@@ -72,7 +72,6 @@ namespace PMS.Controllers
 
             //Profit
 
-
             //Purchase 
             var PurchaseDetails = dashboardRepository.GetAllPurchaseDetails();
             ViewBag.PurchaseQty = PurchaseDetails.Select(x => x.Qty).Sum();

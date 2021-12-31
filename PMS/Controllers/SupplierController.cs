@@ -496,5 +496,51 @@ namespace PMS.Controllers
 
             return File(res.MainStream, "application/pdf");
         }
+
+
+        // GET: SupplierController/Create
+        [HttpGet]
+        public ActionResult CreatePartial()
+        {
+            Supplier supplierModel = new Supplier();
+            ViewBag.Countries = new SelectList(helperRepository.GetCountry(), "Id", "Name");
+            return PartialView("_CreatePartialView", supplierModel);
+        }
+
+
+        // POST: SupplierController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreatePartial(Supplier supplier)
+        {
+            ViewBag.Countries = new SelectList(helperRepository.GetCountry(), "Id", "Name");
+
+            try
+            {
+                bool flag = false;
+                var res = supplierRepository.AddSupplier(supplier);
+                if (res != null)
+                {
+                    flag = true;
+                }
+
+                if (flag)
+                {
+                    toastNotification.AddSuccessToastMessage("The operation was performed successfully");
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    helperRepository.ErrorMessage();
+                    return View(supplier);
+                }
+            }
+            catch
+            {
+                toastNotification.AddErrorToastMessage("Please enter correct data and try again!");
+                return View(supplier);
+            }
+        }
+
     }
 }

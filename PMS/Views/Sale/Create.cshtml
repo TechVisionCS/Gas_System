@@ -22,6 +22,11 @@
                                    class="btn btn-mat btn-primary" style="color: white;">
                                     <i class="fa fa-list"></i> Sales List
                                 </a>
+
+                                <a asp-action="Index" asp-controller="Customer"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-user"></i> Customer
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -63,15 +68,11 @@
 
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
-
                                                         <label class="control-label">Customer<span class="required">*</span></label>
-
-                                                        <select required class="form-control select2" id="customerId" AppendDataBoundItems="true" style="width: 100%;" asp-for="@Sale.CustomerId" asp-items="@ViewBag.Customers">
+                                                        <select required class="form-control select2" id="customerId" style="width: 100%;" asp-for="@Sale.CustomerId" asp-items="@ViewBag.Customers">
                                                             <option selected="selected" value="0">WALKING CUSTOMER</option>
                                                         </select>
-
                                                         <span asp-validation-for="@Sale.CustomerId" class="text-danger"></span>
-
                                                         <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreateCustomerModel")"
                                                            data-redirect="@Url.Action("Create", "Sale")" class="text text-info" style="color: white; cursor: pointer;" id="btnAddCustomer">
                                                             <i class="fa fa-plus"></i> Customer
@@ -114,16 +115,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-12">
-                                                    <hr />
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <h6>Item details</h6>
-                                                    <hr />
-                                                </div>
-
-                                                <div class="col-12">
+                                                <div class="col-12 table-responsive">
                                                     <table class="table">
                                                         <thead>
                                                             <tr>

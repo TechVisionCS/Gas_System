@@ -15836,3 +15836,6 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Debug\netcoreapp3.1\PMS.csproj.CopyCompl
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Debug\netcoreapp3.1\PMS.dll
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Debug\netcoreapp3.1\PMS.pdb
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Debug\netcoreapp3.1\PMS.genruntimeconfig.cache
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Supplier\_CreatePartialView.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Product\CreatePartial.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Debug\netcoreapp3.1\Razor\Views\Product\_CreatePartialView.cshtml.g.cs

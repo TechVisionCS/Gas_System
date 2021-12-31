@@ -17,6 +17,15 @@
                         <h5 class="m-b-10">Purchases Administration</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Product"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-product-hunt"></i> Product List
+                                </a>
+                                <a asp-action="Index" asp-controller="Supplier"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-user"></i> Supplier List
+                                </a>
+
                                 <a asp-action="Index" asp-controller="Purchase"
                                    class="btn btn-mat btn-primary" style="color: white;">
                                     <i class="fa fa-list"></i> Purchases List
@@ -53,33 +62,32 @@
                                         <form method="post" asp-action="Create" id="frm">
                                             <div class="row">
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Supplier <span class="required">*</span></label>
                                                         <select required class="form-control select2" id="supplierId" style="width: 100%;" asp-for="@Purchase.SupplierId" asp-items="@ViewBag.Suppliers">
                                                             <option selected="selected" value="0">--Select Supplier--</option>
                                                         </select>
                                                         <span asp-validation-for="@Purchase.SupplierId" class="text-danger"></span>
-                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreateSupplierModel")"
-                                                           data-redirect="@Url.Action("Create", "Purchase")" class="text text-info" style="color: white; cursor: pointer;" id="btnAddCustomer">
-                                                            <i class="fa fa-plus"></i> Add New Supplier
+                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreatePartial","Supplier")"
+                                                           data-redirect="@Url.Action("Create", "Purchase")" class="text text-info" style="color: white; cursor: pointer;">
+                                                            <i class="fa fa-plus-circle"></i> Supplier
                                                         </a>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type <span class="required">*</span></label>
                                                         <select required class="form-control select2" style="width: 100%;" asp-for="@Purchase.PaymentType" id="pType">
-                                                            <option selected="selected" value="0">--Select Payment Type--</option>
-                                                            <option value="1">Cash Payment</option>
+                                                            <option value="1" selected="selected">Cash Payment</option>
                                                             <option value="2">Bank Payment</option>
                                                         </select>
                                                         <span asp-validation-for="@Purchase.PaymentType" class="text-danger"></span>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12" id="bank" style="display: none;">
+                                                <div class="col-lg-3 col-md-3 col-sm-12" id="bank" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Bank <span class="required">*</span></label>
                                                         <select required class="form-control select2" style="width: 100%;" asp-for="@Purchase.BankId" asp-items="@ViewBag.Banks">
@@ -93,7 +101,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Purchase Date <span class="required">*</span> </label>
                                                         <input type="date" asp-for="@Purchase.PurchaseDate" class="form-control" required />
@@ -101,7 +109,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Invoice No <span class="required">*</span></label>
                                                         <input asp-for="@Purchase.InvoiceNo" class="form-control" required autocomplete="off" Placeholder="Invoice No" />
@@ -109,7 +117,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Description</label>
                                                         <textarea asp-for="@Purchase.Description" class="form-control" placeholder="Details about Purchase..."> </textarea>
@@ -121,16 +129,18 @@
                                                     <hr />
                                                 </div>
 
-                                                <div class="col-12">
-                                                    <h6>Item details</h6>
-                                                    <hr />
-                                                </div>
-
-                                                <div class="col-12">
+                                                <div class="col-12 table-responsive">
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Product <span class="required">*</span></th>
+                                                                <th>
+                                                                    <span class="required">
+                                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreatePartial","Product")"
+                                                                           data-redirect="@Url.Action("Create", "Purchase")" class="text text-info" style="color: white; cursor: pointer;">
+                                                                            <i class="fa fa-plus-circle"></i> Product
+                                                                        </a>*
+                                                                    </span>
+                                                                </th>
                                                                 <th>Unit <span class="required">*</span></th>
                                                                 <th>Unit Price <span class="required">*</span></th>
                                                                 <th>Qty <span class="required">*</span></th>

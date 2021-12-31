@@ -16,6 +16,12 @@
                         <h5 class="m-b-10">Suppliers Administration</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
+
+                                <a asp-action="CreatePayment" asp-controller="Supplier"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-money"></i> Add Payment
+                                </a>
+
                                 <a asp-action="Create" asp-controller="Supplier"
                                    class="btn btn-mat btn-primary" style="color: white;">
                                     <i class="fa fa-user-plus"></i> Add New Supplier
@@ -26,15 +32,6 @@
                                     <i class="fa fa-list"></i> Suppliers Ledger
                                 </a>
 
-                                <a asp-action="Payments" asp-controller="Supplier"
-                                   class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Payments List
-                                </a>
-
-                                <a asp-action="Advances" asp-controller="Supplier"
-                                   class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Advances List
-                                </a>
                             </li>
                         </ul>
                     </div>

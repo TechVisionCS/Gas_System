@@ -318,5 +318,76 @@ namespace PMS.Controllers
             }
         }
 
+        public ActionResult CreatePartial()
+        {
+            Product Productmodel = new Product();
+
+            ViewBag.Category = new SelectList(helperRepository.GetCategory(), "Id", "Name");
+            ViewBag.Unit = helperRepository.GetUnit();
+            ViewBag.Manufacturers = new SelectList(helperRepository.GetManufacturers(), "Id", "Name");
+            return PartialView("_CreatePartialView", Productmodel);
+
+        }
+
+        // POST: ProductController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreatePartial(Product product, long[] UnitId, decimal[] UnitSellPrice)
+        {
+            ViewBag.Category = new SelectList(helperRepository.GetCategory(), "Id", "Name");
+            ViewBag.Unit = helperRepository.GetUnit();
+            ViewBag.Manufacturers = new SelectList(helperRepository.GetManufacturers(), "Id", "Name");
+
+            if (ModelState.IsValid)
+            {
+                //try
+                //{
+                if (UnitId.Length > 0)
+                {
+                    List<ProductUnit> list = new List<ProductUnit>();
+
+                    for (int i = 0; i < UnitId.Length; i++)
+                    {
+                        ProductUnit unit = new ProductUnit
+                        {
+                            UnitId = UnitId[i],
+                            UnitSellPrice = UnitSellPrice[i]
+                        };
+                        list.Add(unit);
+                    }
+
+                    var res = productRepository.AddProduct(product, list);
+
+                    if (res != null)
+                    {
+                        helperRepository.SuccessMessage();
+                        return RedirectToAction(nameof(Index));
+                    }
+                    else
+                    {
+                        helperRepository.ErrorMessage();
+                        return View(product);
+                    }
+                }
+                else
+                {
+                    helperRepository.InfoMessage("Please specify unit details!");
+                    return View(product);
+                }
+                //}
+                //catch
+                //{
+                //    helperRepository.ErrorMessage();
+                //    return View(product);
+                //}
+            }
+            else
+            {
+                helperRepository.WarningMessage("Please check your form and then submit it!");
+                return View(product);
+            }
+
+        }
+
     }
 }

@@ -44,7 +44,7 @@ namespace PMS.Repositories
         }
         public IEnumerable<Partner> GetPartner()
         {
-            return dbContext.Partners.Where(x => x.DeletedAt == null).ToList();
+            return dbContext.Partners.OrderByDescending(x => x.Id).Where(x => x.DeletedAt == null).ToList();
         }
 
         public IEnumerable<Province> GetProvinces()
@@ -60,12 +60,13 @@ namespace PMS.Repositories
 
         public IEnumerable<Supplier> GetSupplier()
         {
-            return dbContext.Suppliers.Where(x => x.DeletedAt == null).ToList();
+            return dbContext.Suppliers.OrderByDescending(x => x.Id).Where(x => x.DeletedAt == null).ToList();
+
         }
 
         public IEnumerable<Supplier> GetAllSupplier()
         {
-            return dbContext.Suppliers.ToList();
+            return dbContext.Suppliers.OrderByDescending(x => x.Id).ToList();
         }
 
         public IEnumerable<Unit> GetUnit()
@@ -74,7 +75,7 @@ namespace PMS.Repositories
         }
         public IEnumerable<ProductType> GetProductType()
         {
-            return dbContext.ProductTypes.Where(x => x.DeletedAt == null && x.Status == 1).ToList();
+            return dbContext.ProductTypes.OrderByDescending(x => x.Id).Where(x => x.DeletedAt == null && x.Status == 1).ToList();
         }
 
         public IEnumerable<ProductType> GetProductTypesById(long CategoryName)
@@ -98,7 +99,7 @@ namespace PMS.Repositories
         {
             if (dbContext != null)
             {
-                var models = dbContext.Products.Where(x => x.DeletedAt == null).ToList();
+                var models = dbContext.Products.OrderByDescending(x => x.Id).Where(x => x.DeletedAt == null).ToList();
                 List<ProductDropDownListViewModel> list = new List<ProductDropDownListViewModel>();
                 foreach (var model in models)
                 {
