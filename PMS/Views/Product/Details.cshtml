@@ -1,0 +1,313 @@
+﻿@model ProductDetailsViewModel
+@{
+    ViewData["Title"] = "Product Details";
+    var productDetails = Model.ProductDetails;
+    var stockdetial = Model.StockDetails;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Product Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="Proudct"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-plus"></i> Add New Product
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Product"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Products List
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Stock"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Stock
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page-header end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+
+                        <form method="get" asp-action="Details">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Change Unit</label>
+                                        <select class="form-control" name="unitId" asp-items="@ViewBag.Units" style="width: 100%;">
+                                            <option selected="selected" value="0">--Select Unit--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
+                                    <div class="form-group pt-2">
+                                        <button type="submit" class="btn btn-outline-primary mr-2"><i class="fa fa-search"></i> Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h5>Product Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="box-body">
+
+                                <div class="page-header card">
+                                    <div class="card-block">
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <h5 class="text text-primary">Product Details</h5>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                <h6>Name</h6>
+                                                <p>@productDetails.Name</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                <h6>Category</h6>
+                                                <p>@productDetails.CategoryName</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                <h6>Manufacturer</h6>
+                                                <p>@productDetails.ManufacturerName</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                <h6>Avalible Qty</h6>
+                                                <p>@productDetails.TotalAvailStockQtys (@ViewBag.UnitName)</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <h6>Description</h6>
+                                                <p>@productDetails.Description</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                <h6>Created At</h6>
+                                                <p>@productDetails.CreatedAt</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                <h6>Last Updated At</h6>
+                                                <p>@productDetails.UpdatedAt</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                                <h6>Registered By User</h6>
+                                                <p>@productDetails.UserName</p>
+                                                <hr />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="page-header card">
+                                    <div class="card-block">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <h5 class="text text-primary">Product Units Details</h5>
+                                                <hr />
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="card-block table-border-style">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>SNo.</th>
+                                                                    <th>Unit Name</th>
+                                                                    <th>Unit Sell Price</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <span class="d-none">@{ var snooo = 1; }</span>
+                                                                @if (Model.ProductUnits != null)
+                                                                {
+                                                                    @foreach (var pu in Model.ProductUnits)
+                                                                    {
+                                                                        <tr>
+                                                                            <td>@snooo</td>
+                                                                            <td>@pu.Unit.Name</td>
+                                                                            <td>
+                                                                                @pu.UnitSellPrice
+                                                                                <span class="d-none">
+                                                                                    @{ snooo++; }
+                                                                                </span>
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    }
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="page-header card">
+                                    <div class="card-block">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <h5 class="text text-primary">Product Purchases</h5>
+                                                <hr />
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="card-block table-border-style">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>SNo.</th>
+                                                                    <th>InQty (@ViewBag.UnitName)</th>
+                                                                    <th>Purchase Price</th>
+                                                                    <th>Description</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <span class="d-none">@{ var sno = 1; }</span>
+                                                                @if (stockdetial.Any())
+                                                                {
+                                                                    @foreach (var m in stockdetial)
+                                                                    {
+                                                                        @if (m.InQty > 0)
+                                                                        {
+                                                                            <tr>
+                                                                                <td>@sno</td>
+                                                                                <td>@m.InQty.ToString("N")</td>
+                                                                                <td>@m.PurchasePrice</td>
+                                                                                <td>
+                                                                                    @m.Description
+                                                                                    <span class="d-none">
+                                                                                        @{ sno++; }
+                                                                                    </span>
+                                                                                </td>
+
+                                                                            </tr>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="page-header card">
+                                    <div class="card-block">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <h5 class="text text-primary">Product Sales </h5>
+                                                <hr />
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="card-block table-border-style">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>SNo.</th>
+                                                                    <th>OutQty (@ViewBag.UnitName)</th>
+                                                                    <th>Sale Price</th>
+                                                                    <th>Description</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <span class="d-none">@{ var snoo = 1; }</span>
+                                                                @if (stockdetial.Any())
+                                                                {
+                                                                    @foreach (var m in stockdetial)
+                                                                    {
+                                                                        @if (m.OutQty > 0)
+                                                                        {
+                                                                            <tr>
+                                                                                <td>@snoo</td>
+                                                                                <td>@m.OutQty.ToString("N")</td>
+                                                                                <td>@m.SalePrice.</td>
+                                                                                <td>
+                                                                                    @m.Description
+                                                                                    <span class="d-none">
+                                                                                        @{ snoo++; }
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*Basic table card end*@
+                    </div>
+                    @*Page-body end*@
+
+                    <div class="page-header card">
+                        <div class="card-block">
+                            <ul class="">
+                                <li class="breadcrumb-item pull-left">
+                                    <a onclick="window.history.back();"
+                                       class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                        <i class="fa fa-arrow-left"></i> Back
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  

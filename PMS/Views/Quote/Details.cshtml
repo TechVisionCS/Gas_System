@@ -1,0 +1,286 @@
+﻿@model ViewQuoteDetailsViewModel
+
+@{
+    ViewData["Title"] = "Quotes";
+
+    var Quote = Model.Quote;
+    var QuoteDetails = Model.QuoteDetails;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Quotes Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Quote"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Quote List
+                                </a>
+
+                                <a asp-action="Create" asp-controller="Quote"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-shopping-cart"></i> Add New Quote
+                                </a>
+
+                                <a asp-action="Create2" asp-controller="Quote"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-cart-plus"></i> Add New Quote (Barcode)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+
+                <div class="page-body">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Quote Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>General Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Quote  No.</h6>
+                                    <p>@Quote.InvoiceNo</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Sale Date</h6>
+                                    <p>@Quote.QuoteDate</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Customer Name</h6>
+                                    @if (Quote.CustomerId == 0)
+                                    {
+                                        <p>@Quote.CustomerName</p>
+                                    }
+                                    else
+                                    {
+                                        <p>WALKING CUSTOMER</p>
+                                    }
+                                    <hr />
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-6">
+                                    <h6>Description</h6>
+                                    <p>@Quote.Description</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Items</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Product Name</th>
+                                                    <th>Batch Id</th>
+                                                    <th>Qty</th>
+                                                    <th>Unit Price</th>
+                                                    <th>Discount</th>
+                                                    <th>Total Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (QuoteDetails.Any())
+                                                {
+                                                    foreach (var m in QuoteDetails)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.Sno</td>
+                                                            <td>@m.ProductName</td>
+                                                            <td>@m.BatchId</td>
+                                                            <td>@m.Qty</td>
+                                                            <td>@m.UnitPrice</td>
+                                                            <td>
+                                                                @{ var res = (100 * m.Discount) / (m.Discount + m.TotalQuotePrice); }
+                                                                @m.Discount (@res % - <small>Per item</small>)
+                                                            </td>
+                                                            <td>@m.TotalQuotePrice</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <span class="text text-info">No item available in this sale!</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Payment Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Payment Type</h6>
+                                    <p>
+                                        @if (Quote.PaymentType == 1)
+                                        {
+                                            <span class="badge badge-info">Cash</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-info">Bank</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                @if (Quote.PaymentType == 2)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Bank Name</h6>
+                                        <p>@Quote.BankName</p>
+                                        <hr />
+                                    </div>
+                                }
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Quote</h6>
+                                    <p>@Quote.SubTotal.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Discount</h6>
+                                    <p>
+                                        @{ var disc_per = (100 * Quote.DiscountAmount) / Quote.SubTotal; }
+                                        @Quote.DiscountAmount.ToString("N") (@disc_per %)
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Rent</h6>
+                                    <p>@Quote.RentAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Tax</h6>
+                                    <p>@Quote.TaxAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6  text text-primary">
+                                    <h6>Total Amount</h6>
+                                    <p>@Quote.TotalAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-success">
+                                    <h6>Paid Amount</h6>
+                                    <p>@Quote.PaidAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-warning">
+                                    <h6>Due Amount</h6>
+                                    <p>@Quote.DueAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>System Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Sale Performed By</h6>
+                                    <p>@Quote.UserName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Created At</h6>
+                                    <p>@Quote.CreatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Update At</h6>
+                                    <p>@Quote.UpdatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <br />
+                                </div>
+
+                                <div class="col-12 text text-right">
+                                    <a class="btn btn-info text-white" asp-action="PrintInvoice" asp-controller="Quote" asp-route-id="@Quote.Id" target="_blank">
+                                        <i class="fa fa-print"></i> Print
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Main-body end -->
+
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

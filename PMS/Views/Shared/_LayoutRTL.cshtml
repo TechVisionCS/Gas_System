@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="ps">
+
+<head>
+    <title>@ViewData["Title"] | ګاز ګروپ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" href="~/assets/images/logo5.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/wwwroot/admin_asset_rtl/css/fontfamily/bahij_halvetic_roman.ttf" />
+    <link rel="stylesheet" href="~/wwwroot/admin_asset_rtl/css/fontfamily/bahij_halvetic_bold.ttf" />
+    <link rel="stylesheet" href="~/wwwroot/admin_asset_rtl/css/fontfamily/bahij_halvetic_light.ttf" />
+    <!-- Google font-->
+    <style>
+        @@font-face {
+            font-family: "Montserrat", "Bahij Halvetica", "Segoe UI" Arial, sans-serif !important;
+        }
+
+        input[type=text] {
+            direction: rtl;
+        }
+
+        th {
+            text-align: right;
+            direction: rtl;
+        }
+    </style>
+    <!-- Required Fremwork -->
+    <link href="~/admin_asset_rtl/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/admin_asset_rtl/css/bootstrap/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="~/admin_asset_rtl/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="~/admin_asset_rtl/icon/font-awesome/css/font-awesome.min.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="~/admin_asset_rtl/icon/icofont/css/icofont.css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/lib/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/lib/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/lib/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/lib/select2/css/select2.min.css">
+    <link rel="stylesheet" href="~/lib/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+    <!-- Style.css -->
+
+    <link rel="stylesheet" type="text/css" href="~/admin_asset_rtl/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/admin_asset_rtl/css/jquery.mCustomScrollbar.css">
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    @RenderSection("Styles", required: false)
+</head>
+
+<body style="">
+    @*<div class="fixed-button">
+            <a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
+            </a>
+        </div>*@
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            @await Html.PartialAsync("_HeaderPartial.cshtml")
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+
+                    @await Html.PartialAsync("_LeftSidebarPartial.cshtml")
+
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+
+                            @RenderBody()
+
+                            <div id="styleSelector">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="~/admin_asset_rtl/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/admin_asset_rtl/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/admin_asset_rtl/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="~/admin_asset_rtl/js/bootstrap/js/bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="~/admin_asset_rtl/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="~/admin_asset_rtl/js/modernizr/modernizr.js"></script>
+    <!-- am chart -->
+    <!--<script src="~/admin_assets/pages/widget/amchart/amcharts.min.js"></script>
+    <script src="~/admin_assets/pages/widget/amchart/serial.min.js"></script>-->
+    <!-- Chart js -->
+    <!--<script type="text/javascript" src="~/admin_assets/js/chart.js/Chart.js"></script>-->
+    <!-- Todo js -->
+    <!--<script type="text/javascript " src="~/admin_assets/pages/todo/todo.js "></script>-->
+    <!-- DataTables  & Plugins -->
+    <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/lib/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/lib/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="~/lib/jszip/jszip.min.js"></script>
+    <script src="~/lib/pdfmake/pdfmake.min.js"></script>
+    <script src="~/lib/pdfmake/vfs_fonts.js"></script>
+    <script src="~/lib/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/lib/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/lib/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <!-- Select2 -->
+    <script src="~/lib/select2/js/select2.full.min.js"></script>
+
+    <!-- Custom js -->
+    <script type="text/javascript" src="~/admin_assets/pages/dashboard/custom-dashboard.min.js"></script>
+    <script type="text/javascript" src="~/admin_assets/js/script.js"></script>
+    <script type="text/javascript " src="~/admin_assets/js/SmoothScroll.js"></script>
+    <script src="~/admin_assets/js/pcoded.min.js"></script>
+    <script src="~/admin_assets/js/vartical-demo.js"></script>
+    <script src="~/admin_assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script src="~/js/site.js"></script>
+    <script src="~/js/onClickDeleteScript.js"></script>
+    <script src="~/js/printThis.js"></script>
+    <!--begin::Page Scripts(Print Area To Print Div Selected  )-->
+    <script src="~/js/PrintScript.js"></script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "buttons": ["excel", "pdf", "print"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+            $('.select2').select2()
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+        });
+
+
+
+    </script>
+
+    @RenderSection("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
+</body>
+</html>
+<!--
+<li class="breadcrumb-item"><a><i class="fas fa-clock"></i> <span id="clock"></span></a></li>
+<li class="breadcrumb-item"><a><i class="fas fa-calendar"></i> <span id="tdate">today</span></a></li>
+colvis - show column visibility in datatable.
+-->

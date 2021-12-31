@@ -1,0 +1,41 @@
+﻿@model PurchaseDetails
+
+<tr id="newItem">
+    <td>
+        <select class="form-control" style="width: 100%;" asp-for="@Model.ProductId" asp-items="@ViewBag.Products" required disabled>
+            <option selected="selected" value="0">--Select Product--</option>
+        </select>
+        <span asp-validation-for="@Model.ProductId" class="text-danger"></span>
+    </td>
+    <td>
+        <select class="form-control" style="width: 100%;" asp-for="@Model.UnitId" asp-items="@ViewBag.Units" required disabled>
+            <option selected="selected" value="0">--Select Unit--</option>
+        </select>
+        <span asp-validation-for="@Model.UnitId" class="text-danger"></span>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control" asp-for="@Model.Qty" placeholder="0.00" required readonly />
+        <span asp-validation-for="@Model.Qty" class="text-danger"></span>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control" asp-for="@Model.PurchasePrice" placeholder="0.00" required readonly />
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" name="returnedQty" id="returnedQty" placeholder="0.00"
+               oninput="$(this).closest('tr').find('#totalReturnPrice').val( ($(this).closest('tr').find('#PurchasePrice').val() * $(this).val()) - ((($(this).closest('tr').find('#PurchasePrice').val() * $(this).val()) * $(this).closest('tr').find('#unitdiscount').val())/100));" />
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" name="discount" id="unitdiscount" placeholder="0.00" min="0" max="100" value="0"
+               oninput="$(this).closest('tr').find('#totalReturnPrice').val( ($(this).closest('tr').find('#PurchasePrice').val() * $(this).closest('tr').find('#returnedQty').val()) - ((($(this).closest('tr').find('#PurchasePrice').val() * $(this).closest('tr').find('#returnedQty').val()) * $(this).val())/100));">
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control total" name="totalReturnPrice" id="totalReturnPrice" placeholder="0.00" readonly />
+    </td>
+    <td>
+        <input type="checkbox" class="form-control" name="chkPurchaseDetailsId" value="@Model.Id"
+               style="width: 2.2rem; height: 2.2rem;" />
+    </td>
+</tr>
+
+<script src="~/js/purchaseReturnFormValidation.js"></script>
+

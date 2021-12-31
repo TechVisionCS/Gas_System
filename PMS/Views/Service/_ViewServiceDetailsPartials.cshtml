@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ServiceDetailViewModel>
+<!--Modal Body Start-->
+<div class="modal-content p-2 m-2">
+    <!--Modal Header Start-->
+    <div class="modal-header">
+        <h5 class="modal-title">Service Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="fa fa-times text text-danger"></i>
+            </span>
+        </button>
+    </div>
+    <!--Modal Header End-->
+    <!--Modal Content here ...-->
+    <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>SNo.</th>
+                    <th>Category Name</th>
+                    <th>Qty</th>
+                    <th>Fee Charges</th>
+                    <th>Discount</th>
+                    <th>Total Service Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>@m.Sno</td>
+                            <td>@m.ServiceCategoryName</td>
+                            <td>@m.Qty</td>
+                            <td>@m.Fee_Charges</td>
+                            <td>
+                                @{ var res = (100 * m.Discount) / (m.Discount + m.TotalServicePrice); }
+                                @m.Discount (@res % - <small>Per item</small>)
+                            </td>
+                            <td>@m.TotalServicePrice</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

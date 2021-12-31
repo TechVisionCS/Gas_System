@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProductBatch>
+<!--Modal Body Start-->
+<div class="modal-content p-2 m-2">
+    <!--Modal Header Start-->
+    <div class="modal-header">
+        <h5 class="modal-title">Product Batch Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="fa fa-times text text-danger"></i>
+            </span>
+        </button>
+    </div>
+    <!--Modal Header End-->
+    <!--Modal Content here ...-->
+    <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Batch ID</th>
+                    <th>Purchase Date</th>
+                    <th>Stock Qty</th>
+                    <th>Purchase Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>@m.BatchId</td>
+                            <td>@m.PurchaseDate</td>
+                            <td>@m.StockQty</td>
+                            <td>@m.PurchasePrice</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <!--Modal Contents end-->
+</div>
+<!--Modal Body End-->

@@ -1,0 +1,164 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Products";
+}
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-ms-12" style="margin:0 auto;">
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Products Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Product"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i>  Products List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Update Product</h5>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="card-block">
+                                    <div class="col-sm-12 text text-center">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                    </div>
+
+                                    <div class="col-lg-8 col-md-10 col-sm-12" style="margin: 0 auto;">
+                                        <form method="post" asp-action="Edit" id="frm">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            Name <span class="required">*</span>
+                                                        </label>
+                                                        <input asp-for="Name" class="form-control" required autocomplete="on" />
+                                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Manufacturer</label>
+                                                        <select required class="form-control select2" style="width: 100%;" asp-for="ManufacturerId" asp-items="@ViewBag.Manufacturers">
+                                                            <option selected="selected" value="0">--Select Manufacturer--</option>
+                                                        </select>
+                                                        <span asp-validation-for="ManufacturerId" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Category</label>
+                                                        <select required class="form-control select2" style="width: 100%;" asp-for="CategoryId" asp-items="@ViewBag.Category">
+                                                            <option selected="selected" value="0">--Select Category--</option>
+                                                        </select>
+                                                        <span asp-validation-for="CategoryId" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Description</label>
+                                                        <textarea asp-for="Description" class="form-control"> </textarea>
+                                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <hr />
+                                                    <input type="hidden" asp-for="Id" />
+                                                    <input type="hidden" asp-for="CreatedAt" />
+                                                    <label class="control-label">Unit Details</label>
+                                                </div>
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <td>Unit Name</td>
+                                                            <td>Unit Sell Price</td>
+                                                        </tr>
+                                                        @foreach (var om in ViewBag.OldUnits)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    <input type="hidden" class="form-control" name="UnitId" value="@om.UnitId" />
+                                                                    <input value="@om.Unit.Name" readonly class="form-control" />
+                                                                </td>
+                                                                <td>
+                                                                    <input type="number" step="any" name="UnitSellPrice" class="form-control" value="@om.UnitSellPrice" />
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    </table>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text text-left">
+                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                        <i class="fa fa-save"></i> Save
+                                                    </button>
+
+                                                    <button type="reset" class="btn btn-mat btn-danger">
+                                                        <i class="fa fa-times"></i> Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $("#sbm_btn").on('click', function () {
+            $("#sbm_flg").val("1");
+            $("#frm").submit();
+        });
+    </script>
+}

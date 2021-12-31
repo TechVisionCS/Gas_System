@@ -1,0 +1,289 @@
+﻿@model ViewSaleDetailsViewModel
+
+@{
+    ViewData["Title"] = "Sales";
+
+    var Sale = Model.Sale;
+    var SaleDetails = Model.SaleDetails;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Sales Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Sale"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Sales List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+
+                <div class="page-header card card-border-danger">
+                    <div class="card-block">
+                        <form method="POST" asp-action="Delete">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-12">
+                                    <p class="h4">Do you want to delete the following record of sale?</p>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12" style="padding-top: 20px;">
+                                    <div class="form-group pt-2">
+                                        <input type="hidden" name="saleId" value="@Sale.Id" />
+                                        <input type="hidden" name="saleDate" value="@Sale.SaleDate" />
+                                        <button type="submit" class="btn btn-danger mr-2"><i class="fa fa-check"></i> Yes, Delete it</button>
+                                        <a asp-action="Index" asp-controller="Sale"
+                                           class="btn btn-secondary"><i class="fa fa-times"></i> No, Cancel it</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Page-body start -->
+
+                <div class="page-body">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Sale Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>General Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Invoice No.</h6>
+                                    <p>@Sale.Id</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Sale Date</h6>
+                                    <p>@Sale.SaleDate</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Customer Name</h6>
+                                    @if (Sale.CustomerId == 0)
+                                    {
+                                        <p>@Sale.CustomerName</p>
+                                    }
+                                    else
+                                    {
+                                        <p>WALKING CUSTOMER</p>
+                                    }
+                                    <hr />
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-6">
+                                    <h6>Description</h6>
+                                    <p>@Sale.Description</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Items</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Product</th>
+                                                    <th>Unit</th>
+                                                    <th>Unit Price</th>
+                                                    <th>Qty</th>
+                                                    <th class="d-none">Discount</th>
+                                                    <th>Total Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (SaleDetails.Any())
+                                                {
+                                                    foreach (var m in SaleDetails)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.Sno</td>
+                                                            <td>@m.Product.Name</td>
+                                                            <td>@m.Unit.Name</td>
+                                                            <td>@m.UnitPrice</td>
+                                                            <td>@m.Qty</td>
+                                                            <td class="d-none">
+                                                                @{ var res = (100 * m.Discount) / (m.Discount + m.TotalSalePrice); }
+                                                                @m.Discount (@res % - <small>Per item</small>)
+                                                            </td>
+                                                            <td>@m.TotalSalePrice</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <span class="text text-info">No item available in this sale!</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Payment Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Payment Type</h6>
+                                    <p>
+                                        @if (Sale.PaymentType == 1)
+                                        {
+                                            <span class="badge badge-info">Cash</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-info">Bank</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                @if (Sale.PaymentType == 2)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Bank Name</h6>
+                                        <p>@Sale.BankName</p>
+                                        <hr />
+                                    </div>
+                                }
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Sale</h6>
+                                    <p>@Sale.SubTotal.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Discount</h6>
+                                    <p>
+                                        @{ var disc_per = (100 * Sale.DiscountAmount) / Sale.SubTotal; }
+                                        @Sale.DiscountAmount.ToString("N") (@disc_per %)
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Rent</h6>
+                                    <p>@Sale.RentAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 d-none">
+                                    <h6>Tax</h6>
+                                    <p>@Sale.TaxAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6  text text-primary">
+                                    <h6>Total Amount</h6>
+                                    <p>@Sale.TotalAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-success">
+                                    <h6>Paid Amount</h6>
+                                    <p>@Sale.PaidAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-warning">
+                                    <h6>Due Amount</h6>
+                                    <p>@Sale.DueAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>System Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Sale Performed By</h6>
+                                    <p>@Sale.UserName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Created At</h6>
+                                    <p>@Sale.CreatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Update At</h6>
+                                    <p>@Sale.UpdatedAt</p>
+                                    <hr />
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Main-body end -->
+
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,141 @@
+﻿@model AssetStock
+@{
+    ViewData["Title"] = "Fixed Assets";
+}
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-ms-12" style="margin:0 auto;">
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Asset Stock Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="AssetStock" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-list"></i> Assets Stock List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Update Asset (@Model.AssetId)</h5>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+                                    <hr />
+                                </div>
+                                <div class="card-block">
+                                    <div class="col-sm-12 text text-center">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-10 col-sm-12" style="margin: 0 auto;">
+                                        <form method="POST" asp-action="AssetStockEdit" asp-controller="FixedAsset">
+                                            <input type="hidden" asp-for="Id" value="@Model.Id" />
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label asp-for="AssetId" class="control-label">Asset Name <span class="required">*</span></label>
+                                                        <select class="form-control select2" style="width: 100%;" asp-for="AssetId" asp-items="@ViewBag.AssetName">
+                                                            <option selected="selected" value="NULL">--Select Asset Name--</option>
+                                                        </select>
+                                                        <span asp-validation-for="AssetId" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label asp-for="PurchaseDate" class="control-label">Purchase Date<span class="required">*</span></label>
+                                                        <div class="input-group">
+                                                            <input type="date" id="PurchaseDate" name="PurchaseDate" asp-for="PurchaseDate" required class="form-control" aria-invalid="false" placeholder="yyyy/mm/dd">
+                                                            <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label asp-for="InQty" class="control-label">Quantity <span class="required">*</span></label>
+                                                        <input type="number" step="1" min="1" oninput="validity.valid||(value='');" name="Qty" id="Qty" asp-for="InQty" class="form-control" required />
+                                                        <span asp-validation-for="InQty" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label asp-for="ExpiryDate" class="control-label">Expiry Date</label>
+                                                        <div class="input-group">
+                                                            <input type="date" id="ExpiryDate" name="ExpiryDate" asp-for="ExpiryDate" class="form-control" aria-invalid="false" placeholder="yyyy/mm/dd">
+                                                            <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            Status
+                                                        </label>
+                                                        <select class="form-control select2" style="width: 100%;" name="Status" id="Status" asp-for="Status" asp-items="Html.GetEnumSelectList<AssetStatus>()">
+                                                            <option selected="selected" value="0">--Select Asset Status--</option>
+                                                        </select>
+                                                        <span asp-validation-for="Status" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label asp-for="Description" class="control-label"></label>
+                                                        <input asp-for="Description" class="form-control" dir="auto" />
+                                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text text-left">
+                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                        <i class="fa fa-save"></i> Update
+                                                    </button>
+
+                                                    <a asp-action="AssetStock" asp-controller="FixedAsset"
+                                                       class="btn btn-mat btn-danger" style="color: white;">
+                                                        <i class="fa fa-list"></i> Cancel
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Page body end -->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();;"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ServiceCategory>
+
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table id="example1" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>SNo.</th>
+                    <th>Service Category</th>
+                    <th>Fee Charges</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ var sno = 1; }
+                @if (Model.Any())
+                {
+                    foreach (var serviceCategory in Model)
+                    {
+                        <tr>
+                            <td>@sno</td>
+                            <td>@serviceCategory.Name</td>
+                            <td>@serviceCategory.Fee</td>
+                            <td>@serviceCategory.Description</td>
+                            <td>
+                                @if (serviceCategory.Status == 1)
+                                {
+                                    <span class="badge badge-primary">Enabled</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-warning">Disabled</span>
+                                }
+                            </td>
+                            <td>
+                                <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action($"Edit/{serviceCategory.Id}")"
+                                   data-redirect="@Url.Action("Success", "ServiceCategory")" class="text text-primary" style="cursor: pointer;">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <span class="d-none">@{sno++;}</span>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

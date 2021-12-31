@@ -1,0 +1,40 @@
+﻿@model SaleDetails
+
+<tr id="newItem">
+    <td>
+        <select class="form-control productId" style="width: 100%;" asp-for="@Model.ProductId" asp-items="@ViewBag.Products" disabled>
+            <option selected="selected" value="0">--Select Product--</option>
+        </select>
+    </td>
+    <td>
+        <select class="form-control productId" style="width: 100%;" asp-for="@Model.UnitId" asp-items="@ViewBag.Units" disabled>
+            <option selected="selected" value="0">--Select Unit--</option>
+        </select>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.Qty" placeholder="0.00" readonly />
+        <span asp-validation-for="@Model.Qty" class="text-danger"></span>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.UnitPrice" placeholder="0.00" readonly />
+        <div class="text text-primary"></div>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" name="returnedQty" id="returnedQty" placeholder="0.00"
+               oninput="$(this).closest('tr').find('#totalReturnPrice').val( ($(this).closest('tr').find('#UnitPrice').val() * $(this).val()) - ((($(this).closest('tr').find('#UnitPrice').val() * $(this).val()) * $(this).closest('tr').find('#unitdiscount').val())/100));" />
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" name="discount" id="unitdiscount" placeholder="0.00" value="0" min="0" max="100"
+               oninput="$(this).closest('tr').find('#totalReturnPrice').val( ($(this).closest('tr').find('#UnitPrice').val() * $(this).closest('tr').find('#returnedQty').val()) - ((($(this).closest('tr').find('#UnitPrice').val() * $(this).closest('tr').find('#returnedQty').val()) * $(this).val())/100));">
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control total" name="totalReturnPrice" id="totalReturnPrice" placeholder="0.00" readonly />
+    </td>
+    <td>
+        <input type="checkbox" class="form-control" name="chkSaleDetailsId" value="@Model.Id"
+               style="width: 2.2rem; height: 2.2rem;" />
+    </td>
+</tr>
+
+<script src="~/js/saleReturnFormValidation.js"></script>
+

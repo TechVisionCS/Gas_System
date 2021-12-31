@@ -1,0 +1,48 @@
+﻿@model WastageDetailsViewModel
+
+
+<tr id="newItem">
+    <td>
+        <input type="hidden" class="form-control" asp-for="@Model.ProductId" />
+        @if (Model.Product.Name != null)
+        {
+            <input type="text" class="form-control" value="@Model.Product.Name" readonly />
+        }
+        else
+        {
+            <input type="text" class="form-control" value="@ViewBag.ProductName" readonly />
+        }
+    </td>
+    <td>
+        <input type="text" asp-for="@Model.UnitId" class="form-control" value="@Model.Unit.Name" readonly />
+        @if (Model.Id > 0)
+        {
+
+        }
+        else
+        {
+            <p class="text text-primary">Available Qty: @ViewBag.AvailQty</p>
+        }
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.UnitPrice" placeholder="0.00" required
+               oninput="$(this).closest('tr').find('#TotalPrice').val(($(this).closest('tr').find('#Qty').val() * $(this).val()) );" />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.UnitPrice" class="text-danger"></span>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.Qty" placeholder="0.00" required
+               oninput="$(this).closest('tr').find('#TotalPrice').val(($(this).closest('tr').find('#UnitPrice').val() * $(this).val()) );" />
+        <span asp-validation-for="@Model.Qty" class="text-danger"></span>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control total" asp-for="@Model.TotalPrice" placeholder="0.00" readonly required />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.TotalPrice" class="text-danger"></span>
+    </td>
+    <td>
+        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> Delete</button>
+    </td>
+</tr>
+
+<script src="~/js/wastageFormValidation.js"></script>

@@ -1,0 +1,286 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Employee";
+}
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Employee Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Employee"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Employees List
+                                </a>
+                                <a asp-action="FiredEmployeeList" asp-controller="Employee"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Fire/Leave Employe
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Employee Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>General Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Name</h6>
+                                    <p>@Model.Name</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Last Name</h6>
+                                    <p>@Model.Lastname</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Father Name</h6>
+                                    <p>@Model.Fathername</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>National Id.</h6>
+                                    <p>@Model.NationalIdnumber</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Designation</h6>
+                                    <p>@Model.DesignationName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Phone</h6>
+                                    <p>@Model.Phone</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Email</h6>
+                                    <p>@Model.Email</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Gender</h6>
+                                    <p>
+                                        @if (Model.Gender == 1)
+                                        {
+                                            <span class="badge badge-primary">Male</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-warning">Female</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Address</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Country</h6>
+                                    <p>@Model.CountryName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Province</h6>
+                                    <p>@Model.ProvinceName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <h6>Address</h6>
+                                    <p>@Model.Address</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Other Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <h6>Marital Status</h6>
+                                    <p>
+                                        @if (Model.MaritalStatus == 1)
+                                        {
+                                            <span class="badge badge-danger">Single</span>
+                                        }
+                                        else if (Model.MaritalStatus == 2)
+                                        {
+                                            <span class="badge badge-success">Married</span>
+                                        }
+                                        else if (Model.MaritalStatus == 3)
+                                        {
+                                            <span class="badge badge-warning">Widowed</span>
+                                        }
+                                        else if (Model.MaritalStatus == 4)
+                                        {
+                                            <span class="badge badge-danger">Divorced</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-dark">Rether_Not_ToSay</span>
+                                        }
+
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <h6>Education Degree</h6>
+                                    <p>
+                                        @if (Model.EducationalDegree == 1)
+                                        {
+                                            <span class="badge badge-primary">Bachlorate</span>
+                                        }
+                                        else if (Model.EducationalDegree == 2)
+                                        {
+                                            <span class="badge badge-info">14th pass</span>
+                                        }
+                                        else if (Model.EducationalDegree == 3)
+                                        {
+                                            <span class="badge badge-info">Bachelor</span>
+                                        }
+                                        else if (Model.EducationalDegree == 4)
+                                        {
+                                            <span class="badge badge-info">Master</span>
+                                        }
+                                        else if (Model.EducationalDegree == 5)
+                                        {
+                                            <span class="badge badge-info">Doctora</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-success">Non</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <h6>Base Salary</h6>
+                                    <p>@Model.BaseSalary</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Date Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Birth Date</h6>
+                                    <p>@Model.Birthdate</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Hire Date</h6>
+                                    <p>@Model.Hidredate</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-6 col-md-4 col-sm-6">
+                                    <h6>Image</h6>
+                                    <img src="~/Uploads/employee-profile/@Model.Image"
+                                         class="rounded-card"
+                                         height="120" width="250"
+                                         asp-append-version="true" />
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>System Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Entry Performed By</h6>
+                                    <p>@Model.UserName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Created At</h6>
+                                    <p>@Model.CreatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Update At</h6>
+                                    <p>@Model.UpdatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <br />
+                                </div>
+
+                                <div class="col-12 text text-right">
+                                    <a class="btn btn-info text-white">
+                                        <i class="fa fa-print"></i> Print
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main-body end -->
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

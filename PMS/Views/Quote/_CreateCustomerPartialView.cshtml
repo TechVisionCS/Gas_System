@@ -1,0 +1,55 @@
+﻿@model Customer
+<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text text-white">
+                <h5 class="modal-title">Customer Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="color: white;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="CreateCustomerModel" asp-controller="Service">
+
+                    <div class="form-group">
+                        <label>Name <span class="required">*</span></label>
+                        <input type="text" asp-for="Name" class="form-control" required autofocus />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label"> Phone </label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">country</label>
+                        <select class="select2 form-control" style="width: 100%;" asp-for="Countryid" asp-items="@ViewBag.Countries">
+                            <option selected="selected" value="0">--select country--</option>
+                        </select>
+                        <span asp-validation-for="Countryid" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Province</label>
+                        <select class="form-control select2" style="width: 100%;" asp-for="Provinceid" asp-items="@ViewBag.Provinces">
+                            <option selected="selected" value="0">--Select Province--</option>
+                        </select>
+                        <span asp-validation-for="Provinceid" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Previous Balance</label>
+                        <input type="number" step="any" asp-for="PreviousBalance" class="form-control" />
+                        <p class="text text-danger">Please enter the correct amount of previous balance. The previous balance can not be updated.</p>
+                        <span asp-validation-for="PreviousBalance" class="text-danger"></span>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="btnSaveCustomer" class="btn btn-primary" data-save="modal">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

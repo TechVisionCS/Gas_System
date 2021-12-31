@@ -1,0 +1,138 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.CodeDom" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Reports\Customer.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Customer.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\customerLedger.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>customerLedger.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\ExpenseLedger.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExpenseLedger.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\OfficePersonLedger.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OfficePersonLedger.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\personloanLedger.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>personloanLedger.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\PurchaseDetails.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PurchaseDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\quoteDetails.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>quoteDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Sale.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Sale.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\SaleDetails.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SaleDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\serviceDetails.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>serviceDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Shop.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Shop.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\supplierLedger.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>supplierLedger.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Reports\Customer.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Customer.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\customerLedger.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customerLedger.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\ExpenseLedger.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExpenseLedger.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\OfficePersonLedger.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OfficePersonLedger.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\personloanLedger.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>personloanLedger.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\PurchaseDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PurchaseDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\quoteDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>quoteDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\Sale.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sale.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\SaleDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SaleDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\serviceDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>serviceDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\Shop.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Shop.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\supplierLedger.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>supplierLedger.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

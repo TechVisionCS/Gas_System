@@ -1,0 +1,225 @@
+﻿@model CreateAssetHandoverViewModel
+
+@{
+    ViewData["Title"] = "Asset Handover";
+    var AssetHandover = Model.AssetHandover;
+    var AssetHandoverDetails = Model.AssetHandoverDetailss;
+}
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-ms-12" style="margin:0 auto;">
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Asset Handover Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-cart-plus"></i> Add Asset
+                                </a>
+
+                                <a asp-action="AssetStock" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-list"></i> Asset Stock
+                                </a>
+                                 <a asp-action="AssetHandoverView" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-list"></i> Assets Handover  List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Update (@Model.AssetHandover.Id)  details</h5>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="card-block">
+                                    <div class="col-sm-12 text text-center">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin: 0 auto;">
+                                        <form method="post" asp-action="AssetHandoverEdit" id="frm" asp-controller="FixedAsset">
+                                            <input type="hidden" hidden asp-for="@AssetHandover.Id" />
+                                            <div class="row">
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Employee <span class="required">*</span></label>
+                                                        <select required class="form-control select2" id="EmployeeId" style="width: 100%;" asp-for="@AssetHandover.EmployeeId" asp-items="@ViewBag.Employee">
+                                                            <option selected="selected" value="0">--Select Employee--</option>
+                                                        </select>
+                                                        <span asp-validation-for="@AssetHandover.EmployeeId" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Handover Date <span class="required">*</span> </label>
+                                                        <input type="date" asp-for="@AssetHandover.HandoverDate" class="form-control" required />
+                                                        <span asp-validation-for="@AssetHandover.HandoverDate" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">HandoverRequestId No <span class="required">*</span></label>
+                                                        <input asp-for="@AssetHandover.HandoverRequestId" class="form-control" required autocomplete="off" Placeholder="Request Id" />
+                                                        <span asp-validation-for="@AssetHandover.HandoverRequestId" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Description</label>
+                                                        <textarea asp-for="@AssetHandover.HandoverRemarks" class="form-control" placeholder="Details about Asset Handover..."> </textarea>
+                                                        <span asp-validation-for="@AssetHandover.HandoverRemarks" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <h6>Asset details</h6>
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Asset <span class="required">*</span></th>
+                                                                <th>Qty <span class="required">*</span></th>
+                                                                <th>Remarks <span class="required">*</span></th>
+                                                                <th>Status<span class="required">*</span></th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="items">
+                                                            @if (AssetHandoverDetails != null)
+                                                            {
+                                                                foreach (var m in AssetHandoverDetails)
+                                                                {
+                                                                    @await Html.PartialAsync("_EditAssetHandoverDetailsPartial", m)
+                                                                }
+                                                            }
+                                                        </tbody>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right"></td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-sm btn-primary-outline" id="btnAddItem"><i class="fa fa-plus-circle"></i> Add New</button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right"></td>
+                                                                <td><button type="button" class="btn btn-sm btn-danger-outline text text-danger" onclick="clearAll();"><i class="fa fa-remove"></i> Clear</button></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text text-left">
+
+                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                        <i class="fa fa-save"></i> Update
+                                                    </button>
+
+                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                        <i class="fa fa-print"></i> Save & Print
+                                                    </button>
+
+                                                    <button type="reset" class="btn btn-mat btn-danger">
+                                                        <i class="fa fa-times"></i> Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Page body end -->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        var i = 1;
+        var sId = 0;
+        $("#EmployeeId").on("change", function () {
+            $("#items").find("tr").remove();
+                sId = $(this).val();
+                $.ajax({
+                cache: false,
+                url: '@Url.Action("LoadDetails", "FixedAsset")',
+                dataType: "html",
+                    data: { "EmployeeId": sId, "i": i },
+                type: "GET",
+                contentType: "application/json",
+                success: function (response) {
+                    $('#items').append(response);
+                },
+                error: function (err) {
+                    alert(err.responseText);
+                }
+            });
+        });
+
+        $("#btnAddItem").click(function () {
+            i++;
+            sId = $("#EmployeeId").val();
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("LoadDetails", "FixedAsset")',
+                dataType: "html",
+                data: { "EmployeeId": sId, "i": i },
+                type: "GET",
+                contentType: "application/json",
+                success: function (response) {
+                    $('#items').append(response);
+                },
+                error: function (err) {
+                    alert(err.responseText);
+                }
+            });
+        });
+
+        //validations
+    </script>
+}

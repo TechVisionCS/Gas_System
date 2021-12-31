@@ -1,0 +1,18 @@
+﻿@{
+    string CurrentName = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+
+    switch (CurrentName)
+    {
+        case "ps":
+            Layout = "~/Views/Shared/_LayoutRTL.cshtml";
+            break;
+
+        case "da":
+            Layout = "~/Views/Shared/_LayoutRTL.cshtml";
+            break;
+
+        default:
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+    }
+}

@@ -1,0 +1,181 @@
+﻿@model IEnumerable<OfficePersonLedgerViewModel>
+
+@{
+    ViewData["Title"] = "Persons Ledger";
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                @*Page-header start*@
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Person Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="OfficeLoan"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-user-plus"></i> Add New Person
+                                </a>
+
+                                <a asp-action="Index" asp-controller="OfficeLoan"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Person List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <form method="get" asp-action="" asp-controller="OfficeLoan">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Person</label>
+                                        <select class="select2 form-control" name="personId" asp-items="@ViewBag.Persons" style="width: 100%;">
+                                            <option selected="selected" value="0">--Select Person--</option>
+                                        </select>
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">From</label>
+                                        <input type="date" name="startDate" class="form-control" id="inlineFormInputName">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">To</label>
+                                        <input type="date" name="endDate" class="form-control" id="inlineFormInputName">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
+                                    <div class="form-group pt-2">
+                                        <button type="submit" class="btn btn-primary mr-2" formaction="GetLedgerById"><i class="fa fa-search"></i> Search</button>
+
+                                        <button type="submit" class="btn btn-success mr-2" formaction="PrintPersonalLoanLedger" formtarget="_blank"> <i class="fa fa-print"></i> Print </button>
+
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Persons Ledger</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>SNo</th>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                            <th>Debit</th>
+                                            <th>Credit</th>
+                                            <th>Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            decimal totalDebit = 0;
+                                            decimal totalCredit = 0;
+                                            decimal totalBalance = 0;
+                                            string balanceFlg = "+";
+                                        }
+                                        @if (Model.Any())
+                                        {
+                                            @foreach (var m in Model)
+                                            {
+                                                <tr>
+                                                    <td>@m.SNo</td>
+                                                    <td>@m.Date</td>
+                                                    <td>@m.Description</td>
+                                                    <td>@m.Debit.ToString("N")</td>
+                                                    <td>@m.Credit.ToString("N")</td>
+                                                    <td>
+                                                        @m.Balance.ToString("N")
+                                                        <span class="d-none">
+                                                            @{
+                                                                totalDebit += m.Debit;
+                                                                totalCredit += m.Credit;
+                                                            }
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr style="background-color: lightgray;">
+                                            <td></td>
+                                            <td></td>
+                                            <td>Total</td>
+                                            <td>@totalDebit.ToString("N")</td>
+                                            <td>@totalCredit.ToString("N")</td>
+                                            <td>
+                                                <span class="d-none">
+                                                    @{
+                                                        totalBalance = totalDebit - totalCredit;
+                                                        if (totalBalance < 0)
+                                                        {
+                                                            balanceFlg = "-";
+                                                        }
+                                                    }
+                                                </span>
+
+                                                @totalBalance.ToString("N")
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    @*Basic table card end*@
+                </div>
+                @*Page-body end*@
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

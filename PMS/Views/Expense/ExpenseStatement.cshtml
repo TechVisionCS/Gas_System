@@ -1,0 +1,185 @@
+﻿@model IEnumerable<ExpenseViewModel>
+
+@{
+    ViewData["Title"] = "Expenses";
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Expenses Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="Expense"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-user-plus"></i> Add New Expense
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Expense"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Expenses List
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page-header end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+
+                        <form method="POST" asp-action="">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Expense Category</label>
+                                        <select class="select2 form-control" name="expenseCategoryId" asp-items="@ViewBag.ExpenseCategory" style="width: 100%;">
+                                            <option selected="selected" value="0">--Select Expense Category--</option>
+                                        </select>
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">From</label>
+                                        <input type="date" name="startDate" class="form-control" id="inlineFormInputName">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">To</label>
+                                        <input type="date" name="endDate" class="form-control" id="inlineFormInputName">
+                                        <span class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
+                                    <div class="form-group pt-2">
+                                        <button type="submit" class="btn btn-primary mr-2" formaction="ExpenseStatement"><i class="fa fa-search"></i> Search</button>
+
+                                        <button type="submit" class="btn btn-success mr-2" formaction="PrintExpneseDivStatment" formtarget="_blank"><i class="fa fa-print"></i> Print</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Page-body start -->
+                <div class="page-body">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Expense Statement</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                @if (ViewBag.flg == 1)
+                                {
+                                    <table class="table table-bordered text text-center">
+                                        <tr style="background-color: lightgray;">
+                                            <th class="text text-center">Expense Category</th>
+                                            <th class="text text-center">Start Date</th>
+                                            <th class="text text-center">End Date</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                @if (ViewBag.Category != null)
+                                                {
+                                                    <span>@ViewBag.Category</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>All Categories</span>
+                                                }
+                                            </td>
+                                            <td>@ViewBag.StartDate</td>
+                                            <td>@ViewBag.EndDate</td>
+                                        </tr>
+                                    </table>
+                                    <hr />
+                                }
+
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>SNo.</th>
+                                            <th>Date</th>
+                                            <th>Category</th>
+                                            <th>Description</th>
+                                            <th style="background-color: lightgray;">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{ decimal total = 0;}
+                                        @if (Model.Any())
+                                        {
+                                            foreach (var m in Model)
+                                            {
+                                                <tr>
+                                                    <td>@m.SNO</td>
+                                                    <td>@m.Date</td>
+                                                    <td>@m.ExpenseCategoryName</td>
+                                                    <td>@m.Description</td>
+                                                    <td style="background-color: lightgray;">
+                                                        @{ total += m.Amount; }
+                                                        @m.Amount.ToString("N")
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <tr><td colspan="5">No records available!</td></tr>
+                                        }
+
+                                        <tr>
+                                            <th class="text-right" colspan="4" style="background-color: lightgray;">Total</th>
+                                            <td style="background-color: lightgray;">@total.ToString("N")</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main-body end -->

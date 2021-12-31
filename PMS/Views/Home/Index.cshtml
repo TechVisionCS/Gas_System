@@ -1,0 +1,106 @@
+﻿@{
+    Layout = "";
+}
+@inject IViewLocalizer localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{ ViewData["Title"] = "Home Page";
+    Layout = null; }
+@{ var culture = Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+
+    var cultureList = LocOptions.Value.SupportedCultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = localizer.GetString(c.Name) })
+        .ToList(); }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Site made with Mobirise Website Builder v5.2.0,  -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Warehouse Management System</title>
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+</head>
+<body>
+
+    <section class="header1 cid-sfz1LwCiwD mbr-fullscreen" id="header1-0">
+        <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(250, 250, 250);"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Welcome to</strong><br><strong>Warehouse</strong></h1>
+                    <h2 class="mbr-section-subtitle mbr-fonts-style mb-3 display-2">Management System</h2>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Our belief that your personal wellness and sustainability starts in the bathroom. Our products are designed to enhance the routine bathroom experience which will ultimately enrich your day-to-day life
+                    </p>
+                    <div class="card card-custom card-stretch gutter-b">
+                        <div class="card-header border-0 pt-5">
+                            <div class="container m-auto">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8 mt-auto border rounded p-5 m-3">
+                                        <div class="row m-3" style="border: 1px solid gray; padding-top: 20px; border-radius: 10px;">
+                                            <form method="post" asp-action="CultureManagment" asp-controller="Home">
+                                                <div class="col-lg-12 text text-center">
+                                                    <div class="form-group">
+                                                        <blockquote class="blockquote">
+                                                            <p class="mb-0">Please Select Language</p>
+                                                            <footer class="blockquote-footer">
+                                                                To Procede with Language Selected
+                                                                <cite title="Source Title">System</cite>
+                                                            </footer>
+                                                        </blockquote>
+                                                        <select class="form-control select2" style="width:100%;" name="culture" asp-for="@culture.RequestCulture.UICulture.Name" asp-items="cultureList"
+                                                                onchange="this.form.submit();">
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-arrow-circle-left"></i> @localizer["let's start"]</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Header-->
+                        <!--begin::Body-->
+                        <!--end::Body-->
+                    </div>
+
+                    @*<div class="mbr-section-btn mt-3"><a class="btn btn-outline-dark display-4" asp-controller="Dashboard" asp-action="Index">Sign In Here</a></div>*@
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer7 cid-sfz2ao6Os6" once="footers" id="footer7-1">
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
+                <div class="col-12">
+                    <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                        © Copyright 2020 <a href="http://techvisioncs.com" target="_blank">Techvision</a>  Counsulting Services- All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background-color: #000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: none;"><a href="https://mobirise.site/t" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;"></section>
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/popper/popper.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+</body>
+</html>

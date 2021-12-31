@@ -1,0 +1,158 @@
+﻿@model SaleDetails
+
+<tr id="newItem">
+    <td>
+        <select class="form-control select2 productId" style="width: 100%;" asp-for="@Model.ProductId" asp-items="@ViewBag.Products" required>
+            <option selected="selected" value="">--Select Product--</option>
+        </select>
+        <p class="text text-primary"></p>
+        <span asp-validation-for="@Model.ProductId" class="text-danger"></span>
+    </td>
+
+    <td>
+        <select class="form-control select2 batchId" style="width: 100%;" asp-for="@Model.UnitId" required asp-items="@ViewBag.Units">
+            <option selected="selected" value="">--Select Product Batch ID--</option>
+        </select>
+        <div class="text text-primary" id="availQty">
+
+        </div>
+        <span asp-validation-for="@Model.UnitId" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.Qty" placeholder="0.00" required
+               oninput="$(this).closest('tr').find('#TotalSalePrice').val(($(this).closest('tr').find('#UnitPrice').val() * $(this).val()) -( (($(this).closest('tr').find('#UnitPrice').val() * $(this).closest('tr').find('#disc_per').val()) / 100) * $(this).val() ) );" />
+        <span asp-validation-for="@Model.Qty" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.UnitPrice" placeholder="0.00" required
+               oninput="$(this).closest('tr').find('#TotalSalePrice').val(($(this).closest('tr').find('#Qty').val() * $(this).val()) - ( ( ($(this).val() * $(this).closest('tr').find('#disc_per').val()) / 100 ) *  $(this).closest('tr').find('#Qty').val()) );" />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.UnitPrice" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="hidden" value="0" asp-for="@Model.Discount" />
+        <input type="number" step="any" class="form-control calc dis" value="0" min="0" max="100" id="disc_per"
+               oninput="$(this).closest('tr').find('#TotalSalePrice').val(($(this).closest('tr').find('#Qty').val() * $(this).closest('tr').find('#UnitPrice').val()) - ((($(this).closest('tr').find('#UnitPrice').val()) * $(this).val() / 100) * $(this).closest('tr').find('#Qty').val())); $(this).closest('tr').find('#Discount').val(((($(this).closest('tr').find('#UnitPrice').val()) * $(this).val() / 100) * $(this).closest('tr').find('#Qty').val()));" />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.Discount" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="number" step="any" class="form-control total" asp-for="@Model.TotalSalePrice" placeholder="0.00" readonly required />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.TotalSalePrice" class="text-danger"></span>
+    </td>
+
+    <td>
+        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> Delete</button>
+    </td>
+</tr>
+
+<script src="~/js/quoteFormValidation.js"></script>
+<script>
+    $('.select2').select2();
+
+    //index change
+    $('.productId').change(function () {
+        var pId = $(this).val();
+        var elm = $(this).closest('tr').find('#BatchId');
+        elm.empty().append('<option selected="selected" value="0">--Select Product Batch ID--</option>');
+        $.ajax({
+            type: "GET",
+            cache: false,
+            url: '@Url.Action("GetProductBatches", "Sale")',
+            data: {"id": pId},
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                response.forEach(function (item) {
+                    elm.append($('<option>').val(item['batchId']).text(item['batchIdName']));
+                });
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log("Product Batches not retrived!");
+            }
+        });
+
+    });
+
+    $('.batchId').change(function () {
+        var pId = $(this).closest('tr').find('#ProductId').val();
+        var batchId = $(this).val();
+        var elm = $(this).closest('tr').find('#availQty');
+        var elm2 = $(this).closest('tr').find('#UnitPrice');
+        $(this).closest('tr').find("#UnitPrice").val("");
+        $(this).closest('tr').find("#Qty").val("");
+        $(this).closest('tr').find("#Discount").val(0);
+        elm.text("");
+        $.ajax({
+            type: "GET",
+            cache: false,
+            url: '@Url.Action("GetProductsAvailQtyByBatchId", "Sale")',
+            data: { "batchId": batchId, "productId": pId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                elm.text("Available Qty: " + response);
+                getQty(elm2, batchId, pId);
+                checkQty(response);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log("No, available Qty!");
+
+            }
+        });
+    });
+
+
+    $('#disc_per').blur(function () {
+        if (parseInt($(this).val()) > 100 ) {
+            $(this).val('0');
+            alert("You are not allowed to give 100+ percent");
+            $(this).focus();
+        }
+    });
+
+    //function checkQty(response) {
+
+    //    $('#Qty').blur(function () {
+    //        alert(response);
+
+    //        if (parseInt($(this).val()) > response) {
+    //            response.empty('0');
+    //            $(this).val('0');
+    //            alert("Items are more then avalibale");
+    //            $(this).focus();
+    //           // response = null;
+    //        }
+
+
+    //    });
+
+    //}
+
+
+
+    function getQty(elm2, batchId, pId) {
+        $.ajax({
+            type: "GET",
+            cache: false,
+            url: '@Url.Action("GetBatchUnitPrice", "Sale")',
+            data: { "batchId": batchId, "productId": pId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                //console.log(response);
+                elm2.val(response);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                elm2.val("No unit price available.");
+                console.log("No, unit price available.");
+            }
+        });
+    }
+
+</script>

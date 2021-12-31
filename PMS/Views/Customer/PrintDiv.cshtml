@@ -1,0 +1,225 @@
+﻿@model IEnumerable<CustomerLedgerViewModel>
+
+@{
+    ViewData["Title"] = "Customers Ledger";
+}
+<style id="table_style" type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+        table th {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+
+        table th, table td {
+            padding: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 1px solid #ccc;
+        }
+</style>
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Customers Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="Customer"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-user-plus"></i> Add New Customer
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Customer"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Customers List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+                <div class="page-body ">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Customer Ledger Print</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style" id="dvContents">
+                            <div class="row">
+
+                                @if (Model.Any())
+                                {
+                                    @foreach (var m in Model)
+                                    {
+                                        <div class="col-lg-6 col-md-6 col-sm-6">
+                                            <div class="d-flex flex-column flex-root">
+                                                <h3> <span class="font-weight-bolder mb-2"> <b> Customer : </b>@m.EntityName </span></h3>
+                                                <span class="opacity-60" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large">
+                                                    / @m.EntityPhone / &nbsp; @m.EntityAddress <br />
+                                                </span>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                        break;
+                                    }
+                                }
+
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2"><h3>@ViewBag.ShopName</h3></span>
+                                        <span class="opacity-60" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large">
+                                            @ViewBag.Phone / @ViewBag.Email <br />
+                                            @ViewBag.Address
+                                        </span>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table id="table_style" class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo</th>
+                                                    <th>Date</th>
+                                                    <th>Description</th>
+                                                    <th>Debit</th>
+                                                    <th>Credit</th>
+                                                    <th>Balance</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    decimal totalDebit = 0;
+                                                    decimal totalCredit = 0;
+                                                    decimal totalBalance = 0;
+                                                    string balanceFlg = "+";
+                                                }
+                                                @if (Model.Any())
+                                                {
+                                                    @foreach (var m in Model)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.SNo</td>
+                                                            <td style="width:10%; word-wrap: break-word">@m.Date.Date.ToShortDateString()</td>
+                                                            <td style="width:45%; word-wrap: break-word">@m.Description</td>
+                                                            <td>@m.Debit.ToString("N")</td>
+                                                            <td>@m.Credit.ToString("N")</td>
+                                                            <td>
+                                                                @m.Balance.ToString("N")
+                                                                <span class="d-none">
+                                                                    @{
+                                                                        totalDebit += m.Debit;
+                                                                        totalCredit += m.Credit;
+                                                                    }
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr style="background-color: lightgray;">
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td style="text-align:right">Total</td>
+                                                    <td><b>@totalDebit.ToString("N")</b></td>
+                                                    <td><b>@totalCredit.ToString("N")</b></td>
+                                                    <td>
+                                                        <span class="d-none">
+                                                            @{
+                                                                totalBalance = totalDebit - totalCredit;
+                                                                if (totalBalance < 0)
+                                                                {
+                                                                    balanceFlg = "-";
+                                                                }
+                                                            }
+                                                        </span>
+                                                        @totalBalance.ToString("N")
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text text-right">
+                            <button type="button" class="btn btn-info" onclick="PrintTable();" style="padding:8px" value='Print'>Print</button>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        function PrintTable() {
+            var printWindow = window.open();
+            printWindow.document.write('<html><head><title>Table Contents</title>');
+
+            //Print the Table CSS.
+            var table_style = document.getElementById("table_style").innerHTML;
+            printWindow.document.write('<style type = "text/css">');
+            printWindow.document.write(table_style);
+            printWindow.document.write('</style>');
+            printWindow.document.write('</head>');
+
+            //Print the DIV contents i.e. the HTML Table.
+            printWindow.document.write('<body>');
+            var divContents = document.getElementById("dvContents").innerHTML;
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body>');
+
+            printWindow.document.write('</html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+}

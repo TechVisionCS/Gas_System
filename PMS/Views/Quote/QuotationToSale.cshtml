@@ -1,0 +1,179 @@
+﻿@model IEnumerable<QuoteViewModel>
+
+@{
+    ViewData["Title"] = "Quote";
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Quotes Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="Quote"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-shopping-cart"></i> Add Quote
+                                </a>
+
+                                <a asp-action="Create2" asp-controller="Quote"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-cart-plus"></i> Add Quote (Barcode)
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-body">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Quotation to Sale</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+
+                                <div class="card-block">
+                                    <div class="col-sm-12 text text-center">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-header-text">Quote To Sale</h5>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12" style="margin: 0 auto;">
+                                            <form asp-action="QuoteMapToSale" asp-controller="Quote" id="frm">
+                                                <div class="row">
+
+                                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Quotation No <span class="required">*</span></label>
+                                                            <input class="form-control" name="PassByInput" required placeholder="Please Enter Qutation Number" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-12 text text-left">
+                                                        <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                            <i class="fa fa-save"></i> Transfer
+                                                        </button>
+
+                                                        <button type="reset" class="btn btn-mat btn-danger">
+                                                            <i class="fa fa-times"></i> Cancel
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8">
+                                <div class="card-block table-border-style">
+                                    <div class="table-responsive">
+                                        <table id="example1" class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Quote No.</th>
+                                                    <th>Customer</th>
+                                                    <th>Total Amount</th>
+                                                    <th>Quote Status</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{ var sno = 1; }
+
+                                                @if (Model.Any())
+                                                {
+                                                    @foreach (var m in Model)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.InvoiceNo</td>
+                                                            <td>
+                                                                <a asp-action="Details" asp-controller="Customer" asp-route-id="@m.CustomerId" class="text text-primary">
+                                                                    @m.CustomerName
+                                                                </a>
+                                                            </td>
+                                                            <td>@m.TotalAmount.ToString("N")</td>
+
+                                                            <td>
+                                                                @if (m.QuoteStatus == 1)
+                                                                {
+                                                                    <span class="badge bg-secondary">Pending</span>
+                                                                }
+                                                                else if (m.QuoteStatus == 2)
+                                                                {
+                                                                    <span class="badge bg-success">Approved</span>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span class="badge bg-danger">Rejected</span>
+                                                                }
+                                                            </td>
+
+                                                            <td>
+                                                                <span class="d-none">@{var url = "ViewQuoteDetails?id=" + m.Id;}</span>
+
+                                                                <a data-url="@url" data-toggle="modal" data-target="#modal-create-edit-user"
+                                                                   id="UserModel" class="btn btn-info btn-mini popup" style="color: white;">
+                                                                    <i class="fa fa-eye"></i> Details
+                                                                </a>
+
+                                                                <a asp-action="QuoteMapToSale" asp-controller="Quote" name="PassByInput" asp-route-id="@m.Id"
+                                                                   class="btn btn-success btn-mini">
+                                                                    Transfer
+                                                                </a>
+
+                                                                <span class="d-none">@{sno++;}</span>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

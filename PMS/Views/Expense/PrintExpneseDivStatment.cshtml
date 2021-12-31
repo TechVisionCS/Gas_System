@@ -1,0 +1,220 @@
+﻿@model IEnumerable<ExpenseViewModel>
+
+@{
+    ViewData["Title"] = "Expense Ledger";
+}
+<style id="table_style" type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
+
+        table th {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+
+        table th, table td {
+            padding: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 1px solid #ccc;
+        }
+</style>
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Suppliers Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="Expense"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-user-plus"></i> Add New Expense
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Expense"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Expenses List
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+                <div class="page-body ">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Expense Ledger Print</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style" id="dvContents">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2"><h3>@ViewBag.ShopName</h3></span>
+                                        <span class="opacity-60">
+                                            @ViewBag.Phone / @ViewBag.Email <br />
+                                            @ViewBag.Address
+                                        </span>
+                                    </div>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <h2> <span class="font-weight-bolder mb-2" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large"> <b> Expense Ledger</h2>
+                                        <span class="opacity-60">
+                                            Date :  @DateTime.Now.Date.ToShortDateString()  <br />
+                                        </span>
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <div class="table table-responsive">
+                                        @if (ViewBag.flg == 1)
+                                        {
+                                            <table class="table table-bordered text text-center">
+                                                <tr style="background-color: lightgray;">
+                                                    <th class="text text-center">Expense Category</th>
+                                                    <th class="text text-center">Start Date</th>
+                                                    <th class="text text-center">End Date</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        @if (ViewBag.Category != null)
+                                                        {
+                                                            <span>@ViewBag.Category</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>All Categories</span>
+                                                        }
+                                                    </td>
+                                                    <td>@ViewBag.StartDate</td>
+                                                    <td>@ViewBag.EndDate</td>
+                                                </tr>
+                                            </table>
+                                            <hr />
+                                        }
+
+                                        <table id="table_style" class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Date</th>
+                                                    <th>Category</th>
+                                                    <th>Description</th>
+                                                    <th style="background-color: lightgray;">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{ decimal total = 0;}
+                                                @if (Model.Any())
+                                                {
+                                                    foreach (var m in Model)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.SNO</td>
+                                                            <td>@m.Date</td>
+                                                            <td>@m.ExpenseCategoryName</td>
+                                                            <td>@m.Description</td>
+                                                            <td style="background-color: lightgray;">
+                                                                @{ total += m.Amount; }
+                                                                @m.Amount.ToString("N")
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr><td colspan="5">No records available!</td></tr>
+                                                }
+
+                                                <tr>
+                                                    <th class="text-right" colspan="4" style="background-color: lightgray;">Total</th>
+                                                    <td style="background-color: lightgray;">@total.ToString("N")</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text text-right">
+                            <button type="button" class="btn btn-info" onclick="PrintTable();" style="padding:8px" value='Print'>Print</button>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        function PrintTable() {
+            var printWindow = window.open();
+            printWindow.document.write('<html><head><title>Table Contents</title>');
+
+            //Print the Table CSS.
+            var table_style = document.getElementById("table_style").innerHTML;
+            printWindow.document.write('<style type = "text/css">');
+            printWindow.document.write(table_style);
+            printWindow.document.write('</style>');
+            printWindow.document.write('</head>');
+
+            //Print the DIV contents i.e. the HTML Table.
+            printWindow.document.write('<body>');
+            var divContents = document.getElementById("dvContents").innerHTML;
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body>');
+
+            printWindow.document.write('</html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+}

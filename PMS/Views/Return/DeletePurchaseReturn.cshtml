@@ -1,0 +1,298 @@
+﻿@model ReturnViewModel
+
+@{
+    ViewData["Title"] = "Returns";
+
+    var Return = Model.Return;
+    var ReturnDetails = Model.ReturnDetails;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Purchase Returns Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Return"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-plus"></i> Add New Return
+                                </a>
+
+                                <a asp-action="PurchaseReturn" asp-controller="Return"
+                                   class="btn btn-mat btn-info mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Purchase Returns List
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page-header end -->
+
+                <div class="page-header card card-border-danger">
+                    <div class="card-block">
+                        <form method="POST" asp-action="DeletePurchaseReturn">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-12">
+                                    <p class="h4">Do you want to delete the following record of purchase return?</p>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12" style="padding-top: 20px;">
+                                    <div class="form-group pt-2">
+                                        <input type="hidden" name="returnId" value="@Return.Id" />
+                                        <input type="hidden" name="purchaseId" value="@Return.PurchaseId" />
+                                        <button type="submit" class="btn btn-danger mr-2"><i class="fa fa-check"></i> Yes, Delete it</button>
+                                        <a asp-action="PurchaseReturn" asp-controller="Return"
+                                           class="btn btn-secondary"><i class="fa fa-times"></i> No, Cancel it</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- Page-body start -->
+                <div class="page-body">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Purchase Return Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>Return Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-sm-12 text text-center">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Return No.</h6>
+                                    <p>@Return.Id</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Purchase ID</h6>
+                                    <p>@Return.PurchaseId</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Return Date</h6>
+                                    <p>@Return.ReturnDate</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Supplier Name</h6>
+                                    <p>@Return.SupplierName</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-6">
+                                    <h6>Description</h6>
+                                    <p>@Return.Description</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Return Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Product</th>
+                                                    <th>Unit</th>
+                                                    <th>Returned Qty</th>
+                                                    <th>Unit Price</th>
+                                                    <th>Discount</th>
+                                                    <th>Total Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{ var sno = 1;}
+                                                @if (ReturnDetails.Any())
+                                                {
+                                                    foreach (var m in ReturnDetails)
+                                                    {
+                                                        <tr>
+                                                            <td>@sno @{sno++;}</td>
+                                                            <td>@m.Product.Name</td>
+                                                            <td>@m.Unit.Name</td>
+                                                            <td>@m.Qty</td>
+                                                            <td>@m.UnitPrice</td>
+                                                            <td>
+                                                                @{ var disc_per_item = (100 * m.Discount) / m.TotalPrice; }
+                                                                @m.Discount.ToString("N") (@disc_per_item %)
+                                                            </td>
+                                                            <td>@m.TotalPrice</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <span class="text text-info">No item available in this purchase!</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Payment Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Payment Type</h6>
+                                    <p>
+                                        @if (Return.PaymentType == 1)
+                                        {
+                                            <span class="badge badge-info">Cash</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-info">Bank</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                @if (Return.PaymentType == 2)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Bank Name</h6>
+                                        <p>@Return.BankName</p>
+                                        <hr />
+                                    </div>
+                                }
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Returns</h6>
+                                    <p>@Return.SubTotal.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Discount</h6>
+                                    <p>
+                                        @{ var disc_per = (100 * Return.DiscountAmount) / Return.SubTotal; }
+                                        @Return.DiscountAmount.ToString("N") (@disc_per %)
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Rent</h6>
+                                    <p>@Return.RentAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Tax</h6>
+                                    <p>@Return.TaxAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6  text text-primary">
+                                    <h6>Total Amount</h6>
+                                    <p>@Return.TotalAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-success">
+                                    <h6>Received Amount</h6>
+                                    <p>@Return.PaidAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-warning">
+                                    <h6>Balanced Amount</h6>
+                                    <p>@Return.DueAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>System Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Return Performed By</h6>
+                                    <p>@Return.UserName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Created At</h6>
+                                    <p>@Return.CreatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Update At</h6>
+                                    <p>@Return.UpdatedAt</p>
+                                    <hr />
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Main-body end -->
+
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

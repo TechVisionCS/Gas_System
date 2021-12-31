@@ -1,0 +1,341 @@
+﻿@model ReturnViewModel
+
+@{
+    ViewData["Title"] = "Returns";
+}
+
+<div id="PlaceHolderHere"></div>
+
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-ms-12" style="margin:0 auto;">
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Sale Returns Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="SaleReturn" asp-controller="Return"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-list"></i> Sale Returns List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Edit sale return</h5>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="card-block">
+                                    <div class="col-sm-12 text text-center">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin: 0 auto;">
+                                        <form method="post" asp-action="EditSaleReturn2" id="frm">
+                                            <div class="row">
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Return Id<span class="required">*</span> </label>
+                                                        <input type="text" asp-for="@Model.Return.Id" class="form-control" disabled />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Customer<span class="required">*</span></label>
+                                                        <select required class="form-control select2" id="customerId" style="width: 100%;" asp-for="@Model.Return.CustomerId" asp-items="@ViewBag.Customers">
+                                                            <option selected="selected" value="0">WALKING CUSTOMER</option>
+                                                        </select>
+                                                        <span asp-validation-for="@Model.Return.CustomerId" class="text-danger"></span>
+                                                        <a class="text text-info" style="color: white; cursor: pointer;" id="btnAddCustomer">
+                                                            <i class="fa fa-user-plus"></i> Add New Customer
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Payment Type <span class="required">*</span></label>
+                                                        <input type="hidden" asp-for="@Model.Return.PaymentType" />
+                                                        <select required class="form-control select2" style="width: 100%;" asp-for="@Model.Return.PaymentType" id="pType" disabled>
+                                                            <option value="1" selected="selected">Cash Payment</option>
+                                                            <option value="2">Bank Payment</option>
+                                                        </select>
+                                                        <span asp-validation-for="@Model.Return.PaymentType" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12" id="bank" style="display: none;">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Bank <span class="required">*</span></label>
+                                                        <select required class="form-control select2" style="width: 100%;" asp-for="@Model.Return.BankId" asp-items="@ViewBag.Banks">
+                                                            <option selected="selected" value="0">--Select Bank--</option>
+                                                        </select>
+                                                        <span asp-validation-for="@Model.Return.BankId" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Return Date <span class="required">*</span> </label>
+                                                        <input type="date" asp-for="@Model.Return.ReturnDate" class="form-control" required />
+                                                        <span asp-validation-for="@Model.Return.ReturnDate" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <input type="hidden" asp-for="@Model.Return.ReturnType" />
+                                                    <input type="hidden" asp-for="@Model.Return.Id" />
+                                                    <input type="hidden" asp-for="@Model.Return.CreatedAt" />
+                                                    <input type="hidden" asp-for="@Model.Return.TransCode" />
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <h6>Item details</h6>
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <input type="text" id="barcode" class="form-control form-control-lg form-control-primary form-txt-primary" placeholder="Scan barcode ..." autofocus autocomplete="off" />
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Product <span class="required"></span></th>
+                                                                <th>Unit <span class="required"></span></th>
+                                                                <th>Unit Price <span class="required"></span></th>
+                                                                <th>Returned Qty <span class="required">*</span></th>
+                                                                <th>Discount(%)</th>
+                                                                <th>Total Price</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="items">
+                                                            @if (Model.ReturnDetails != null)
+                                                            {
+                                                                foreach (var m in Model.ReturnDetails)
+                                                                {
+                                                                    @await Html.PartialAsync("_SaleDetailsPartial2", m)
+                                                                }
+
+                                                            }
+                                                        </tbody>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Sub Total</td>
+                                                                <td>
+                                                                    <input type="number" step="any" class="form-control" asp-for="@Model.Return.SubTotal" id="subTotal" placeholder="0.00" readonly />
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-sm btn-primary-outline d-none" id="btnAddItem"><i class="fa fa-plus-circle"></i> Add New</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Total Discount (%)</td>
+                                                                <td>
+                                                                    <input type="hidden" step="any" asp-for="@Model.Return.DiscountAmount" value="0" id="totalDiscount" class="form-control calc" />
+                                                                    <input type="number" step="any" value="0" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
+                                                                </td>
+                                                                <td>
+                                                                    <p class="text text-info">Amount: <span id="discAmount">0</span></p>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Rent</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Model.Return.RentAmount" id="rent" class="form-control calc" />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Tax</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Model.Return.TaxAmount" id="tax" class="form-control calc" />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Grand Total</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Model.Return.TotalAmount" placeholder="0.00" id="grandtotal" class="form-control" readonly />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Paid Amount</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Model.Return.PaidAmount" id="paid" class="form-control calc" />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Due Amount</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Model.Return.DueAmount" placeholder="0.00" id="due" class="form-control" readonly />
+                                                                </td>
+                                                                <td><button type="button" class="btn btn-sm btn-danger-outline text text-danger d-none" onclick="clearAll();"><i class="fa fa-remove"></i> Clear</button></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Description</label>
+                                                        <textarea asp-for="@Model.Return.Description" class="form-control" placeholder="Details about return..."> </textarea>
+                                                        <span asp-validation-for="@Model.Return.Description" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text text-left">
+
+                                                    <button type="button" class="btn btn-sm btn-primary-outline mr-2" onclick="calculate2();" id="btnCalc"><i class="fa fa-money"></i> Calculate</button>
+
+                                                    <button type="button" class="btn btn-sm btn-info-outline text text-info mr-2" onclick="fullPay();"><i class="fa fa-money"></i> Full Paid</button>
+
+                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                        <i class="fa fa-save"></i> Save
+                                                    </button>
+
+                                                    <button type="reset" class="btn btn-mat btn-danger">
+                                                        <i class="fa fa-times"></i> Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript" src="~/lib/jQuery-Scanner-Detection-master/jquery.scannerdetection.js"></script>
+    <script src="~/js/saleReturnFormValidation.js"></script>
+    <script>
+
+        var batchId = "";
+        $(window).ready(function () {
+
+            //$("#bCode").scannerDetection();
+
+            $(window).scannerDetection();
+            $(window).bind('scannerDetectionComplete', function (e, data) {
+                console.log('complete ' + data.string);
+                $("#barcode").val(data.string);
+                batchId = $("#barcode").val();
+                $("#btnAddItem").trigger('click');
+            })
+            .bind('scannerDetectionError', function (e, data) {
+                console.log('detection error ' + data.string);
+            })
+            .bind('scannerDetectionReceive', function (e, data) {
+                console.log('Recieve');
+                console.log(data.evt.which);
+            })
+        });
+
+        $("#pType").on('change', function () {
+            if ($(this).val() == "2") {
+                $("#bank").removeAttr("Style");
+            } else {
+                $("#bank").addClass("d-none");
+            }
+        });
+
+        var i = 1;
+        var sId = 0;
+
+        $("#btnAddItem").click(function () {
+            i++;
+            //sId = $("#supplierId").val();
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("LoadDetails", "Return")',
+                dataType: "html",
+                data: { "batchId": batchId},
+                type: "GET",
+                contentType: "application/json",
+                success: function (response) {
+                    $('#items').append(response);
+                },
+                error: function (err) {
+                    alert(err.responseText);
+                }
+            });
+        });
+
+        function fullPay() {
+            var total = $("#grandtotal").val();
+            $("#due").val(0);
+            $("#paid").val(total);
+
+        }
+
+        function calcDiscount() {
+            var subtotal = $("#subTotal").val();
+            var discper = $("#totalPercentDiscount").val();
+
+            var res = (subtotal * discper) / 100;
+
+            $("#totalDiscount").val(res);
+            $("#discAmount").text(res);
+
+        }
+
+    </script>
+
+}

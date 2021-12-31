@@ -1,0 +1,77 @@
+﻿@model ServiceDetails
+
+<tr id="newItem">
+
+    <td>
+        <select class="form-control select2 ServiceCatergoryId" style="width: 100%;" id="ServiceCatergoryId" name="ServiceCatergoryId" asp-for="@Model.ServiceCatergoryId" asp-items="@ViewBag.Category" required>
+            <option selected="selected" value="0">--Select Service Category--</option>
+        </select>
+        <p class="text text-primary"></p>
+        <span asp-validation-for="@Model.ServiceCatergoryId" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="text" class="form-control" id="Descriptions" name="Descriptions" asp-for="@Model.Descriptions" placeholder="describ" />
+        <span asp-validation-for="@Model.Descriptions" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="number" step="any" class="form-control calc" name="Qty" asp-for="@Model.Qty" placeholder="0.00" required
+               oninput="$(this).closest('tr').find('#TotalServicePrice').val(($(this).closest('tr').find('#Fee_Charges').val() * $(this).val()) -( (($(this).closest('tr').find('#Fee_Charges').val() * $(this).closest('tr').find('#disc_per').val()) / 100) * $(this).val() ) );" />
+        <span asp-validation-for="@Model.Qty" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="number" step="any" class="form-control calc" name="Fee_Charges" asp-for="@Model.Fee_Charges" placeholder="0.00" required
+               oninput="$(this).closest('tr').find('#TotalServicePrice').val(($(this).closest('tr').find('#Qty').val() * $(this).val()) - ( ( ($(this).val() * $(this).closest('tr').find('#disc_per').val()) / 100 ) *  $(this).closest('tr').find('#Qty').val()));" />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.Fee_Charges" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="hidden" value="0" asp-for="@Model.Discount" />
+        <input type="number" step="any" class="form-control calc dis" name="Discount" value="0" min="0" max="100" id="disc_per"
+               oninput="$(this).closest('tr').find('#TotalServicePrice').val(($(this).closest('tr').find('#Qty').val() * $(this).closest('tr').find('#Fee_Charges').val()) - ((($(this).closest('tr').find('#Fee_Charges').val()) * $(this).val() / 100) * $(this).closest('tr').find('#Qty').val())); $(this).closest('tr').find('#Discount').val(((($(this).closest('tr').find('#UnitPrice').val()) * $(this).val() / 100) * $(this).closest('tr').find('#Qty').val()));" />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.Discount" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="number" step="any" class="form-control total" name="TotalServicePrice" asp-for="@Model.TotalServicePrice" placeholder="0.00" readonly required />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.TotalServicePrice" class="text-danger"></span>
+    </td>
+
+    <td>
+        @*<input type="hidden" hidden value="@Model.Id" name="DetailsId" />*@
+        @*<input type="hidden" hidden asp-for="@Model.ServiceId" />*@
+        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> Delete</button>
+    </td>
+</tr>
+
+<script src="~/js/serviceFormValidation.js"></script>
+
+<script>
+    $('.select2').select2();
+    $('.ServiceCatergoryId').change(function () {
+          var CategoryId = $(this).closest('tr').find('#ServiceCatergoryId').val();
+          var Fee_Charges = $(this).closest('tr').find('#Fee_Charges');
+        $.ajax({
+            type: "GET",
+            cache: false,
+            url: '@Url.Action("GetCategoryFeePrice", "Service")',
+            data: { "CategoryId": CategoryId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                //console.log(response);
+                Fee_Charges.val(response);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                Fee_Charges.val("No unit price available.");
+                console.log("No, unit price available.");
+            }
+        });
+    });
+
+</script>

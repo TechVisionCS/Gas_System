@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+@model RegisterViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register161632</title>
+</head>
+<body>
+    <form method="post">
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Full Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" asp-for="FullName"
+                       placeholder="Full Name" required autofocus>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" class="form-control" asp-for="Email"
+                       placeholder="Email" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Password</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" asp-for="Password"
+                       placeholder="Password" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Confirm Password</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" asp-for="ConfirmPassword"
+                       placeholder="Retype Password" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-12 text text-center">
+                <button type="submit" class="btn btn-mat btn-success mr-2">
+                    <i class="fa fa-save"></i> Save
+                </button>
+
+                <button type="reset" class="btn btn-mat btn-danger">
+                    <i class="fa fa-times"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

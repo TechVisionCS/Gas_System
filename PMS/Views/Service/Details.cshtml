@@ -1,0 +1,282 @@
+﻿@model ViewServiceDetailViewModel
+
+@{
+    ViewData["Title"] = "Service";
+
+    var Service = Model.ServiceViewModel;
+    var ServiceDetails = Model.ServiceDetailViewModels;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Services Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Service"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Service List
+                                </a>
+
+                                <a asp-action="Create" asp-controller="Service"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-shopping-cart"></i> Add New Service
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+
+                <div class="page-body">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Service Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>General Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Service Id.</h6>
+                                    <p>@Service.Id</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Service Date</h6>
+                                    <p>@Service.ServiceDate</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Employee Name</h6>
+                                    <p>@Service.EmployeeName</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Customer Name</h6>
+                                    @if (Service.CustomerId == 0)
+                                    {
+                                        <p>@Service.CustomerName</p>
+                                    }
+                                    else
+                                    {
+                                        <p>WALKING CUSTOMER</p>
+                                    }
+                                    <hr />
+                                </div>
+                                <div class="col-lg-9 col-md-8 col-sm-6">
+                                    <h6>Description</h6>
+                                    <p>@Service.Description</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Items</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Category Name</th>
+                                                    <th>Description</th>
+                                                    <th>Fee Charges</th>
+                                                    <th>Qty</th>
+
+                                                    <th>Discount</th>
+                                                    <th>Total Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (ServiceDetails.Any())
+                                                {
+                                                    foreach (var m in ServiceDetails)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.Sno</td>
+                                                            <td>@m.ServiceCategoryName</td>
+                                                            <td>@m.Descriptions</td>
+                                                            <td>@m.Fee_Charges</td>
+                                                            <td>@m.Qty</td>
+                                                            <td>
+                                                                @{ var res = (100 * m.Discount) / (m.Discount + m.TotalServicePrice); }
+                                                                @m.Discount (@res % - <small>Per item</small>)
+                                                            </td>
+                                                            <td>@m.TotalServicePrice</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <span class="text text-info">No item available in this Service!</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Payment Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Payment Type</h6>
+                                    <p>
+                                        @if (Service.PaymentType == 1)
+                                        {
+                                            <span class="badge badge-info">Cash</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-info">Bank</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                @if (Service.PaymentType == 2)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Bank Name</h6>
+                                        <p>@Service.BankName</p>
+                                        <hr />
+                                    </div>
+                                }
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Service</h6>
+                                    <p>@Service.SubTotal.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Discount</h6>
+                                    <p>
+                                        @{ var disc_per = (100 * Service.DiscountAmount) / Service.SubTotal; }
+                                        @Service.DiscountAmount.ToString("N") (@disc_per %)
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Tax</h6>
+                                    <p>@Service.TaxAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6  text text-primary">
+                                    <h6>Total Amount</h6>
+                                    <p>@Service.TotalAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-success">
+                                    <h6>Paid Amount</h6>
+                                    <p>@Service.PaidAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-warning">
+                                    <h6>Due Amount</h6>
+                                    <p>@Service.DueAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>System Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Service Performed By</h6>
+                                    <p>@Service.UserName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Created At</h6>
+                                    <p>@Service.CreatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Update At</h6>
+                                    <p>@Service.UpdatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <br />
+                                </div>
+
+                                <div class="col-12 text text-right">
+                                    <a class="btn btn-info text-white" asp-action="PrintInvoice" asp-controller="Service" asp-route-id="@Service.Id" target="_blank">
+                                        <i class="fa fa-print"></i> Print
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Main-body end -->
+
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

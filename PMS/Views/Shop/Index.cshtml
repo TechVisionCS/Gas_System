@@ -1,0 +1,244 @@
+﻿@model Shop
+
+@{
+    ViewData["Title"] = "Shop Administration";
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Shop Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                @if (Model == null)
+                                {
+                                    <a asp-action="Create" asp-controller="Shop"
+                                       class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                        <i class="fa fa-plus"></i> Add Shop Details
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-action="Edit" asp-controller="Shop"
+                                       class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                        <i class="fa fa-edit"></i> Update Shop Details
+                                    </a>
+                                }
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+
+                <div class="page-body">
+
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Shop Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                @if (Model != null)
+                                {
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Name (en)</h6>
+                                        <p>@Model.Name_en</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Name (ps)</h6>
+                                        <p>@Model.Name_ps</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Name (dr)</h6>
+                                        <p>@Model.Name_dr</p>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <hr />
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Phone 1</h6>
+                                        <p>@Model.Phone1</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Phone 2</h6>
+                                        <p>@Model.Phone2</p>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <hr />
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Email 1</h6>
+                                        <p>@Model.Email1</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Email 2</h6>
+                                        <p>@Model.Email2</p>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <hr />
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Address (en)</h6>
+                                        <p>@Model.Address_en</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Address (ps)</h6>
+                                        <p>@Model.Address_ps</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Address (dr)</h6>
+                                        <p>@Model.Address_dr</p>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <hr />
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Responsibl 1</h6>
+                                        <p>@Model.Responsible1</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Responsible 2</h6>
+                                        <p>@Model.Responsible2</p>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <hr />
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Slogan (en)</h6>
+                                        <p>@Model.Slog_en</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Slogan (ps)</h6>
+                                        <p>@Model.Slog_ps</p>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Slogan (dr)</h6>
+                                        <p>@Model.Slog_dr</p>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <hr />
+                                    </div>
+
+
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <h6>Logo</h6>
+                                        <img src="~/Uploads/@Model.LogoUrl" style="width: 200px; height: 200px;" />
+                                    </div>
+
+                                    <div class="col-12">
+                                        <hr />
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <h6>System Info</h6>
+                                        <hr />
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Shop Registered By</h6>
+                                        <p>@Model.UserName</p>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Created At</h6>
+                                        <p>@Model.CreatedAt</p>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Update At</h6>
+                                        <p>@Model.UpdatedAt</p>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <hr />
+                                    </div>
+
+                                    <div class="col-12 text text-right">
+                                        <a class="btn btn-primary text-white" asp-action="Edit" asp-controller="Shop">
+                                            <i class="fa fa-edit"></i> Update Shop Details
+                                        </a>
+                                    </div>
+
+                                }
+                                else
+                                {
+                                    <div>
+                                        <p class="text text-warning d-block">No, registered shop available.</p>
+                                    </div>
+                                    <div>
+                                        <p class="text text-info d-block"> Please add shop details from <a asp-action="Create" asp-controller="Shop">here</a> ...</p>
+                                    </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Main-body end -->
+
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

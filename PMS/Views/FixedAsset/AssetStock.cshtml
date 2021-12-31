@@ -1,0 +1,124 @@
+﻿@model IEnumerable<AssetStockViewModel>
+@{
+    ViewData["Title"] = "Asset Stock";
+}
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Assets Stock Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Assets List
+                                </a>
+
+                                <a asp-action="AssetStockAdd" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-plus"></i> Add To Stock
+                                </a>
+
+                                <a asp-action="AssetHandover" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-plus"></i> Add Handover
+                                </a>
+
+                                <a asp-action="Create" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-plus"></i> Add Asset
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Assets Stock List</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>SNo.</th>
+                                            <th>Asset Name</th>
+                                            <th>Description</th>
+                                            <th>Expiry Date</th>
+                                            <th style="background-color: lightgray;">Current Stock Qty</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            var sno = 1;
+                                        }
+                                        @if (Model.Any())
+                                        {
+                                            @foreach (var m in Model)
+                                            {
+                                                <tr>
+                                                    <td>@sno  @{sno++;}</td>
+                                                    <td>
+                                                        <div class="d-inline-block align-middle">
+                                                            <div class="d-inline-block">
+                                                                <h6 class="m-b-0 d-inline">@m.AssetName</h6>
+                                                                <p class="m-b-0">
+                                                                    @m.Status
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>@m.Description</td>
+                                                    <td>@m.ExpiryDate</td>
+                                                    <td style="background-color: lightgray;">@m.TotalAvailStockQtys.ToString("N")</td>
+                                                    <td>
+                                                        <a asp-action="AssetStockEdit" asp-controller="FixedAsset" asp-route-id="@m.Id"
+                                                           class="text text-primary mr-3">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main-body end -->

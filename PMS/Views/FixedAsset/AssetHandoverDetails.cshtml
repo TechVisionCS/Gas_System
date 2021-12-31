@@ -1,0 +1,194 @@
+﻿@model ViewAssetHandoverDetailViewModel
+
+@{
+    ViewData["Title"] = "Asset Handover";
+
+    var AssetHandover = Model.AssetHandoverViewModel;
+    var AssetHandoverDetails = Model.AssetHandoverDetailsViewModels;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Asset Handover Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Asset List
+                                </a>
+                                <a asp-action="AssetStockAdd" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-history"></i> Asset Stock Add
+                                </a>
+                                 <a asp-action="AssetHandoverView" asp-controller="FixedAsset"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-list"></i> Assets Handover  List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Asset Handover Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>General Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Handover No.</h6>
+                                    <p>@AssetHandover.Id</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Handover Date Date</h6>
+                                    <p>@AssetHandover.HandoverDate</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Request id </h6>
+                                    <p>@AssetHandover.HandoverRequestId</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Remarks.</h6>
+                                    <p>@AssetHandover.HandoverRemarks</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Employee Name</h6>
+                                    <p>@AssetHandover.EmployeeName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Items</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Asset Name</th>
+                                                    <th>Qty</th>
+                                                    <th>Status</th>
+                                                    <th>Details</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (AssetHandoverDetails.Any())
+                                                {
+                                                    foreach (var m in AssetHandoverDetails)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.SNO</td>
+                                                            <td>@m.AssetName</td>
+                                                            <td>@m.Qty</td>
+                                                            <td>@m.Status</td>
+                                                            <td>@m.Details</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <span class="text text-info">No item available in this asset!</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>System Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Purchase Performed By</h6>
+                                    <p>@AssetHandover.UserName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Created At</h6>
+                                    <p>@AssetHandover.CreatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Update At</h6>
+                                    <p>@AssetHandover.UpdatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <br />
+                                </div>
+
+                                <div class="col-12 text text-right">
+                                    <a class="btn btn-info text-white">
+                                        <i class="fa fa-print"></i> Print
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main-body end -->
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

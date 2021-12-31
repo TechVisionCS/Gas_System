@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewData["Title"] = "Product Barcodes";
+
+}
+<link href="~/css/PrintArea.css" rel="stylesheet" />
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Products Barcodes Print</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+                <div class="page-body PrintArea">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Print Amount - (@ViewBag.number) - Barcode Number of @ViewBag.Batch Batch Id</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-block table-border-style" id="section1">
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-hover">
+                                    <tbody>
+                                        @if (@ViewBag.Batch != null)
+                                        {
+                                            for (int Row = 1; Row <= @ViewBag.number; Row++)
+                                            {
+                                                //for (int Col = 1; Col <= 5; Col++)
+                                                //{
+                                                <div id="index-gallery">
+                                                    <div class="item">
+                                                        <barcode content="@ViewBag.Batch" width="130" height="60" />
+                                                        <p style="font-family:Courier New; font: 1.2em 'Fira Sans', sans-serif">@ViewBag.Batch</p>
+                                                    </div>
+                                                </div>
+                                                //}
+                                            }
+                                        }
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <div class="col-12 text text-right mb-4 mr-4">
+                            <a class="btn btn-info text-white" id="btnprint">
+                                <i class="fa fa-print"></i> Print
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main-body end -->
+@section scripts
+{
+    <script>
+        $('#btnprint').click(function () {
+            $(this).hide();
+        });
+
+        $('#btnprint').click(function () {
+            $(".PrintArea").printThis({
+                debug: false,                      // show the iframe for debugging
+                importCSS: true,                  // import parent page css
+                importStyle: true,                // import style tags
+                printContainer: true,            // print outer container/$.selector
+                loadCSS: "~/css/PrintArea.css",                // path to additional css file - use an array [] for multiple
+                pageTitle: "Print Barcodes",              // add title to print page
+                removeInline: false,             // remove inline styles from print elements
+                removeInlineSelector: "*",      // custom selectors to filter inline styles. removeInline must be true
+                printDelay: 333,                 // variable print delay
+                header: "<h1>Barcode Print Page</h1>",               // prefix to html
+                footer: null,                    // postfix to html
+                base: false,                    // preserve the BASE tag or accept a string for the URL
+                formValues: true,           // preserve input/form values
+                canvas: false,              // copy canvas content
+                doctypeString: '...',       // enter a different doctype for older markup
+                removeScripts: false,       // remove script tags from print content
+                copyTagClasses: false,      // copy classes from the html & body tag
+                beforePrintEvent: null,     // function for printEvent in iframe
+                beforePrint: null,          // function called before iframe is filled
+                afterPrint: null            // function called before iframe is removed
+            });
+        });
+
+    </script>
+}

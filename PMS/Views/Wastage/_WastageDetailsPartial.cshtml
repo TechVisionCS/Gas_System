@@ -1,0 +1,89 @@
+﻿@model WastageDetailsViewModel
+
+<tr id="newItem">
+    <td>
+        <select class="form-control select2 productId" style="width: 100%;" asp-for="@Model.ProductId" asp-items="@ViewBag.Products" required>
+            <option selected="selected" value="0">--Select Product--</option>
+        </select>
+        <p class="text text-primary"></p>
+        <span asp-validation-for="@Model.ProductId" class="text-danger"></span>
+    </td>
+    <td>
+        <select class="form-control select2 batchId" style="width: 100%;" asp-for="@Model.UnitId" required asp-items="@ViewBag.Units">
+            <option selected="selected">--Select Unit--</option>
+        </select>
+        <div class="text text-primary" id="availQty"></div>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.UnitPrice" placeholder="0.00" required
+               oninput="$(this).closest('tr').find('#TotalPrice').val(($(this).closest('tr').find('#Qty').val() * $(this).val()) );" />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.UnitPrice" class="text-danger"></span>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.Qty" placeholder="0.00" required
+               oninput="$(this).closest('tr').find('#TotalPrice').val(($(this).closest('tr').find('#UnitPrice').val() * $(this).val()) );" />
+        <span asp-validation-for="@Model.Qty" class="text-danger"></span>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control total" asp-for="@Model.TotalPrice" placeholder="0.00" readonly required />
+        <div class="text text-primary"></div>
+        <span asp-validation-for="@Model.TotalPrice" class="text-danger"></span>
+    </td>
+    <td>
+        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> Delete</button>
+    </td>
+</tr>
+
+<script>
+
+    $('.select2').select2();
+                $('.batchId').change(function () {
+                var pId = $(this).closest('tr').find('#ProductId').val();
+                var batchId = $(this).val();
+                var elm = $(this).closest('tr').find('#availQty');
+                var elm2 = $(this).closest('tr').find('#UnitPrice');
+                $(this).closest('tr').find("#UnitPrice").val("");
+                $(this).closest('tr').find("#Qty").val("");
+                elm.text("");
+                $.ajax({
+                type: "GET",
+                cache: false,
+                url: '@Url.Action("GetProductsAvailQty", "Wastage")',
+                data: { "unitId": batchId, "productId": pId },
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                //console.log(response);
+                elm.text("Available Qty: " + response);
+                getQty(elm2, batchId, pId);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log("No, available Qty!");
+                elm.text("No, available Qty!")
+                }
+                });
+                });
+
+                function getQty(elm2, batchId, pId) {
+                $.ajax({
+                type: "GET",
+                cache: false,
+                url: '@Url.Action("GetBatchUnitPrice", "Wastage")',
+                data: { "unitId": batchId, "productId": pId },
+                contentType: "application/json",
+                dataType: "json",
+                success: function (response) {
+                //console.log(response);
+                elm2.val(response);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                elm2.val("No unit price available.");
+                console.log("No, unit price available.");
+                }
+                });
+                }
+
+</script>
+
+<script src="~/js/wastageFormValidation.js"></script>

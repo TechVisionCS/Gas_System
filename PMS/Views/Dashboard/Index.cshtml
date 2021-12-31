@@ -1,0 +1,248 @@
+﻿@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = localizer["Dashboard"];
+
+}
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="page-body">
+            <div class="row">
+                <!-- order-card start -->
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">@localizer["Purchase Amount"]</h6>
+                            <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span>@ViewBag.TotalPurchase</span></h2>
+                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalPurchasePerMonth</span></p>
+                            <p class="m-b-0">@localizer["Purchased In Kg"]<span class="f-right">@ViewBag.PurchaseQty</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-green order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">@localizer["Sales Amount"]</h6>
+                            <h2 class="text-right"><i class="ti-tag f-left"></i><span>@ViewBag.TotalSale</span></h2>
+                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalSalePerMonth</span></p>
+                            <p class="m-b-0">@localizer["Saled In Kg"]<span class="f-right">@ViewBag.SaleQty</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-yellow order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">@localizer["Revenue Amount"]</h6>
+                            <h2 class="text-right"><i class="ti-reload f-left"></i><span>@ViewBag.SaleRevenue</span></h2>
+                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.SaleRevenuePerMonth</span></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-orenge order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">@localizer["Profit Amount"]</h6>
+                            <h2 class="text-right"><i class="fa fa-money f-left"></i><span>@ViewBag.TotalProfit</span></h2>
+                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalProfitPerMonth</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-pink order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">@localizer["Expense Amount"]</h6>
+                            <h2 class="text-right"><i class="ti-wallet f-left"></i><span>@ViewBag.TotalExpenses</span></h2>
+                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalExpensesMonth</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">@localizer["Produts"]</h6>
+                            <h2 class="text-right"><i class="ti-wallet f-left"></i><span>@ViewBag.TotalProducts</span></h2>
+                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalProductMonth</span></p>
+                        </div>
+                    </div>
+                    <!--end::Nav-->
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-green order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">@localizer["Total Customer"]</h6>
+                            <h2 class="text-right"><i class="ti-tag f-left"></i><span>@ViewBag.TotalCustomers</span></h2>
+                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalCustomersPerMonth</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="card bg-c-yellow order-card">
+                        <div class="card-block">
+                            <h6 class="m-b-20">@localizer["Total Supliers"]</h6>
+                            <h2 class="text-right"><i class="ti-tag f-left"></i><span>@ViewBag.TotalSuppliers</span></h2>
+                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalSuppliersPerMonth</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="col-lg-6 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Statistics</h5>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa-chevron-left"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-times close-card"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <canvas id="Statistics-chart" height="250"></canvas>
+                            </div>
+                        </div>
+                    </div>*@
+
+                <div class="col-lg-12 col-md-12 d-none">
+                    <span id="TotalProjectsPerYear"></span>
+
+                </div>
+
+                <!-- tabs card start -->
+                <div class="col-sm-12">
+                    <div class="card tabs-card">
+                        <div class="card-block p-0">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs md-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-shopping-cart"></i>Sale</a>
+                                    <div class="slide"></div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#purchase" role="tab"><i class="fa fa-edge"></i>Purchase</a>
+                                    <div class="slide"></div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#Expenses" role="tab"><i class="fa fa-credit-card"></i>Expense</a>
+                                    <div class="slide"></div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#stock" role="tab"><i class="fa fa-database"></i>Stock</a>
+                                    <div class="slide"></div>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content card-block">
+                                <div class="tab-pane active" id="home3" role="tabpanel">
+
+                                </div>
+                                <div class="tab-pane" id="purchase" role="tabpanel">
+
+                                </div>
+                                <div class="tab-pane" id="Expenses" role="tabpanel">
+
+                                </div>
+                                <div class="tab-pane" id="stock" role="tabpanel">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tabs card end -->
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $.ajax({
+                    cache: false,
+                    url: '@Url.Action("Sale", "Dashboard")',
+                    dataType: "html",
+
+                    type: "GET",
+                    contentType: "application/json",
+                    success: function (response) {
+                        $('#home3').append(response);
+                    },
+                    error: function (err) {
+                        alert(err.responseText);
+                    }
+             });
+
+            $.ajax({
+                    cache: false,
+                    url: '@Url.Action("Purchase", "Dashboard")',
+                    dataType: "html",
+                    type: "GET",
+                    contentType: "application/json",
+                    success: function (response) {
+                        $('#purchase').append(response);
+                    },
+                    error: function (err) {
+                        alert(err.responseText);
+                    }
+            });
+
+            $.ajax({
+                        cache: false,
+                        url: '@Url.Action("Expenses", "Dashboard")',
+                        dataType: "html",
+                        type: "GET",
+                        contentType: "application/json",
+                        success: function (response) {
+                            $('#Expenses').append(response);
+                        },
+                        error: function (err) {
+                            alert(err.responseText);
+                        }
+              });
+
+            $.ajax({
+                        cache: false,
+                        url: '@Url.Action("Stock", "Dashboard")',
+                        dataType: "html",
+                        type: "GET",
+                        contentType: "application/json",
+                        success: function (response) {
+                            $('#stock').append(response);
+                        },
+                        error: function (err) {
+                            alert(err.responseText);
+                        }
+              });
+        });
+             $.ajax({
+                    cache: false,
+                    url: '@Url.Action("TotalSalesPerMonth", "Dashboard")',
+                    dataType: "html",
+                    type: "GET",
+                    contentType: "application/json",
+                    success: function (response) {
+                        $('#TotalProjectsPerYear').html(response);
+                    },
+                    error: function (err) {
+                        alert(err.responseText);
+                    }
+            });
+
+    </script>
+
+
+}

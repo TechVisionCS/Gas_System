@@ -1,0 +1,40 @@
+﻿@model ReturnDetailsViewModel
+
+<tr id="newItem">
+    <td>
+        <input type="hidden" class="form-control" asp-for="@Model.ProductId" />
+        @if (Model.Product.Name != null)
+        {
+            <input type="text" class="form-control" value="@Model.Product.Name" readonly />
+        }
+        else
+        {
+            <input type="text" class="form-control" value="@ViewBag.ProductName" readonly />
+        }
+    </td>
+    <td>
+        <input type="hidden" class="form-control" asp-for="@Model.UnitId" />
+        <input type="text" class="form-control" value="@Model.Unit.Name" readonly />
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.UnitPrice" placeholder="0.00" />
+        <div class="text text-primary"></div>
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.Qty" id="returnedQty" placeholder="0.00"
+               oninput="$(this).closest('tr').find('#totalReturnPrice').val(($(this).closest('tr').find('#UnitPrice').val() * $(this).val()) - ((($(this).closest('tr').find('#UnitPrice').val() * $(this).val()) * $(this).closest('tr').find('#unitdiscount').val()) / 100));" />
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.Discount" id="unitdiscount" placeholder="0.00" min="0" max="100"
+               oninput="$(this).closest('tr').find('#totalReturnPrice').val(($(this).closest('tr').find('#UnitPrice').val() * $(this).closest('tr').find('#returnedQty').val()) - ((($(this).closest('tr').find('#UnitPrice').val() * $(this).closest('tr').find('#returnedQty').val()) * $(this).val()) / 100));">
+    </td>
+    <td>
+        <input type="number" step="any" class="form-control total" asp-for="@Model.TotalPrice" id="totalReturnPrice" placeholder="0.00" readonly />
+    </td>
+    <td>
+        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> Delete</button>
+    </td>
+</tr>
+
+<script src="~/js/saleReturnFormValidation.js"></script>
+

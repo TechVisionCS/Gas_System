@@ -1,0 +1,149 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager
+@{
+    var user = await userManager.GetUserAsync(User);
+}
+
+<nav class="pcoded-navbar">
+    <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+    <div class="pcoded-inner-navbar main-menu">
+        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation" style="text-transform:uppercase">MAIN</div>
+
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Create" asp-controller="Sale">
+                    <span class="pcoded-micon"><i class="fa fa-shopping-cart"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Sale</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Create" asp-controller="Purchase">
+                    <span class="pcoded-micon"><i class="fa fa-cart-arrow-down"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Purchase</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Index" asp-controller="Return">
+                    <span class="pcoded-micon"><i class="fa fa-undo"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Retrun</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="fa fa-file"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Report</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a asp-action="Index" asp-controller="Stock">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Total Stock</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a asp-action="StockDetailsList" asp-controller="Stock">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Stock Details</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a asp-action="Index" asp-controller="Product">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Manage Products</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a asp-action="Index" asp-controller="Customer">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Manage Customer</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a asp-action="Index" asp-controller="Supplier">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-22.menu-level-31">Manage Supplier</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="pcoded-navigatio-lavel" data-i18n="nav.cate gory.other" style="text-transform:uppercase">Administration </div>
+
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="CreateOrEdit" asp-controller="Bank">
+                    <span class="pcoded-micon"><i class="fa fa-bank"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Bank</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Create" asp-controller="Expense">
+                    <span class="pcoded-micon"><i class="fa fa-money"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Expenses</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Create" asp-controller="Employee">
+                    <span class="pcoded-micon"><i class="fa fa-users"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Employee</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Users" asp-controller="Administration">
+                    <span class="pcoded-micon"><i class="fa fa-users"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Users</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a onclick="event.preventDefault();
+                                        document.getElementById('logout-form222').submit();" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="fa fa-sign-out"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Logout</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <form method="post" asp-action="FullLogout" asp-controller="Account" id="logout-form222" style="display: none;"></form>
+            </li>
+        </ul>
+    </div>
+</nav>

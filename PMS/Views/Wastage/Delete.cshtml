@@ -1,0 +1,235 @@
+﻿@model WastageViewModel
+
+@{
+    ViewData["Title"] = "Wastages";
+
+    var Wastage = Model.Wastage;
+    var WastageDetails = Model.WastageDetails;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Wastages Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="Wastage"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-plus"></i> Add New Wastage
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Wastage"
+                                   class="btn btn-mat btn-info mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Wastages List
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page-header end -->
+
+                <div class="page-header card card-border-danger">
+                    <div class="card-block">
+                        <form method="POST" asp-action="Delete">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-12">
+                                    <p class="h4">Do you want to delete the following record of wastage?</p>
+                                </div>
+
+                                <div class="col-md-4 col-sm-12" style="padding-top: 20px;">
+                                    <div class="form-group pt-2">
+                                        <input type="hidden" name="wastageId" value="@Model.Wastage.Id" />
+                                        <input type="hidden" name="wastageDate" value="@Model.Wastage.WastageDate" />
+                                        <button type="submit" class="btn btn-danger mr-2"><i class="fa fa-check"></i> Yes, Delete it</button>
+                                        <a asp-action="Index" asp-controller="Wastage"
+                                           class="btn btn-secondary"><i class="fa fa-times"></i> No, Cancel it</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Page-body start -->
+                <div class="page-body">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Wastage Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>Wastage Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Wastage No.</h6>
+                                    <p>@Wastage.Id</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Wastage Date</h6>
+                                    <p>@Wastage.WastageDate</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-9 col-md-8 col-sm-6">
+                                    <h6>Description</h6>
+                                    <p>@Wastage.Description</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Wastage Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Product</th>
+                                                    <th>Unit</th>
+                                                    <th>Unit Price</th>
+                                                    <th>Qty</th>
+                                                    <th>Total Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{ var sno = 1;}
+                                                @if (WastageDetails.Any())
+                                                {
+                                                    foreach (var m in WastageDetails)
+                                                    {
+                                                        <tr>
+                                                            <td>@sno @{sno++;}</td>
+                                                            <td>@m.Product.Name</td>
+                                                            <td>@m.Unit.Name</td>
+                                                            <td>@m.UnitPrice</td>
+                                                            <td>@m.Qty</td>
+                                                            <td>@m.TotalPrice</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <span class="text text-info">No item available in this wastage!</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Financial Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Wastages</h6>
+                                    <p>@Wastage.SubTotal.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Extra Charges</h6>
+                                    <p>@Wastage.ExCharges.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Income from Wastages</h6>
+                                    <p>@Wastage.IncomeFromWastage.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6  text text-info">
+                                    <h6>Total Amount</h6>
+                                    <p>@Wastage.TotalAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+
+                                <div class="col-12">
+                                    <h6>System Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Wastage Saved By</h6>
+                                    <p>@Wastage.UserName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Created At</h6>
+                                    <p>@Wastage.CreatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Update At</h6>
+                                    <p>@Wastage.UpdatedAt</p>
+                                    <hr />
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Main-body end -->
+
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,243 @@
+﻿@model WastageViewModel
+
+@{
+    ViewData["Title"] = "Wastages";
+    var Wastage = Model.Wastage;
+    var WastageDetails = Model.WastageDetails;
+}
+
+<div id="PlaceHolderHere"></div>
+
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-ms-12" style="margin:0 auto;">
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Wastages Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Wastage"
+                                   class="btn btn-mat btn-info mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Wastages List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Edit wastage</h5>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="card-block">
+                                    <div class="col-sm-12 text text-center">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin: 0 auto;">
+                                        <form method="post" asp-action="Edit2" id="frm">
+                                            <div class="row">
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Wastage Date <span class="required">*</span> </label>
+                                                        <input type="date" asp-for="@Model.Wastage.WastageDate" class="form-control" required />
+                                                        <span asp-validation-for="@Model.Wastage.WastageDate" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <input type="hidden" asp-for="@Model.Wastage.Id" />
+                                                    <input type="hidden" asp-for="@Model.Wastage.Flg" />
+                                                    <input type="hidden" asp-for="@Model.Wastage.CreatedAt" />
+                                                    <input type="hidden" asp-for="@Model.Wastage.TransCode" />
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <h6>Item details</h6>
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <input type="text" id="barcode" class="form-control form-control-lg form-control-primary form-txt-primary" placeholder="Scan barcode ..." autofocus autocomplete="off" />
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Product <span class="required">*</span></th>
+                                                                <th>Unit <span class="required">*</span></th>
+                                                                <th>Purchase Unit Price <span class="required">*</span></th>
+                                                                <th>Qty <span class="required">*</span></th>
+                                                                <th>Total Price</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="items">
+                                                            @if (Model.WastageDetails != null)
+                                                            {
+                                                                foreach (var m in Model.WastageDetails)
+                                                                {
+                                                                    @await Html.PartialAsync("_WastageDetailsPartial2", m)
+                                                                }
+
+                                                            }
+                                                        </tbody>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Sub Total</td>
+                                                                <td>
+                                                                    <input type="number" step="any" class="form-control" id="total" asp-for="@Model.Wastage.SubTotal" placeholder="0.00" readonly />
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-sm btn-primary-outline d-none" id="btnAddItem"><i class="fa fa-plus-circle"></i> Add New</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Extra Charges</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Model.Wastage.ExCharges" value="0" id="excharges" class="form-control calc" />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr class="d-none">
+                                                                <td colspan="4" class="text text-right">Income From Wastage(s)</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Model.Wastage.IncomeFromWastage" value="0" id="income" class="form-control calc" />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="text text-right">Grand Total</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Model.Wastage.TotalAmount" placeholder="0.00" id="grandtotal" class="form-control" readonly />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Description</label>
+                                                        <textarea asp-for="@Model.Wastage.Description" class="form-control" placeholder="Details about wastage(s)..."> </textarea>
+                                                        <span asp-validation-for="@Model.Wastage.Description" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text text-left">
+                                                    <button type="button" class="btn btn-sm btn-primary-outline mr-2" onclick="calculate2();" id="btnCalc"><i class="fa fa-money"></i> Calculate</button>
+
+                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                        <i class="fa fa-save"></i> Save
+                                                    </button>
+
+                                                    <button type="reset" class="btn btn-mat btn-danger">
+                                                        <i class="fa fa-times"></i> Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript" src="~/lib/jQuery-Scanner-Detection-master/jquery.scannerdetection.js"></script>
+    <script src="~/js/wastageFormValidation.js"></script>
+    <script>
+
+        var batchId = "";
+        $(window).ready(function () {
+
+            //$("#bCode").scannerDetection();
+
+            $(window).scannerDetection();
+            $(window).bind('scannerDetectionComplete', function (e, data) {
+                console.log('complete ' + data.string);
+                $("#barcode").val(data.string);
+                batchId = $("#barcode").val();
+                $("#btnAddItem").trigger('click');
+            })
+            .bind('scannerDetectionError', function (e, data) {
+                console.log('detection error ' + data.string);
+            })
+            .bind('scannerDetectionReceive', function (e, data) {
+                console.log('Recieve');
+                console.log(data.evt.which);
+            })
+        });
+
+        var i = 1;
+        var sId = 0;
+
+        $("#btnAddItem").click(function () {
+            i++;
+            //sId = $("#supplierId").val();
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("LoadDetails2", "Wastage")',
+                dataType: "html",
+                data: { "batchId": batchId},
+                type: "GET",
+                contentType: "application/json",
+                success: function (response) {
+                    $('#items').append(response);
+                },
+                error: function (err) {
+                    alert(err.responseText);
+                }
+            });
+        });
+
+    </script>
+
+}

@@ -1,0 +1,137 @@
+﻿@model IEnumerable<ServiceViewModel>
+
+@{
+    ViewData["Title"] = "Services";
+}
+
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Services Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="Service"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-shopping-cart"></i> Add Service
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-body">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Service List</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>SNo.</th>
+                                            <th>Service Date</th>
+                                            <th>Customer</th>
+                                            <th>Description</th>
+                                            <th>Total Amount</th>
+                                            <th>Service Details</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{ var sno = 1; }
+
+                                        @if (Model.Any())
+                                        {
+                                            @foreach (var m in Model)
+                                            {
+                                                <tr>
+                                                    <td>@sno</td>
+                                                    <td>@m.ServiceDate</td>
+                                                    <td>
+                                                        <a asp-action="Details" asp-controller="Customer" asp-route-id="@m.CustomerId" class="text text-primary">
+                                                            @m.CustomerName
+                                                        </a>
+                                                    </td>
+                                                    <td>@m.Description</td>
+
+                                                    <td>@m.TotalAmount.ToString("N")</td>
+                                                    <td>
+                                                        <span class="d-none">@{var url = "Service/ViewServiceDetails?id=" + m.Id;}</span>
+                                                        <a data-url="@url" data-toggle="modal" data-target="#modal-create-edit-user"
+                                                           id="UserModel" class="btn btn-info btn-mini popup" style="color: white;">
+                                                            <i class="fa fa-eye"></i> Details
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a asp-action="PrintInvoice" asp-controller="Service" asp-route-id="@m.Id" target="_blank"
+                                                           class="text text-info mr-3">
+                                                            <i class="fa fa-print"></i>
+                                                        </a>
+                                                        <a asp-action="PrintDiv" asp-controller="Service" asp-route-id="@m.Id" target="_blank"
+                                                           class="text text-info mr-2">
+                                                            <i class="fa fa-print"></i>
+                                                        </a>
+                                                        <a asp-action="Details" asp-controller="Service" asp-route-id="@m.Id"
+                                                           class="text text-info mr-3">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
+
+                                                        <a asp-action="Edit" asp-controller="Service" asp-route-id="@m.Id"
+                                                           class="text text-primary mr-3">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+
+                                                        <form style="display: inline; padding-left:0;" method="POST" asp-controller="Service" asp-action="Delete" asp-route-Id="@m.Id"
+                                                              onclick="return confirm('Are you sure you want to delete this?')">
+                                                            <button type="submit" class="btn-link text-danger mr-2"> <i class="fa fa-trash"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                <span class="d-none">@{sno++;}</span>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

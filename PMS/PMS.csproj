@@ -1,0 +1,466 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>c55e7b2d-57c3-431d-a575-6a4c95d92c6c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\**" />
+    <Compile Remove="ViewModels\Lookup\**" />
+    <Compile Remove="Views\Comapny\**" />
+    <Compile Remove="wwwroot\assets1\**" />
+    <Content Remove="Services\**" />
+    <Content Remove="ViewModels\Lookup\**" />
+    <Content Remove="Views\Comapny\**" />
+    <Content Remove="wwwroot\assets1\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="ViewModels\Lookup\**" />
+    <EmbeddedResource Remove="Views\Comapny\**" />
+    <EmbeddedResource Remove="wwwroot\assets1\**" />
+    <None Remove="Services\**" />
+    <None Remove="ViewModels\Lookup\**" />
+    <None Remove="Views\Comapny\**" />
+    <None Remove="wwwroot\assets1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210306190554_SupplierModelRenamed.cs" />
+    <Compile Remove="Migrations\20210306190554_SupplierModelRenamed.Designer.cs" />
+    <Compile Remove="Migrations\20210306190851_SupplierModelRenamed.cs" />
+    <Compile Remove="Migrations\20210306190851_SupplierModelRenamed.Designer.cs" />
+    <Compile Remove="Migrations\20210306191353_SupplierModelForeignKeysAdded.cs" />
+    <Compile Remove="Migrations\20210306191353_SupplierModelForeignKeysAdded.Designer.cs" />
+    <Compile Remove="Migrations\20210312062909_Update-Database.cs" />
+    <Compile Remove="Migrations\20210312062909_Update-Database.Designer.cs" />
+    <Compile Remove="Migrations\20210323184723_DefaultValueAddedToPurchaseModels.cs" />
+    <Compile Remove="Migrations\20210323184723_DefaultValueAddedToPurchaseModels.Designer.cs" />
+    <Compile Remove="Migrations\20210323184953_DefaultValueAddedToPurchaseModels.cs" />
+    <Compile Remove="Migrations\20210323184953_DefaultValueAddedToPurchaseModels.Designer.cs" />
+    <Compile Remove="Migrations\20210605124139_defaultvalueforexpensecategorycreated.cs" />
+    <Compile Remove="Migrations\20210605124139_defaultvalueforexpensecategorycreated.Designer.cs" />
+    <Compile Remove="Migrations\20210624195144_SetAddedToSaleDetailsMigration.cs" />
+    <Compile Remove="Migrations\20210624195144_SetAddedToSaleDetailsMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Reports\InvoiceReport.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\OfficeLoan\Create.cshtml" />
+    <None Include="Views\OfficeLoan\CreatePayment.cshtml" />
+    <None Include="Views\OfficeLoan\CreateReceive.cshtml" />
+    <None Include="Views\OfficeLoan\Details.cshtml" />
+    <None Include="Views\OfficeLoan\Edit.cshtml" />
+    <None Include="Views\OfficeLoan\EditPayment.cshtml" />
+    <None Include="Views\OfficeLoan\EditReceive.cshtml" />
+    <None Include="Views\OfficeLoan\GetAllLedgers.cshtml" />
+    <None Include="Views\OfficeLoan\GetLedgerById.cshtml" />
+    <None Include="Views\OfficeLoan\Index.cshtml" />
+    <None Include="Views\OfficeLoan\LoanReceives.cshtml" />
+    <None Include="Views\OfficeLoan\OfficeLoanPayments.cshtml" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\menu\pccoded-horizontal-menu.css.map" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\menu\pccoded-horizontal-menu.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\menu\_pcmenu.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_alert.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_authentication.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_breadcrumb.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_charts.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_chat.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_color.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_draggable.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_e-payment.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_editors.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_fb-wall.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_full-calender.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_job-find.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_mail-pages.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_maps.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_navbars.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_note.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_pre-loader.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_prism.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_progress-bar.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_range-slider.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\other\_rating.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\responsive\_responsive.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\tables\_tables.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\theme-elements\_box-shadow.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\theme-elements\_button.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\theme-elements\_form-elements.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\theme-elements\_icon-layout.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\theme-elements\_label-badges.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\theme-elements\_ready-to-use.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\todo\_todo.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\widget-dashboard\_dashboard.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\widget-dashboard\_widget.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\_dark.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\_general.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\_generic.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\_mixins.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\partials\_variables.scss" />
+    <None Include="wwwroot\admin_asset_rtl\css\pcoded-horizontal.min.css.map" />
+    <None Include="wwwroot\admin_asset_rtl\css\style.css.map" />
+    <None Include="wwwroot\admin_asset_rtl\css\style.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\animated.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\bordered-pulled.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\core.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\fixed-width.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\font-awesome.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\icons.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\larger.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\list.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\mixins.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\path.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\rotated-flipped.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\screen-reader.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\stacked.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\less\variables.less" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\font-awesome.css.map" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\font-awesome.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_animated.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_core.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_fixed-width.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_icons.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_larger.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_list.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_mixins.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_path.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_screen-reader.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_stacked.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\font-awesome\scss\_variables.scss" />
+    <None Include="wwwroot\admin_asset_rtl\icon\icofont\fonts\icofont.svg" />
+    <None Include="wwwroot\admin_asset_rtl\icon\themify-icons\fonts\themify.svg" />
+    <None Include="wwwroot\admin_asset_rtl\js\bootstrap-growl.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\chart.js\Chart.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\common-pages.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\jquery-slimscroll\jquery.slimscroll.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\jquery-ui\jquery-ui.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\jquery.mCustomScrollbar.concat.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\jquery.mousewheel.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\jquery\jquery.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\modernizr\css-scrollbars.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\modernizr\modernizr.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\morris.js\morris.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\pcoded.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\popper.js\popper.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\raphael\raphael.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\script.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\script.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\SmoothScroll.js" />
+    <None Include="wwwroot\admin_asset_rtl\js\vartical-demo.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\accordion\accordion.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\accordion\accordion.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\c3\c3-custom-chart.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\chartjs\chartjs-custom.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\chartlist\chartlist-custom.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\chartlist\js\chartist-plugin-threshold.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\chartlist\js\chartist-plugin-tooltip.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\echarts\echart-custom.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\echarts\js\echarts-all.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\float\float-chart-custom.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\float\jquery.flot.categories.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\float\jquery.flot.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\float\jquery.flot.pie.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\google\js\custom-google-chart.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\knob\jquery.knob.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\knob\knob-custom-chart.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\morris\morris-custom-chart.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\nv-chart\js\stream_layers.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\nvd3\chart-nvd3.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\peity\peity-custom-chart.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\rickshow\d3.layout.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\rickshow\rickshow-custom-.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\chart\sparkline\chart-sparkline.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\amchart\js\amcharts.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\amchart\js\custom-amchart.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\amchart\js\export.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\amchart\js\images\dragIconRoundBig.svg" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\amchart\js\images\dragIconRoundBigH.svg" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\amchart\js\light.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\amchart\js\serial.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\analytic-dashboard.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\analytic-dashboard.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\crm-dashboard.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\custom-dashboard.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\custom-dashboard.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\custom-dashboard1.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\d3chart\js\bullet.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\d3chart\js\d3.v3.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\ecommerce-dashboard.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\high-chart\js\high-chart.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\horizontal-timeline\css\cd-arrow.svg" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\horizontal-timeline\js\jquery.mobile.custom.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\horizontal-timeline\js\main.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\project-dashboard.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\dashboard\project-dashboard.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\flag-icons.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\form-validation.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\google-maps\gmaps.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\google-maps\jquery.gmaps.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\icon-modal.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\notification\notification.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\range-slider.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\sortable-custom.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\todo\todo.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\user-profile.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\gdp-data.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-2.0.2.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-2.0.3.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-asia-mill.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-au-mill.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-ca-lcc.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-de-mill.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-in-mill.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-uk-mill-en.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-us-aea-en.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-us-il-chicago-mill-en.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\jquery-jvectormap-world-mill-en.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\vector-maps\js\map-vector.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\amcharts.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\amcharts.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\ammap.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\ammap.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\continentsLow.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\continentsLow.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\gauge.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\gauge.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\light.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\light.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\pie.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\pie.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\serial.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\serial.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\worldLow.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\amchart\worldLow.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\calender\pignose.calendar.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\custom-widget.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\custom-widget1.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\custom-widget1.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\custom-widget2.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\excanvas.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\flipclock\flipclock.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\gauge\gauge.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\jquery.sparkline.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\pretty-calender\calendar.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\timer\jquery.countdown.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\timer\TimeCircles.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\timer\waypoints.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\waterball\createWaterBall-jquery.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\widget-advanced.js" />
+    <None Include="wwwroot\admin_asset_rtl\pages\widget\widget-advanced.min.js" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\menu\pccoded-horizontal-menu.css.map" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\menu\pccoded-horizontal-menu.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\menu\_pcmenu.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\other\_authentication.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\other\_breadcrumb.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\other\_charts.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\other\_color.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\other\_maps.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\other\_navbars.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\other\_progress-bar.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\responsive\_responsive.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\tables\_tables.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\theme-elements\_button.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\theme-elements\_form-elements.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\theme-elements\_icon-layout.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\theme-elements\_label-badges.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\todo\_todo.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\widget-dashboard\_widget.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\_dark.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\_general.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\_generic.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\_mixins.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\partials\_variables.scss" />
+    <None Include="wwwroot\admin_asset_rtl\scss\style.scss" />
+    <None Include="wwwroot\assets\fonts\fa-brands-400.svg" />
+    <None Include="wwwroot\assets\fonts\fa-regular-400.svg" />
+    <None Include="wwwroot\assets\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\assets\fonts\feather6cfa.svg" />
+    <None Include="wwwroot\assets\fonts\Flaticon.svg" />
+    <None Include="wwwroot\assets\fonts\pct.svg" />
+    <None Include="wwwroot\assets\images\maintance\sark.svg" />
+    <None Include="wwwroot\assets\images\maintance\ship.svg" />
+    <None Include="wwwroot\assets\js\analytics.js" />
+    <None Include="wwwroot\assets\js\horizontal-menu.js" />
+    <None Include="wwwroot\assets\js\menu-setting.min.js" />
+    <None Include="wwwroot\assets\js\pages\ac-alert.js" />
+    <None Include="wwwroot\assets\js\pages\ac-datepicker.js" />
+    <None Include="wwwroot\assets\js\pages\ac-lightbox.js" />
+    <None Include="wwwroot\assets\js\pages\ac-notification.js" />
+    <None Include="wwwroot\assets\js\pages\ac-rangeslider.js" />
+    <None Include="wwwroot\assets\js\pages\ac-rating.js" />
+    <None Include="wwwroot\assets\js\pages\chart-apex.js" />
+    <None Include="wwwroot\assets\js\pages\chart-chart-custom.js" />
+    <None Include="wwwroot\assets\js\pages\chart-highchart-custom.js" />
+    <None Include="wwwroot\assets\js\pages\chart-peity-custom.js" />
+    <None Include="wwwroot\assets\js\pages\chart.js" />
+    <None Include="wwwroot\assets\js\pages\dashboard-help.js" />
+    <None Include="wwwroot\assets\js\pages\dashboard-main.js" />
+    <None Include="wwwroot\assets\js\pages\dashboard-sale.js" />
+    <None Include="wwwroot\assets\js\pages\data-advance-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-api-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-autofill-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-basic-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-buttons-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-column-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-export-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-header-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-key-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-plugin-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-reorder-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-responsive-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-row-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-scroller-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-select-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-source-custom.js" />
+    <None Include="wwwroot\assets\js\pages\data-styling-custom.js" />
+    <None Include="wwwroot\assets\js\pages\form-advance-custom.js" />
+    <None Include="wwwroot\assets\js\pages\form-masking-custom.js" />
+    <None Include="wwwroot\assets\js\pages\form-picker-custom.js" />
+    <None Include="wwwroot\assets\js\pages\form-select-custom.js" />
+    <None Include="wwwroot\assets\js\pages\form-validation.js" />
+    <None Include="wwwroot\assets\js\pages\google-maps.js" />
+    <None Include="wwwroot\assets\js\pages\invoice-list.js" />
+    <None Include="wwwroot\assets\js\pages\jquery.knob-custom.min.js" />
+    <None Include="wwwroot\assets\js\pages\jquery.wavify.js" />
+    <None Include="wwwroot\assets\js\pages\map-api.js" />
+    <None Include="wwwroot\assets\js\pages\notify-event.js" />
+    <None Include="wwwroot\assets\js\pages\page-croper.js" />
+    <None Include="wwwroot\assets\js\pages\task-board.js" />
+    <None Include="wwwroot\assets\js\pages\todo.js" />
+    <None Include="wwwroot\assets\js\pages\TweenMax.min.js" />
+    <None Include="wwwroot\assets\js\pages\widget-data.js" />
+    <None Include="wwwroot\assets\js\pcoded.min.js" />
+    <None Include="wwwroot\assets\js\plugins\apexcharts.min.js" />
+    <None Include="wwwroot\assets\js\plugins\bootstrap-maxlength.js" />
+    <None Include="wwwroot\assets\js\plugins\bootstrap-notify.min.js" />
+    <None Include="wwwroot\assets\js\plugins\bootstrap-slider.min.js" />
+    <None Include="wwwroot\assets\js\plugins\bootstrap-tagsinput.min.js" />
+    <None Include="wwwroot\assets\js\plugins\bootstrap.min.js" />
+    <None Include="wwwroot\assets\js\plugins\buttons.bootstrap4.min.js" />
+    <None Include="wwwroot\assets\js\plugins\buttons.colVis.min.js" />
+    <None Include="wwwroot\assets\js\plugins\buttons.html5.min.js" />
+    <None Include="wwwroot\assets\js\plugins\buttons.print.min.js" />
+    <None Include="wwwroot\assets\js\plugins\Chart.min.js" />
+    <None Include="wwwroot\assets\js\plugins\ckeditor.js" />
+    <None Include="wwwroot\assets\js\plugins\clipboard.min.js" />
+    <None Include="wwwroot\assets\js\plugins\cropper.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dataTables.bootstrap4.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dataTables.buttons.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dataTables.colReorder.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dataTables.fixedColumns.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dataTables.fixedHeader.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dataTables.keyTable.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dataTables.responsive.min.js" />
+    <None Include="wwwroot\assets\js\plugins\dataTables.select.min.js" />
+    <None Include="wwwroot\assets\js\plugins\daterangepicker.js" />
+    <None Include="wwwroot\assets\js\plugins\dropzone-amd-module.min.js" />
+    <None Include="wwwroot\assets\js\plugins\ekko-lightbox.min.js" />
+    <None Include="wwwroot\assets\js\plugins\fullcalendar.min.js" />
+    <None Include="wwwroot\assets\js\plugins\gmaps.min.js" />
+    <None Include="wwwroot\assets\js\plugins\highcharts-3d.js" />
+    <None Include="wwwroot\assets\js\plugins\highcharts.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery-ui.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery.barrating.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery.bootstrap.wizard.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery.dataTables.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery.knob.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery.mask.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery.minicolors.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery.peity.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jquery.validate.min.js" />
+    <None Include="wwwroot\assets\js\plugins\jszip.min.js" />
+    <None Include="wwwroot\assets\js\plugins\lightbox.min.js" />
+    <None Include="wwwroot\assets\js\plugins\moment.js" />
+    <None Include="wwwroot\assets\js\plugins\moment.min.js" />
+    <None Include="wwwroot\assets\js\plugins\pdfmake.min.js" />
+    <None Include="wwwroot\assets\js\plugins\PNotify.js" />
+    <None Include="wwwroot\assets\js\plugins\PNotifyButtons.js" />
+    <None Include="wwwroot\assets\js\plugins\PNotifyCallbacks.js" />
+    <None Include="wwwroot\assets\js\plugins\PNotifyConfirm.js" />
+    <None Include="wwwroot\assets\js\plugins\PNotifyDesktop.js" />
+    <None Include="wwwroot\assets\js\plugins\prism.js" />
+    <None Include="wwwroot\assets\js\plugins\select.bootstrap4.min.js" />
+    <None Include="wwwroot\assets\js\plugins\select2.full.min.js" />
+    <None Include="wwwroot\assets\js\plugins\sweetalert.min.js" />
+    <None Include="wwwroot\assets\js\plugins\trumbowyg.min.js" />
+    <None Include="wwwroot\assets\js\vendor-all.min.js" />
+    <None Include="wwwroot\assets\js\waves.min.js" />
+    <None Include="wwwroot\lib\echarts\echarts-all-english-v2.js" />
+    <None Include="wwwroot\lib\echarts\echarts-en.common.js" />
+    <None Include="wwwroot\lib\echarts\echarts-en.common.min.js" />
+    <None Include="wwwroot\lib\echarts\echarts-en.js" />
+    <None Include="wwwroot\lib\echarts\echarts-en.js.map" />
+    <None Include="wwwroot\lib\echarts\echarts-en.min.js" />
+    <None Include="wwwroot\lib\echarts\echarts-en.simple.js" />
+    <None Include="wwwroot\lib\echarts\echarts-en.simple.min.js" />
+    <None Include="wwwroot\lib\echarts\echarts.common.js" />
+    <None Include="wwwroot\lib\echarts\echarts.common.min.js" />
+    <None Include="wwwroot\lib\echarts\echarts.js" />
+    <None Include="wwwroot\lib\echarts\echarts.js.map" />
+    <None Include="wwwroot\lib\echarts\echarts.min.js" />
+    <None Include="wwwroot\lib\echarts\echarts.simple.js" />
+    <None Include="wwwroot\lib\echarts\echarts.simple.min.js" />
+    <None Include="wwwroot\lib\echarts\extension\bmap.js" />
+    <None Include="wwwroot\lib\echarts\extension\bmap.js.map" />
+    <None Include="wwwroot\lib\echarts\extension\bmap.min.js" />
+    <None Include="wwwroot\lib\echarts\extension\dataTool.js" />
+    <None Include="wwwroot\lib\echarts\extension\dataTool.js.map" />
+    <None Include="wwwroot\lib\echarts\extension\dataTool.min.js" />
+    <None Include="wwwroot\Reports\InvoiceReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+  
+    <PackageReference Include="AspNetCore.Reporting" Version="2.1.0" />
+  
+    <PackageReference Include="BarcodeLib" Version="2.3.0" />
+  
+    <PackageReference Include="Castle.Windsor" Version="5.1.0" />
+  
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+  
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.9" />
+  
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="NToastNotify" Version="7.0.0" />
+    <PackageReference Include="NuGet.CommandLine" Version="5.8.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.CodeDom" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="toastr" Version="2.1.1" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
+    <PackageReference Include="ZXing.Net" Version="0.16.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\Asset\" />
+    <Folder Include="wwwroot\Uploads\employee-profile\" />
+  </ItemGroup>
+
+
+
+</Project>

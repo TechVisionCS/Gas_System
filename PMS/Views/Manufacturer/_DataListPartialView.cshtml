@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Manufacturer>
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table id="example1" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>SNo.</th>
+                    <th>Manufacturer Name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{ var sno = 1; }
+                @if (Model.Any())
+                {
+                    foreach (var Type in Model)
+                    {
+                        <tr>
+                            <td>@sno</td>
+                            <td>@Type.Name</td>
+                            <td>@Type.Description</td>
+                            <td>
+                                @if (Type.Status == 1)
+                                {
+                                    <span class="badge badge-primary">Enabled</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-warning">Disabled</span>
+                                }
+                            </td>
+                            <td>
+                                <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action($"Edit/{Type.Id}")"
+                                   data-redirect="@Url.Action("Success", "Manufacturer")" class="text text-primary" style="cursor: pointer;">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <span class="d-none">@{sno++;}</span>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

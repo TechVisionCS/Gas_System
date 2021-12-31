@@ -1,0 +1,59 @@
+﻿
+@model IEnumerable<CurrentStockViewModel>
+
+<div class="table-responsive">
+    <table id="example1" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>SNo.</th>
+                <th>Product Name</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
+
+                <th style="background-color: lightgray;">Current Stock Qty (@ViewBag.UnitName)</th>
+
+                <th>View Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var sno = 1;
+                decimal purchasePriceTotal = 0;
+                decimal salePriceTotla = 0;
+            }
+
+            @if (Model.Any())
+            {
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <td>@sno  @{sno++;}</td>
+                        <td>@m.ProductName</td>
+                        <td>
+                            <a asp-action="GetByManufacturerId" asp-controller="Stock" asp-route-id="@m.ManufacturerId" class="text text-primary">
+                                @m.ManufacturerName
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-action="GetByCategoryId" asp-controller="Stock" asp-route-id="@m.CategoryId" class="text text-primary">
+                                @m.CategoryName
+                            </a>
+                        </td>
+
+                        <td style="background-color: lightgray;">@m.CurrentStockQty.ToString("N")</td>
+
+                        <td>
+                            <a asp-action="StockDetails" asp-controller="Stock" asp-route-id="@m.ProductId"
+                               class="btn btn-info btn-mini">
+                                <i class="fa fa-eye"></i> Details
+                            </a>
+
+
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>

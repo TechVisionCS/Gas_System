@@ -1,0 +1,273 @@
+﻿@model ViewPurchaseDetailsViewModel
+
+@{
+    ViewData["Title"] = "Purchases";
+
+    var Purchase = Model.purchase;
+    var PurchaseDetails = Model.purchaseDetails;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Purchases Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Purchase"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Purchases List
+                                </a>
+
+                                <a asp-action="Create" asp-controller="Purchase"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-shopping-cart"></i> Add New Purchase
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+
+                <div class="page-body">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Purchase Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>General Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <h6>Purchase No.</h6>
+                                    <p>@Purchase.Id</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <h6>Purchase Date</h6>
+                                    <p>@Purchase.PurchaseDate</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <h6>Invoice No.</h6>
+                                    <p>@Purchase.InvoiceNo</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <h6>Supplier Name</h6>
+                                    <p>@Purchase.SupplierName</p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <h6>Description</h6>
+                                    <p>@Purchase.Description</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Items</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Product</th>
+                                                    <th>Unit</th>
+                                                    <th>Unit Price</th>
+                                                    <th>Qty</th>
+                                                    <th>Total Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (PurchaseDetails.Any())
+                                                {
+                                                    foreach (var m in PurchaseDetails)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.Sno</td>
+                                                            <td>@m.Product.Name</td>
+                                                            <td>@m.Unit.Name</td>
+                                                            <td>@m.PurchasePrice</td>
+                                                            <td>@m.Qty</td>
+                                                            <td>@m.TotalPurchasePrice</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <span class="text text-info">No item available in this purchase!</span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>Payment Details</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Payment Type</h6>
+                                    <p>
+                                        @if (Purchase.PaymentType == 1)
+                                        {
+                                            <span class="badge badge-info">Cash</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-info">Bank</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                @if (Purchase.PaymentType == 2)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Bank Name</h6>
+                                        <p>@Purchase.BankName</p>
+                                        <hr />
+                                    </div>
+                                }
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Total Purchase</h6>
+                                    <p>@Purchase.SubTotal.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Discount</h6>
+                                    <p>
+                                        @{ var disc_per = (100 * Purchase.DiscountAmount) / Purchase.SubTotal; }
+                                        @Purchase.DiscountAmount.ToString("N") (@disc_per %)
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Rent</h6>
+                                    <p>@Purchase.RentAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 d-none">
+                                    <h6>Tax</h6>
+                                    <p>@Purchase.TaxAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6  text text-primary">
+                                    <h6>Total Amount</h6>
+                                    <p>@Purchase.TotalAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-success">
+                                    <h6>Paid Amount</h6>
+                                    <p>@Purchase.PaidAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6 text text-warning">
+                                    <h6>Due Amount</h6>
+                                    <p>@Purchase.DueAmount.ToString("N")</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <h6>System Info</h6>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Purchase Performed By</h6>
+                                    <p>@Purchase.UserName</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Created At</h6>
+                                    <p>@Purchase.CreatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Update At</h6>
+                                    <p>@Purchase.UpdatedAt</p>
+                                    <hr />
+                                </div>
+
+                                <div class="col-12">
+                                    <br />
+                                </div>
+
+                                <div class="col-12 text text-right">
+                                    <a class="btn btn-info text-white">
+                                        <i class="fa fa-print"></i> Print
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Main-body end -->
+
+<partial name="_Modal" />
+@section Scripts{
+    <script src="~/js/popupModel.js" asp-append-version="true"></script>
+}

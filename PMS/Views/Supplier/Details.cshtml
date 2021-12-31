@@ -1,0 +1,273 @@
+﻿@model SupplierDetailsViewModel
+@{
+    ViewData["Title"] = "Suppliers Details";
+    var supplierDetails = Model.SupplierDetails;
+    var supplierLedgers = Model.SupplierLedgerDetails;
+    var supplierProducts = Model.ProductDetails;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Suppliers Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Create" asp-controller="Supplier"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-user-plus"></i> Add New Supplier
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Supplier"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Suppliers List
+                                </a>
+
+                                <a asp-action="GetAllLedgers" asp-controller="Supplier"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-list"></i> Suppliers Ledger
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+                <div class="page-body">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h5>Supplier Details</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="box-body">
+
+                                <div class="page-header card">
+                                    <div class="card-block">
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <h5 class="text text-primary">Supplier Details</h5>
+                                                <hr />
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                <h6>Name</h6>
+                                                <p>@supplierDetails.Name</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                <h6>Phone</h6>
+                                                <p>@supplierDetails.Phone</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                <h6>Email</h6>
+                                                <p>@supplierDetails.Email</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-4 col-sm-6">
+                                                <h6>Address</h6>
+                                                <p>@supplierDetails.Address</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-4 col-sm-6">
+                                                <h6>Details</h6>
+                                                <p>@supplierDetails.Details</p>
+                                                <hr />
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                <h6>Created At</h6>
+                                                <p>@supplierDetails.CreatedAt</p>
+                                                <hr />
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                <h6>Last Updated At</h6>
+                                                <p>@supplierDetails.UpdatedAt</p>
+                                                <hr />
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                                <h6>Registered By User</h6>
+                                                <p>@supplierDetails.UserName</p>
+                                                <hr />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="page-header card">
+                                    <div class="card-block">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <h5 class="text text-primary">Supplier Products</h5>
+                                                <hr />
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="card-block table-border-style">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>SNo.</th>
+                                                                    <th>Name</th>
+                                                                    <th>Manufacturer</th>
+                                                                    <th>Category</th>
+                                                                    <th>Type</th>
+                                                                    <th>Model</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <span class="d-none">@{ var sno = 1; }</span>
+                                                                @if (supplierProducts.Any())
+                                                                {
+                                                                    @foreach (var m in supplierProducts)
+                                                                    {
+                                                                        <tr>
+                                                                            <td>@sno</td>
+                                                                            <td>@m.Name</td>
+                                                                            <td>@m.ManufacturerName</td>
+                                                                            <td>
+                                                                                @m.CategoryName <span class="d-none">
+                                                                                    @{ sno++; }
+                                                                                </span>
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    }
+                                                                }
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="page-header card">
+                                    <div class="card-block">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <h5 class="text text-primary">Supplier Ledger Details</h5>
+                                                <hr />
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="card-block table-border-style">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>SNo</th>
+                                                                    <th>Date</th>
+                                                                    <th>Description</th>
+                                                                    <th>Debit</th>
+                                                                    <th>Credit</th>
+                                                                    <th>Balance</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @{
+                                                                    decimal totalDebit = 0;
+                                                                    decimal totalCredit = 0;
+                                                                    decimal totalBalance = 0;
+                                                                    string balanceFlg = "+";
+                                                                }
+                                                                @if (supplierLedgers.Any())
+                                                                {
+                                                                    @foreach (var m in supplierLedgers)
+                                                                    {
+                                                                        <tr>
+                                                                            <td>@m.SNo</td>
+                                                                            <td>@m.Date</td>
+                                                                            <td>@m.Description</td>
+                                                                            <td>@m.Debit.ToString("N")</td>
+                                                                            <td>@m.Credit.ToString("N")</td>
+                                                                            <td>
+                                                                                @m.Balance.ToString("N")
+                                                                                <span class="d-none">
+                                                                                    @{
+                                                                                        totalDebit += m.Debit;
+                                                                                        totalCredit += m.Credit;
+                                                                                    }
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    }
+                                                                }
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr style="background-color: lightgray;">
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td>Total</td>
+                                                                    <td>@totalDebit.ToString("N")</td>
+                                                                    <td>@totalCredit.ToString("N")</td>
+                                                                    <td>
+                                                                        <span class="d-none">
+                                                                            @{
+                                                                                totalBalance = totalDebit - totalCredit;
+                                                                                if (totalBalance < 0)
+                                                                                {
+                                                                                    balanceFlg = "-";
+                                                                                }
+                                                                            }
+                                                                        </span>
+
+                                                                        @totalBalance.ToString("N")
+                                                                    </td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        @*Basic table card end*@
+                    </div>
+                    @*Page-body end*@
+
+                    <div class="page-header card">
+                        <div class="card-block">
+                            <ul class="">
+                                <li class="breadcrumb-item pull-left">
+                                    <a onclick="window.history.back();"
+                                       class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                        <i class="fa fa-arrow-left"></i> Back
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

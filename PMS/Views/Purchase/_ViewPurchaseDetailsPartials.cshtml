@@ -1,0 +1,48 @@
+﻿@model IEnumerable<PurchaseDetailsViewModel>
+<!--Modal Body Start-->
+<div class="modal-content p-2 m-2">
+    <!--Modal Header Start-->
+    <div class="modal-header">
+        <h5 class="modal-title">Purchase Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+                <i class="fa fa-times text text-danger"></i>
+            </span>
+        </button>
+    </div>
+    <!--Modal Header End-->
+    <!--Modal Content here ...-->
+    <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>SNo.</th>
+                    <th>Product</th>
+                    <th>Unit</th>
+                    <th>Unit Price</th>
+                    <th>Qty</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>@m.Sno</td>
+                            <td>@m.Product.Name</td>
+                            <td>@m.Unit.Name</td>
+                            <td>@m.PurchasePrice</td>
+                            <td>@m.Qty</td>
+                            <td>@m.TotalPurchasePrice</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <!--Modal Contents end-->
+
+</div>
+<!--Modal Body End-->

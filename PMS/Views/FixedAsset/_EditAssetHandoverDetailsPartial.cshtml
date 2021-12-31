@@ -1,0 +1,35 @@
+﻿@model AssetHandoverDetails
+
+<tr id="newItem">
+    <td>
+        <select class="form-control select2" style="width: 100%;" asp-for="@Model.AssetId" asp-items="@ViewBag.Asset" required>
+            <option selected="selected" value="0">--Select Asset--</option>
+        </select>
+        <span asp-validation-for="@Model.AssetId" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="number" step="any" class="form-control calc" asp-for="@Model.Qty" placeholder="0.00" required />
+        <span asp-validation-for="@Model.Qty" class="text-danger"></span>
+    </td>
+
+    <td>
+        <input type="text" class="form-control" asp-for="@Model.Details" />
+        <span asp-validation-for="@Model.Details" class="text-danger"></span>
+    </td>
+
+    <td>
+        <select class="form-control select2" style="width: 100%;" name="Status" id="Status" asp-for="Status" asp-items="Html.GetEnumSelectList<AssetStatus>()">
+            <option selected="selected" value="0">--Select Asset Status--</option>
+        </select>
+    </td>
+
+    <td>
+        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> Delete</button>
+        <input type="hidden" hidden value="@Model.Id" name="DetailsId" />
+        <input type="hidden" hidden asp-for="@Model.AssetHandoverId" />
+    </td>
+</tr>
+<script>
+    $('.select2').select2();
+</script>

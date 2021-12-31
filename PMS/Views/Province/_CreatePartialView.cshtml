@@ -1,0 +1,36 @@
+﻿@model Province
+
+<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text text-white">
+                <h5 class="modal-title">Province Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="color: white;">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-action="Create" asp-controller="Province">
+                    <div class="form-group">
+                        <label>Province Name:</label>
+                        <input type="text" asp-for="Name" class="form-control" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Country Name:</label>
+                        <select class="form-control select2" asp-for="CountryId" asp-items="@ViewBag.Countries"
+                                data-placeholder="Select a Country" style="width: 100%;">
+                            <option selected="selected" value="0">--Select Country--</option>
+                        </select>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-save="modal">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,399 @@
+﻿@model CreatePurchaseViewModel
+
+@{
+    ViewData["Title"] = "Purchases";
+    var Purchase = Model.Purchase;
+    var PurchaseDetails = Model.PurchaseDetails;
+}
+
+<div id="PlaceHolderHere"></div>
+
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-ms-12" style="margin:0 auto;">
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Purchases Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Purchase"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-list"></i> Purchases List
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Basic Form Inputs card start -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Add a new puchase details</h5>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="card-block">
+                                    <div class="col-sm-12 text text-center">
+                                        <div asp-validation-summary="All" class="text-danger"></div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="margin: 0 auto;">
+                                        <form method="post" asp-action="Create" id="frm">
+                                            <div class="row">
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Supplier <span class="required">*</span></label>
+                                                        <select required class="form-control select2" id="supplierId" style="width: 100%;" asp-for="@Purchase.SupplierId" asp-items="@ViewBag.Suppliers">
+                                                            <option selected="selected" value="0">--Select Supplier--</option>
+                                                        </select>
+                                                        <span asp-validation-for="@Purchase.SupplierId" class="text-danger"></span>
+                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreateSupplierModel")"
+                                                           data-redirect="@Url.Action("Create", "Purchase")" class="text text-info" style="color: white; cursor: pointer;" id="btnAddCustomer">
+                                                            <i class="fa fa-plus"></i> Add New Supplier
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Payment Type <span class="required">*</span></label>
+                                                        <select required class="form-control select2" style="width: 100%;" asp-for="@Purchase.PaymentType" id="pType">
+                                                            <option selected="selected" value="0">--Select Payment Type--</option>
+                                                            <option value="1">Cash Payment</option>
+                                                            <option value="2">Bank Payment</option>
+                                                        </select>
+                                                        <span asp-validation-for="@Purchase.PaymentType" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12" id="bank" style="display: none;">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Bank <span class="required">*</span></label>
+                                                        <select required class="form-control select2" style="width: 100%;" asp-for="@Purchase.BankId" asp-items="@ViewBag.Banks">
+                                                            <option selected="selected" value="0">--Select Bank--</option>
+                                                        </select>
+                                                        <span asp-validation-for="@Purchase.BankId" class="text-danger"></span>
+                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreateBankModel")"
+                                                           data-redirect="@Url.Action("Create", "Purchase")" class="text text-info" style="color: white; cursor: pointer;">
+                                                            <i class="fa fa-plus"></i> Add New Bank
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Purchase Date <span class="required">*</span> </label>
+                                                        <input type="date" asp-for="@Purchase.PurchaseDate" class="form-control" required />
+                                                        <span asp-validation-for="@Purchase.PurchaseDate" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Invoice No <span class="required">*</span></label>
+                                                        <input asp-for="@Purchase.InvoiceNo" class="form-control" required autocomplete="off" Placeholder="Invoice No" />
+                                                        <span asp-validation-for="@Purchase.InvoiceNo" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Description</label>
+                                                        <textarea asp-for="@Purchase.Description" class="form-control" placeholder="Details about Purchase..."> </textarea>
+                                                        <span asp-validation-for="@Purchase.Description" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <h6>Item details</h6>
+                                                    <hr />
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Product <span class="required">*</span></th>
+                                                                <th>Unit <span class="required">*</span></th>
+                                                                <th>Unit Price <span class="required">*</span></th>
+                                                                <th>Qty <span class="required">*</span></th>
+                                                                <th>Total Price</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="items">
+                                                            @if (PurchaseDetails != null)
+                                                            {
+                                                                foreach (var m in PurchaseDetails)
+                                                                {
+                                                                    @await Html.PartialAsync("_PurchaseDetailsPartial", m)
+                                                                }
+                                                            }
+                                                        </tbody>
+                                                        <tbody>
+                                                            @{
+                                                                string CurrentName = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+
+                                                                var valueDefined = "";
+
+
+                                                                switch (CurrentName)
+                                                                {
+                                                                    case "ps":
+                                                                        valueDefined = "text text-left";
+                                                                        break;
+
+                                                                    case "da":
+                                                                        valueDefined = "text text-left";
+                                                                        break;
+
+                                                                    default:
+                                                                        valueDefined = "text text-right";
+                                                                        break;
+                                                                }
+                                                            }
+                                                            <tr>
+                                                                <td colspan="4" class="@valueDefined">Sub Total</td>
+                                                                <td>
+                                                                    <input type="number" step="any" class="form-control" id="total" asp-for="@Purchase.SubTotal" placeholder="0.00" readonly />
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-sm btn-primary-outline" id="btnAddItem"><i class="fa fa-plus-circle"></i> Add New</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="@valueDefined">Total Discount (%)</td>
+                                                                <td>
+                                                                    <input type="hidden" step="any" asp-for="@Purchase.DiscountAmount" value="0" id="discount" class="form-control calc" />
+                                                                    <input type="number" step="any" value="0" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
+                                                                </td>
+                                                                <td>
+                                                                    <p class="text text-info">Amount: <span id="discAmount">0</span></p>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td colspan="4" class="@valueDefined">Rent</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Purchase.RentAmount" value="0" id="rent" class="form-control calc" />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr class="d-none">
+                                                                <td colspan="4" class="@valueDefined">Tax</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Purchase.TaxAmount" value="0" id="tax" class="form-control calc" />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4" class="@valueDefined">Grand Total</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Purchase.TotalAmount" placeholder="0.00" id="grandtotal" class="form-control" readonly />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4" class="@valueDefined">Paid Amount</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Purchase.PaidAmount" value="0" id="paid" class="form-control calc" />
+                                                                </td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="4" class="@valueDefined">Due Amount</td>
+                                                                <td>
+                                                                    <input type="number" step="any" asp-for="@Purchase.DueAmount" placeholder="0.00" id="due" class="form-control" readonly />
+                                                                </td>
+                                                                <td><button type="button" class="btn btn-sm btn-danger-outline text text-danger" onclick="clearAll();"><i class="fa fa-remove"></i> Clear</button></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text text-left">
+                                                    <input type="hidden" asp-for="@Purchase.PurchaseType" value="0" />
+                                                    <input type="hidden" name="sbm_flg" id="sbm_flg" value="0" />
+                                                    <button type="button" class="btn btn-sm btn-primary-outline mr-2" onclick="calculate();"><i class="fa fa-money"></i> Calculate</button>
+
+                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                        <i class="fa fa-save"></i> Save
+                                                    </button>
+
+                                                    <button type="button" formtarget="_blank" id="sbm_btn" class="btn btn-mat btn-success mr-2">
+                                                        <i class="fa fa-save"></i> Save & Print
+                                                    </button>
+
+                                                    <button type="reset" class="btn btn-mat btn-danger">
+                                                        <i class="fa fa-times"></i> Cancel
+                                                    </button>
+
+                                                    <button type="button" id="HiddenTriggerForDropDown" hidden onclick="TriggerDropDownList();">
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+
+        $(document).ready(function () {
+            $("#HiddenTriggerForDropDown").trigger('click');
+        });
+
+        $("#sbm_btn").on('click', function () {
+            $("#sbm_flg").val("1");
+            $("#frm").submit();
+        });
+
+
+        $("#pType").on('change', function () {
+            if ($(this).val() == "2") {
+                $("#bank").removeAttr("Style");
+            } else {
+                $("#bank").addClass("d-none");
+            }
+        });
+
+        var i = 1;
+        var sId = 0;
+
+        $(document).ready(function () {
+                $("#items").find("tr").remove();
+                $.ajax({
+                cache: false,
+                url: '@Url.Action("LoadDetails", "Purchase")',
+                dataType: "html",
+                type: "GET",
+                contentType: "application/json",
+                success: function (response) {
+                    $('#items').append(response);
+                },
+                error: function (err) {
+                    alert(err.responseText);
+                }
+            });
+        });
+
+
+        $("#btnAddItem").click(function () {
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("LoadDetails", "Purchase")',
+                dataType: "html",
+                type: "GET",
+                contentType: "application/json",
+                success: function (response) {
+                    $('#items').append(response);
+                },
+                error: function (err) {
+                    alert(err.responseText);
+                }
+            });
+        });
+
+        //validations
+
+        function calcDiscount() {
+            var subtotal = $("#total").val();
+            var discper = $("#totalPercentDiscount").val();
+
+            var res = (subtotal * discper) / 100;
+
+            $("#discount").val(res);
+            $("#discAmount").text(res);
+
+        }
+
+
+           function TriggerDropDownList() {
+                    $("#supplierId").empty().append('<option selected="selected" value="0">--Select Supplier--</option>');
+                    $("#BankId").empty().append('<option selected="selected" value="0">--Select Bank--</option>');
+
+                    $.ajax({
+                        type: "POST",
+                        cache: false,
+                        url: '@Url.Action("GetSupplier", "Purchase")',
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (response) {
+
+                            response.forEach(function (item) {
+                                $("#supplierId").append($('<option>').val(item['value']).text(item['text']));
+                            });
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                        }
+                    });
+
+                     $.ajax({
+                            type: "POST",
+                            cache: false,
+                            url: '@Url.Action("GetBank", "Purchase")',
+                            contentType: "application/json",
+                            dataType: "json",
+                            success: function (response) {
+
+                                response.forEach(function (item) {
+                                    $("#BankId").append($('<option>').val(item['value']).text(item['text']));
+                                });
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                            }
+                     });
+                }
+
+    </script>
+
+    <script src="~/js/purchaseFormValidation.js"></script>
+}

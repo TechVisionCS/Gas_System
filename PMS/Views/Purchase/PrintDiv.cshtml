@@ -1,0 +1,196 @@
+﻿@model ViewPurchaseDetailsViewModel
+
+@{
+    ViewData["Title"] = "Purchase";
+
+    var Purchase = Model.purchase;
+    var PurchaseDetails = Model.purchaseDetails;
+    var shopDetails = Model.ShopModelDetails;
+}
+
+<!-- Main-body start -->
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
+                <!-- Page-header start-->
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Purchase Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Purchase"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Purchase List
+                                </a>
+
+                                <a asp-action="Create" asp-controller="Purchase"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-shopping-cart"></i> Add New Purchase
+                                </a>
+
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Page-header end -->
+                <!-- Page-body start -->
+
+                <div class="page-body PrintArea">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Purchase Invoice Print</h5>
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option">
+                                    <li><i class="fa fa-chevron-left"></i></li>
+                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                    <li><i class="fa fa-times close-card"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card-block table-border-style" id="DivIdToPrint">
+
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <h3 class="display-5 font-weight-bolder mb-2"> INVOICE - # @Purchase.InvoiceNo</h3>
+                                        <span class="font-weight-bolder mb-2"> <b> Date : </b>@Purchase.PurchaseDate</span>
+                                        <span class="opacity-60" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large">
+                                            <b>Supplier:</b> @Purchase.SupplierId / &nbsp; @Purchase.SupplierName <br />
+                                        </span>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="d-flex flex-column flex-root">
+                                        <span class="font-weight-bolder mb-2"><h3>@shopDetails.Name_en</h3></span>
+                                        <span class="opacity-60" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large">
+                                            @shopDetails.Phone1 / @shopDetails.Email1 <br />
+                                            @shopDetails.Address_en
+                                        </span>
+                                    </div>
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNo.</th>
+                                                    <th>Product Name</th>
+                                                    <th>Unit</th>
+                                                    <th>Purchase Price</th>
+                                                    <th>Qty</th>
+                                                    <th>Total Purchase Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (PurchaseDetails.Any())
+                                                {
+                                                    foreach (var m in PurchaseDetails)
+                                                    {
+                                                        <tr>
+                                                            <td>@m.Sno</td>
+                                                            <td>@m.Product.Name</td>
+                                                            <td>@m.Unit.Name</td>
+                                                            <td>@m.PurchasePrice</td>
+                                                            <td>@m.Qty</td>
+                                                            <td>@m.TotalPurchasePrice</td>
+                                                        </tr>
+                                                    }
+                                                }
+
+                                            </tbody>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="5" class="text text-right">Sub Total</td>
+                                                    <td>
+                                                        @Purchase.SubTotal
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td colspan="5" class="text text-right">Rent</td>
+                                                    <td>
+                                                        @Purchase.RentAmount
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="d-none">
+                                                    <td colspan="5" class="text text-right">Tax</td>
+                                                    <td>
+                                                        @Purchase.TaxAmount
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td colspan="5" class="text text-right">Total Discount (%)</td>
+                                                    <td>
+                                                        @Purchase.DiscountAmount
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td colspan="5" class="text text-right">Grand Total</td>
+                                                    <td>
+                                                        @Purchase.TotalAmount
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td colspan="5" class="text text-right">Paid Amount</td>
+                                                    <td>
+                                                        @Purchase.PaidAmount
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td colspan="5" class="text text-right">Due Amount</td>
+                                                    <td>
+                                                        @Purchase.DueAmount
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text text-right">
+                            <button type="button" class="btn btn-info" style="padding:8px" value='Print' onclick='printtag("DivIdToPrint");'>Print</button>
+                        </div>
+                    </div>
+                    <!-- Basic table card end -->
+                </div>
+                <!-- Page-body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

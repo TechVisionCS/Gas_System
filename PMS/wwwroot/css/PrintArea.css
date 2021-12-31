@@ -1,0 +1,13 @@
+﻿.item {
+    width: 200px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin-right: 10px;
+    margin-bottom: 1px;
+    float: left;
+}
+
+#index-gallery {
+    width: 100%;
+}

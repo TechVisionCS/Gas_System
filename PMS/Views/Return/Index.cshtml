@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "Returns";
+}
+
+<div class="main-body">
+    <div class="page-wrapper">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-ms-12" style="margin:0 auto;">
+                <div class="page-header card">
+                    <div class="card-block">
+                        <h5 class="m-b-10">Products Administration</h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="SaleReturn" asp-controller="Return"
+                                   class="btn btn-mat btn-info mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Sale Returns
+                                </a>
+
+                                <a asp-action="PurchaseReturn" asp-controller="Return"
+                                   class="btn btn-mat btn-info mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Purchase Returns
+                                </a>
+
+                                <a asp-action="Wastages" asp-controller="Return"
+                                   class="btn btn-mat btn-info mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Wastages
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="page-body">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Sale Return from Customers</h5>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="card-block">
+                                    <div class="col-12" style="margin: 0 auto;">
+                                        <form method="get" asp-action="CreateSaleReturn">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            Invoice No (Sale ID) <span class="required">*</span>
+                                                        </label>
+                                                        <input name="saleId" class="form-control" required placeholder="Enter Invoice No or Sale ID" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text text-right">
+                                                    <button type="submit" class="btn btn-mat btn-primary">
+                                                        <i class="fa fa-search"></i> Search
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>Purchase Return to Suppliers</h5>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+
+                                    <div class="card-header-right">
+                                        <i class="icofont icofont-spinner-alt-5"></i>
+                                    </div>
+                                    <hr />
+                                </div>
+
+                                <div class="card-block">
+                                    <div class="col-12" style="margin: 0 auto;">
+                                        <form method="get" asp-action="CreatePurchaseReturn">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                            Purchase ID <span class="required">*</span>
+                                                        </label>
+                                                        <input name="purchaseId" class="form-control" required placeholder="Enter Purchase Id" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12 text text-right">
+                                                    <button type="submit" class="btn btn-mat btn-primary">
+                                                        <i class="fa fa-search"></i> Search
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Page body end -->
+
+                <div class="page-header card">
+                    <div class="card-block">
+                        <ul class="">
+                            <li class="breadcrumb-item pull-left">
+                                <a onclick="window.history.back();"
+                                   class="text text-danger font-weight-bold" style="cursor: pointer;">
+                                    <i class="fa fa-arrow-left"></i> Back
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

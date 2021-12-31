@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AssetsCategory>
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table id="example1" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>SNo.</th>
+                    <th>Asset Category</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ var sno = 1; }
+                @if (Model.Any())
+                {
+                    foreach (var assettype in Model)
+                    {
+                        <tr>
+                            <td>@sno</td>
+                            <td>@assettype.Name</td>
+                            <td>@assettype.Description</td>
+                            <td>
+                                @if (assettype.Status == 1)
+                                {
+                                    <span class="badge badge-primary">Enabled</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-warning">Disabled</span>
+                                }
+                            </td>
+                            <td>
+                                <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action($"Edit/{assettype.Id}")"
+                                   data-redirect="@Url.Action("Success", "AssetType")" class="text text-primary" style="cursor: pointer;">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a class="delete-link" href="@Url.Action("Delete", new {id =assettype.Id})"><i class="fa fa-trash text-warning"></i></a>
+                                <div class="delete-confirm" style="display:none" data-delete-id="@assettype.Id"><i class="fa fa-trash text-danger"></i></div>
+                                <span class="d-none">@{sno++;}</span>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

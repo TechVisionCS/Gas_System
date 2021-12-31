@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\TechVisionCS\Publishes\WMS</_PublishTargetUrl>
+    <History>True|2021-12-22T17:06:51.0703959Z;True|2021-04-20T13:20:12.3380163+04:30;True|2021-04-20T12:16:27.6272106+04:30;True|2021-04-19T22:33:48.9420762+04:30;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="RemoteConnectString">
+      <Value>Data Source=66.45.233.170%3bInitial Catalog=techvisi_wms%3bIntegrated Security=False%3bUser Id=techvisi%3bPassword=Admin%40123%2a%2a%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="PMS.Data.ApplicationDbContext">
+      <Value>Server=.%3bDatabase=wms_db_original_2021%3bTrusted_Connection=True%3bMultipleActiveResultSets=true</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
