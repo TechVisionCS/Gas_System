@@ -5,7 +5,14 @@
 @{
     var user = await userManager.GetUserAsync(User);
 }
-
+<style>
+    #demotext {
+        font-family: roboto;
+        font-size: 24px;
+        font-weight: 400;
+        color: #ffffff;
+    }
+</style>
 
 <nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
@@ -25,7 +32,7 @@
                 </div>
             </div>
             <a asp-action="Index" asp-controller="Dashboard">
-                <img class="img-fluid" src="~/admin_assets/images/logo.png" alt="Theme-Logo" />
+                <div id="demotext">Tech Vision</div>
             </a>
             <a class="mobile-options">
                 <i class="ti-more"></i>
