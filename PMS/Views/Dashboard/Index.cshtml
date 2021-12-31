@@ -78,48 +78,47 @@
                     <!--end::Nav-->
                 </div>
 
-                <div class="col-lg-8 col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Statistics</h5>
-                            <div class="card-header-right">
-                                <ul class="list-unstyled card-option">
-                                    <li><i class="fa fa-chevron-left"></i></li>
-                                    <li><i class="fa fa-window-maximize full-card"></i></li>
-                                    <li><i class="fa fa-minus minimize-card"></i></li>
-                                    <li><i class="fa fa-refresh reload-card"></i></li>
-                                    <li><i class="fa fa-times close-card"></i></li>
-                                </ul>
+                @*<div class="col-lg-8 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Statistics</h5>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa-chevron-left"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-times close-card"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <canvas id="Statistics-chart1" height="250"></canvas>
                             </div>
                         </div>
-                        <div class="card-block">
-                            <canvas id="Statistics-chart" height="250"></canvas>
-                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-4 col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Customer Feedback</h5>
-                        </div>
-                        <div class="card-block">
-                            <iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; inset: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; inset: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;"></iframe>
-                            <span class="d-block text-c-blue f-24 f-w-600 text-center">365247</span>
-                            <canvas id="feedback-chart" height="267" width="810" style="display: block; height: 89px; width: 270px;"></canvas>
-                            <div class="row justify-content-center m-t-15">
-                                <div class="col-auto b-r-default m-t-5 m-b-5">
-                                    <h4>83%</h4>
-                                    <p class="text-success m-b-0"><i class="ti-hand-point-up m-r-5"></i>Positive</p>
-                                </div>
-                                <div class="col-auto m-t-5 m-b-5">
-                                    <h4>17%</h4>
-                                    <p class="text-danger m-b-0"><i class="ti-hand-point-down m-r-5"></i>Negative</p>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Sale / Purchase</h5>
+                            </div>
+                            <div class="card-block">
+                                <span class="d-block text-c-blue f-24 f-w-600 text-center">365247</span>
+                                <canvas id="feedback-chart" height="267" width="810" style="display: block; height: 89px; width: 270px;"></canvas>
+                                <div class="row justify-content-center m-t-15">
+                                    <div class="col-auto b-r-default m-t-5 m-b-5">
+                                        <h4>83%</h4>
+                                        <p class="text-success m-b-0"><i class="ti-hand-point-up m-r-5"></i>Positive</p>
+                                    </div>
+                                    <div class="col-auto m-t-5 m-b-5">
+                                        <h4>17%</h4>
+                                        <p class="text-danger m-b-0"><i class="ti-hand-point-down m-r-5"></i>Negative</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>*@
                 <!-- tabs card start -->
                 <div class="col-sm-12">
                     <div class="card tabs-card">
@@ -228,7 +227,7 @@
                         }
               });
         });
-             $.ajax({
+             @*$.ajax({
                     cache: false,
                     url: '@Url.Action("TotalSalesPerMonth", "Dashboard")',
                     dataType: "html",
@@ -240,6 +239,106 @@
                     error: function (err) {
                         alert(err.responseText);
                     }
+             });*@
+        var Jan =@ViewBag.JanuarySale;
+
+        var feb = @ViewBag.FaberuarySale;
+        var mar=@ViewBag.March;
+        var apr=@ViewBag.AprilSale;
+        var may =@ViewBag.MaySale ;
+        var jun =@ViewBag.JuneSale ;
+        var july =@ViewBag.JulySale ;
+        var aug =@ViewBag.AugustSale ;
+        var sep =@ViewBag.SeptemberSale ;
+        var oct =@ViewBag.OctoberSale ;
+        var nov=@ViewBag.NovermberSale;
+        var dec=@ViewBag.DecemberSale;
+        // statustic start
+        $(function () {
+            var ctx = document.getElementById('Statistics-chart1').getContext("2d");
+            var greenline = ctx.createLinearGradient(500, 0, 100, 0);
+            greenline.addColorStop(0, '#fd93a8');
+            greenline.addColorStop(1, '#FC6180');
+            var blueline = ctx.createLinearGradient(500, 0, 100, 0);
+            blueline.addColorStop(1, '#56CCF2');
+            blueline.addColorStop(0, '#2F80ED');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+                    datasets: [{
+                        label: "Sale",
+                        borderColor: blueline,
+                        pointBorderColor: blueline,
+                        pointBackgroundColor: blueline,
+                        pointHoverBackgroundColor: blueline,
+                        pointHoverBorderColor: blueline,
+                        pointBorderWidth: 10,
+                        pointHoverRadius: 10,
+                        pointHoverBorderWidth: 1,
+                        pointRadius: 0,
+                        fill: false,
+                        borderWidth: 4,
+                        data: [Jan, feb, mar, apr, may, jun, july, aug, sep, oct, nov, dec]
+                    },
+                    {
+                        label: "Purchase",
+                        borderColor: greenline,
+                        pointBorderColor: greenline,
+                        pointBackgroundColor: greenline,
+                        pointHoverBackgroundColor: greenline,
+                        pointHoverBorderColor: greenline,
+                        pointBorderWidth: 10,
+                        pointHoverRadius: 10,
+                        pointHoverBorderWidth: 1,
+                        pointRadius: 0,
+                        fill: false,
+                        borderWidth: 4,
+                        data: [Jan, feb, mar, apr, may, jun, july, aug, sep, oct, nov, dec]
+                    }
+                    ]
+                },
+                options: {
+                    legend: {
+                        position: "top"
+                    },
+                    tooltips: {
+                        enabled: true,
+                        intersect: !1,
+                        mode: "nearest",
+                        xPadding: 10,
+                        yPadding: 10,
+                        caretPadding: 10
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                fontColor: "rgba(0,0,0,0.5)",
+                                fontStyle: "bold",
+                                beginAtZero: true,
+                                maxTicksLimit: 5,
+                                padding: 20,
+                            },
+                            gridLines: {
+                                drawTicks: false,
+                                display: false
+                            }
+
+                        }],
+                        xAxes: [{
+                            gridLines: {
+                                drawTicks: false,
+                                display: false
+                            },
+                            ticks: {
+                                padding: 20,
+                                fontColor: "rgba(0,0,0,0.5)",
+                                fontStyle: "bold"
+                            }
+                        }]
+                    }
+                }
             });
+        });
     </script>
 }

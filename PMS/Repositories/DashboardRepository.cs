@@ -240,7 +240,9 @@ namespace PMS.Repositories
                     SalesPerMonthViewModel model = new SalesPerMonthViewModel
                     {
                         Amount = d.TotalAmount,
-                        Month = d.SaleDate.Month
+                        Month = d.SaleDate.Month,
+                        Year = d.SaleDate.Year
+
                     };
                     list.Add(model);
                 }

@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PMS.Repositories.IRepositories;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace PMS.Controllers
@@ -35,6 +34,23 @@ namespace PMS.Controllers
         // GET: Dashboard
         public ActionResult Index()
         {
+            var salesperMonths = dashboardRepository.GetAllSalesPerMonth();
+
+            ViewBag.JanuarySale = salesperMonths.Where(x => x.Month == 1 && x.Year == 2022).Select(x => x.Amount).Sum();
+            ViewBag.FaberuarySale = salesperMonths.Where(x => x.Month == 2 && x.Year == 2022).Select(x => x.Amount).Sum();
+            ViewBag.March = salesperMonths.Where(x => x.Month == 3 && x.Year == 2022).Select(x => x.Amount).Sum();
+            ViewBag.AprilSale = salesperMonths.Where(x => x.Month == 4 && x.Year == 2022).Select(x => x.Amount).Sum();
+            ViewBag.MaySale = salesperMonths.Where(x => x.Month == 5).Select(x => x.Amount).Sum();
+            ViewBag.JuneSale = salesperMonths.Where(x => x.Month == 6).Select(x => x.Amount).Sum();
+            ViewBag.JulySale = salesperMonths.Where(x => x.Month == 7).Select(x => x.Amount).Sum();
+            ViewBag.AugustSale = salesperMonths.Where(x => x.Month == 8).Select(x => x.Amount).Sum();
+            ViewBag.SeptemberSale = salesperMonths.Where(x => x.Month == 9).Select(x => x.Amount).Sum();
+            ViewBag.OctoberSale = salesperMonths.Where(x => x.Month == 10).Select(x => x.Amount).Sum();
+            ViewBag.NovermberSale = salesperMonths.Where(x => x.Month == 11).Select(x => x.Amount).Sum();
+            ViewBag.DecemberSale = salesperMonths.Where(x => x.Month == 12).Select(x => x.Amount).Sum();
+
+
+
             var TotalExpenses = dashboardRepository.GetAllExpenses();
             ViewBag.TotalExpenses = TotalExpenses;
 
@@ -140,61 +156,45 @@ namespace PMS.Controllers
             return PartialView("_LatestCurrentStock", stockItems);
         }
 
-        public ActionResult TotalSalesPerMonth()
-        {
-            //PassMonth List Static for now
-            var monthlists = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-            ViewBag.MonthName = Newtonsoft.Json.JsonConvert.SerializeObject(monthlists);
-            var salesperMonths = dashboardRepository.GetAllSalesPerMonth();
-
-            // Method One 
-
-            //ViewBag.other = salesperMonths
-            //   .GroupBy(x => new { group = x.Month }).Select(group => new
-            //   {
-            //       sum = salesperMonths.Select(x => x.Amount).Sum()
-            //   }).ToArray();
-
-            //Method Tow
-            ViewBag.another = (from t in salesperMonths
-                               group t by new
-                               {
-                                   t.Month
-                               }
-                       into g
-                               select g.Sum(a => a.Amount)).ToArray();
-
-            // This was also 
-            //List<decimal> lst = new List<decimal>();
-            //ViewBag.Data = salesperMonths.Select(k => new { k.Month, k.Amount }).GroupBy(x => new { x.Month }, (key, group) => new
-            //{
-            //    Month = key.Month,
-            //    Amount = group.Sum(k => k.Amount)
-            //}).ToArray();
-
-            //Also this 
-
-            //ViewBag.Data = salesperMonths.GroupBy(x => new { x.Month }, (key, group) => new
-            //{
-            //    Amount = group.Sum(k => k.Amount)
-            //}).ToList();
+        //public ActionResult TotalSalesPerMonth()
+        //{
+        //    //PassMonth List Static for now
+        //    var monthlists = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+        //    ViewBag.MonthName = Newtonsoft.Json.JsonConvert.SerializeObject(monthlists);
 
 
-            //Changed to ENumerble 
 
-            //var other= salesperMonths.GroupBy(a => new {
-            //      Month = a.Month
-            //  })
-            //.AsEnumerable()
-            //.Select(q => salesperMonths
-            //{
-            //    Month = q.Key.Month,
-            //    Year = q.Key.Year,
-            //    Total = q.SelectMany(a => a.DetalleVenta).Sum(a => a.Total)
-            //}).OrderByDescending(a => a.Month)
-            //.ToList();
+        //    // This was also 
+        //    //List<decimal> lst = new List<decimal>();
+        //    //ViewBag.Data = salesperMonths.Select(k => new { k.Month, k.Amount }).GroupBy(x => new { x.Month }, (key, group) => new
+        //    //{
+        //    //    Month = key.Month,
+        //    //    Amount = group.Sum(k => k.Amount)
+        //    //}).ToArray();
 
-            return PartialView("_TotalSalesPerMonth");
-        }
+        //    //Also this 
+
+        //    //ViewBag.Data = salesperMonths.GroupBy(x => new { x.Month }, (key, group) => new
+        //    //{
+        //    //    Amount = group.Sum(k => k.Amount)
+        //    //}).ToList();
+
+
+        //    //Changed to ENumerble 
+
+        //    //var other= salesperMonths.GroupBy(a => new {
+        //    //      Month = a.Month
+        //    //  })
+        //    //.AsEnumerable()
+        //    //.Select(q => salesperMonths
+        //    //{
+        //    //    Month = q.Key.Month,
+        //    //    Year = q.Key.Year,
+        //    //    Total = q.SelectMany(a => a.DetalleVenta).Sum(a => a.Total)
+        //    //}).OrderByDescending(a => a.Month)
+        //    //.ToList();
+
+        //    return PartialView("_TotalSalesPerMonth");
+        //}
     }
 }
