@@ -50,7 +50,7 @@
                                         <form method="post" asp-action="Edit" id="frm">
                                             <div class="row">
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Supplier <span class="required">*</span></label>
                                                         <select required class="form-control select2" id="supplierId" style="width: 100%;" asp-for="@Purchase.SupplierId" asp-items="@ViewBag.Suppliers">
@@ -60,7 +60,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type <span class="required">*</span></label>
                                                         <select required class="form-control select2" style="width: 100%;" asp-for="@Purchase.PaymentType" id="pType" disabled>
@@ -73,7 +73,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12" id="bank" style="display: none;">
+                                                <div class="col-lg-3 col-md-3 col-sm-12" id="bank" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Bank <span class="required">*</span></label>
                                                         <select required class="form-control select2" style="width: 100%;" asp-for="@Purchase.BankId" asp-items="@ViewBag.Banks">
@@ -83,7 +83,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Purchase Date <span class="required">*</span> </label>
                                                         <input type="date" asp-for="@Purchase.PurchaseDate" class="form-control" required />
@@ -91,7 +91,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Invoice No <span class="required">*</span></label>
                                                         <input asp-for="@Purchase.InvoiceNo" class="form-control" required autocomplete="off" Placeholder="Invoice No" />
@@ -99,7 +99,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Description</label>
                                                         <textarea asp-for="@Purchase.Description" class="form-control" placeholder="Details about Purchase..."> </textarea>
@@ -111,11 +111,6 @@
                                                     <input type="hidden" asp-for="@Purchase.Id" />
                                                     <input type="hidden" asp-for="@Purchase.CreatedAt" />
                                                     <input type="hidden" asp-for="@Purchase.TransCode" />
-                                                    <hr />
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <h6>Item details</h6>
                                                     <hr />
                                                 </div>
 

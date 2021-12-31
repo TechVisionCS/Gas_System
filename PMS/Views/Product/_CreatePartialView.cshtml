@@ -1,10 +1,10 @@
 ﻿@model Product
 
-<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog">
+<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text text-white">
-                <h5 class="modal-title">Supplier Details</h5>
+                <h5 class="modal-title">Product Details</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" style="color: white;">&times;</span>
                 </button>
@@ -83,6 +83,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-save="modal">Save</button>
+
                         <a asp-action="Index" asp-controller="Product" class="btn btn-primary">Manage</a>
                     </div>
                 </form>
@@ -103,23 +104,5 @@
             dropdownParent: $("#exampleModal")
         });
     });
-
-    @*$('#exampleModal').on('hidden.bs.modal', function (e) {
-
-   var saveUrl = '@Url.Action("Create", "Manufacturer")';
-function CallAjax(actionPath) {
-    $.ajax({
-        url: saveUrl,
-        type: 'POST',
-        success: function (partialView) {
-
-        },
-        error: function () {
-            alert('error');
-        }
-    });
-}
-    });*@
-
 
 </script>

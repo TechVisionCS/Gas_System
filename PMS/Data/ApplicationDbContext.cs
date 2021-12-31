@@ -324,6 +324,32 @@ namespace PMS.Data
                new Designation { Id = 7, Name = "Pharmacist", UserName = "System Defined" }
                );
 
+            builder.Entity<ExpensesCategory>().HasData(
+              new ExpensesCategory { Id = 23, Name = "Rent ", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 22, Name = "Electricity", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 21, Name = "Gas", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 20, Name = "Water", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 19, Name = "Air conditioning", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 18, Name = "Trash", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 17, Name = "Cellphones", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 16, Name = "Office supplies", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 15, Name = "Advertising", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 14, Name = "marketing", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 13, Name = "Website", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 12, Name = "Software", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 11, Name = "Entertainment", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 10, Name = "Business meals", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 9, Name = "travel expenses", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 8, Name = "Vehicle expenses", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 7, Name = "Insurance", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 6, Name = "Health Insurance", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 5, Name = "Meals", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 4, Name = "Bank fees", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 3, Name = "Maintenance", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 2, Name = "repairs", UserName = "System Defined", Status = 1, Description = "" },
+              new ExpensesCategory { Id = 1, Name = "Printing", UserName = "System Defined", Status = 1, Description = "" }
+              );
+
             //lookup
             builder.Entity<Category>();
             builder.Entity<Unit>();

@@ -55,14 +55,7 @@
                                         <form method="post" asp-action="Edit" id="frm">
                                             <div class="row">
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Invoice No<span class="required">*</span></label>
-                                                        <input class="form-control" disabled value="@Sale.Id" />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Customer<span class="required">*</span></label>
                                                         <select required class="form-control select2" id="customerId" style="width: 100%;" asp-for="@Sale.CustomerId" asp-items="@ViewBag.Customers">
@@ -76,8 +69,7 @@
                                                     </div>
                                                 </div>
 
-
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type <span class="required">*</span></label>
                                                         <select required class="form-control select2" style="width: 100%;" asp-for="@Sale.PaymentType" id="pType" disabled>
@@ -89,7 +81,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12" id="bank" style="display: none;">
+                                                <div class="col-lg-3 col-md-3 col-sm-12" id="bank" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Bank <span class="required">*</span></label>
                                                         <select required class="form-control select2" style="width: 100%;" asp-for="@Sale.BankId" asp-items="@ViewBag.Banks">
@@ -99,7 +91,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Sale Date <span class="required">*</span> </label>
                                                         <input type="date" asp-for="@Sale.SaleDate" class="form-control" required />
@@ -107,15 +99,23 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Invoice No<span class="required">*</span></label>
+                                                        <input class="form-control" disabled value="@Sale.Id" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Description</label>
+                                                        <textarea asp-for="@Sale.Description" class="form-control" placeholder="Details about Sale..."> </textarea>
+                                                        <span asp-validation-for="@Sale.Description" class="text-danger"></span>
+                                                    </div>
+                                                </div>
                                                 <div class="col-12">
                                                     <input type="hidden" asp-for="@Sale.Id" />
                                                     <input type="hidden" asp-for="@Sale.CreatedAt" />
                                                     <input type="hidden" asp-for="@Sale.TransCode" />
-                                                    <hr />
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <h6>Item details</h6>
                                                     <hr />
                                                 </div>
 
@@ -272,15 +272,6 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Description</label>
-                                                        <textarea asp-for="@Sale.Description" class="form-control" placeholder="Details about Sale..."> </textarea>
-                                                        <span asp-validation-for="@Sale.Description" class="text-danger"></span>
-                                                    </div>
-                                                </div>
-
                                             </div>
 
                                             <div class="form-group row">

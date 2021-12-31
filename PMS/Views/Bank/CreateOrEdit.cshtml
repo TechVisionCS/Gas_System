@@ -14,6 +14,9 @@
                         <h5 class="m-b-10">Banks Administration</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
+                                <a asp-action="Transaction" asp-controller="Bank" class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-plus"></i> New Transaction
+                                </a>
                                 <a asp-action="Index" asp-controller="Bank"
                                    class="btn btn-mat btn-primary" style="color: white;">
                                     <i class="fa fa-list"></i> Banks List
@@ -69,7 +72,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label">Branch</label>
-                                                <input asp-for="Branch" class="form-control" autocomplete="off"  />
+                                                <input asp-for="Branch" class="form-control" autocomplete="off" />
                                                 <span asp-validation-for="Branch" class="text-danger"></span>
                                             </div>
 
