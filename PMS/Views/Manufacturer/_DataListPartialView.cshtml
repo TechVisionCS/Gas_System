@@ -21,7 +21,7 @@
                         <tr>
                             <td>@sno</td>
                             <td>@Type.Name</td>
-                            <td>@Type.Description</td>
+                            <td style="word-wrap: break-word; white-space: normal;" class="text-wrap">@Type.Description</td>
                             <td>
                                 @if (Type.Status == 1)
                                 {
@@ -37,9 +37,10 @@
                                    data-redirect="@Url.Action("Success", "Manufacturer")" class="text text-primary" style="cursor: pointer;">
                                     <i class="fa fa-edit"></i>
                                 </a>
+                                <span class="d-none">@{sno++;}</span>
                             </td>
                         </tr>
-                        <span class="d-none">@{sno++;}</span>
+
                     }
                 }
             </tbody>

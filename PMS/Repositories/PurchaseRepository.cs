@@ -169,6 +169,11 @@ namespace PMS.Repositories
             if (dbContext != null)
             {
                 var purchase = dbContext.Purchases.FirstOrDefault(x => x.Id == id);
+                if (purchase == null)
+                {
+                    return null;
+                }
+
                 var details = dbContext.PurchaseDetails.Where(x => x.PurchaseId == id).ToList();
 
                 CreatePurchaseViewModel model = new CreatePurchaseViewModel

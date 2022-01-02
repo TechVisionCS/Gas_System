@@ -27,9 +27,9 @@
                                 </select>
                                 <span asp-validation-for="ManufacturerId" class="text-danger"></span>
 
-                                @*<a data-dismiss="modal" class="text text-info" style="color: white; cursor: pointer;">
-                                        <i class="fa fa-plus-circle"></i> Add New Manufecture
-                                    </a>*@
+                                <a asp-action="Index" asp-controller="Manufacturer" class="text text-info" style="color: white; cursor: pointer;">
+                                    <i class="fa fa-building"></i> Manage Manufecturer
+                                </a>
                             </div>
                         </div>
 
@@ -40,10 +40,9 @@
                                     <option selected="selected" value="0">--Select Category--</option>
                                 </select>
                                 <span asp-validation-for="CategoryId" class="text-danger"></span>
-                                @*<a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create","Category")"
-                                       data-redirect="@Url.Action("Create", "Product")" class="text text-info" style="color: white; cursor: pointer;">
-                                        <i class="fa fa-plus-circle"></i> Add New Category
-                                    </a>*@
+                                <a asp-action="Index" asp-controller="Category" class="text text-info" style="color: white; cursor: pointer;">
+                                    <i class="fa fa-list"></i> Manage Category
+                                </a>
                             </div>
                         </div>
 
@@ -58,6 +57,9 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <hr />
                             <label class="control-label">Unit Details</label>
+                            <a asp-action="Index" asp-controller="Unit" class="text text-info" style="color: white; cursor: pointer;">
+                                <i class="fa fa-balance-scale"></i> Manage Unit
+                            </a>
                         </div>
 
                         <div class="col-lg-12 col-md-12 col-sm-12 mb-5">

@@ -105,13 +105,21 @@ namespace PMS.Controllers
         {
             ViewBag.SaleId = saleId;
             var sale = saleRepository.GetSaleForEdit(saleId);
+            if (sale == null)
+            {
+                helperRepository.InfoMessage("Input Invoice Not Found, Please Re-enter Invoice");
+                return RedirectToAction("Index", "Return", new { SaleIdNotFound = saleId });
+            }
+            else
+            {
+                ViewBag.Customers = new SelectList(helperRepository.GetCustomer(), "Id", "Name");
+                ViewBag.Banks = new SelectList(helperRepository.GetBanks(), "Id", "BankName");
+                ViewBag.Products = new SelectList(productRepository.ProductsList(), "Id", "Name");
+                ViewBag.Units = new SelectList(helperRepository.GetUnit(), "Id", "Name");
 
-            ViewBag.Customers = new SelectList(helperRepository.GetCustomer(), "Id", "Name");
-            ViewBag.Banks = new SelectList(helperRepository.GetBanks(), "Id", "BankName");
-            ViewBag.Products = new SelectList(productRepository.ProductsList(), "Id", "Name");
-            ViewBag.Units = new SelectList(helperRepository.GetUnit(), "Id", "Name");
+                return View(sale);
+            }
 
-            return View(sale);
         }
 
         public ActionResult LoadDetails(string batchId)
@@ -155,13 +163,21 @@ namespace PMS.Controllers
 
             }
 
+
             return PartialView("_PurchaseDetailsPartial2", returnDetail);
         }
 
         public ActionResult CreatePurchaseReturn(long purchaseId)
         {
             ViewBag.PurchaseId = purchaseId;
+
             var purchase = purchaseRepository.GetPurchaseForEdit(purchaseId);
+
+            if (purchase == null)
+            {
+                helperRepository.InfoMessage("Purchase Id Not Found, Please Re-enter Invoice");
+                return RedirectToAction("Index", "Return", new { SaleIdNotFound = purchaseId });
+            }
 
             ViewBag.Suppliers = new SelectList(helperRepository.GetAllSupplier(), "Id", "Name");
             ViewBag.Banks = new SelectList(helperRepository.GetBanks(), "Id", "BankName");

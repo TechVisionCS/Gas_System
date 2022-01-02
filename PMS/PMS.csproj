@@ -25,25 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20210306190554_SupplierModelRenamed.cs" />
-    <Compile Remove="Migrations\20210306190554_SupplierModelRenamed.Designer.cs" />
-    <Compile Remove="Migrations\20210306190851_SupplierModelRenamed.cs" />
-    <Compile Remove="Migrations\20210306190851_SupplierModelRenamed.Designer.cs" />
-    <Compile Remove="Migrations\20210306191353_SupplierModelForeignKeysAdded.cs" />
-    <Compile Remove="Migrations\20210306191353_SupplierModelForeignKeysAdded.Designer.cs" />
-    <Compile Remove="Migrations\20210312062909_Update-Database.cs" />
-    <Compile Remove="Migrations\20210312062909_Update-Database.Designer.cs" />
-    <Compile Remove="Migrations\20210323184723_DefaultValueAddedToPurchaseModels.cs" />
-    <Compile Remove="Migrations\20210323184723_DefaultValueAddedToPurchaseModels.Designer.cs" />
-    <Compile Remove="Migrations\20210323184953_DefaultValueAddedToPurchaseModels.cs" />
-    <Compile Remove="Migrations\20210323184953_DefaultValueAddedToPurchaseModels.Designer.cs" />
-    <Compile Remove="Migrations\20210605124139_defaultvalueforexpensecategorycreated.cs" />
-    <Compile Remove="Migrations\20210605124139_defaultvalueforexpensecategorycreated.Designer.cs" />
-    <Compile Remove="Migrations\20210624195144_SetAddedToSaleDetailsMigration.cs" />
-    <Compile Remove="Migrations\20210624195144_SetAddedToSaleDetailsMigration.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Remove="wwwroot\Reports\InvoiceReport.rdlc" />
   </ItemGroup>
 
@@ -430,8 +411,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
   
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.9" />
-  
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
       <PrivateAssets>all</PrivateAssets>

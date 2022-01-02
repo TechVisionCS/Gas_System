@@ -36,20 +36,32 @@ namespace PMS.Controllers
         {
             var salesperMonths = dashboardRepository.GetAllSalesPerMonth();
 
-            ViewBag.JanuarySale = salesperMonths.Where(x => x.Month == 1 && x.Year == 2022).Select(x => x.Amount).Sum();
-            ViewBag.FaberuarySale = salesperMonths.Where(x => x.Month == 2 && x.Year == 2022).Select(x => x.Amount).Sum();
-            ViewBag.March = salesperMonths.Where(x => x.Month == 3 && x.Year == 2022).Select(x => x.Amount).Sum();
-            ViewBag.AprilSale = salesperMonths.Where(x => x.Month == 4 && x.Year == 2022).Select(x => x.Amount).Sum();
-            ViewBag.MaySale = salesperMonths.Where(x => x.Month == 5).Select(x => x.Amount).Sum();
-            ViewBag.JuneSale = salesperMonths.Where(x => x.Month == 6).Select(x => x.Amount).Sum();
-            ViewBag.JulySale = salesperMonths.Where(x => x.Month == 7).Select(x => x.Amount).Sum();
-            ViewBag.AugustSale = salesperMonths.Where(x => x.Month == 8).Select(x => x.Amount).Sum();
-            ViewBag.SeptemberSale = salesperMonths.Where(x => x.Month == 9).Select(x => x.Amount).Sum();
-            ViewBag.OctoberSale = salesperMonths.Where(x => x.Month == 10).Select(x => x.Amount).Sum();
-            ViewBag.NovermberSale = salesperMonths.Where(x => x.Month == 11).Select(x => x.Amount).Sum();
-            ViewBag.DecemberSale = salesperMonths.Where(x => x.Month == 12).Select(x => x.Amount).Sum();
+            ViewBag.JanuarySale = salesperMonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Average();
+            ViewBag.FaberuarySale = salesperMonths.Where(x => x.Month == 2 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.March = salesperMonths.Where(x => x.Month == 3 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.AprilSale = salesperMonths.Where(x => x.Month == 4 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.MaySale = salesperMonths.Where(x => x.Month == 5 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.JuneSale = salesperMonths.Where(x => x.Month == 6 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.JulySale = salesperMonths.Where(x => x.Month == 7 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.AugustSale = salesperMonths.Where(x => x.Month == 8 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.SeptemberSale = salesperMonths.Where(x => x.Month == 9 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.OctoberSale = salesperMonths.Where(x => x.Month == 10 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.NovermberSale = salesperMonths.Where(x => x.Month == 11 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.DecemberSale = salesperMonths.Where(x => x.Month == 12 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
 
-
+            var salesperMPurchaseonths = dashboardRepository.GetAllPurchasePerMonth();
+            ViewBag.JanuarySalep = salesperMPurchaseonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Average();
+            ViewBag.FaberuarySalep = salesperMPurchaseonths.Where(x => x.Month == 2 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.Marchp = salesperMPurchaseonths.Where(x => x.Month == 3 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.AprilSalep = salesperMPurchaseonths.Where(x => x.Month == 4 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.MaySalep = salesperMPurchaseonths.Where(x => x.Month == 5 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.JuneSalep = salesperMPurchaseonths.Where(x => x.Month == 6 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.JulySalep = salesperMPurchaseonths.Where(x => x.Month == 7 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.AugustSalep = salesperMPurchaseonths.Where(x => x.Month == 8 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.SeptemberSalep = salesperMPurchaseonths.Where(x => x.Month == 9 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.OctoberSalep = salesperMPurchaseonths.Where(x => x.Month == 10 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.NovermberSalep = salesperMPurchaseonths.Where(x => x.Month == 11 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
+            ViewBag.DecemberSalep = salesperMPurchaseonths.Where(x => x.Month == 12 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
 
             var TotalExpenses = dashboardRepository.GetAllExpenses();
             ViewBag.TotalExpenses = TotalExpenses;
@@ -62,28 +74,22 @@ namespace PMS.Controllers
             ViewBag.SaleQty = SaleDetails.Select(x => x.Qty).Sum();
             ViewBag.TotalSale = SaleDetails.Select(x => x.TotalSalePrice).Sum();
             ViewBag.TotalSalePerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.TotalSalePrice).Sum();
-            var check = SaleDetails;
-            if (check == null)
+
+            if (SaleDetails == null)
+            {
+                ViewBag.SaleRevenue = (SaleDetails.Select(x => x.Qty).Sum()) * (SaleDetails.Select(x => x.UnitPrice).Average());
+                ViewBag.SaleRevenuePerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average();
+                ViewBag.SaleRevenueQty = SaleDetails.Select(x => x.Qty).Sum();
+                ViewBag.TotalProfit = SaleDetails.Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average() - TotalExpenses;
+                ViewBag.TotalProfitPerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average() - TotalExpenses;
+            }
+            else
             {
                 ViewBag.SaleRevenue = 0;
                 ViewBag.SaleRevenuePerMonth = 0;
                 ViewBag.SaleRevenueQty = 0;
                 ViewBag.TotalProfit = 0;
                 ViewBag.TotalProfitPerMonth = 0;
-            }
-            else
-            {
-                try
-                { //Revenue
-                    ViewBag.SaleRevenue = SaleDetails.Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average();
-                    ViewBag.SaleRevenuePerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average();
-                    ViewBag.SaleRevenueQty = SaleDetails.Select(x => x.Qty).Sum();
-                    ViewBag.TotalProfit = SaleDetails.Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average() - TotalExpenses;
-                    ViewBag.TotalProfitPerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average() - TotalExpenses;
-                }
-                catch
-                {
-                }
             }
 
             //Profit

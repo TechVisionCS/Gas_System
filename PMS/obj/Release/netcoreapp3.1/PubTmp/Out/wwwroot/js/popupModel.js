@@ -11,7 +11,7 @@
                 var url = $(reff).data('url');
 
                 $.get(url).done(function (data) {
-                    debugger;
+/*                    debugger;*/
                     $('#modal-create-edit-user').find(".modal-dialog").html(data);
                     $('#modal-create-edit-user > .modal', data).modal("show");
                 });

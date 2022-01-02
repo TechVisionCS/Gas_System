@@ -40,8 +40,26 @@
                 </a>
             </li>
         </ul>
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Index" asp-controller="Stock">
+                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Stock</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
 
-
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Index" asp-controller="Product">
+                    <span class="pcoded-micon"><i class="fa fa-product-hunt"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Manage Product</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+        <div class="pcoded-navigatio-lavel" data-i18n="nav.cate gory.other"></div>
 
         <ul class="pcoded-item pcoded-left-item">
             <li class="pcoded-hasmenu">
@@ -52,26 +70,31 @@
                 </a>
                 <ul class="pcoded-submenu">
                     <li class=" ">
-                        <a asp-action="Index" asp-controller="Stock">
+                        <a href="#">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Total Stock</span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Total Sele</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                     <li class=" ">
-                        <a asp-action="StockDetailsList" asp-controller="Stock">
+                        <a href="#">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Stock Details</span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Total Purchase</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
-                    <li class=" ">
-                        <a asp-action="Index" asp-controller="Product">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Manage Products</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="fa fa-book"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Accounts</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
                     <li class=" ">
                         <a asp-action="Index" asp-controller="Customer">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -89,8 +112,8 @@
                 </ul>
             </li>
         </ul>
-
         <div class="pcoded-navigatio-lavel" data-i18n="nav.cate gory.other" style="text-transform:uppercase">Administration </div>
+
 
 
         <ul class="pcoded-item pcoded-left-item">

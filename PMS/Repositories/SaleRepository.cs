@@ -171,8 +171,12 @@ namespace PMS.Repositories
             if (dbContext != null)
             {
                 var sale = dbContext.Sales.FirstOrDefault(x => x.Id == id);
-                var details = dbContext.SaleDetails.Where(x => x.SaleId == id).ToList();
+                if (sale == null)
+                {
+                    return null;
+                }
 
+                var details = dbContext.SaleDetails.Where(x => x.SaleId == id).ToList();
                 CreateSaleViewModel model = new CreateSaleViewModel
                 {
                     Sale = sale,

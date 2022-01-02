@@ -42,7 +42,9 @@
                                     <option selected="selected" value="0">--Select Country--</option>
                                 </select>
                                 <span asp-validation-for="Countryid" class="text-danger"></span>
-
+                                <a asp-action="Index" asp-controller="Country" class="text text-info" style="color: white; cursor: pointer;">
+                                    <i class="fa fa-flag"></i> Manage Country
+                                </a>
                             </div>
                         </div>
 
@@ -53,6 +55,9 @@
                                     <option selected="selected" value="0">--Select Province--</option>
                                 </select>
                                 <span asp-validation-for="Provinceid" class="text-danger"></span>
+                                <a asp-action="Index" asp-controller="Province" class="text text-info" style="color: white; cursor: pointer;">
+                                    <i class="fa fa-map"></i> Manage Province
+                                </a>
                             </div>
                         </div>
 

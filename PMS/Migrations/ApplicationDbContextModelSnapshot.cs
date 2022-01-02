@@ -1732,6 +1732,192 @@ namespace PMS.Migrations
                         .IsUnique();
 
                     b.ToTable("wms_expense_category_tbl");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Description = "",
+                            Name = "Rent",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            Description = "",
+                            Name = "Electricity",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            Description = "",
+                            Name = "Gas",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            Description = "",
+                            Name = "Water",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 5L,
+                            Description = "",
+                            Name = "Air conditioning",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 6L,
+                            Description = "",
+                            Name = "Trash",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 7L,
+                            Description = "",
+                            Name = "Cellphones",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 8L,
+                            Description = "",
+                            Name = "Office supplies",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 9L,
+                            Description = "",
+                            Name = "Advertising",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 10L,
+                            Description = "",
+                            Name = "marketing",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 11L,
+                            Description = "",
+                            Name = "Website",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 12L,
+                            Description = "",
+                            Name = "Software",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 13L,
+                            Description = "",
+                            Name = "Entertainment",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 14L,
+                            Description = "",
+                            Name = "Business meals",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 15L,
+                            Description = "",
+                            Name = "travel expenses",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 16L,
+                            Description = "",
+                            Name = "Vehicle expenses",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 17L,
+                            Description = "",
+                            Name = "Insurance",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 18L,
+                            Description = "",
+                            Name = "Health Insurance",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 19L,
+                            Description = "",
+                            Name = "Meals",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 20L,
+                            Description = "",
+                            Name = "Bank fees",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 21L,
+                            Description = "",
+                            Name = "Maintenance",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 22L,
+                            Description = "",
+                            Name = "repairs",
+                            Status = 1,
+                            UserName = "System Defined"
+                        },
+                        new
+                        {
+                            Id = 23L,
+                            Description = "",
+                            Name = "Printing",
+                            Status = 1,
+                            UserName = "System Defined"
+                        });
                 });
 
             modelBuilder.Entity("PMS.Models.Lookup.Manufacturer", b =>
@@ -1776,7 +1962,7 @@ namespace PMS.Migrations
                         {
                             Id = 1L,
                             Description = "Turkey",
-                            Name = "2A Muhendislik San. - Tur ",
+                            Name = "2A Muhendislik San.- Tur ",
                             Status = 1,
                             UserName = "System_Populated"
                         },

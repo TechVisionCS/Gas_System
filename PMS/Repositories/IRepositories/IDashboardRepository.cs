@@ -9,6 +9,7 @@ namespace PMS.Repositories.IRepositories
         IEnumerable<SaleDetailsViewModel> GetAllSaleDetails();
         IEnumerable<PurchaseDetailsViewModel> GetAllPurchaseDetails();
         IEnumerable<SalesPerMonthViewModel> GetAllSalesPerMonth();
+        IEnumerable<SalesPerMonthViewModel> GetAllPurchasePerMonth();
 
         // void MonthSales(out string Months, out string Amount);
         long GetAllProducts();

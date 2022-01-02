@@ -29,12 +29,6 @@ namespace PMS.Repositories
                 {
                     var kgunits = dbContext.Units.FirstOrDefault(x => x.Id == d.UnitId).KgAmount;
                     float QtyUnits = (float)d.Qty * kgunits;
-                    //3*1=3
-                    //3*1=3
-                    //2*1=2
-                    //1*1=1 = 3+3+2+1 = 9 
-                    //100 * 0.59 = 59 
-                    // 59+9= 68
 
                     SaleDetailsViewModel model = new SaleDetailsViewModel
                     {
@@ -242,6 +236,29 @@ namespace PMS.Repositories
                         Amount = d.TotalAmount,
                         Month = d.SaleDate.Month,
                         Year = d.SaleDate.Year
+
+                    };
+                    list.Add(model);
+                }
+                return list;
+            }
+            return null;
+        }
+
+        //i leaved the salepermonthviewmodel same VM for purchase
+        public IEnumerable<SalesPerMonthViewModel> GetAllPurchasePerMonth()
+        {
+            if (dbContext != null)
+            {
+                List<SalesPerMonthViewModel> list = new List<SalesPerMonthViewModel>();
+                var details = dbContext.Purchases.Where(x => x.DeletedAt == null).ToList();
+                foreach (var d in details)
+                {
+                    SalesPerMonthViewModel model = new SalesPerMonthViewModel
+                    {
+                        Amount = d.TotalAmount,
+                        Month = d.PurchaseDate.Month,
+                        Year = d.PurchaseDate.Year
 
                     };
                     list.Add(model);

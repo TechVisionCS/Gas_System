@@ -134,15 +134,22 @@ namespace PMS
                             new CultureInfo("ps"),
                             new CultureInfo("da")
                         };
+
                     opt.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en");
+
                     opt.SupportedCultures = SupportedCultures;
+
                     opt.SupportedUICultures = SupportedCultures;
                 });
+
             services.AddMvc().AddXmlSerializerFormatters();
+
             services.AddMvc(o =>
             {
                 var policy = new AuthorizationPolicyBuilder()
+
                     .RequireAuthenticatedUser()
+
                     .Build();
                 o.Filters.Add(new AuthorizeFilter(policy));
             });
@@ -150,11 +157,14 @@ namespace PMS
             services.AddMvc().AddNToastNotifyToastr(new ToastrOptions()
             {
                 ProgressBar = true,
+
                 PositionClass = ToastPositions.TopCenter
             });
             services.AddDistributedMemoryCache();
+
             services.AddControllersWithViews();
-            services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -174,15 +184,21 @@ namespace PMS
             }
             ///db.Database.EnsureCreated();
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
+
             app.UseCors();
 
             app.UseAuthentication();
+
             app.UseAuthorization();
+
             app.UseSession();
+
             app.UseStatusCodePages();
+
             app.UseNToastNotify();
 
             app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
