@@ -99,5 +99,11 @@
         public const string Wastage = "wms_wastage_tbl";
         public const string WastageDetails = "wms_wastage_details_tbl";
 
+        public const string Saraf = "wms_saraf_tbl";
+        public const string SarafLedger = "wms_saraf_leger_tbl";
+        public const string SarafTransaction = "wms_saraf_transaction_tbl";
+
+
+
     }
 }

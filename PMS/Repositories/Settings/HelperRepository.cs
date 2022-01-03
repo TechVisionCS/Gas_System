@@ -95,6 +95,11 @@ namespace PMS.Repositories
             return dbContext.Banks.OrderByDescending(x => x.Id).Where(x => x.DeletedAt == null).ToList();
         }
 
+        public IEnumerable<Saraf> GetSarafs()
+        {
+            return dbContext.Sarafs.OrderByDescending(x => x.Id).Where(x => x.DeletedAt == null).ToList();
+        }
+
         public IEnumerable<ProductDropDownListViewModel> GetProducts()
         {
             if (dbContext != null)
@@ -497,8 +502,33 @@ namespace PMS.Repositories
             return msg;
         }
 
+        //Saraf Massages
 
+        public string SarafDebitMsg(string voucherId, decimal amount)
+        {
+            var msg = "Saraf Account Debited with " + amount + " amount from Saraf Transaction " + voucherId;
+            return msg;
+        }
 
+        public string SarafCreditMsg(string voucherId, decimal amount)
+        {
+            var msg = "Saraf Account Credited with " + amount + " amount from Saraf Transaction " + voucherId;
+            return msg;
+        }
+
+        public string SarafCashDebitMsg(string voucherId, decimal amount)
+        {
+            var msg = "Cash Debited with " + amount + " amount from Saraf Transaction " + voucherId;
+            return msg;
+        }
+
+        public string SarafCashCreditMsg(string voucherId, decimal amount)
+        {
+            var msg = "Cash Credited with " + amount + " amount from Saraf Transaction " + voucherId;
+            return msg;
+        }
+
+        //Bank Massages
         public string BankDebitMsg(string voucherId, decimal amount)
         {
             var msg = "Bank Account Debited with " + amount + " amount from Bank Transaction " + voucherId;

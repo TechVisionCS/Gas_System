@@ -7421,3 +7421,9 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.csproj.CopyCom
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.dll
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.pdb
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.genruntimeconfig.cache
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\Index.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\Details.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\CreateOrEdit.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\GetAllLedgers.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\GetLedgerById.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\Transaction.cshtml.g.cs

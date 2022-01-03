@@ -1,4 +1,5 @@
 ﻿using PMS.Data.Enums;
+using PMS.Models;
 using System;
 
 namespace PMS.ViewModels.PurchaseViewModels
@@ -9,6 +10,7 @@ namespace PMS.ViewModels.PurchaseViewModels
         public long SNo { get; set; }
         public string PurchaseDate { get; set; }
         public string InvoiceNo { get; set; }
+        public Supplier Supplier { get; set; }
         public long SupplierId { get; set; }
         public string SupplierName { get; set; }
         public int PaymentType { get; set; }

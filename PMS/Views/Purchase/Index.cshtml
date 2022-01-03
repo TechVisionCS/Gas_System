@@ -71,12 +71,16 @@
                                         {
                                             @foreach (var m in Model)
                                             {
+
                                                 <tr>
                                                     <td>@m.Id</td>
-                                                    <td>@m.PurchaseDate</td>
+                                                    @{
+                                                        string iDate = m.PurchaseDate;
+                                                        DateTime oDate = Convert.ToDateTime(iDate);
+                                                    }
+                                                    <td>@oDate.Date.ToShortDateString()</td>
 
                                                     <td>@m.InvoiceNo</td>
-
                                                     <td>
                                                         <a asp-action="Details" asp-controller="Supplier" asp-route-id="@m.SupplierId" class="text text-primary">
                                                             @m.SupplierName

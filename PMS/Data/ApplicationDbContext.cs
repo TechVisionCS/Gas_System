@@ -50,6 +50,7 @@ namespace PMS.Data
         public DbSet<CustomerReceive> CustomerReceives { get; set; }
         public DbSet<CustomerAdvanced> CustomerAdvanceds { get; set; }
         public DbSet<Bank> Banks { get; set; }
+        public DbSet<Saraf> Sarafs { get; set; }
 
         //Ledger bankTransiction
         public DbSet<PartnerLedger> PartnerLedgers { get; set; }
@@ -59,6 +60,8 @@ namespace PMS.Data
         public DbSet<BankLedger> BankLedgers { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<BankTransaction> BankTransactions { get; set; }
+        public DbSet<SarafTransaction> SarafTransactions { get; set; }
+        public DbSet<SarafLedger> SarafLedgers { get; set; }
 
         //Purchase
         public DbSet<Purchase> Purchases { get; set; }
@@ -528,6 +531,9 @@ namespace PMS.Data
             builder.Entity<OfficeLoanPayment>().ToTable(TablesConstants.OfficeLoanPayment);
             builder.Entity<OfficeLoanReceive>().ToTable(TablesConstants.OfficeLoanReceive);
             builder.Entity<OfficeLoanLedger>().ToTable(TablesConstants.OfficeLoanLedger);
+            builder.Entity<Saraf>().ToTable(TablesConstants.Saraf);
+            builder.Entity<SarafLedger>().ToTable(TablesConstants.SarafLedger);
+            builder.Entity<SarafTransaction>().ToTable(TablesConstants.SarafTransaction);
 
             //Return
             builder.Entity<Return>().ToTable(TablesConstants.Return);

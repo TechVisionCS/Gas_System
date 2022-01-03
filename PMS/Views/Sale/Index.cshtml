@@ -70,10 +70,15 @@
                                         {
                                             @foreach (var m in Model)
                                             {
+
                                                 <tr>
                                                     <td>@sno</td>
                                                     <td>@m.Id</td>
-                                                    <td>@m.SaleDate</td>
+                                                    @{
+                                                        string iDate = m.SaleDate;
+                                                        DateTime oDate = Convert.ToDateTime(iDate);
+                                                    }
+                                                    <td>@oDate.Date.ToShortDateString()</td>
                                                     <td>
                                                         <a asp-action="Details" asp-controller="Customer" asp-route-id="@m.CustomerId" class="text text-primary">
                                                             @m.CustomerName

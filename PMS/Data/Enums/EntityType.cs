@@ -9,6 +9,7 @@
         Expense = 4,
         PersonLoan = 5,
         OfficeLoan = 6,
-        Employee = 7
+        Employee = 7,
+        Saraf = 8
     }
 }

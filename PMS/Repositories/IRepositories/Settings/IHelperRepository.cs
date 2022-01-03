@@ -31,6 +31,7 @@ namespace PMS.Repositories.IRepositories
         string getExpenseCategoryName(long id);
 
         IEnumerable<Bank> GetBanks();
+        IEnumerable<Saraf> GetSarafs();
         string GetCurrentUserId();
         string GetUserName(string userId);
 
@@ -108,6 +109,14 @@ namespace PMS.Repositories.IRepositories
         string BankCreditMsg(string voucherId, decimal amount);
         string BankCashDebitMsg(string voucherId, decimal amount);
         string BankCashCreditMsg(string voucherId, decimal amount);
+
+        //Saraf Messages
+
+        string SarafDebitMsg(string voucherId, decimal amount);
+        string SarafCreditMsg(string voucherId, decimal amount);
+        string SarafCashDebitMsg(string voucherId, decimal amount);
+        string SarafCashCreditMsg(string voucherId, decimal amount);
+
 
         // Stock Details Description
 

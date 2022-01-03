@@ -283,6 +283,56 @@ namespace PMS.Repositories
             return null;
         }
 
+        //saraf ledgers
+        public SarafLedger AddSarafLedger(SarafLedger sarafLedger)
+        {
+            if (dbContext != null)
+            {
+                sarafLedger.CreatedAt = DateTime.Now;
+                sarafLedger.UpdatedAt = DateTime.Now;
+                sarafLedger.UserId = pmsHelper.GetCurrentUserId();
+                sarafLedger.UserName = pmsHelper.GetUserName(pmsHelper.GetCurrentUserId());
+
+                dbContext.SarafLedgers.Add(sarafLedger);
+                dbContext.SaveChanges();
+
+                return sarafLedger;
+            }
+
+            return null;
+        }
+
+        public SarafLedger UpdateSarafLedger(SarafLedger sarafLedger)
+        {
+            if (dbContext != null)
+            {
+                sarafLedger.CreatedAt = sarafLedger.CreatedAt;
+                sarafLedger.UpdatedAt = DateTime.Now;
+                sarafLedger.UserId = pmsHelper.GetCurrentUserId();
+                sarafLedger.UserName = pmsHelper.GetUserName(pmsHelper.GetCurrentUserId());
+
+                dbContext.SarafLedgers.Update(sarafLedger);
+                dbContext.SaveChanges();
+
+                return sarafLedger;
+            }
+
+            return null;
+        }
+
+        public SarafLedger DeleteSarafLedger(SarafLedger sarafLedger)
+        {
+            if (dbContext != null)
+            {
+                dbContext.SarafLedgers.Remove(sarafLedger);
+                dbContext.SaveChanges();
+
+                return sarafLedger;
+            }
+
+            return null;
+        }
+
         public PersonalLoanLedger AddPersonalLoanLedger(PersonalLoanLedger personalLoanLedger)
         {
             if (dbContext != null)

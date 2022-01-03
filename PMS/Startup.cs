@@ -70,8 +70,7 @@ namespace PMS
 
             services.AddScoped<IReturnRepository, ReturnRepository>();
             services.AddScoped<IWastageRepository, WastageRepository>();
-
-
+            services.AddScoped<ISarafRepository, SarafRepository>();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

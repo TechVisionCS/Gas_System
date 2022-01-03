@@ -66,7 +66,11 @@
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <h6>Purchase Date</h6>
-                                    <p>@Purchase.PurchaseDate</p>
+                                    @{
+                                        string iDate = Purchase.PurchaseDate;
+                                        DateTime oDate = Convert.ToDateTime(iDate);
+                                    }
+                                    <p>@oDate.Date.ToShortDateString();</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6">

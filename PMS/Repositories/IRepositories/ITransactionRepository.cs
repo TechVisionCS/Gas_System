@@ -26,6 +26,11 @@ namespace PMS.Repositories.IRepositories
         BankLedger UpdateBankLedger(BankLedger bankLedger);
         BankLedger DeleteBankLedger(BankLedger bankLedger);
 
+        //Saraf Ledger
+        SarafLedger AddSarafLedger(SarafLedger sarafLedger);
+        SarafLedger UpdateSarafLedger(SarafLedger sarafLedger);
+        SarafLedger DeleteSarafLedger(SarafLedger sarafLedger);
+
         //Personal Loan   
         PersonalLoanLedger AddPersonalLoanLedger(PersonalLoanLedger personalLoanLedger);
         PersonalLoanLedger UpdatePersonalLoanLedger(PersonalLoanLedger personalLoanLedger);

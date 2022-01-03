@@ -24,5 +24,6 @@
         PersonalLoanReceive = 19,
         Return = 20,
         EmployeeSalary = 21,
+        SarafBalance = 22
     }
 }

@@ -151,7 +151,7 @@
                                                                             <td>@m.Date</td>
                                                                             <td>@m.Description</td>
                                                                             <td>
-                                                                                @if(m.TransType == 0)
+                                                                                @if (m.TransType == 0)
                                                                                 {
                                                                                     <span>Debit</span>
                                                                                 }
@@ -161,13 +161,13 @@
                                                                                 }
                                                                             </td>
                                                                             <td>
-                                                                            @m.Amount.ToString("N")
+                                                                                @m.Amount.ToString("N")
                                                                                 <span class="d-none">
                                                                                     @{ sno++; }
                                                                                 </span>
                                                                             </td>
-                                                                    </tr>
-                                                                }
+                                                                        </tr>
+                                                                    }
                                                                 }
                                                             </tbody>
                                                         </table>
