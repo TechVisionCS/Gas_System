@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMS.Data.Enums;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -36,5 +37,8 @@ namespace PMS.Models.Sale
         public decimal DueAmount { get; set; }
         public string Description { get; set; }
         public string TransCode { get; set; }
+
+        [EnumDataType(typeof(SaleType))]
+        public SaleType SaleType { get; set; }
     }
 }

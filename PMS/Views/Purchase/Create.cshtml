@@ -294,7 +294,7 @@
 @section Scripts
 {
     <script>
-
+        document.getElementById('Purchase_PurchaseDate').valueAsDate = new Date();
         $(document).ready(function () {
             $("#HiddenTriggerForDropDown").trigger('click');
         });
@@ -303,7 +303,6 @@
             $("#sbm_flg").val("1");
             $("#frm").submit();
         });
-
 
         $("#pType").on('change', function () {
             if ($(this).val() == "2") {

@@ -430,8 +430,8 @@ namespace PMS.Repositories
                     long pid = 0;
 
                     string address = "";
-                    string country = "";
-                    string province = "";
+                    string country = "Country Not Register";
+                    string province = "Province Not Register";
                     string addr = "";
 
                     string entityName = "WALKING CUSTOMER";
@@ -439,20 +439,19 @@ namespace PMS.Repositories
 
                     if (m.EntityId != 0)
                     {
+
                         cid = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Countryid;
                         pid = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid;
 
-                        country = helperRepository.GetCountry().FirstOrDefault(x => x.Id == cid).Name;
-                        province = helperRepository.GetProvinces().FirstOrDefault(x => x.Id == pid).Name;
-                        addr = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Address;
+                        country = helperRepository.GetCountry().FirstOrDefault(a => a.Id == dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Countryid)?.Name;
+                        province = helperRepository.GetProvinces().FirstOrDefault(a => a.Id == dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid)?.Name;
 
+                        addr = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Address;
                         entityName = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Name;
                         entityPhone = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Phone;
                     }
 
-
                     address = addr + ", " + province + ", " + country;
-
 
                     CustomerLedgerViewModel model = new CustomerLedgerViewModel
                     {
@@ -1216,10 +1215,6 @@ namespace PMS.Repositories
 
             }
             return null;
-
         }
-
-
-
     }
 }

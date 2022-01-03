@@ -10,6 +10,7 @@ using PMS.Repositories.IRepositories;
 using PMS.ViewModels.SaleViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PMS.Controllers
 {
@@ -45,16 +46,24 @@ namespace PMS.Controllers
             this.bankRepository = bankRepository;
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
         }
-        // GET: SaleController 
+
+        // GET: SController 
         public ActionResult Index()
         {
             var sales = saleRepository.GetAllSales();
             return View(sales);
         }
 
+        public ActionResult SaleBySaleType(long saletype)
+        {
+            var salesbyType = saleRepository.GetAllSales().Where(x => x.SaleType == saletype).ToList();
+            return View("Index", salesbyType);
+        }
+
         // GET: SaleController/Details/5
         public ActionResult Details(long id)
         {
+
             var sale = saleRepository.GetSale(id);
             return View(sale);
         }

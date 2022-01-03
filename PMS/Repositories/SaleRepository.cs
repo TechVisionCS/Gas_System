@@ -48,7 +48,7 @@ namespace PMS.Repositories
             if (dbContext != null)
             {
                 List<SaleViewModel> list = new List<SaleViewModel>();
-                var models = dbContext.Sales.Where(x => x.DeletedAt == null).OrderByDescending(x => x.Id).ToList();
+                var models = dbContext.Sales.Where(x => x.DeletedAt == null).ToList();
                 long sno = 1;
 
                 foreach (var m in models)
@@ -56,13 +56,11 @@ namespace PMS.Repositories
                     var bId = (long)0;
                     var bName = "";
 
-
                     if (m.PaymentType != 1)
                     {
                         bId = m.BankId;
                         bName = dbContext.Banks.FirstOrDefault(x => x.Id == m.BankId).BankName;
                     }
-
 
                     var cName = "WALKING CUSTOMER";
                     Customer customer = new Customer();
@@ -73,11 +71,11 @@ namespace PMS.Repositories
                         customer = dbContext.Customers.FirstOrDefault(x => x.Id == m.CustomerId);
                     }
 
-
                     SaleViewModel model = new SaleViewModel
                     {
                         Id = m.Id,
                         SNo = sno++,
+                        SaleType = (int)m.SaleType,
                         SaleDate = m.SaleDate.Date.ToString(),
                         CustomerId = m.CustomerId,
                         CustomerName = cName,
@@ -99,11 +97,9 @@ namespace PMS.Repositories
                         DeletedAt = m.DeletedAt,
                         UserId = m.UserId,
                         UserName = pmsHelper.GetUserName(m.UserId)
-
                     };
 
                     sno++;
-
                     list.Add(model);
                 }
 

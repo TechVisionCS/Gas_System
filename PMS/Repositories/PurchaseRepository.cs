@@ -55,7 +55,7 @@ namespace PMS.Repositories
                     var ptname = "";
                     var bId = (long)0;
                     var bName = "";
-
+                    var sName = "";
                     if (m.PurchaseType == Data.Enums.PurchaseType.General)
                     {
                         ptname = "General";
@@ -70,7 +70,13 @@ namespace PMS.Repositories
                         bId = m.BankId;
                         bName = dbContext.Banks.FirstOrDefault(x => x.Id == m.BankId).BankName;
                     }
+                    Supplier supplier = new Supplier();
 
+                    if (m.SupplierId != 0)
+                    {
+                        sName = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.SupplierId).Name;
+                        supplier = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.SupplierId);
+                    }
                     PurchaseViewModel model = new PurchaseViewModel
                     {
                         Id = m.Id,
@@ -78,7 +84,8 @@ namespace PMS.Repositories
                         PurchaseDate = m.PurchaseDate.Date.ToString(),
                         InvoiceNo = m.InvoiceNo,
                         SupplierId = m.SupplierId,
-                        SupplierName = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.SupplierId).Name,
+                        SupplierName = sName,
+                        Supplier = supplier,
                         PaymentType = m.PaymentType,
                         BankId = bId,
                         BankName = bName,

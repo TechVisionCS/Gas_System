@@ -8,7 +8,11 @@
 }
 
 <div id="PlaceHolderHere"></div>
-
+<style>
+    #totalPercentDiscounts, #FixedAmounts, #amountlable {
+        display: none;
+    }
+</style>
 <div class="main-body">
     <div class="page-wrapper">
         <div class="row">
@@ -73,6 +77,16 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Sale Type<span class="required">*</span></label>
+                                                        <select class="form-control select2" style="width: 100%;" asp-for="@Sale.SaleType" asp-items="Html.GetEnumSelectList<SaleType>()">
+                                                            <option selected="selected" value="">--Select Sale Type--</option>
+                                                        </select>
+                                                        <span asp-validation-for="@Sale.SaleType" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-lg-3 col-md-3 col-sm-12 d-none">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type <span class="required">*</span></label>
@@ -91,10 +105,6 @@
                                                             <option selected="selected" value="0">--Select Bank--</option>
                                                         </select>
                                                         <span asp-validation-for="@Sale.BankId" class="text-danger"></span>
-                                                        @*<a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreateBankModel")"
-                                                               data-redirect="@Url.Action("Create", "Sale")" class="text text-info" style="color: white; cursor: pointer;">
-                                                                <i class="fa fa-plus"></i> Add New Bank
-                                                            </a>*@
                                                     </div>
                                                 </div>
 
@@ -175,13 +185,28 @@
                                                             </tr>
 
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">Total Discount (%)</td>
-                                                                <td>
-                                                                    <input type="hidden" step="any" asp-for="@Sale.DiscountAmount" value="0" id="totalDiscount" class="form-control calc" />
-                                                                    <input type="number" step="any" value="0" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
+                                                                <td colspan="4" class="@valueDefined">
+
+                                                                    <div id="input-type" class="row float-lg-right">
+                                                                        <label for="input-type">Select Discount Type:</label>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="TextBoxCheck" value="0" onClick="show()" /> Discount
+                                                                        </label>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> Fixed
+                                                                        </label>
+                                                                    </div>
                                                                 </td>
                                                                 <td>
-                                                                    <p class="text text-info">Amount: <span id="discAmount">0</span></p>
+                                                                    <input type="hidden" step="any" asp-for="@Sale.DiscountAmount" value="0" id="totalDiscount" class="form-control calc" />
+                                                                    <div id='totalPercentDiscounts'>
+                                                                        <input type="number" step="any" value="0" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
+
+                                                                    </div>
+                                                                    <div id='FixedAmounts'> <input type="number" step="any" value="0" id="FixedAmount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" /></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div id="amountlable"> <p class="text text-info">Amount: <span id="discAmount">0</span></p></div>
                                                                 </td>
                                                             </tr>
 
@@ -364,10 +389,8 @@
             var discper = $("#totalPercentDiscount").val();
 
             var res = (subtotal * discper) / 100;
-
             $("#totalDiscount").val(res);
             $("#discAmount").text(res);
-
         }
 
            function TriggerDropDownList() {
@@ -406,8 +429,26 @@
 
                             }
                      });*@
-           }
+        }
 
+        function show() {
+            var TextBoxCheck = document.getElementsByName('TextBoxCheck');
+            var totalPercentDiscount = document.getElementById("totalPercentDiscounts");
+            var FixedAmount = document.getElementById("FixedAmounts");
+            var amountlable = document.getElementById("amountlable");
+
+            if (TextBoxCheck[0].checked) {
+
+                totalPercentDiscount.style.display = 'inline-block';
+                amountlable.style.display = 'inline-block';
+                FixedAmount.style.display = 'none';
+            } else {
+                totalPercentDiscount.style.display = 'none';
+                amountlable.style.display = 'none';
+                FixedAmount.style.display = 'inline-block';
+
+            }
+        }
     </script>
 
     <script src="~/js/saleFormValidation.js"></script>

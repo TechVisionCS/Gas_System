@@ -47,6 +47,12 @@ namespace PMS.Controllers
         // GET: CustomerController/Details/5
         public ActionResult Details(long id)
         {
+            if (id == 0)
+            {
+                helperRepository.InfoMessage("Walking cusotmer recorde is not avalible");
+                return RedirectToAction("Index", "Sale", new { CustomerIdNotFound = id });
+            }
+
             var customerDetails = customerRepository.GetCustomerDetails(id);
             return View(customerDetails);
         }

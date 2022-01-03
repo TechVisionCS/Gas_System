@@ -58,6 +58,7 @@
                                             <th>Invoice No.</th>
                                             <th>Sale Date</th>
                                             <th>Customer</th>
+                                            <th>Sale Type</th>
                                             <th>Total Amount</th>
                                             <th>Sale Details</th>
                                             <th>Actions</th>
@@ -83,6 +84,26 @@
                                                         <a asp-action="Details" asp-controller="Customer" asp-route-id="@m.CustomerId" class="text text-primary">
                                                             @m.CustomerName
                                                         </a>
+                                                    </td>
+                                                    <td>
+                                                        @if (m.SaleType == 1)
+                                                        {
+                                                            <a asp-action="SaleBySaleType" asp-controller="Sale" asp-route-saletype="@m.SaleType" class="text text-primary">
+                                                                <span class="badge badge-primary">Whole Sale</span>
+                                                            </a>
+
+                                                        }
+                                                        else if (m.SaleType == 2)
+                                                        {
+                                                            <a asp-action="SaleBySaleType" asp-controller="Sale" asp-route-saletype="@m.SaleType" class="text text-primary">
+                                                                <span class="badge badge-info">Retails</span>
+                                                            </a>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="badge badge-warning">None</span>
+                                                        }
                                                     </td>
                                                     <td>@m.TotalAmount.ToString("N")</td>
                                                     <td>

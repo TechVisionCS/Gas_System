@@ -428,8 +428,9 @@ namespace PMS.Repositories
                     long pid = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid;
 
                     string address = "";
-                    string country = helperRepository.GetCountry().FirstOrDefault(x => x.Id == cid).Name;
-                    string province = helperRepository.GetProvinces().FirstOrDefault(x => x.Id == pid).Name;
+                    string country = helperRepository.GetCountry().FirstOrDefault(a => a.Id == dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Countryid)?.Name;
+                    string province = helperRepository.GetProvinces().FirstOrDefault(a => a.Id == dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid)?.Name;
+
                     string addr = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Address;
 
                     address = addr + ", " + province + ", " + country;

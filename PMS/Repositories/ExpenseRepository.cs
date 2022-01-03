@@ -419,7 +419,7 @@ namespace PMS.Repositories
             if (dbContext != null)
             {
                 List<ExpenseViewModel> list = new List<ExpenseViewModel>();
-                var ModelList = dbContext.Expenses.OrderBy(n => n.Date).Where(x => x.DeletedAt == null).ToList();
+                var ModelList = dbContext.Expenses.Where(x => x.DeletedAt == null).ToList();
                 long sno = 1;
                 var bankName = "";
                 var ExpenseCategory = "";
