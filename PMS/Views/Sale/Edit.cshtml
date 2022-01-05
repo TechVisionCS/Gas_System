@@ -8,7 +8,11 @@
 }
 
 <div id="PlaceHolderHere"></div>
-
+<style>
+    #DiscountTextBoxDiv, #FixedAmountTextBoxDiv, #amountlable {
+        display: none;
+    }
+</style>
 
 <div class="main-body">
     <div class="page-wrapper">
@@ -228,18 +232,45 @@
                                                             </tr>
 
                                                             <tr>
+                                                                <td colspan="4" class="@valueDefined">
+                                                                    <div class="form-group">
+                                                                        <div id="input-type" class="row float-lg-right">
+                                                                            <label for="input-type">Select Discount Type &nbsp;&nbsp; </label>
+                                                                            <label class="radio-inline form-check-inline">
+                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" /> By Discount
+                                                                            </label>
+                                                                            <label class="radio-inline form-check-inline">
+                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> By Fixed Amount
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td>
+                                                                    <div id='DiscountTextBoxDiv'>
+                                                                        @{
+                                                                            var totalDis = Sale.DiscountAmount;
+                                                                            var subTotal = Sale.SubTotal;
+                                                                            decimal disc = (100 * totalDis) / subTotal;
+                                                                        }
+                                                                        <input type="number" step="any" value="@disc" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
+                                                                    </div>
+                                                                    <div id='FixedAmountTextBoxDiv'>
+                                                                        <input step="any" asp-for="@Sale.DiscountAmount" id="totalDiscount" class="form-control calc" />
+                                                                    </div>
+                                                                </td>
+
+                                                                <td>
+                                                                    <div id="AmountLabelForDiscount">  <p class="text text-info">Amount: <span id="discAmount">@Sale.DiscountAmount</span></p></div>
+                                                                </td>
+
+                                                            </tr>
+
+                                                            <tr>
                                                                 <td colspan="4" class="@valueDefined">Total Discount (%)</td>
                                                                 <td>
-                                                                    <input type="hidden" step="any" asp-for="@Sale.DiscountAmount" id="totalDiscount" class="form-control calc" />
-                                                                    @{
-                                                                        var totalDis = Sale.DiscountAmount;
-                                                                        var subTotal = Sale.SubTotal;
-                                                                        decimal disc = (100 * totalDis) / subTotal;
-                                                                    }
-                                                                    <input type="number" step="any" value="@disc" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
                                                                 </td>
                                                                 <td>
-                                                                    <p class="text text-info">Amount: <span id="discAmount">@Sale.DiscountAmount</span></p>
                                                                 </td>
                                                             </tr>
 
@@ -435,6 +466,30 @@
         });
     }
 
+        DiscountTextBoxDiv.style.display = 'inline-block';
+        AmountLabelForDiscount.style.display = 'inline-block';
+
+        function show() {
+            var TextBoxCheck = document.getElementsByName('TextBoxCheck');
+            var DiscountTextBoxDiv = document.getElementById("DiscountTextBoxDiv");
+
+            var FixedAmountTextBoxDiv = document.getElementById("FixedAmountTextBoxDiv");
+            var AmountLabelForDiscount = document.getElementById("AmountLabelForDiscount");
+
+
+
+            if (TextBoxCheck[0].checked) {
+
+                DiscountTextBoxDiv.style.display = 'inline-block';
+                AmountLabelForDiscount.style.display = 'inline-block';
+                FixedAmountTextBoxDiv.style.display = 'none';
+            } else {
+                DiscountTextBoxDiv.style.display = 'none';
+                AmountLabelForDiscount.style.display = 'none';
+                FixedAmountTextBoxDiv.style.display = 'inline-block';
+
+            }
+        }
     </script>
 
     <script src="~/js/saleFormValidation.js"></script>

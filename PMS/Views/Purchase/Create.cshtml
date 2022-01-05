@@ -7,7 +7,11 @@
 }
 
 <div id="PlaceHolderHere"></div>
-
+<style>
+    #DiscountTextBoxDiv, #FixedAmountTextBoxDiv, #amountlable {
+        display: none;
+    }
+</style>
 <div class="main-body">
     <div class="page-wrapper">
         <div class="row">
@@ -64,10 +68,11 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Supplier <span class="required">*</span></label>
-                                                        <select required class="form-control select2" id="supplierId" style="width: 100%;" asp-for="@Purchase.SupplierId" asp-items="@ViewBag.Suppliers">
-                                                            <option selected="selected" value="0">--Select Supplier--</option>
+                                                        <label class="control-label">Supplier<span class="required">*</span></label>
+                                                        <select required="required" class="form-control select2 required" id="supplierId" style="width: 100%;" asp-for="@Purchase.SupplierId" asp-items="@ViewBag.Suppliers">
+                                                            <option value="">--Select Supplier--</option>
                                                         </select>
+
                                                         <span asp-validation-for="@Purchase.SupplierId" class="text-danger"></span>
                                                         <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreatePartial","Supplier")"
                                                            data-redirect="@Url.Action("Create", "Purchase")" class="text text-info" style="color: white; cursor: pointer;">
@@ -190,13 +195,32 @@
                                                             </tr>
 
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">Total Discount (%)</td>
-                                                                <td>
-                                                                    <input type="hidden" step="any" asp-for="@Purchase.DiscountAmount" value="0" id="discount" class="form-control calc" />
-                                                                    <input type="number" step="any" value="0" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
+                                                                <td colspan="4" class="@valueDefined">
+
+                                                                    <div class="form-group">
+                                                                        <div id="input-type" class="row float-lg-right">
+                                                                            <label for="input-type">Select Discount Type &nbsp;&nbsp; </label>
+                                                                            <label class="radio-inline form-check-inline">
+                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" /> By Discount
+                                                                            </label>
+                                                                            <label class="radio-inline form-check-inline">
+                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> By Fixed Amount
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
                                                                 </td>
+
                                                                 <td>
-                                                                    <p class="text text-info">Amount: <span id="discAmount">0</span></p>
+                                                                    <div id='DiscountTextBoxDiv'>
+                                                                        <input type="number" step="any" value="0" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
+                                                                    </div>
+                                                                    <div id='FixedAmountTextBoxDiv'>
+                                                                        <input step="any" asp-for="@Purchase.DiscountAmount" value="0" id="discount" class="form-control calc" />
+                                                                    </div>
+                                                                </td>
+
+                                                                <td>
+                                                                    <div id="AmountLabelForDiscount"> <p class="text text-info">Amount: <span id="discAmount">0</span></p></div>
                                                                 </td>
                                                             </tr>
 
@@ -207,6 +231,7 @@
                                                                 </td>
                                                                 <td></td>
                                                             </tr>
+
                                                             <tr class="d-none">
                                                                 <td colspan="4" class="@valueDefined">Tax</td>
                                                                 <td>
@@ -214,6 +239,7 @@
                                                                 </td>
                                                                 <td></td>
                                                             </tr>
+
                                                             <tr>
                                                                 <td colspan="4" class="@valueDefined">Grand Total</td>
                                                                 <td>
@@ -221,6 +247,7 @@
                                                                 </td>
                                                                 <td></td>
                                                             </tr>
+
                                                             <tr>
                                                                 <td colspan="4" class="@valueDefined">Paid Amount</td>
                                                                 <td>
@@ -400,8 +427,29 @@
 
                             }
                      });
-                }
+           }
 
+        DiscountTextBoxDiv.style.display = 'inline-block';
+        AmountLabelForDiscount.style.display = 'inline-block';
+
+        function show() {
+            var TextBoxCheck = document.getElementsByName('TextBoxCheck');
+            var DiscountTextBoxDiv = document.getElementById("DiscountTextBoxDiv");
+
+            var FixedAmountTextBoxDiv = document.getElementById("FixedAmountTextBoxDiv");
+            var AmountLabelForDiscount = document.getElementById("AmountLabelForDiscount");
+
+            if (TextBoxCheck[0].checked) {
+
+                DiscountTextBoxDiv.style.display = 'inline-block';
+                AmountLabelForDiscount.style.display = 'inline-block';
+                FixedAmountTextBoxDiv.style.display = 'none';
+            } else {
+                DiscountTextBoxDiv.style.display = 'none';
+                AmountLabelForDiscount.style.display = 'none';
+                FixedAmountTextBoxDiv.style.display = 'inline-block';
+            }
+        }
     </script>
 
     <script src="~/js/purchaseFormValidation.js"></script>

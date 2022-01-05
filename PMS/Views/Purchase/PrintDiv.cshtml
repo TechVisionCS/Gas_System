@@ -188,7 +188,7 @@
                         </div>
 
                         <div class="col-12 text text-right p-2">
-                            <button type="button" class="btn btn-info" style="padding:8px" value='Print' onclick='printtag("DivIdToPrint");'>Print</button>
+                            <button type="button" id="onClick" class="btn btn-info" style="padding:8px" value='Print' onclick='printDiv("DivIdToPrint");'>Print</button>
                         </div>
                     </div>
                     <!-- Basic table card end -->
@@ -212,3 +212,11 @@
         </div>
     </div>
 </div>
+@section Scripts{
+    <script>
+        $(function () {
+            $("#onClick").trigger("click");
+        });
+    </script>
+
+}

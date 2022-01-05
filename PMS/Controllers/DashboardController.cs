@@ -35,8 +35,7 @@ namespace PMS.Controllers
         public ActionResult Index()
         {
             var salesperMonths = dashboardRepository.GetAllSalesPerMonth();
-
-            ViewBag.JanuarySale = salesperMonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Average();
+            ViewBag.JanuarySale = salesperMonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.FaberuarySale = salesperMonths.Where(x => x.Month == 2 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.March = salesperMonths.Where(x => x.Month == 3 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.AprilSale = salesperMonths.Where(x => x.Month == 4 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
@@ -49,8 +48,9 @@ namespace PMS.Controllers
             ViewBag.NovermberSale = salesperMonths.Where(x => x.Month == 11 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.DecemberSale = salesperMonths.Where(x => x.Month == 12 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
 
+
             var salesperMPurchaseonths = dashboardRepository.GetAllPurchasePerMonth();
-            ViewBag.JanuarySalep = salesperMPurchaseonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Average();
+            ViewBag.JanuarySalep = salesperMPurchaseonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.FaberuarySalep = salesperMPurchaseonths.Where(x => x.Month == 2 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.Marchp = salesperMPurchaseonths.Where(x => x.Month == 3 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.AprilSalep = salesperMPurchaseonths.Where(x => x.Month == 4 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();

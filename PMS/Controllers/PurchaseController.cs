@@ -101,6 +101,13 @@ namespace PMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CreatePurchaseViewModel purchaseViewModel, long[] ProductId, long[] UnitId, decimal[] Qty, decimal[] PurchasePrice, int sbm_flg)
         {
+            if (purchaseViewModel.Purchase.SupplierId == 0)
+            {
+                helperRepository.InfoMessage("Please Resubmit Form Select Supplier");
+                RedirectToAction("Create", "Purchase");
+            }
+
+
             ViewBag.Suppliers = new SelectList(helperRepository.GetSupplier(), "Id", "Name");
             ViewBag.Banks = new SelectList(helperRepository.GetBanks(), "Id", "BankName");
             ViewBag.Products = new SelectList(helperRepository.GetProducts(), "Id", "Name");
@@ -108,6 +115,7 @@ namespace PMS.Controllers
 
             if (ProductId.Length > 0)
             {
+
                 List<PurchaseDetails> list = new List<PurchaseDetails>();
 
                 decimal subTotal = 0;
@@ -124,6 +132,7 @@ namespace PMS.Controllers
                     list.Add(model);
                     subTotal += model.TotalPurchasePrice;
                 }
+
                 purchaseViewModel.Purchase.SubTotal = subTotal;
                 purchaseViewModel.PurchaseDetails = list;
             }
@@ -133,6 +142,7 @@ namespace PMS.Controllers
             {
                 //try
                 //{
+
 
                 var res = purchaseRepository.AddPurchase(purchaseViewModel);
 
@@ -146,7 +156,7 @@ namespace PMS.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("PrintDiv", "Purchase", new { Id = res });
+                        return RedirectToAction("PrintDivSaveClicked", "Purchase", new { Id = res });
                     }
                 }
                 else
@@ -283,12 +293,16 @@ namespace PMS.Controllers
             }
         }
 
-        //Print Invoices Bills 
+        //Print Invoices Bills,
         public ActionResult PrintDiv(long Id)
         {
             return View(purchaseRepository.GetPurchase(Id));
         }
 
+        public ActionResult PrintDivSaveClicked(long Id)
+        {
+            return View(purchaseRepository.GetPurchase(Id));
+        }
 
         //Bill Print ...
         public ActionResult PrintInvoice(long id)

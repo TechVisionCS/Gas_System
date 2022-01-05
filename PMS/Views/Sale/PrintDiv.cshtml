@@ -42,7 +42,6 @@
             direction: rtl;
         }
     </style>
-
 }
 
 <!-- Main-body start -->
@@ -193,11 +192,9 @@
                                     <p><span style="direction: rtl; float: right;">ادرس: ارزان قیمت سلیم کاروان</span> <span style="direction: rtl; float: left;"> شماره های تماس: 0774102020 - 0731159741 - 0776785461</span></p>
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="col-12 text text-right p-2">
-                            <button type="button" class="btn btn-info" style="padding:8px" value='Print' onclick='printtag("DivIdToPrint");'>Print</button>
+                            <button type="button" class="btn btn-info" id="onClick" style="padding:8px" value='Print' onclick='printDiv("DivIdToPrint");'>Print</button>
                         </div>
                     </div>
                     <!-- Basic table card end -->
@@ -216,9 +213,16 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
+
+@section Scripts{
+    <script>
+        $(function () {
+            $("#onClick").trigger("click");
+        });
+    </script>
+
+}

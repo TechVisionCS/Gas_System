@@ -74,7 +74,6 @@ namespace PMS.Controllers
                         return RedirectToAction("Index", "Home");
                     }
 
-
                 }
 
                 foreach (var error in result.Errors)

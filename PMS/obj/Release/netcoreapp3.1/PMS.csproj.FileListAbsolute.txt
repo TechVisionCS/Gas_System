@@ -7427,3 +7427,5 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\GetAllLedgers.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\GetLedgerById.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Saraf\Transaction.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Sale\PrintDivSaveClicked.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Purchase\PrintDivSaveClicked.cshtml.g.cs

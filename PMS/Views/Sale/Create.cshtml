@@ -9,7 +9,7 @@
 
 <div id="PlaceHolderHere"></div>
 <style>
-    #totalPercentDiscounts, #FixedAmounts, #amountlable {
+    #DiscountTextBoxDiv, #FixedAmountTextBoxDiv, #amountlable {
         display: none;
     }
 </style>
@@ -175,39 +175,48 @@
                                                         }
                                                         <tbody>
                                                             <tr>
+
                                                                 <td colspan="4" class="@valueDefined">Sub Total</td>
+
                                                                 <td>
                                                                     <input type="number" step="any" class="form-control" id="total" asp-for="@Sale.SubTotal" placeholder="0.00" readonly />
                                                                 </td>
+
                                                                 <td>
                                                                     <button type="button" class="btn btn-sm btn-primary-outline" id="btnAddItem"><i class="fa fa-plus-circle"></i> Add New</button>
                                                                 </td>
+
                                                             </tr>
 
                                                             <tr>
                                                                 <td colspan="4" class="@valueDefined">
 
-                                                                    <div id="input-type" class="row float-lg-right">
-                                                                        <label for="input-type">Select Discount Type:</label>
-                                                                        <label class="radio-inline">
-                                                                            <input type="radio" name="TextBoxCheck" value="0" onClick="show()" /> Discount
-                                                                        </label>
-                                                                        <label class="radio-inline">
-                                                                            <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> Fixed
-                                                                        </label>
+                                                                    <div class="form-group">
+                                                                        <div id="input-type" class="row float-lg-right">
+                                                                            <label for="input-type">Select Discount Type &nbsp;&nbsp; </label>
+                                                                            <label class="radio-inline form-check-inline">
+                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" /> By Discount
+                                                                            </label>
+                                                                            <label class="radio-inline form-check-inline">
+                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> By Fixed Amount
+                                                                            </label>
+                                                                        </div>
                                                                     </div>
                                                                 </td>
-                                                                <td>
-                                                                    <input type="hidden" step="any" asp-for="@Sale.DiscountAmount" value="0" id="totalDiscount" class="form-control calc" />
-                                                                    <div id='totalPercentDiscounts'>
-                                                                        <input type="number" step="any" value="0" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
 
-                                                                    </div>
-                                                                    <div id='FixedAmounts'> <input type="number" step="any" value="0" id="FixedAmount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" /></div>
-                                                                </td>
                                                                 <td>
-                                                                    <div id="amountlable"> <p class="text text-info">Amount: <span id="discAmount">0</span></p></div>
+                                                                    <div id='DiscountTextBoxDiv'>
+                                                                        <input type="number" step="any" value="0" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" />
+                                                                    </div>
+                                                                    <div id='FixedAmountTextBoxDiv'>
+                                                                        <input step="any" asp-for="@Sale.DiscountAmount" value="0" id="totalDiscount" class="form-control calc" />
+                                                                    </div>
                                                                 </td>
+
+                                                                <td>
+                                                                    <div id="AmountLabelForDiscount"> <p class="text text-info">Amount: <span id="discAmount">0</span></p></div>
+                                                                </td>
+
                                                             </tr>
 
                                                             <tr>
@@ -429,23 +438,29 @@
 
                             }
                      });*@
-        }
+           }
+
+        DiscountTextBoxDiv.style.display = 'inline-block';
+        AmountLabelForDiscount.style.display = 'inline-block';
 
         function show() {
             var TextBoxCheck = document.getElementsByName('TextBoxCheck');
-            var totalPercentDiscount = document.getElementById("totalPercentDiscounts");
-            var FixedAmount = document.getElementById("FixedAmounts");
-            var amountlable = document.getElementById("amountlable");
+            var DiscountTextBoxDiv = document.getElementById("DiscountTextBoxDiv");
+
+            var FixedAmountTextBoxDiv = document.getElementById("FixedAmountTextBoxDiv");
+            var AmountLabelForDiscount = document.getElementById("AmountLabelForDiscount");
+
+
 
             if (TextBoxCheck[0].checked) {
 
-                totalPercentDiscount.style.display = 'inline-block';
-                amountlable.style.display = 'inline-block';
-                FixedAmount.style.display = 'none';
+                DiscountTextBoxDiv.style.display = 'inline-block';
+                AmountLabelForDiscount.style.display = 'inline-block';
+                FixedAmountTextBoxDiv.style.display = 'none';
             } else {
-                totalPercentDiscount.style.display = 'none';
-                amountlable.style.display = 'none';
-                FixedAmount.style.display = 'inline-block';
+                DiscountTextBoxDiv.style.display = 'none';
+                AmountLabelForDiscount.style.display = 'none';
+                FixedAmountTextBoxDiv.style.display = 'inline-block';
 
             }
         }

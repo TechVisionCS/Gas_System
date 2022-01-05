@@ -5,6 +5,13 @@
     var Purchase = Model.Purchase;
     var PurchaseDetails = Model.PurchaseDetails;
 }
+
+<style>
+    #DiscountTextBoxDiv, #FixedAmountTextBoxDiv, #amountlable {
+        display: none;
+    }
+</style>
+
 <div class="main-body">
     <div class="page-wrapper">
         <div class="row">
@@ -53,8 +60,8 @@
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Supplier <span class="required">*</span></label>
-                                                        <select required class="form-control select2" id="supplierId" style="width: 100%;" asp-for="@Purchase.SupplierId" asp-items="@ViewBag.Suppliers">
-                                                            <option selected="selected" value="0">--Select Supplier--</option>
+                                                        <select required class="form-control select2 required" id="supplierId" style="width: 100%;" asp-for="@Purchase.SupplierId" asp-items="@ViewBag.Suppliers">
+                                                            <option selected="selected" value="">--Select Supplier--</option>
                                                         </select>
                                                         <span asp-validation-for="@Purchase.SupplierId" class="text-danger"></span>
                                                     </div>
@@ -168,22 +175,38 @@
                                                             </tr>
 
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">Total Discount (%)</td>
+                                                                <td colspan="4" class="@valueDefined">
+
+                                                                    <div class="form-group">
+                                                                        <div id="input-type" class="row float-lg-right">
+                                                                            <label for="input-type">Select Discount Type &nbsp;&nbsp; </label>
+                                                                            <label class="radio-inline form-check-inline">
+                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" /> By Discount
+                                                                            </label>
+                                                                            <label class="radio-inline form-check-inline">
+                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> By Fixed Amount
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+
                                                                 <td>
-                                                                    <input type="hidden" step="any" asp-for="@Purchase.DiscountAmount" id="discount" class="form-control calc" />
-                                                                    @{
-                                                                        var totalDis = Purchase.DiscountAmount;
-                                                                        var subTotal = Purchase.SubTotal;
-                                                                        decimal disc = (100 * totalDis) / subTotal;
-                                                                    }
-                                                                    <input type="number" step="any" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100"
-                                                                           value="@disc" />
+                                                                    <div id='DiscountTextBoxDiv'>
+                                                                        @{
+                                                                            var totalDis = Purchase.DiscountAmount;
+                                                                            var subTotal = Purchase.SubTotal;
+                                                                            decimal disc = (100 * totalDis) / subTotal;
+                                                                        }
+                                                                        <input type="number" step="any" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" value="@disc" />
+                                                                    </div>
+                                                                    <div id='FixedAmountTextBoxDiv'>
+                                                                        <input type="hidden" step="any" asp-for="@Purchase.DiscountAmount" id="discount" class="form-control calc" />
+                                                                    </div>
                                                                 </td>
                                                                 <td>
-                                                                    <p class="text text-info">Amount: <span id="discAmount">@Purchase.DiscountAmount</span></p>
+                                                                    <div id="AmountLabelForDiscount">  <p class="text text-info">Amount: <span id="discAmount">@Purchase.DiscountAmount</span></p></div>
                                                                 </td>
                                                             </tr>
-
 
                                                             <tr>
                                                                 <td colspan="4" class="@valueDefined">Rent</td>

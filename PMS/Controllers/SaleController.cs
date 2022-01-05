@@ -25,7 +25,6 @@ namespace PMS.Controllers
         private readonly IWebHostEnvironment webHostEnvironment;
         private readonly ICustomerRepository customerRepository;
         private readonly IBankRepository bankRepository;
-
         public SaleController(IToastNotification toastNotification,
                               ISaleRepository saleRepository,
                               IHelperRepository helperRepository,
@@ -180,7 +179,7 @@ namespace PMS.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("PrintDiv", "Sale", new { Id = res });
+                        return RedirectToAction("PrintDivSaveClicked", "Sale", new { Id = res });
                     }
                 }
                 else
@@ -398,6 +397,11 @@ namespace PMS.Controllers
         //Bill Print ...
 
         public ActionResult PrintDiv(long Id)
+        {
+            return View(saleRepository.GetSale(Id));
+        }
+        //most
+        public ActionResult PrintDivSaveClicked(long Id)
         {
             return View(saleRepository.GetSale(Id));
         }
