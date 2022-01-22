@@ -89,7 +89,7 @@
                             </div>
                         </div>
 
-                        <div class="card-block table-border-style" id="DivIdToPrint">
+                        <div class="card-block table-border-style" id="DivIdToPrintSave">
                             <div class="body">
                                 <div id="header">
                                     <img src="~/gas-title.png" />
@@ -194,7 +194,7 @@
                             </div>
                         </div>
                         <div class="col-12 text text-right p-2">
-                            <button type="button" class="btn btn-info" id="onClick" style="padding:8px" value='Print' onclick='printDivSaveCLicked("DivIdToPrint");'>Print</button>
+                            <button type="button" class="btn btn-info" id="justCLick" style="padding:8px" value='Print' onclick='printSaveTrigger("DivIdToPrintSave");'>Print</button>
                         </div>
                     </div>
                     <!-- Basic table card end -->
@@ -221,7 +221,7 @@
 @section Scripts{
     <script>
         $(function () {
-            $("#onClick").trigger("click");
+            $("#justCLick").trigger("click");
         });
     </script>
 

@@ -15,7 +15,7 @@
             <li>
                 <a asp-action="Create" asp-controller="Sale">
                     <span class="pcoded-micon"><i class="fa fa-shopping-cart"></i></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Sale</span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Sales</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
@@ -25,7 +25,7 @@
             <li>
                 <a asp-action="Create" asp-controller="Purchase">
                     <span class="pcoded-micon"><i class="fa fa-cart-arrow-down"></i></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Purchase</span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Purchases</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
@@ -35,7 +35,7 @@
             <li>
                 <a asp-action="Index" asp-controller="Return">
                     <span class="pcoded-micon"><i class="fa fa-undo"></i></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Retrun</span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Retruns</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
@@ -43,7 +43,7 @@
         <ul class="pcoded-item pcoded-left-item">
             <li>
                 <a asp-action="Index" asp-controller="Stock">
-                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                    <span class="pcoded-micon"><i class="fa fa-shopping-cart"></i></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Stock</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
@@ -54,50 +54,33 @@
             <li>
                 <a asp-action="Index" asp-controller="Product">
                     <span class="pcoded-micon"><i class="fa fa-product-hunt"></i></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Manage Product</span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Products</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
         </ul>
-        <div class="pcoded-navigatio-lavel" data-i18n="nav.cate gory.other"></div>
+
+        @*<div class="pcoded-navigatio-lavel" data-i18n="nav.cate gory.other"></div>*@
+
+        @*<div class="pcoded-navigatio-lavel" data-i18n="nav.cate gory.other"></div>*@
 
         <ul class="pcoded-item pcoded-left-item">
-            <li class="pcoded-hasmenu">
-                <a href="javascript:void(0)">
-                    <span class="pcoded-micon"><i class="fa fa-file"></i></span>
-                    <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Report</span>
+            <li>
+                <a asp-action="Create" asp-controller="Expense">
+                    <span class="pcoded-micon"><i class="fa fa-money"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Expenses</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
-                <ul class="pcoded-submenu">
-                    <li class=" ">
-                        <a href="#">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Total Sele</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a href="#">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Total Purchase</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class=" ">
-                        <a asp-action="Index" asp-controller="Customer">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Manage Customer</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a asp-action="Index" asp-controller="Supplier">
-                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-22.menu-level-31">Manage Supplier</span>
-                            <span class="pcoded-mcaret"></span>
-                        </a>
-                    </li>
-                </ul>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="Create" asp-controller="Employee">
+                    <span class="pcoded-micon"><i class="fa fa-users"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Employees</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
             </li>
         </ul>
 
@@ -109,6 +92,13 @@
                     <span class="pcoded-mcaret"></span>
                 </a>
                 <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a asp-action="" asp-controller="">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Cash Book</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
                     <li class=" ">
                         <a asp-action="Index" asp-controller="Bank">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -126,34 +116,82 @@
                 </ul>
             </li>
         </ul>
-        <div class="pcoded-navigatio-lavel" data-i18n="nav.cate gory.other" style="text-transform:uppercase">Administration </div>
 
         <ul class="pcoded-item pcoded-left-item">
-            <li>
-                <a asp-action="Create" asp-controller="Expense">
-                    <span class="pcoded-micon"><i class="fa fa-money"></i></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Expenses</span>
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="fa fa-file"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Reports</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="#">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Sales Report</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="#">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Purchases Report</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="#">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Returns Report</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="#">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Wastages Report</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="#">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Expenses Report</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
 
-        <ul class="pcoded-item pcoded-left-item">
-            <li>
-                <a asp-action="Create" asp-controller="Employee">
-                    <span class="pcoded-micon"><i class="fa fa-users"></i></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Employee</span>
-                    <span class="pcoded-mcaret"></span>
-                </a>
-            </li>
-        </ul>
 
+        <div class="pcoded-navigatio-lavel" data-i18n="nav.cate gory.other" style="text-transform:uppercase">Settings </div>
 
         <ul class="pcoded-item pcoded-left-item">
             <li>
                 <a asp-action="Users" asp-controller="Administration">
-                    <span class="pcoded-micon"><i class="fa fa-users"></i></span>
+                    <span class="pcoded-micon"><i class="fa fa-user-secret"></i></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Users</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="" asp-controller="">
+                    <span class="pcoded-micon"><i class="fa fa-laptop"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">System</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a asp-action="" asp-controller="">
+                    <span class="pcoded-micon"><i class="fa fa-support"></i></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Support</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>

@@ -73,6 +73,7 @@ namespace PMS.Repositories
         {
             return dbContext.Units.Where(x => x.DeletedAt == null && x.Status == 1).ToList();
         }
+
         public IEnumerable<ProductType> GetProductType()
         {
             return dbContext.ProductTypes.OrderByDescending(x => x.Id).Where(x => x.DeletedAt == null && x.Status == 1).ToList();
@@ -178,10 +179,10 @@ namespace PMS.Repositories
             return null;
         }
 
-        public string getExpenseCategoryName(long id)
+        public string getExpenseCategoryName(long expenseCategoryId)
         {
-            if (id != 0)
-                return dbContext.ExpensesCategories.FirstOrDefault(x => x.Id == id).Name;
+            if (expenseCategoryId != 0)
+                return dbContext.ExpensesCategories.FirstOrDefault(x => x.Id == expenseCategoryId).Name;
             else
                 return null;
         }

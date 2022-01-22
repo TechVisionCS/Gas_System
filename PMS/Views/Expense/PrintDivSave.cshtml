@@ -4,39 +4,72 @@
     ViewData["Title"] = "Expense";
 }
 
+@section Styles {
+    <style>
+        .body {
+            text-align: center;
+            font-size: 12px;
+        }
+
+        #header {
+            margin: 0 auto;
+        }
+
+        .sno {
+            text-align: right;
+            font-size: 18px;
+            margin-left: 50px;
+        }
+
+        table {
+            width: 100%;
+            direction: rtl;
+            text-align: right;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        #footer-text {
+            font-size: 12px;
+            direction: rtl;
+        }
+    </style>
+}
 
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
         <div class="row">
             <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Expenses Administration</h5>
+                        <h5 class="m-b-10">Expense Administration</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
-                                <a asp-action="Create" asp-controller="Expense"
-                                   class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-user-plus"></i> Add New Expense
+                                <a asp-action="Index" asp-controller="Expense"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> Expense List
                                 </a>
 
-                                <a asp-action="Index" asp-controller="Expense"
-                                   class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Expenses List
+                                <a asp-action="Create" asp-controller="PurchExpase"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-shopping-cart"></i> Add New Expense
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- Page-header end -->
                 <!-- Page-body start -->
-                <div class="page-body ">
+
+                <div class="page-body PrintArea">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Expense Slip Print</h5>
+                            <h5>Print Invoice</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -48,77 +81,57 @@
                             </div>
                         </div>
 
-                        <div class="card-block table-border-style PrintArea" id="">
-                            <div class="row">
-
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="d-flex flex-column flex-root">
-                                        <span class="font-weight-bolder mb-2"><h3>@ViewBag.ShopName</h3></span>
-                                        <span class="opacity-60" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large">
-                                            @ViewBag.Phone / @ViewBag.Email <br />
-                                            @ViewBag.Address
-                                        </span>
-                                    </div>
-                                    <hr />
+                        <div class="card-block table-border-style" id="DivIdToPrint">
+                            <div class="body">
+                                <div id="header">
+                                    <img src="~/Expense-gas-title.png" />
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="d-flex flex-column flex-root">
-                                        <h2> <span class="font-weight-bolder mb-2" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large"> <b> Expense Slip</h2>
-                                        <span class="opacity-60">
-                                            Date :  @DateTime.Now.Date.ToShortDateString()  <br />
-                                        </span>
-                                    </div>
-                                    <hr />
-                                </div>
+                                <div id="content">
+                                    <p class="sno"> <span style="float: right;"><u>نمبر بل: @Model.Id</u></span> <span style="float: left;">تاریخ: @Model.Date.ToShortDateString()</span></p><br /><br />
+                                    <p class="sno" style="direction: rtl; text-align: right;"><span>نام کارمند: @Model.EmployeeName</span>   </p>
+                                    <table style="margin-top: 0; padding-top: 0; text-align:right;">
 
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="table-responsive">
-                                        <table id="" class="table table-bordered table-hover">
-                                            <tbody>
-                                                <tr>
-                                                    <th>Expense Id</th>
-                                                    <td>@Model.Id</td>
-
-                                                    <th>Date</th>
-                                                    <td>@Model.Date</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Amount</th>
-                                                    <td>@Model.Amount</td>
-                                                    <th>Category</th>
-                                                    <td>@Model.ExpenseCategoryName</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Employee </th>
-                                                    <td>@Model.EmployeeName</td>
-
-                                                    <th>Bill Number</th>
-
-                                                    <td>@Model.BillNumber</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th>Descriptions</th>
-                                                    <td colspan="4">@Model.Description</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                        <tbody>
+                                            <tr>
+                                                <th>شماره</th>
+                                                <td>@Model.Id</td>
+                                                <th>بیل نمبر</th>
+                                                <td>@Model.BillNumber</td>
+                                            </tr>
+                                            <tr>
+                                                <th>تاریخ</th>
+                                                <td>@Model.Date.ToShortDateString()</td>
+                                                <th>مبلغ</th>
+                                                <td>@Model.Amount</td>
+                                            </tr>
+                                            <tr>
+                                                <th>کارمند </th>
+                                                <td>@Model.EmployeeName</td>
+                                                <th>کتګوری</th>
+                                                <td>@Model.ExpenseCategoryName</td>
+                                            </tr>
+                                            <tr>
+                                                <th>تصیل</th>
+                                                <td colspan="4">@Model.Description</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p class="sno">امضاء مدیر: ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ</p>
+                                    <hr>
+                                    <p><span style="direction: rtl; float: right;">ادرس: ارزان قیمت سلیم کاروان</span> <span style="direction: rtl; float: left;"> شماره های تماس: 0774102020 - 0731159741 - 0776785461</span></p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-12 text text-right mb-4 mr-4">
-                            <a class="btn btn-info text-white" id="btnprint">
-                                <i class="fa fa-print"></i> Print
-                            </a>
+                        <div class="col-12 text text-right p-2">
+                            <button type="button" id="onClick" class="btn btn-info" style="padding:8px" value='Print' onclick='printSaveTrigger("DivIdToPrint");'>Print</button>
                         </div>
                     </div>
                     <!-- Basic table card end -->
                 </div>
                 <!-- Page-body end -->
+
                 <div class="page-header card">
                     <div class="card-block">
                         <ul class="">
@@ -131,39 +144,16 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
-
-@section scripts
-{
-    <script type="text/javascript">
-
-
-        $('#btnprint').click(function () {
-            $(".PrintArea").printThis({
-                debug: false,                      // show the iframe for debugging
-                importCSS: true,                  // import parent page css
-                importStyle: true,                // import style tags
-                printContainer: true,            // print outer container/$.selector
-                loadCSS: "~/css/PrintArea.css",                // path to additional css file - use an array [] for multiple
-                pageTitle: "Expence Slip",              // add title to print page
-                removeInline: false,             // remove inline styles from print elements
-                removeInlineSelector: "*",      // custom selectors to filter inline styles. removeInline must be true
-                printDelay: 333,                 // variable print delay
-                header: "<h1>Expense Slip Print</h1>",               // prefix to html
-                footer: null,                    // postfix to html
-                base: false,                    // preserve the BASE tag or accept a string for the URL
-                formValues: true,           // preserve input/form values
-                canvas: false,              // copy canvas content
-                doctypeString: '...',       // enter a different doctype for older markup
-                removeScripts: false,       // remove script tags from print content
-                copyTagClasses: false,      // copy classes from the html & body tag
-                beforePrintEvent: null,     // function for printEvent in iframe
-                beforePrint: null,          // function called before iframe is filled
-                afterPrint: null            // function called before iframe is removed
-            });
+@section Scripts{
+    <script>
+        $(function () {
+            $("#onClick").trigger("click");
         });
     </script>
+
 }

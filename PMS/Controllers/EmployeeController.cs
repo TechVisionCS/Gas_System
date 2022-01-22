@@ -16,7 +16,6 @@ namespace PMS.Controllers
         private readonly IToastNotification toastNotification;
         private readonly IHelperRepository helperRepository;
         private readonly IWebHostEnvironment webHostEnvironment;
-
         public EmployeeController(IEmployeeRepository employeeRepository,
             IToastNotification toastNotification,
             IHelperRepository helperRepository,
@@ -65,7 +64,6 @@ namespace PMS.Controllers
 
             ViewBag.Countries = new SelectList(helperRepository.GetCountry(), "Id", "Name");
             ViewBag.Designation = new SelectList(helperRepository.GetDesignations(), "Id", "Name");
-
             if (ModelState.IsValid)
             {
                 try
@@ -97,6 +95,7 @@ namespace PMS.Controllers
                 return View(employee);
             }
         }
+
         // GET: EmployeeController/Edit/5
         [HttpGet]
         public ActionResult Edit(long id)
@@ -187,14 +186,12 @@ namespace PMS.Controllers
             {
                 helperRepository.ErrorMessage();
             }
-
             return RedirectToAction(nameof(Index));
         }
 
         private string ProcessUploadedFile(Employee model)
         {
             string uniqueFileName = null;
-
             if (model.ImageFile != null)
             {
                 string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "Uploads/employee-profile");
@@ -221,7 +218,6 @@ namespace PMS.Controllers
                 year = DateTime.Now.Year;
 
             ViewBag.Y = year;
-
             ViewBag.M = month;
 
             var employeeSalaries = employeeRepository.GetAllEmployeeSalaries(year, month);
@@ -238,7 +234,6 @@ namespace PMS.Controllers
         {
             var employee = employeeRepository.GetByIdEmployee(id);
             ViewBag.Emp = employee;
-
             ViewBag.BaseSalary = employee.BaseSalary;
             ViewBag.Name = employee.Name;
             ViewBag.Fathername = employee.Fathername;
@@ -395,7 +390,6 @@ namespace PMS.Controllers
                 {
                     helperRepository.ErrorMessage();
                 }
-
                 return RedirectToAction(nameof(EmployeeSalaries));
             }
             catch
@@ -444,6 +438,7 @@ namespace PMS.Controllers
                 ViewBag.SupplierAddress = null;
                 ViewBag.StartDate = month;
                 ViewBag.EndDate = year;
+
                 return View(employeeLedgers);
             }
             else if (employeeId != 0 && month == 0 && year == 0)
@@ -455,6 +450,7 @@ namespace PMS.Controllers
                 ViewBag.EmployeeAddress = spp.Address;
                 ViewBag.StartDate = null;
                 ViewBag.EndDate = null;
+
                 return View(employeeLedgers);
             }
             else

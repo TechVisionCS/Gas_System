@@ -2,7 +2,7 @@
 {
     public enum SaleType
     {
-        Whole_Sale = 1,
-        Retia_lSale = 2
+        WholeSale = 1,
+        RetailSale = 2
     }
 }

@@ -98,15 +98,15 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Date</th>
-                                            <th>Category</th>
-                                            <th>Bill Number</th>
-                                            <th>Amount</th>
-                                            <th>Payment Type</th>
-                                            <th>Bank Name</th>
-                                            <th>Description</th>
-                                            <th>Actions</th>
+                                            <th>شماره</th>
+                                            <th>تاریخ</th>
+                                            <th>کتګوری</th>
+                                            <th>بیل نمبر</th>
+                                            <th>مبلغ</th>
+                                            @*<th>Payment Type</th>
+                                                <th>Bank Name</th>*@
+                                            <th>تفصیل</th>
+                                            <th>فعالیت</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -116,29 +116,29 @@
                                             {
                                                 <tr>
                                                     <td>@m.SNO</td>
-                                                    <td>@m.Date</td>
+                                                    <td>@m.Date.ToShortDateString()</td>
                                                     <td>
                                                         @m.ExpenseCategoryName
                                                     </td>
                                                     <td>@m.BillNumber</td>
                                                     <td>@m.Amount.ToString("N")</td>
 
-                                                    <td>
-                                                        @if (m.PaymentType == 0)
-                                                        {
-                                                            <span class="badge badge-info">Cash</span>
-                                                        }
-                                                        else
-                                                        {
-                                                            <span class="badge badge-info">Bank</span>
-                                                        }
-                                                    </td>
-                                                    <td>
-                                                        @if (m.BankId != 0)
-                                                        {
-                                                            <span class="badge badge-danger">@m.BankName</span>
-                                                        }
-                                                    </td>
+                                                    @*<td>
+                                                            @if (m.PaymentType == 0)
+                                                            {
+                                                                <span class="badge badge-info">Cash</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="badge badge-info">Bank</span>
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            @if (m.BankId != 0)
+                                                            {
+                                                                <span class="badge badge-danger">@m.BankName</span>
+                                                            }
+                                                        </td>*@
 
                                                     <td>@m.Description</td>
 
@@ -152,7 +152,6 @@
                                                               onclick="return confirm('Are you sure you want to delete this?')">
                                                             <button type="submit" class="btn btn-link text-danger mr-1"> <i class="fa fa-trash"></i></button>
                                                         </form>
-
                                                     </td>
                                                 </tr>
                                             }

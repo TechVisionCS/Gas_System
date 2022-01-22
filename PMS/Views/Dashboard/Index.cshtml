@@ -14,7 +14,7 @@
                     <div class="card bg-c-blue order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Purchase Amount"]</h6>
-                            <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span>@ViewBag.TotalPurchase.ToString(@ViewBag.TotalPurchase % 1 == 0 ? "N0" : "N2")</span></h2>
+                            <h4 class="text-right"><i class="ti-shopping-cart f-left"></i><span>@ViewBag.TotalPurchase.ToString(@ViewBag.TotalPurchase % 1 == 0 ? "N0" : "N2")</span></h4>
                             <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalPurchasePerMonth.ToString(@ViewBag.TotalPurchasePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
                             <p class="m-b-0">@localizer["Purchased In Kg"]<span class="f-right">@ViewBag.PurchaseQty.ToString(@ViewBag.PurchaseQty % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
@@ -25,7 +25,7 @@
                     <div class="card bg-c-green order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Sales Amount"]</h6>
-                            <h2 class="text-right"><i class="ti-tag f-left"></i><span>@ViewBag.TotalSale.ToString(@ViewBag.TotalSale % 1 == 0 ? "N0" : "N2")</span></h2>
+                            <h4 class="text-right"><i class="ti-tag f-left"></i><span>@ViewBag.TotalSale.ToString(@ViewBag.TotalSale % 1 == 0 ? "N0" : "N2")</span></h4>
                             <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalSalePerMonth.ToString(@ViewBag.TotalSalePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
                             <p class="m-b-0">@localizer["Saled In Kg"]<span class="f-right">@ViewBag.SaleQty.ToString(@ViewBag.SaleQty % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
@@ -36,7 +36,7 @@
                     <div class="card bg-c-yellow order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Revenue Amount"]</h6>
-                            <h2 class="text-right"><i class="ti-reload f-left"></i><span>@ViewBag.SaleRevenue.ToString(@ViewBag.SaleRevenue % 1 == 0 ? "N0" : "N2")</span></h2>
+                            <h4 class="text-right"><i class="ti-reload f-left"></i><span>@ViewBag.SaleRevenue.ToString(@ViewBag.SaleRevenue % 1 == 0 ? "N0" : "N2")</span></h4>
                             <p class="m-b-20">@localizer["This Month"]<span class="f-right">@ViewBag.SaleRevenuePerMonth.ToString(@ViewBag.SaleRevenuePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="card bg-c-pink order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Expense Amount"]</h6>
-                            <h2 class="text-right"><i class="ti-wallet f-left"></i><span>@ViewBag.TotalExpenses.ToString(@ViewBag.TotalExpenses % 1 == 0 ? "N0" : "N2")</span></h2>
+                            <h4 class="text-right"><i class="ti-wallet f-left"></i><span>@ViewBag.TotalExpenses.ToString(@ViewBag.TotalExpenses % 1 == 0 ? "N0" : "N2")</span></h4>
                             <p class="m-b-20">@localizer["This Month"]<span class="f-right">@ViewBag.TotalExpensesMonth.ToString(@ViewBag.TotalExpensesMonth % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                     <div class="card bg-c-orenge order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Profit Amount"]</h6>
-                            <h2 class="text-right"><i class="fa fa-money f-left"></i><span>@ViewBag.TotalProfit.ToString(@ViewBag.TotalProfit % 1 == 0 ? "N0" : "N2")</span></h2>
+                            <h4 class="text-right"><i class="fa fa-money f-left"></i><span>@ViewBag.TotalProfit.ToString(@ViewBag.TotalProfit % 1 == 0 ? "N0" : "N2")</span></h4>
                             <p class="m-b-20">@localizer["This Month"]<span class="f-right">@ViewBag.TotalProfitPerMonth.ToString(@ViewBag.TotalProfitPerMonth % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                     <div class="card bg-c-blue order-card">
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Produts"]</h6>
-                            <h2 class="text-right"><i class="ti-wallet f-left"></i><span>@ViewBag.TotalProducts.ToString(@ViewBag.TotalProducts % 1 == 0 ? "N0" : "N2")</span></h2>
+                            <h4 class="text-right"><i class="ti-wallet f-left"></i><span>@ViewBag.TotalProducts.ToString(@ViewBag.TotalProducts % 1 == 0 ? "N0" : "N2")</span></h4>
                             <p class="m-b-20">@localizer["This Month"]<span class="f-right">@ViewBag.TotalProductMonth.ToString(@ViewBag.TotalProductMonth % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="card-block">
-                            <canvas id="Statistics-chart1" width="100%" height="240" style='width: 100%; height: 240px'></canvas>
+                            <canvas id="Statistics-chart1" width="100%" height="400" style='width: 100%; height: 400px'></canvas>
                         </div>
                     </div>
                 </div>
@@ -96,21 +96,10 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5> Sale / Purchase </h5>
+
                         </div>
                         <div class="card-block">
-                            <span class="d-block text-c-blue f-24 f-w-600 text-center">365247</span>
-                            <canvas id="feedback-chart" height="267" width="810" style="display: block; height: 89px; width: 270px;"></canvas>
-                            <div class="row justify-content-center m-t-15">
-                                <div class="col-auto b-r-default m-t-5 m-b-5">
-                                    <h4>83%</h4>
-                                    <p class="text-success m-b-0"><i class="ti-hand-point-up m-r-5"></i>Positive</p>
-                                </div>
-                                <div class="col-auto m-t-5 m-b-5">
-                                    <h4>17%</h4>
-                                    <p class="text-danger m-b-0"><i class="ti-hand-point-down m-r-5"></i>Negative</p>
-                                </div>
-                            </div>
+                            <canvas id="oilChart" width="600" height="400"></canvas>
                         </div>
                     </div>
                 </div>
@@ -165,6 +154,8 @@
 @section Scripts
 {
     <script type="text/javascript">
+
+
         $(document).ready(function (){
             $.ajax({
                     cache: false,
@@ -366,5 +357,136 @@
                 }
             });
         });
+
+
+        //console.log(chunked);
+
+        @*var ProductName = new Array();
+
+        var array6 = @Html.Raw(Json.Serialize(@ViewBag.ProductName));
+
+        for (var i = 0; i < array6.length; i++){
+            ProductName[i] = array6[i];
+        }
+
+        alert(ProductName[i]);
+
+        var jScriptArray = new Array();
+
+        var array = @Html.Raw(Json.Serialize(@ViewBag.CurrentQty));
+
+        for (var i = 0; i < array.length; i++)
+        {
+            jScriptArray[i] = array[i];
+        }
+
+
+        alert(jScriptArray);*@
+
+       // var checkitOUt =(Html.Raw(ViewBag.ProductName));
+
+        @*@for (int row = 0; row < Viewbag.collection.GetLength(0); row++)
+            {
+                 <tr>
+                for (int col = 0; col < Viewbag.collection.GetLength(1); col++)
+                {
+                    <td>@numbers[row, col] </td>
+                }
+                </tr>
+            }*@
+
+        @*var availableToday = JSON.parse('@Html.Raw(ViewBag.ProductName)');
+        var array = @Html.Raw(Json.Serialize(@ViewBag.ProductName));*@
+
+        //var jsonArray = '{"required":1, "minlength":2}'
+        //var jsonParsedArray = JSON.parse(availableToday);
+        //for (key in jsonParsedArray) {
+        //    if (jsonParsedArray.hasOwnProperty(key)) {
+        //        console.log("%c " + key + " = " + jsonParsedArray[key], "color:cyan");
+        //    }
+        //}
+
+        //function printValues(array) {
+        //    for (var k in array) {
+        //        if (array[k] instanceof Object) {
+        //            printValues(array[k]);
+        //        } else {
+        //            document.write(array[k] + "<br>");
+        //        };
+        //    }
+        //};
+
+
+        //for (ProductName in availableToday) {
+        //    if (availableToday.hasOwnProperty(ProductName)) {
+        //        console.log(ProductName + " = " + availableToday[ProductName]);
+        //    }
+        //}
+
+        //for (var event in availableToday) {
+        //    var dataCopy = data[event];
+        //    for (data in dataCopy) {
+        //        var mainData = dataCopy[data];
+        //        for (key in mainData) {
+        //            if (key.match(/name|value/)) {
+        //                //console.log(key + ' ' + mainData[key]);
+        //                alert('key : ' + key + ' :: value : ' + mainData[key])
+        //            }
+        //        }
+        //    }
+        //}
+
+        //console.log("asdfasdfasdf");
+
+        //console.log(availableToday);
+
+        @*var jScriptArray = new Array();
+
+        var array = @Html.Raw(Json.Serialize(@ViewBag.CurrentQty));
+
+        for (var i = 0; i < array.length; i++)
+        {
+            jScriptArray[i] = array[i];
+        }*@
+
+        @*var array = @Html.Raw(Json.Serialize(@ViewBag.stockPro));
+
+        for (n1 in array) {
+            for (n1_1 in array[n1]) {
+                for (n1_2 in array[n1][n1_1]) {
+                    for (n1_3 in array[n1][n1_1][n1_2]) {
+                        console.log(array[array[n1][n1_1][n1_2].name] = array[n1][n1_1][n1_2].value);
+                    }
+                }
+            }
+        }
+        console.log(arraya);
+        console.log("ASdfasdfasd");*@
+
+        var oilCanvas = document.getElementById("oilChart");
+        Chart.defaults.global.defaultFontFamily = "Lato";
+        Chart.defaults.global.defaultFontSize = 18;
+        var oilData = {
+            labels: ["Pro 1", "Pro 2", "Pro 3", "Pro 4", "Pro 5"],
+            datasets: [
+                {
+                    data: [123.23,132.34,145,156,124],
+                    backgroundColor: ["#FF6384", "#63FF84", "#84FF63", "#8463FF", "#6384FF"]
+                }]
+        };
+
+        var pieChart = new Chart(oilCanvas, {
+            type: 'doughnut',
+            data: oilData,
+            options: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+
     </script>
 }

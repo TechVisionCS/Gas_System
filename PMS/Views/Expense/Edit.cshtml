@@ -11,8 +11,13 @@
                         <h5 class="m-b-10">Expenses Administration</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
-                                <a asp-action="Index" asp-controller="Expense"
+                                <a asp-action="Index" asp-controller="ExpenseCategory"
                                    class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-plus"></i> Expense Category
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Expense"
+                                   class="btn btn-mat btn-info" style="color: white;">
                                     <i class="fa fa-list"></i>  Expenses List
                                 </a>
                                 <a asp-action="ExpenseStatement" asp-controller="Expense"
@@ -27,7 +32,6 @@
                 <div class="page-body">
                     <div class="row">
                         <div class="col-md-12">
-                            Basic Form Inputs card start
                             <div class="card">
                                 <div class="card-header">
                                     <h5>Edit expense payment details</h5>
@@ -42,12 +46,13 @@
                                     <hr />
                                 </div>
                                 <div class="card-block">
+
                                     <div class="col-sm-12 text text-center">
                                         <div asp-validation-summary="All" class="text-danger"></div>
                                     </div>
+
                                     <div class="col-lg-8 col-md-10 col-sm-12" style="margin: 0 auto;">
                                         <form class="form" method="POST" enctype="multipart/form-data" asp-action="Edit" asp-controller="Expense">
-
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
@@ -69,25 +74,28 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12 d-none">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type <span class="required">*</span></label>
-                                                        <select class="form-control select2" style="width: 100%;" asp-for="PaymentType" id="invtype">
-                                                            <option selected="selected" value="-1">--Select Payment Type--</option>
-                                                            <option value="0">Through Cash</option>
-                                                            <option value="1">Through Bank</option>
+                                                        <select required class="form-control select2" style="width: 100%;" asp-for="PaymentType" id="pType">
+                                                            <option value="1" selected="selected">Cash Payment</option>
+                                                            <option value="2">Bank Payment</option>
                                                         </select>
                                                         <span asp-validation-for="PaymentType" class="text-danger"></span>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-6 col-md-6 col-sm-12" id="bankid">
+                                                <div class="col-lg-3 col-md-3 col-sm-12" id="bank" style="display: none;">
                                                     <div class="form-group">
                                                         <label class="control-label">Bank <span class="required">*</span></label>
-                                                        <select class="form-control select2" style="width: 100%;" asp-for="BankId" asp-items="@ViewBag.Banks">
+                                                        <select required class="form-control select2" style="width: 100%;" asp-for="BankId" asp-items="@ViewBag.Banks">
                                                             <option selected="selected" value="0">--Select Bank--</option>
                                                         </select>
                                                         <span asp-validation-for="BankId" class="text-danger"></span>
+                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreateBankModel")"
+                                                           data-redirect="@Url.Action("Create", "Expense")" class="text text-info" style="color: white; cursor: pointer;">
+                                                            <i class="fa fa-plus"></i> Add New Bank
+                                                        </a>
                                                     </div>
                                                 </div>
 
@@ -113,13 +121,13 @@
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label" asp-for="Date"> Payment Date <span class="required">*</span> </label>
-                                                        <input type="date" name="Date" class="form-control" value="0" />
+                                                        <label class="control-label">Payment Date <span class="required">*</span> </label>
+                                                        <input type="date" asp-for="Date" class="form-control" required />
                                                         <span asp-validation-for="Date" class="text-danger"></span>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Description</label>
                                                         <textarea asp-for="Description" class="form-control" dir="auto"> </textarea>
@@ -144,15 +152,11 @@
                                             </div>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-                Page body end
 
                 <div class="page-header card">
                     <div class="card-block">
@@ -173,19 +177,27 @@
 
 @section Scripts{
     <script>
-        $("#bankid").hide();
+        //$("#bankid").hide();
 
-        $("#invtype").on('change', function () {
-            var vl = $(this).val();
+        //$("#invtype").on('change', function () {
+        //    var vl = $(this).val();
 
-            if (vl == "0") {
-                $("#bankid").hide();
-                $("#bankid").val("-1");
-            } else if (vl == "1") {
-                $("#bankid").show();
+        //    if (vl == "0") {
+        //        $("#bankid").hide();
+        //        $("#bankid").val("-1");
+        //    } else if (vl == "1") {
+        //        $("#bankid").show();
+        //    } else {
+        //        $("#bankid").hide();
+        //        $("#bankid").val("-1");
+        //    }
+        //});
+
+        $("#pType").on('change', function () {
+            if ($(this).val() == "2") {
+                $("#bank").removeAttr("Style");
             } else {
-                $("#bankid").hide();
-                $("#bankid").val("-1");
+                $("#bank").addClass("d-none");
             }
         });
     </script>

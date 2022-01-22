@@ -64,16 +64,18 @@
         }, 1000)
     }
 
-function printDivSaveCLicked(elementId) {
-    let printElement = document.getElementById(elementId);
-    var printWindow = window.open('', 'PRINT');
-    printWindow.document.write(document.documentElement.innerHTML);
+ 
+
+function printSaveTrigger(elementIdTriggered) {
+    let printElementsave = document.getElementById(elementIdTriggered);
+    var printWindowsave = window.open('', 'PRINT');
+    printWindowsave.document.write(document.documentElement.innerHTML);
     setTimeout(() => { // Needed for large documents
-        printWindow.document.body.style.margin = '0 0';
-        printWindow.document.body.innerHTML = printElement.outerHTML;
-        printWindow.document.close(); // necessary for IE >= 10
-        printWindow.focus(); // necessary for IE >= 10*/
-        printWindow.print();
-        printWindow.close();
+        printWindowsave.document.body.style.margin = '0 0';
+        printWindowsave.document.body.innerHTML = printElementsave.outerHTML;
+        printWindowsave.document.close(); // necessary for IE >= 10
+        printWindowsave.focus(); // necessary for IE >= 10*/
+        printWindowsave.print();
+        printWindowsave.close();
     }, 1000)
 }

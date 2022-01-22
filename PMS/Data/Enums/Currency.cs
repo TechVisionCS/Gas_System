@@ -6,6 +6,7 @@
         USD = 1,
         PKR = 2,
         Euro = 3,
-        Toman = 4
+        Toman = 4,
+        rials = 5
     }
 }

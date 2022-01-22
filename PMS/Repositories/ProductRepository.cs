@@ -441,16 +441,14 @@ namespace PMS.Repositories
         {
             if (dbContext != null)
             {
-                var models = dbContext.Stocks.OrderByDescending(x => x.ProductId).Where(x => x.DeletedAt == null && x.StockQty > 0).ToList();
+                var models = dbContext.Products.Where(x => x.DeletedAt == null).ToList();
                 List<ProductDropDownListViewModel> list = new List<ProductDropDownListViewModel>();
                 foreach (var model in models)
                 {
                     ProductDropDownListViewModel m = new ProductDropDownListViewModel
                     {
-                        Id = model.ProductId,
-                        //Name = model.Name
-                        Name = dbContext.Products.FirstOrDefault(x => x.Id == model.ProductId).Name
-
+                        Id = model.Id,
+                        Name = model.Name
                     };
 
                     list.Add(m);

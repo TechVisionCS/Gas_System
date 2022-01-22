@@ -4114,6 +4114,12 @@ namespace PMS.Migrations
                     b.Property<decimal>("DueAmount")
                         .HasColumnType("decimal(38, 2)");
 
+                    b.Property<decimal>("ExchangeAmount")
+                        .HasColumnType("decimal(38, 2)");
+
+                    b.Property<decimal>("ExchangeRate")
+                        .HasColumnType("decimal(38, 2)");
+
                     b.Property<string>("InvoiceNo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -4122,6 +4128,9 @@ namespace PMS.Migrations
                         .HasColumnType("decimal(38, 2)");
 
                     b.Property<int>("PaymentType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PurchaseCurrency")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("PurchaseDate")
@@ -4488,6 +4497,12 @@ namespace PMS.Migrations
                     b.Property<decimal>("DueAmount")
                         .HasColumnType("decimal(38, 2)");
 
+                    b.Property<decimal>("ExchangeAmount")
+                        .HasColumnType("decimal(38, 2)");
+
+                    b.Property<decimal>("ExchangeRate")
+                        .HasColumnType("decimal(38, 2)");
+
                     b.Property<decimal>("PaidAmount")
                         .HasColumnType("decimal(38, 2)");
 
@@ -4496,6 +4511,9 @@ namespace PMS.Migrations
 
                     b.Property<decimal>("RentAmount")
                         .HasColumnType("decimal(38, 2)");
+
+                    b.Property<int>("SaleCurrency")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("SaleDate")
                         .HasColumnType("datetime2");

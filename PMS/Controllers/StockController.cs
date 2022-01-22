@@ -132,6 +132,7 @@ namespace PMS.Controllers
                 if (unitId > 0)
                 {
                     ViewBag.UnitName = helperRepository.GetUnit().FirstOrDefault(x => x.Id == unitId).Name;
+                    
                     stockItems = stockRepository.GetCurrentStockDetails(unitId);
                 }
                 else

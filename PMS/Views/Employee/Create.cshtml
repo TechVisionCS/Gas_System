@@ -51,9 +51,9 @@
                                         <div asp-validation-summary="All" class="text-danger"></div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12" style="margin: 0 auto;">
-                                        <form method="POST" asp-action="Create" enctype="multipart/form-data">
+                                        <form method="POST" asp-action="Create" asp-controller="Employee" enctype="multipart/form-data">
                                             <div class="row">
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
                                                             Name <span class="required">*</span>
@@ -63,17 +63,17 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">
-                                                            Last Name
-                                                        </label>
-                                                        <input type="text" asp-for="Lastname" name="Lastname" id="Lastname" class="form-control" autocomplete="off" dir="auto" />
-                                                        <span asp-validation-for="Lastname" class="text-danger"></span>
-                                                    </div>
-                                                </div>
+                                                @*<div class="col-lg-3 col-md-4 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label">
+                                                                Last Name
+                                                            </label>
+                                                            <input type="text" asp-for="Lastname" name="Lastname" id="Lastname" class="form-control" autocomplete="off" dir="auto" />
+                                                            <span asp-validation-for="Lastname" class="text-danger"></span>
+                                                        </div>
+                                                    </div>*@
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
                                                             Father Name <span class="required">*</span>
@@ -83,7 +83,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
                                                             National Id <span class="required">*</span>
@@ -93,7 +93,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
                                                             Base Salary <span class="required">*</span>
@@ -103,17 +103,17 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label asp-for="Birthdate" class="control-label">Birth Date</label>
-                                                        <div class="input-group">
-                                                            <input type="date" id="Birthdate" name="Birthdate" asp-for="Birthdate" class="form-control" aria-invalid="false" placeholder="yyyy/mm/dd">
-                                                            <span asp-validation-for="Birthdate" class="text-danger"></span>
+                                                @*<div class="col-lg-3 col-md-4 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label asp-for="Birthdate" class="control-label">Birth Date</label>
+                                                            <div class="input-group">
+                                                                <input type="date" id="Birthdate" name="Birthdate" asp-for="Birthdate" class="form-control" aria-invalid="false" placeholder="yyyy/mm/dd">
+                                                                <span asp-validation-for="Birthdate" class="text-danger"></span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                    </div>*@
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label asp-for="Hiredate" class="control-label">Hire Date</label>
                                                         <div class="input-group">
@@ -123,7 +123,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label"> Phone </label>
                                                         <input type="text" asp-for="Phone" class="form-control" required autocomplete="off" max="14" min="10" onkeypress="ChangeNumbers1(event, 'Phone');" oninput="ChangeNumbers2(event, 'Phone');" />
@@ -131,45 +131,44 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Email</label>
-                                                        <input type="email" asp-for="Email" class="form-control" />
-                                                        <span asp-validation-for="Email" class="text-danger"></span>
-                                                    </div>
-                                                </div>
+                                                @*<div class="col-lg-3 col-md-4 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Email</label>
+                                                            <input type="email" asp-for="Email" class="form-control" />
+                                                            <span asp-validation-for="Email" class="text-danger"></span>
+                                                        </div>
+                                                    </div>*@
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Gender</label>
-                                                        <select class="form-control select2 required" required style="width: 100%;" name="Gender" id="Gender" asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()">
-                                                            <option selected="selected" value="">--Select Gender --</option>
-                                                        </select>
-                                                        <span asp-validation-for="Gender" class="text-danger"></span>
+                                                <div class="col-lg-3 col-md-4 col-sm-12 d-none">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Gender</label>
+                                                            <select class="form-control select2 required" required style="width: 100%;" name="Gender" id="Gender" asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()">
+                                                           
+                                                            </select>
+                                                            <span asp-validation-for="Gender" class="text-danger"></span>
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Marital Status</label>
-                                                        <select class="form-control select2 required" required style="width: 100%;" name="MaritalStatus" id="MaritalStatus" asp-for="MaritalStatus" asp-items="Html.GetEnumSelectList<MaritalState>()">
-                                                            <option selected="selected" value="">--Select Marital Status--</option>
-                                                        </select>
-                                                        <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                                                    <div class="col-lg-3 col-md-4 col-sm-12 d-none">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Marital Status</label>
+                                                            <select class="form-control select2 required" required style="width: 100%;" name="MaritalStatus" id="MaritalStatus" asp-for="MaritalStatus" asp-items="Html.GetEnumSelectList<MaritalState>()">
+                                                                
+                                                            </select>
+                                                            <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-3 col-sm-12 d-none">
                                                     <div class="form-group">
                                                         <label class="control-label">Educational Degree</label>
                                                         <select class="form-control select2 required" required style="width: 100%;" name="EducationalDegree" id="EducationalDegree" asp-for="EducationalDegree" asp-items="Html.GetEnumSelectList<EducationDegree>()">
-                                                            <option selected="selected" value="">--Select Educational Degree--</option>
                                                         </select>
                                                         <span asp-validation-for="EducationalDegree" class="text-danger"></span>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Designation</label>
                                                         <select class="form-control select2 required" required style="width: 100%;" asp-for="DesignationId" asp-items="@ViewBag.Designation">
@@ -179,7 +178,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Country</label>
                                                         <select class="select2 form-control required" required style="width: 100%;" id="CountryIdd" asp-for="Countryid" asp-items="@ViewBag.Countries">
@@ -189,7 +188,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Province</label>
                                                         <select class="form-control select2 required" required style="width: 100%;" id="ProvinceIdd" asp-for="Provinceid">
@@ -199,7 +198,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Address</label>
                                                         <input type="text" asp-for="Address" class="form-control" dir="auto" />
@@ -207,7 +206,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-84 col-md-8 col-sm-12">
+                                                <div class="col-lg-3 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
                                                             Logo <span class="required">*</span>
@@ -217,13 +216,13 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Details</label>
-                                                        <textarea asp-for="Details" class="form-control" dir="auto"> </textarea>
-                                                        <span asp-validation-for="Details" class="text-danger"></span>
-                                                    </div>
-                                                </div>
+                                                @*<div class="col-lg-12 col-md-12 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Details</label>
+                                                            <textarea asp-for="Details" class="form-control" dir="auto"> </textarea>
+                                                            <span asp-validation-for="Details" class="text-danger"></span>
+                                                        </div>
+                                                    </div>*@
                                             </div>
 
                                             <div class="form-group row">

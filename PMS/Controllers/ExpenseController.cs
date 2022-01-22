@@ -74,9 +74,7 @@ namespace PMS.Controllers
                         }
                         else
                         {
-                            //return RedirectToAction(nameof(PrintDivSave));
                             return RedirectToAction("PrintDivSave", "Expense", new { Id = res });
-
                         }
                     }
                     else
@@ -227,31 +225,19 @@ namespace PMS.Controllers
         // Bill Print  in Divs...
         public ActionResult PrintDiv(long Id)
         {
-            var shop = shopRepository.GetShop();
-            ViewBag.ShopName = shop.Name_en;
-            ViewBag.Email = shop.Email1;
-            ViewBag.Phone = shop.Phone1;
-            ViewBag.Address = shop.Address_en;
+
             return View(expenseRepository.GetByIdExpense(Id));
         }
 
         public ActionResult PrintDivSave(long Id)
         {
-            var shop = shopRepository.GetShop();
-            ViewBag.ShopName = shop.Name_en;
-            ViewBag.Email = shop.Email1;
-            ViewBag.Phone = shop.Phone1;
-            ViewBag.Address = shop.Address_en;
             return View(expenseRepository.GetByIdExpense(Id));
         }
 
         public ActionResult PrintExpneseDivStatment(long expenseCategoryId, DateTime? startDate, DateTime? endDate)
         {
-            var shop = shopRepository.GetShop();
-            ViewBag.ShopName = shop.Name_en;
-            ViewBag.Email = shop.Email1;
-            ViewBag.Phone = shop.Phone1;
-            ViewBag.Address = shop.Address_en;
+            ViewBag.Category = helperRepository.getExpenseCategoryName(expenseCategoryId);
+
             return View(expenseRepository.GetExpenseBySearchStatment(expenseCategoryId, startDate, endDate));
         }
 

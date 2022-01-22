@@ -82,7 +82,7 @@
                                                             <option selected="selected" value="0">--Select Manufacturer--</option>
                                                         </select>
                                                         <span asp-validation-for="ManufacturerId" class="text-danger"></span>
-                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create","Manufacturer")"
+                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create", "Manufacturer")"
                                                            data-redirect="@Url.Action("Create", "Product")" class="text text-info" style="color: white; cursor: pointer;">
                                                             <i class="fa fa-plus-circle"></i> Add New Manufecture
                                                         </a>
@@ -96,7 +96,7 @@
                                                             <option selected="selected" value="0">--Select Category--</option>
                                                         </select>
                                                         <span asp-validation-for="CategoryId" class="text-danger"></span>
-                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create","Category")"
+                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create", "Category")"
                                                            data-redirect="@Url.Action("Create", "Product")" class="text text-info" style="color: white; cursor: pointer;">
                                                             <i class="fa fa-plus-circle"></i> Add New Category
                                                         </a>
@@ -113,7 +113,14 @@
 
                                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <hr />
-                                                    <label class="control-label">Unit Details</label>
+
+                                                    <label class="control-label">
+                                                        Unit Details
+                                                    </label>
+                                                    <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create","Unit")"
+                                                       data-redirect="@Url.Action("Create", "Product")" class="text text-danger" style="color: white; cursor: pointer;">
+                                                        <i class="fa fa-plus-circle"></i> Add New Unit
+                                                    </a>
                                                 </div>
 
                                                 <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
@@ -134,9 +141,10 @@
                                                                 </td>
                                                             </tr>
                                                         }
+                                                        <label class="text-muted"> please configure product units </label>
+
                                                     </table>
                                                 </div>
-
                                             </div>
 
                                             <div class="form-group row">

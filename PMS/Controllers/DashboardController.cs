@@ -35,6 +35,7 @@ namespace PMS.Controllers
         public ActionResult Index()
         {
             var salesperMonths = dashboardRepository.GetAllSalesPerMonth();
+
             ViewBag.JanuarySale = salesperMonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.FaberuarySale = salesperMonths.Where(x => x.Month == 2 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.March = salesperMonths.Where(x => x.Month == 3 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
@@ -50,6 +51,7 @@ namespace PMS.Controllers
 
 
             var salesperMPurchaseonths = dashboardRepository.GetAllPurchasePerMonth();
+
             ViewBag.JanuarySalep = salesperMPurchaseonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.FaberuarySalep = salesperMPurchaseonths.Where(x => x.Month == 2 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.Marchp = salesperMPurchaseonths.Where(x => x.Month == 3 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
@@ -64,15 +66,20 @@ namespace PMS.Controllers
             ViewBag.DecemberSalep = salesperMPurchaseonths.Where(x => x.Month == 12 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
 
             var TotalExpenses = dashboardRepository.GetAllExpenses();
+
             ViewBag.TotalExpenses = TotalExpenses;
 
             var TotalExpensesMonth = dashboardRepository.GetAllExpensesMonth();
+
             ViewBag.TotalExpensesMonth = TotalExpensesMonth;
 
-            //Sale Report
+
             var SaleDetails = dashboardRepository.GetAllSaleDetails();
+
             ViewBag.SaleQty = SaleDetails.Select(x => x.Qty).Sum();
+
             ViewBag.TotalSale = SaleDetails.Select(x => x.TotalSalePrice).Sum();
+
             ViewBag.TotalSalePerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.TotalSalePrice).Sum();
 
             if (SaleDetails == null)
@@ -83,6 +90,7 @@ namespace PMS.Controllers
                 ViewBag.TotalProfit = SaleDetails.Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average() - TotalExpenses;
                 ViewBag.TotalProfitPerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average() - TotalExpenses;
             }
+
             else
             {
                 ViewBag.SaleRevenue = 0;
@@ -91,6 +99,39 @@ namespace PMS.Controllers
                 ViewBag.TotalProfit = 0;
                 ViewBag.TotalProfitPerMonth = 0;
             }
+
+            //doughnet
+
+            var stockItems = stockRepository.GetCurrentStockDetails();
+
+
+
+            ViewBag.stockPro = stockItems.Select(k => new { k.ProductName, k.CurrentStockQty }).GroupBy(a => new
+            {
+                ProductName = a.ProductName
+            }).ToArray();
+
+            //ViewBag.ProductName = stockItems.Select(k => new { k.ProductName }).ToArray();
+
+            ////ViewBag.ProductName = JsonConvert.SerializeObject(list);
+
+            ////  ViewBag.ProductName = stockItems.Select(k => new { k.ProductName }).ToArray();
+            //ViewBag.CurrentQty = stockItems.Select(k => new { k.CurrentStockQty }).ToArray();
+
+            //// var CurrentQty = @Html.Raw(Json.Serialize(@ViewBag.CurrentQty));
+            //ViewBag.ProductName = Newtonsoft.Json.JsonConvert.SerializeObject(ProductName);
+            //ViewBag.CurrentStock = Newtonsoft.Json.JsonConvert.SerializeObject(CurrentStock);
+            //List<DatapointLine> dataPoints = new List<DatapointLine>{
+            //    new DatapointLine(10, 22),
+            //    new DatapointLine(20, 36),
+            //    new DatapointLine(30, 42),
+            //    new DatapointLine(40, 51),
+            //    new DatapointLine(50, 46),
+            //};
+
+            //ViewBag.DataPoints = JsonConvert.SerializeObject(dataPoints);
+
+            //return Json(dataPoints, JsonRequestBehavior.AllowGet);
 
             //Profit
 
