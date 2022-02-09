@@ -5862,6 +5862,7 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\bin\Release\netcoreapp3.1\runtimes\win\lib\n
 E:\0110\GasGroupApp\GasGroupApp\PMS\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\0110\GasGroupApp\GasGroupApp\PMS\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\0110\GasGroupApp\GasGroupApp\PMS\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.csproj.AssemblyReference.cache
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Return.EditSaleReturn2da.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Controllers.AccountController.da.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Controllers.AccountController.en.resources
@@ -7165,6 +7166,7 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\AssetT
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\AssetType\_CreatePartialView.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\AssetType\_DataListPartialView.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\AssetType\_EditPartialView.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Backup\Index.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Backup\RestoreDatabase.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Backup\RestoreDatabaseView.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Bank\CreateOrEdit.cshtml.g.cs
@@ -7180,6 +7182,10 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Catego
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Country\Index.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Country\_CreatePartialView.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Country\_EditPartialView.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Currency\Index.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Currency\_CreatePartialView.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Currency\_DataListPartialView.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Currency\_EditPartialView.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\Advances.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\Create.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\CreateAdvance.cshtml.g.cs
@@ -7244,6 +7250,7 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\FixedA
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\FixedAsset\_ViewAssetHandoverDetailsPartials.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\LanguageTrade\Index.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Manufacturer\Index.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Manufacturer\_CreatePartialView.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Manufacturer\_DataListPartialView.cshtml.g.cs
@@ -7430,5 +7437,4 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.csproj.CopyCom
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.dll
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.pdb
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.genruntimeconfig.cache
-E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.csproj.AssemblyReference.cache
-E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Backup\Index.cshtml.g.cs
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\_CreatePartialView.cshtml.g.cs

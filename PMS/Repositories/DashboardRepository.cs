@@ -141,7 +141,7 @@ namespace PMS.Repositories
         {
             if (dbContext != null)
             {
-                var totalExpense = dbContext.Expenses.Where(x => x.DeletedAt == null && x.Date.Month == DateTime.Now.Month).Sum(x => x.Amount);
+                var totalExpense = dbContext.Expenses.Where(x => x.DeletedAt == null && x.ExpenseDate.Month == DateTime.Now.Month).Sum(x => x.Amount);
                 if (totalExpense > 0)
                 {
                     return totalExpense;

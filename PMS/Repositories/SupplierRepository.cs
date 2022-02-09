@@ -179,41 +179,16 @@ namespace PMS.Repositories
                 long sno = 1;
                 decimal pBalance = 0;
                 string bFlg = "+";
-                var Country = "";
-                var Province = "";
+
                 foreach (var m in models)
                 {
                     pBalance = dbContext.SupplierLedgers.Where(x => x.EntityId == m.Id).Sum(x => x.Debit) - dbContext.SupplierLedgers.Where(x => x.EntityId == m.Id).Sum(x => x.Credit);
-
-
-                    if (m.Countryid == 0)
-                    {
-                        Country = "";
-                    }
-                    else
-                    {
-                        Country = dbContext.Countries.FirstOrDefault(x => x.Id == m.Countryid).Name;
-                    }
-
-                    if (m.Provinceid == 0)
-                    {
-                        Province = "";
-                    }
-                    else
-                    {
-                        Province = dbContext.Provinces.FirstOrDefault(x => x.Id == m.Provinceid).Name;
-                    }
                     SupplierViewModel model = new SupplierViewModel
                     {
                         Id = m.Id,
                         SNo = sno++,
                         Name = m.Name,
                         Phone = m.Phone,
-                        Email = m.Email,
-                        Countryid = m.Countryid,
-                        CountryName = Country,
-                        Provinceid = m.Provinceid,
-                        ProvinceName = Province,
                         Address = m.Address,
                         Details = m.Details,
                         CreatedAt = m.CreatedAt,
@@ -252,26 +227,6 @@ namespace PMS.Repositories
                 string bFlg = "+";
 
                 pBalance = dbContext.SupplierLedgers.Where(x => x.EntityId == id).Sum(x => x.Debit) - dbContext.SupplierLedgers.Where(x => x.EntityId == id).Sum(x => x.Credit);
-                var Country = "";
-                var Province = "";
-
-                if (m.Countryid == 0)
-                {
-                    Country = "";
-                }
-                else
-                {
-                    Country = dbContext.Countries.FirstOrDefault(x => x.Id == m.Countryid).Name;
-                }
-
-                if (m.Provinceid == 0)
-                {
-                    Province = "";
-                }
-                else
-                {
-                    Province = dbContext.Provinces.FirstOrDefault(x => x.Id == m.Provinceid).Name;
-                }
 
                 SupplierViewModel model = new SupplierViewModel
                 {
@@ -279,11 +234,7 @@ namespace PMS.Repositories
                     Name = m.Name,
                     Phone = m.Phone,
                     Email = m.Email,
-                    Countryid = m.Countryid,
-                    CountryName = Country,
-                    Provinceid = m.Provinceid,
-                    ProvinceName = Province,
-                    Address = m.Address + ", " + Province + ", " + Country,
+                    Address = m.Address,
                     Details = m.Details,
                     CreatedAt = m.CreatedAt,
                     UpdatedAt = m.UpdatedAt,
@@ -424,17 +375,12 @@ namespace PMS.Repositories
                 {
                     pBalance = m.Debit - m.Credit;
 
-                    long cid = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Countryid;
-                    long pid = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid;
+                    //long cid = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Countryid;
+                    //long pid = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid;
 
-                    string address = "";
-                    string country = helperRepository.GetCountry().FirstOrDefault(a => a.Id == dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Countryid)?.Name;
-                    string province = helperRepository.GetProvinces().FirstOrDefault(a => a.Id == dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid)?.Name;
-
-                    string addr = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Address;
-
-                    address = addr + ", " + province + ", " + country;
-
+                    //string address = "";
+                    //string country = helperRepository.GetCountry().FirstOrDefault(a => a.Id == dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Countryid)?.Name;
+                    //string province = helperRepository.GetProvinces().FirstOrDefault(a => a.Id == dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid)?.Name; 
 
                     SupplierLedgerViewModel model = new SupplierLedgerViewModel
                     {
@@ -443,7 +389,7 @@ namespace PMS.Repositories
                         EntityId = m.EntityId,
                         EntityName = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Name,
                         EntityPhone = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Phone,
-                        EntityAddress = address,
+                        EntityAddress = dbContext.Suppliers.FirstOrDefault(x => x.Id == m.EntityId).Address,
                         Date = m.Date,
                         Description = m.Description,
                         Debit = m.Debit,

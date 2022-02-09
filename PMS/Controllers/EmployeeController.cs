@@ -238,11 +238,11 @@ namespace PMS.Controllers
             ViewBag.Name = employee.Name;
             ViewBag.Fathername = employee.Fathername;
             ViewBag.DesignationName = employee.DesignationName;
-            ViewBag.Email = employee.Email;
+
             ViewBag.Phone = employee.Phone;
             ViewBag.Hidredate = employee.Hidredate;
             ViewBag.Address = employee.Address;
-            ViewBag.ProvinceName = employee.ProvinceName;
+
             ViewBag.Id = employee.Id;
             var employeeSalaries = employeeRepository.GetAllSalariesPerEachEmployee(id);
             return View(employeeSalaries);
@@ -256,11 +256,11 @@ namespace PMS.Controllers
             ViewBag.Name = employee.Name;
             ViewBag.Fathername = employee.Fathername;
             ViewBag.DesignationName = employee.DesignationName;
-            ViewBag.Email = employee.Email;
+
             ViewBag.Phone = employee.Phone;
             ViewBag.Hidredate = employee.Hidredate;
             ViewBag.Address = employee.Address;
-            ViewBag.ProvinceName = employee.ProvinceName;
+
             ViewBag.Id = employee.Id;
 
             int year = DateTime.Now.Year;
@@ -309,11 +309,11 @@ namespace PMS.Controllers
             ViewBag.Name = employee.Name;
             ViewBag.Fathername = employee.Fathername;
             ViewBag.DesignationName = employee.DesignationName;
-            ViewBag.Email = employee.Email;
+
             ViewBag.Phone = employee.Phone;
             ViewBag.Hidredate = employee.Hidredate;
             ViewBag.Address = employee.Address;
-            ViewBag.ProvinceName = employee.ProvinceName;
+
             ViewBag.Id = employee.Id;
             int year = 2021;
             ViewBag.CurrenYear = year;

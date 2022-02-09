@@ -105,6 +105,29 @@
                                     </p>
                                     <hr />
                                 </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>Currency</h6>
+                                    <p>
+                                        @if (Sale.CurrecnyId == 1)
+                                        {
+                                            <span class="badge badge-info">AFN</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-primary">USD</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                @if (Sale.CurrecnyId == 2)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>Excahgen Rate</h6>
+                                        <p>@Sale.ExchangeRate.ToString("N")</p>
+                                        <hr />
+                                    </div>
+                                }
 
                                 <div class="col-lg-9 col-md-8 col-sm-6">
                                     <h6>Description</h6>

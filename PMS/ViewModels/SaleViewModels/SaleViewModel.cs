@@ -1,5 +1,6 @@
 ﻿using PMS.Models;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PMS.ViewModels.SaleViewModels
 {
@@ -32,5 +33,10 @@ namespace PMS.ViewModels.SaleViewModels
         public DateTime? DeletedAt { get; set; }
 
         public int SaleType { get; set; }
+        public int CurrecnyId { get; set; }
+
+        [Column(TypeName = "decimal(38, 2)")]
+        public decimal ExchangeRate { get; set; }
+
     }
 }

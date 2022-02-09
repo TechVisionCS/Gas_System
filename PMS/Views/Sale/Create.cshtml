@@ -70,20 +70,21 @@
                                                             <option selected="selected" value="0">WALKING CUSTOMER</option>
                                                         </select>
                                                         <span asp-validation-for="@Sale.CustomerId" class="text-danger"></span>
-                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreateCustomerModel")"
+                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreatePartial","Customer")"
                                                            data-redirect="@Url.Action("Create", "Sale")" class="text text-info" style="color: white; cursor: pointer;" id="btnAddCustomer">
                                                             <i class="fa fa-plus"></i> Customer
                                                         </a>
+                                                       
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-2 col-md-2 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Currency<span class="required">*</span></label>
-                                                        <select class="form-control select2 required" required style="width: 100%;" id="CurrencyID" asp-for="@Sale.SaleCurrency" asp-items="Html.GetEnumSelectList<Currency>()">
-                                                        </select>
-                                                    </div>
-                                                </div>
+                                                @*<div class="col-lg-2 col-md-2 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Currency<span class="required">*</span></label>
+                                                            <select class="form-control select2 required" required style="width: 100%;" id="CurrencyID" asp-for="@Sale.SaleCurrency" asp-items="Html.GetEnumSelectList<Currency>()">
+                                                            </select>
+                                                        </div>
+                                                    </div>*@
 
                                                 <div class="col-lg-2 col-md-2 col-sm-12">
                                                     <div class="form-group">
@@ -94,6 +95,30 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="col-lg-2 col-md-2 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Currency<span class="required">*</span></label>
+                                                        <select class="form-control select2 required" required style="width: 100%;" id="CurrencyID" asp-for="@Sale.currencyEnum" asp-items="Html.GetEnumSelectList<CurrencyEnum>()">
+                                                        </select>
+                                                        <span asp-validation-for="@Sale.currencyEnum" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-2 col-md-2 col-sm-12 d-none" id="dvExchange">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Exchange Rate<span class="required">*</span></label>
+                                                        <input type="text" id="ExchangeRate" asp-for="@Sale.ExchangeRate" value="0" class="form-control" placeholder="Exchange Rate" />
+                                                        <span asp-validation-for="@Sale.ExchangeRate" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-2 col-md-2 col-sm-12 d-none">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Exchange Amount<span class="required">*</span></label>
+                                                        <input type="text" id="ExchangeAmount" asp-for="@Sale.ExchangeAmount" value="0" class="form-control" placeholder="Exchange Amount" />
+                                                        <span asp-validation-for="@Sale.ExchangeAmount" class="text-danger"></span>
+                                                    </div>
+                                                </div>
                                                 <div class="col-lg-3 col-md-3 col-sm-12 d-none">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type <span class="required">*</span></label>
@@ -200,12 +225,12 @@
 
                                                                     <div class="form-group">
                                                                         <div id="input-type" class="row float-lg-right">
-                                                                            <label for="input-type">Select Discount Type &nbsp;&nbsp; </label>
+                                                                            <label for="input-type"> Discount Type &nbsp;&nbsp; </label>
                                                                             <label class="radio-inline form-check-inline">
-                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" /> By Percentage(%)
+                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" /> Percentage(%)
                                                                             </label>
                                                                             <label class="radio-inline form-check-inline">
-                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> By Fixed Amount
+                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> Fixed Amount
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -221,7 +246,7 @@
                                                                 </td>
 
                                                                 <td>
-                                                                    <div id="AmountLabelForDiscount"> <p class="text text-info">Amount: <span id="discAmount">0</span></p></div>
+                                                                    <div id="AmountLabelForDiscount"> <p class="text text-info">Discount Amount: <span id="discAmount">0</span></p></div>
                                                                 </td>
 
                                                             </tr>
@@ -278,14 +303,6 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Exchange Amount <span class="required">*</span></label>
-                                                        <input type="text" id="ExchangeAmount" asp-for="@Sale.ExchangeAmount" value="0" class="form-control" readonly placeholder="Exchange Amount" />
-                                                        <span asp-validation-for="@Sale.ExchangeAmount" class="text-danger"></span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-3 col-md-3 col-sm-12">
-                                                    <div class="form-group">
 
                                                         <div class="form-group">
                                                             <div id="input-type" class="row float-lg-right">
@@ -313,7 +330,7 @@
 
                                                     <button type="button" class="btn btn-sm btn-info-outline text text-info mr-2" onclick="fullPay();"><i class="fa fa-money"></i> Full Paid</button>
 
-                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                    <button type="submit" class="btn btn-mat btn-success mr-2" id="sbm_btnSave">
                                                         <i class="fa fa-save"></i> Save
                                                     </button>
                                                     <button type="button" formtarget="_blank" id="sbm_btn" class="btn btn-mat btn-success mr-2">
@@ -372,22 +389,39 @@
             ShowHideExchangeFields();
         });
 
-        $('input[name="rdExchangeOperation"]').on('click', function () {
-            setTrAmount($(this).val());
-        });
-
         $("#sbm_btn").on('click', function () {
             $("#sbm_flg").val("1");
+            setTrAmount();
+
             $("#frm").submit();
         });
 
-        $("#pType").on('change', function () {
-            if ($(this).val() == "2") {
-                $("#bank").removeAttr("Style");
-            } else {
-                $("#bank").addClass("d-none");
-            }
+        $("#sbm_btnSave").on('click', function () {
+            setTrAmount();
+            $("#frm").submit();
         });
+
+
+
+        function ShowHideExchangeFields() {
+            $("#ExchangeRate").val("");
+            $("#ExchangeAmount").val("");
+            if ($("#CurrencyID").val() != 1 && $("#CurrencyID").val() != "") {
+                $("#dvExchange").removeClass("d-none");
+            }
+            else {
+                $("#dvExchange").addClass("d-none");
+                $("#ExchangeRate").val(0);
+                $("#ExchangeAmount").val(0);
+            }
+        }
+        //$("#pType").on('change', function () {
+        //    if ($(this).val() == "2") {
+        //        $("#bank").removeAttr("Style");
+        //    } else {
+        //        $("#bank").addClass("d-none");
+        //    }
+        //});
 
 
         var i = 1;
@@ -434,66 +468,28 @@
             });
         });
 
-
-
         if (newCreateFlg == "1") {
             $('.select2').select2();
-
         }
 
         function fullPay() {
             var total = $("#grandtotal").val();
             $("#due").val(0);
             $("#paid").val(total);
-
+            setTrAmount();
         }
 
         function calcDiscount() {
             var subtotal = $("#total").val();
             var discper = $("#totalPercentDiscount").val();
-
             var res = (subtotal * discper) / 100;
             $("#totalDiscount").val(res);
             $("#discAmount").text(res);
         }
 
-        function setTrAmount(val) {
-            if (val == "*") {
-                var am = ($("#grandtotal").val());
-                var ex = $("#ExchangeRate").val();
-                var tra = am * ex;
-                $("#ExchangeAmount").val(tra);
-            }
-            else {
-                var am = ($("#grandtotal").val());
-                var ex = $("#ExchangeRate").val();
-                var tra = am / ex;
-                $("#ExchangeAmount").val(tra);
-            }
-        }
-
-        function ShowHideExchangeFields() {
-
-            $("#ExchangeRate").val("");
-
-            $("#ExchangeAmount").val("");
-
-            if ($("#CurrencyID").val() != 0 && $("#CurrencyID").val() != "") {
-                $("#dvExchange").removeClass("d-none");
-                //$("#TrAmount").attr("readonly", "readonly");
-                //$("#HawalaType").val("").val("Different");
-            }
-            else {
-                $("#dvExchange").addClass("d-none");
-                //$("#TrAmount").removeAttr("readonly");
-                //$("#HawalaType").val("").val("Same");
-            }
-        }
-
-
            function TriggerDropDownList() {
                     $("#customerId").empty().append('<option selected="selected" value="0">WALKING CUSTOMER</option>');
-                    $("#BankId").empty().append('<option selected="selected" value="0">--Select Bank--</option>');
+                   // $("#BankId").empty().append('<option selected="selected" value="0">--Select Bank--</option>');
                     $.ajax({
                         type: "POST",
                         cache: false,
@@ -510,21 +506,6 @@
 
                         }
                     });
-
-                     @*$.ajax({
-                            type: "POST",
-                            cache: false,
-                            url: '@Url.Action("GetBank", "Sale")',
-                            contentType: "application/json",
-                            dataType: "json",
-                            success: function (response) {
-                                response.forEach(function (item) {
-                                    $("#BankId").append($('<option>').val(item['value']).text(item['text']));
-                                });
-                            },
-                            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                            }
-                     });*@
            }
 
         DiscountTextBoxDiv.style.display = 'inline-block';
@@ -536,8 +517,6 @@
 
             var FixedAmountTextBoxDiv = document.getElementById("FixedAmountTextBoxDiv");
             var AmountLabelForDiscount = document.getElementById("AmountLabelForDiscount");
-
-
 
             if (TextBoxCheck[0].checked) {
 
@@ -551,8 +530,15 @@
 
             }
         }
+        function setTrAmount() {
+            var am = ($("#grandtotal").val());
+            var ex = $("#ExchangeRate").val();
+            var tra = am * ex;
+            $("#ExchangeAmount").val(tra);
+        }
     </script>
 
     <script src="~/js/saleFormValidation.js"></script>
+
 }
 

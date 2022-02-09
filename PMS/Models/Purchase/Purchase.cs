@@ -42,13 +42,15 @@ namespace PMS.Models.Purchase
         public string Description { get; set; }
         public PurchaseType PurchaseType { get; set; }
         public string TransCode { get; set; }
+        [EnumDataType(typeof(CurrencyEnum))]
+        public CurrencyEnum currencyEnum { get; set; }
 
-        [EnumDataType(typeof(Currency))]
-        public Currency PurchaseCurrency { get; set; }
         [Column(TypeName = "decimal(38, 2)")]
-        public decimal ExchangeRate { get; set; } = 0;
+        public decimal ExchangeRate { get; set; }
         [Column(TypeName = "decimal(38, 2)")]
-        public decimal ExchangeAmount { get; set; } = 0;
+
+        public decimal ExchangeAmount { get; set; }
+
 
     }
 }

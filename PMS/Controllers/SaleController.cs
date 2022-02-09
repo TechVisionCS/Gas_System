@@ -405,7 +405,6 @@ namespace PMS.Controllers
         {
             return View(saleRepository.GetSale(Id));
         }
-
         public ActionResult PrintInvoice(long id)
         {
             string mimeType = "";
@@ -466,40 +465,23 @@ namespace PMS.Controllers
         [HttpGet]
         public ActionResult CreateCustomerModel()
         {
-
-            ViewBag.Countries = new SelectList(helperRepository.GetCountry(), "Id", "Name");
-            ViewBag.Provinces = new SelectList(helperRepository.GetProvinces(), "Id", "Name");
-
             Customer customer = new Customer();
             return PartialView("_CreateCustomerPartialView", customer);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateCustomerModel(Customer customer, int sbm_flg)
-        {
-            // ViewBag.CustomerAdded = 1;
-            ViewBag.Countries = new SelectList(helperRepository.GetCountry(), "Id", "Name");
-            ViewBag.Provinces = new SelectList(helperRepository.GetProvinces(), "Id", "Name");
-
+        public ActionResult CreateCustomerModel(Customer customer)
+        { 
             if (ModelState.IsValid)
             {
                 try
                 {
                     var res = customerRepository.AddCustomer(customer);
-                    var id = customer.Id;
-                    ViewBag.LastId = id;
                     if (res != null)
                     {
                         helperRepository.SuccessMessage();
-                        if (sbm_flg == 0)
-                        {
-                            return RedirectToAction(nameof(GetCustomer));
-                        }
-                        else
-                        {
-                            return RedirectToAction(nameof(Create));
-                        }
+                        return RedirectToAction(nameof(Create));
                     }
                     else
                     {

@@ -1,6 +1,7 @@
 ﻿using PMS.Data.Enums;
 using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PMS.Models.Finance
@@ -31,5 +32,12 @@ namespace PMS.Models.Finance
         public bool isClosed { get; set; }
 
         public long SarafTransactionId { get; set; }
+
+        //[EnumDataType(typeof(CurrencyEnum))]
+        //public CurrencyEnum currencyEnum { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; }
+
     }
 }

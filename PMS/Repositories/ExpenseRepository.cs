@@ -201,7 +201,7 @@ namespace PMS.Repositories
                         {
                             EntityId = expense.Id,
                             EntityType = EntityType.Expense,
-                            Date = expense.Date,
+                            Date = expense.ExpenseDate,
                             Description = helperRepository.ExpensePaymentMsg_Cash(expense.Amount),
                             VoucherNo = expense.BillNumber,
                             Debit = 0,
@@ -238,7 +238,7 @@ namespace PMS.Repositories
                         {
                             EntityId = (long)expense.BankId,
                             EntityType = EntityType.Bank,
-                            Date = expense.Date,
+                            Date = expense.ExpenseDate,
                             Description = helperRepository.ExpensePaymentMsg_Bank(expense.Amount),
                             Debit = 0,
                             VoucherNo = expense.BillNumber,
@@ -333,7 +333,7 @@ namespace PMS.Repositories
                             {
                                 EntityId = m.Id,
                                 EntityType = EntityType.Expense,
-                                Date = m.Date,
+                                Date = m.ExpenseDate,
                                 Description = helperRepository.ExpenseDeletePaymentMsg_Cash(m.Amount),
                                 VoucherNo = m.BillNumber,
                                 Debit = m.Amount,
@@ -467,7 +467,7 @@ namespace PMS.Repositories
                         EmployeeName = EmployeeName,
                         BankId = (long)expense.BankId,
                         BankName = bankName,
-                        Date = expense.Date,
+                        ExpenseDate = expense.ExpenseDate,
                         Amount = expense.Amount,
                         BillNumber = expense.BillNumber,
                         Description = expense.Description,
@@ -548,7 +548,7 @@ namespace PMS.Repositories
                     Id = expense.Id,
                     ExpenseCategoryName = ExpenseCategory,
                     EmployeeName = EmployeeName,
-                    Date = expense.Date,
+                    ExpenseDate = expense.ExpenseDate,
                     Amount = expense.Amount,
                     BillNumber = BillNumber,
                     Description = Description
@@ -612,7 +612,7 @@ namespace PMS.Repositories
                     Id = expense.Id,
                     ExpenseCategoryName = ExpenseCategory,
                     EmployeeName = EmployeeName,
-                    Date = expense.Date,
+                    ExpenseDate = expense.ExpenseDate,
                     Amount = expense.Amount,
                     BillNumber = BillNumber,
                     Description = Description,
@@ -627,7 +627,7 @@ namespace PMS.Repositories
             if (dbContext != null)
             {
                 List<ExpenseViewModel> list = new List<ExpenseViewModel>();
-                var ModelList = dbContext.Expenses.OrderBy(n => n.Date).Where(x => x.DeletedAt == null).ToList();
+                var ModelList = dbContext.Expenses.OrderBy(n => n.ExpenseDate).Where(x => x.DeletedAt == null).ToList();
                 long sno = 1;
                 var bankName = "";
                 var ExpenseCategory = "";
@@ -672,7 +672,7 @@ namespace PMS.Repositories
                         EmployeeName = EmployeeName,
                         BankId = (long)expense.BankId,
                         BankName = bankName,
-                        Date = expense.Date,
+                        ExpenseDate = expense.ExpenseDate,
                         Amount = expense.Amount,
                         BillNumber = expense.BillNumber,
                         Description = expense.Description,
@@ -692,12 +692,12 @@ namespace PMS.Repositories
 
                 if (startDate != null)
                 {
-                    list = list.Where(x => x.Date >= startDate).ToList();
+                    list = list.Where(x => x.ExpenseDate >= startDate).ToList();
                 }
 
                 if (endDate != null)
                 {
-                    list = list.Where(x => x.Date <= endDate).ToList();
+                    list = list.Where(x => x.ExpenseDate <= endDate).ToList();
                 }
 
                 return list;
@@ -723,12 +723,12 @@ namespace PMS.Repositories
 
                 if (startDate != null)
                 {
-                    ModelList = ModelList.Where(x => x.Date >= startDate).ToList();
+                    ModelList = ModelList.Where(x => x.ExpenseDate >= startDate).ToList();
                 }
 
                 if (endDate != null)
                 {
-                    ModelList = ModelList.Where(x => x.Date <= endDate).ToList();
+                    ModelList = ModelList.Where(x => x.ExpenseDate <= endDate).ToList();
                 }
 
                 foreach (var expense in ModelList)
@@ -763,7 +763,7 @@ namespace PMS.Repositories
                         Id = expense.Id,
                         ExpenseCategoryName = dbContext.ExpensesCategories.FirstOrDefault(x => x.Id == expense.ExpenseCategory).Name,
                         EmployeeName = dbContext.Employees.FirstOrDefault(x => x.Id == expense.EmployeeId).Name,
-                        Date = expense.Date,
+                        ExpenseDate = expense.ExpenseDate,
                         Amount = expense.Amount,
                         BillNumber = BillNumber,
                         Description = Description,

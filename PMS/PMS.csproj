@@ -437,8 +437,16 @@
 
   <ItemGroup>
     <Folder Include="ViewModels\Asset\" />
+    <Folder Include="wwwroot\Backup\" />
     <Folder Include="wwwroot\Uploads\employee-profile\" />
     <Folder Include="wwwroot\Uploads\backup\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Currency\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 

@@ -19,5 +19,12 @@ namespace PMS.Models
         public string Description { get; set; }
         public string TransCode { get; set; }
         public int Flg { get; set; }
+
+        //[EnumDataType(typeof(CurrencyEnum))]
+        //public CurrencyEnum currencyEnum { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; }
+
     }
 }

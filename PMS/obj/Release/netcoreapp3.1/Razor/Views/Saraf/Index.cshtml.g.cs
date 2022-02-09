@@ -188,13 +188,6 @@ using PMS.ViewModels.Wastages;
 #line hidden
 #nullable disable
 #nullable restore
-#line 29 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
-using PMS.Data.Enums;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 30 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
@@ -229,8 +222,15 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 35 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
+using PMS.Data.Enums;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b58038044bfbd3d236fb615bced030729fa73ec7", @"/Views/Saraf/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"07c988150c4fa84b28b6ef034ddc763942ed574f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1294a065003cd80f0d0b51345d2b1e10ab7a6a9a", @"/Views/_ViewImports.cshtml")]
     public class Views_Saraf_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<SarafViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "CreateOrEdit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

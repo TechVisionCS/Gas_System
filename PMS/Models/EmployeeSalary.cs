@@ -45,5 +45,12 @@ namespace PMS.Models
         public bool isPaid { get; set; }
         public string TransCode { get; set; }
         public Employee Employee { get; set; }
+
+        //[EnumDataType(typeof(CurrencyEnum))]
+        //public CurrencyEnum currencyEnum { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; }
+
     }
 }

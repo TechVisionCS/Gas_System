@@ -37,5 +37,10 @@ namespace PMS.ViewModels.Finance
         public DateTime? DeletedAt { get; set; }
         public string UserId { get; set; }
         public string UserName { get; set; }
+        //public int CurrecnyId { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; }
+
     }
 }

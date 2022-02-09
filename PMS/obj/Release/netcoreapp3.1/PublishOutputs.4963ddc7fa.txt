@@ -963,6 +963,7 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\assets\theme\css\style.css
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\assets\theme\js\script.js
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\assets\web\assets\jquery\jquery.min.js
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Backup\gas_db_original(2022-01-23_10-14-04-PM).bak
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\css\PrintArea.css
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\css\site.css
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Expense-gas-title.png
@@ -1157,9 +1158,14 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Reports\ServiceInvoice.rdlc
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Reports\SupplierLedger.rdlc
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\1ede589a-c9bb-480a-b077-2d1fa482d179_Capture.PNG
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\3d4ea87f-0370-4fd4-bc09-baa24c66155c_scanner_20211204_152826.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\4c9198ac-d30d-4431-9a8a-3b4278d92b65_Capture.PNG
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\6af2bef0-1df1-4720-8e43-9ea0b0e7fd3d_KhayalBacha.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\Backups\gas_db_original(2022-01-21_09-13-03-PM_Admin User).bak
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\Backups\gas_db_original(2022-01-22_11-53-55-AM_Admin User).bak
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\Backups\gas_db_original(2022-01-23_12-07-36-PM_Admin User).bak
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\Backups\gas_db_original(2022-01-23_12-26-16-PM_Admin User).bak
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\Backups\gas_db_original(2022-01-23_12-26-21-PM_Admin User).bak
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\bfe08465-bcb0-4990-9ed7-ea7fccf56491_01.PNG
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\c0430269-549d-4609-844a-ebd3e60d734d_eeeee.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\dbb251bd-e9e1-40cd-a168-890c078e4f31_190705878_773312203378191_1671868058975634366_n.jpg

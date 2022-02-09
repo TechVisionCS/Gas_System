@@ -126,6 +126,7 @@
                                         </tbody>
 
                                         <tbody>
+
                                             <tr>
 
                                                 <th colspan="5" class="text text-left">مجموعه اولیه</th>
@@ -168,6 +169,21 @@
                                                 <th colspan="5" class="text text-left">باقیمانده</th>
                                                 <td>
                                                     @Purchase.DueAmount
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+
+                                                <th colspan="5" class="text text-left">کرنسی</th>
+                                                <td>
+                                                    @if (Purchase.CurrecnyId == 1)
+                                                    {
+                                                        <span class="badge badge-info">افغانی</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="badge badge-primary">دالر</span>
+                                                    }
                                                 </td>
 
                                             </tr>

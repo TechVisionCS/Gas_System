@@ -1,0 +1,63 @@
+﻿@model Customer
+
+<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header bg-primary text text-white">
+                <h5 class="modal-title">Customer Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="color: white;">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form method="post" asp-action="CreatePartial" asp-controller="Customer">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label>Name <span class="required">*</span></label>
+                                <input type="text" asp-for="Name" class="form-control" required autofocus />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label"> Phone </label>
+                                <input asp-for="Phone" class="form-control" value="07---------" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label"> Email </label>
+                                <input asp-for="Email" class="form-control" value="customer@email.com" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label"> Address </label>
+                                <input asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group d-none">
+                            <label class="control-label">Previous Balance</label>
+                            <input type="number" hidden step="any" asp-for="PreviousBalance" class="form-control" value="0" />
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-save="modal">Save</button>
+                            <a asp-action="Index" asp-controller="Supplier" class="btn btn-primary">Manage</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

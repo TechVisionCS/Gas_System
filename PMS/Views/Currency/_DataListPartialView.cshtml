@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Currency>
+<div class="card-block table-border-style">
+    <div class="table-responsive">
+        <table id="example1" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>SNo.</th>
+                    <th>Name</th>
+                    <th>ISO_Code</th>
+                    <th>Symbol</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ var sno = 1; }
+                @if (Model.Any())
+                {
+                    foreach (var Type in Model)
+                    {
+                        <tr>
+                            <td>@sno</td>
+                            <td>@Type.CurrencyName</td>
+                            <td>@Type.CurrencyCode</td>
+                            <td>@Type.CurrencySymbol</td>
+                            <td>
+                                <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action($"Edit/{Type.Id}")"
+                                   data-redirect="@Url.Action("Success", "Currency")" class="text text-primary" style="cursor: pointer;">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <span class="d-none">@{sno++;}</span>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

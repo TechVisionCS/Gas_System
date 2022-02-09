@@ -188,13 +188,6 @@ using PMS.ViewModels.Wastages;
 #line hidden
 #nullable disable
 #nullable restore
-#line 29 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
-using PMS.Data.Enums;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 30 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
@@ -229,8 +222,15 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 35 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
+using PMS.Data.Enums;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b4288d18b04dc6315a78580c777520a6c6ae7d3c", @"/Views/Product/_BatchDetailsPartials.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"07c988150c4fa84b28b6ef034ddc763942ed574f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1294a065003cd80f0d0b51345d2b1e10ab7a6a9a", @"/Views/_ViewImports.cshtml")]
     public class Views_Product__BatchDetailsPartials : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ProductBatch>>
     {
         #pragma warning disable 1998

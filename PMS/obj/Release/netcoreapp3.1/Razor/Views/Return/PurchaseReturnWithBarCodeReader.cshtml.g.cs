@@ -188,13 +188,6 @@ using PMS.ViewModels.Wastages;
 #line hidden
 #nullable disable
 #nullable restore
-#line 29 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
-using PMS.Data.Enums;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 30 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
@@ -230,6 +223,13 @@ using System.Text.Json;
 #line hidden
 #nullable disable
 #nullable restore
+#line 35 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
+using PMS.Data.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\Return\PurchaseReturnWithBarCodeReader.cshtml"
 using PMS.Controllers;
 
@@ -237,7 +237,7 @@ using PMS.Controllers;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"39c698ba60b8e7e520d3e44e6a89300bbbaafffc", @"/Views/Return/PurchaseReturnWithBarCodeReader.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"07c988150c4fa84b28b6ef034ddc763942ed574f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1294a065003cd80f0d0b51345d2b1e10ab7a6a9a", @"/Views/_ViewImports.cshtml")]
     public class Views_Return_PurchaseReturnWithBarCodeReader : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ReturnViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "PurchaseReturn", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

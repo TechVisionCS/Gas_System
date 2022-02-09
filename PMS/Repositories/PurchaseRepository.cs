@@ -23,7 +23,6 @@ namespace PMS.Repositories
         private readonly IBankRepository bankRepository;
         private readonly IShopRepository shopRepository;
 
-
         public PurchaseRepository(ApplicationDbContext dbContext,
                                   IHelperRepository helperRepository,
                                   PMSHelper pmsHelper,
@@ -104,7 +103,10 @@ namespace PMS.Repositories
                         UpdatedAt = m.UpdatedAt,
                         DeletedAt = m.DeletedAt,
                         UserId = m.UserId,
-                        UserName = pmsHelper.GetUserName(m.UserId)
+                        UserName = pmsHelper.GetUserName(m.UserId),
+                        ExchangeRate = m.ExchangeRate,
+                        ExchangeAmount = m.ExchangeAmount,
+                        CurrecnyId = (int)m.currencyEnum
 
                     };
 

@@ -40,6 +40,12 @@ namespace PMS.Models.Quote
 
         [EnumDataType(typeof(QuoteStatus))]
         public QuoteStatus QuoteStatus { get; set; }
+        //[EnumDataType(typeof(CurrencyEnum))]
+        //public CurrencyEnum currencyEnum { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; }
+
 
     }
 }

@@ -255,7 +255,7 @@ namespace PMS.Controllers
             parameters.Add("shopPhone", shop.Phone1);
             parameters.Add("shopEmail", shop.Email1);
             parameters.Add("Id", expense.Id.ToString());
-            parameters.Add("Date", expense.Date.ToString());
+            parameters.Add("Date", expense.ExpenseDate.ToString());
             parameters.Add("EmployeeName", expense.EmployeeName.ToString());
             parameters.Add("ExpenseCategoryName", expense.ExpenseCategoryName.ToString());
             parameters.Add("Amount", expense.Amount.ToString());
@@ -281,7 +281,7 @@ namespace PMS.Controllers
             parameters.Add("shopEmail", shop.Email1);
 
             parameters.Add("Id", expense.Id.ToString());
-            parameters.Add("Date", expense.Date.ToString());
+            parameters.Add("Date", expense.ExpenseDate.ToString());
             parameters.Add("EmployeeName", expense.EmployeeName.ToString());
             parameters.Add("ExpenseCategoryName", expense.ExpenseCategoryName.ToString());
             parameters.Add("Amount", expense.Amount.ToString());

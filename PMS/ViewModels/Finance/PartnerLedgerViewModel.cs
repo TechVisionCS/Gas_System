@@ -1,11 +1,6 @@
-﻿using Castle.MicroKernel.SubSystems.Conversion;
-using PMS.Models;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PMS.ViewModels
 {
@@ -42,5 +37,7 @@ namespace PMS.ViewModels
         public DateTime? DeletedAt { get; set; }
         public string UserId { get; set; }
         public string UserName { get; set; }
+
+
     }
 }

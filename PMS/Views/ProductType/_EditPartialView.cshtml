@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
                 <form method="post" asp-action="Edit" asp-controller="ProductType">
-                    
+
                     <div class="form-group">
                         <label>Category <span class="required">*</span></label>
                         <select class="form-control select2" asp-for="CategoryName" asp-items="@ViewBag.Categories"
@@ -50,6 +50,8 @@
 
                     <div class="modal-footer">
                         <input type="hidden" asp-for="Id" value="@Model.Id" />
+                        <input type="hidden" asp-for="CreatedAt" />
+
                         <button type="button" class="btn btn-primary" data-save="modal">Update</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>

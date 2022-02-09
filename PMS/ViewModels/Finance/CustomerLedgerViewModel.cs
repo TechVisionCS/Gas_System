@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace PMS.ViewModels.Finance
 {
@@ -40,5 +37,7 @@ namespace PMS.ViewModels.Finance
         public DateTime? DeletedAt { get; set; }
         public string UserId { get; set; }
         public string UserName { get; set; }
+
+
     }
 }

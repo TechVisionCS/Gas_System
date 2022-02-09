@@ -263,7 +263,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_bank_tbl");
+                    b.ToTable("gms_bank_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.BankTransaction", b =>
@@ -310,7 +310,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_bank_transaction_tbl");
+                    b.ToTable("gms_bank_transaction_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Customer", b =>
@@ -322,9 +322,6 @@ namespace PMS.Migrations
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("Countryid")
-                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -348,9 +345,6 @@ namespace PMS.Migrations
                     b.Property<decimal>("PreviousBalance")
                         .HasColumnType("decimal(38, 2)");
 
-                    b.Property<long>("Provinceid")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -362,7 +356,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_customer_tbl");
+                    b.ToTable("gms_customer_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.CustomerAdvanced", b =>
@@ -416,7 +410,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_customer_advanced_tbl");
+                    b.ToTable("gms_customer_advanced_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.CustomerReceive", b =>
@@ -470,7 +464,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_customer_receive_tbl");
+                    b.ToTable("gms_customer_receive_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Employee", b =>
@@ -486,12 +480,6 @@ namespace PMS.Migrations
                     b.Property<decimal>("BaseSalary")
                         .HasColumnType("decimal (38,2)");
 
-                    b.Property<string>("Birthdate")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("Countryid")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -504,18 +492,9 @@ namespace PMS.Migrations
                     b.Property<string>("Details")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EducationalDegree")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Fathername")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Gender")
-                        .HasColumnType("int");
 
                     b.Property<string>("Hiredate")
                         .HasColumnType("nvarchar(max)");
@@ -523,14 +502,8 @@ namespace PMS.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Lastname")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("Leavedate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("MaritalStatus")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -542,9 +515,6 @@ namespace PMS.Migrations
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("Provinceid")
-                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -561,7 +531,7 @@ namespace PMS.Migrations
                         .IsUnique()
                         .HasFilter("[NationalIdnumber] IS NOT NULL");
 
-                    b.ToTable("wms_employee_tbl");
+                    b.ToTable("gms_employee_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.EmployeeSalary", b =>
@@ -625,7 +595,7 @@ namespace PMS.Migrations
 
                     b.HasKey("EmployeeId", "SalaryYear", "SalaryMonth");
 
-                    b.ToTable("pms_employee_salaries_tbl");
+                    b.ToTable("gms_employee_salaries_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Expense", b =>
@@ -650,9 +620,6 @@ namespace PMS.Migrations
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
@@ -664,6 +631,9 @@ namespace PMS.Migrations
 
                     b.Property<long>("ExpenseCategory")
                         .HasColumnType("bigint");
+
+                    b.Property<DateTime>("ExpenseDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("PaymentType")
                         .HasColumnType("int");
@@ -682,7 +652,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_expense_tbl");
+                    b.ToTable("gms_expense_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.BankLedger", b =>
@@ -745,7 +715,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_bank_ledger_tbl");
+                    b.ToTable("gms_bank_ledger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.CashLedger", b =>
@@ -782,6 +752,9 @@ namespace PMS.Migrations
                     b.Property<int>("EntityType")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("ExchangeRate")
+                        .HasColumnType("decimal(38, 2)");
+
                     b.Property<string>("TransCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -800,12 +773,15 @@ namespace PMS.Migrations
                     b.Property<string>("VoucherNo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("currencyEnum")
+                        .HasColumnType("int");
+
                     b.Property<bool>("isClosed")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_cash_ledger_tbl");
+                    b.ToTable("gms_cash_ledger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.CustomerLedger", b =>
@@ -864,7 +840,7 @@ namespace PMS.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("wms_customer_ledger_tbl");
+                    b.ToTable("gms_customer_ledger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.EmployeeLedger", b =>
@@ -918,7 +894,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("pms_employee_ledger_tbl");
+                    b.ToTable("gms_employee_ledger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.OfficeLoanLedger", b =>
@@ -972,7 +948,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_office_loan_ledger_tbl");
+                    b.ToTable("gms_office_loan_ledger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.PartnerLedger", b =>
@@ -1031,7 +1007,7 @@ namespace PMS.Migrations
 
                     b.HasIndex("partnerId");
 
-                    b.ToTable("wms_partner_ledger_tbl");
+                    b.ToTable("gms_partner_ledger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.PersonalLoanLedger", b =>
@@ -1085,7 +1061,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_person_loan_ledger_tbl");
+                    b.ToTable("gms_person_loan_ledger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.SarafLedger", b =>
@@ -1148,7 +1124,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_saraf_leger_tbl");
+                    b.ToTable("gms_saraf_leger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.SupplierLedger", b =>
@@ -1202,7 +1178,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_supplier_ledger_tbl");
+                    b.ToTable("gms_supplier_ledger_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Finance.Transaction", b =>
@@ -1250,7 +1226,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_transaction_tbl");
+                    b.ToTable("gms_transaction_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.FixedAsset.Asset", b =>
@@ -1305,7 +1281,7 @@ namespace PMS.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("wms_asset_tbl");
+                    b.ToTable("gms_asset_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.FixedAsset.AssetHandover", b =>
@@ -1344,7 +1320,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_asset_handover_tbl");
+                    b.ToTable("gms_asset_handover_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.FixedAsset.AssetHandoverDetails", b =>
@@ -1386,7 +1362,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_asset_handover_Details_tbl");
+                    b.ToTable("gms_asset_handover_Details_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.FixedAsset.AssetReturn", b =>
@@ -1413,7 +1389,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_asset_return");
+                    b.ToTable("gms_asset_return");
                 });
 
             modelBuilder.Entity("PMS.Models.FixedAsset.AssetStock", b =>
@@ -1465,7 +1441,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_asset_stock_tbl");
+                    b.ToTable("gms_asset_stock_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Lookup.AssetsCategory", b =>
@@ -1505,7 +1481,7 @@ namespace PMS.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("wms_assets_category_tbl");
+                    b.ToTable("gms_assets_category_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Lookup.Category", b =>
@@ -1526,7 +1502,7 @@ namespace PMS.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -1542,54 +1518,17 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_category_tbl");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("gms_category_tbl");
 
                     b.HasData(
                         new
                         {
                             Id = 1L,
-                            Description = "Liquefied petroleum gas (LPG, LP gas, or condensate), is a flammable mixture of hydrocarbon gases, most commonly propane, butane, and propylene. However, the latter two typically comprise 5% or less of the mixture.",
-                            Name = "Liquefied petroleum gas LPG",
-                            Status = 1,
-                            UserName = "System Defined"
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            Description = "Syngas, or synthesis gas, is a fuel gas mixture consisting primarily of hydrogen, carbon monoxide, and very often some carbon dioxide. Syngas can be produced from many sources, including natural gas, coal, biomass, or virtually any hydrocarbon feedstock, by reaction with steam (steam reforming), carbon dioxide (dry reforming) or oxygen (partial oxidation).",
-                            Name = "Syngas",
-                            Status = 1,
-                            UserName = "System Defined"
-                        },
-                        new
-                        {
-                            Id = 3L,
                             Description = "Natural gas is colorless and odorless, and explosive, so a sulfur-smell (similar to rotten eggs) is usually added for early detection of leaks",
-                            Name = "Natural gas",
-                            Status = 1,
-                            UserName = "System Defined"
-                        },
-                        new
-                        {
-                            Id = 4L,
-                            Description = "Propane (/ˈproʊpeɪn/) is a three-carbon alkane with the molecular formula C3H8. It is a gas at standard temperature and pressure, but compressible to a transportable liquid.",
-                            Name = "Propane",
-                            Status = 1,
-                            UserName = "System Defined"
-                        },
-                        new
-                        {
-                            Id = 5L,
-                            Description = "A gas stove is a stove that is fuelled by combustible gas such as syngas, natural gas, propane, butane, liquefied petroleum gas or other flammable gas.",
-                            Name = "Gas stove",
-                            Status = 1,
-                            UserName = "System Defined"
-                        },
-                        new
-                        {
-                            Id = 6L,
-                            Description = "Butane is a gas at room temperature and atmospheric pressure. Butane is a highly flammable, colorless, easily liquefied gas that quickly vaporizes at room temperature.",
-                            Name = "Butane",
+                            Name = "Natural Gas",
                             Status = 1,
                             UserName = "System Defined"
                         });
@@ -1629,7 +1568,7 @@ namespace PMS.Migrations
                         .IsUnique()
                         .HasFilter("[Name] IS NOT NULL");
 
-                    b.ToTable("wms_country_tbl");
+                    b.ToTable("gms_country_tbl");
 
                     b.HasData(
                         new
@@ -1669,6 +1608,65 @@ namespace PMS.Migrations
                         });
                 });
 
+            modelBuilder.Entity("PMS.Models.Lookup.Currency", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CurrencyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CurrencySymbol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CurrencyCode")
+                        .IsUnique();
+
+                    b.ToTable("gas_currencies_tbl");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CurrencyCode = "AFN",
+                            CurrencyName = "Afghani",
+                            CurrencySymbol = "؋",
+                            UserName = "System_generated"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            CurrencyCode = "USD",
+                            CurrencyName = "UnitedState Dollar",
+                            CurrencySymbol = "$",
+                            UserName = "System_generated"
+                        });
+                });
+
             modelBuilder.Entity("PMS.Models.Lookup.Designation", b =>
                 {
                     b.Property<long>("Id")
@@ -1703,7 +1701,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_designation_tbl");
+                    b.ToTable("gms_designation_tbl");
 
                     b.HasData(
                         new
@@ -1747,13 +1745,6 @@ namespace PMS.Migrations
                             Name = "Gaurd",
                             Status = 1,
                             UserName = "System Defined"
-                        },
-                        new
-                        {
-                            Id = 7L,
-                            Name = "Pharmacist",
-                            Status = 1,
-                            UserName = "System Defined"
                         });
                 });
 
@@ -1794,7 +1785,7 @@ namespace PMS.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("wms_expense_category_tbl");
+                    b.ToTable("gms_expense_category_tbl");
 
                     b.HasData(
                         new
@@ -2018,118 +2009,14 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_manufacturer_tbl");
+                    b.ToTable("gms_manufacturer_tbl");
 
                     b.HasData(
                         new
                         {
                             Id = 1L,
-                            Description = "Turkey",
-                            Name = "2A Muhendislik San.- Tur ",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 2L,
-                            Description = "China Petroleum and Chemical Corporation, also known as Sinopec, is the second-largest company behind US retailer Walmart and ",
-                            Name = "Sinopec",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            Description = "China National Petroleum is the state-owned parent company of PetroChina – the country’s second-largest oil producer.",
-                            Name = "China National Petroleum",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 4L,
-                            Description = "Saudi Aramco is the state-owned oil company of the Kingdom of Saudi Arabia and is the third-largest oil and gas company in Asia and the fourth-largest in the world by revenue.",
-                            Name = " Saudi Aramco",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 5L,
-                            Description = "Eneos Holdings is a Japanese petroleum and metals conglomerate and the fifth-largest oil and gas company in Asia by revenue.The Tokyo - headquartered firm brought in $75.9bn at the end of the 2019 - 20 fiscal year and recorded a $1.7bn loss across the same period.",
-                            Name = "Eneos Holdings ",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 6L,
-                            Description = "",
-                            Name = "Adeel Industry(Shan Gas)",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 7L,
-                            Description = "",
-                            Name = "Bashir gas pvt limited",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 8L,
-                            Description = "",
-                            Name = "Burhan Gas Company",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 9L,
-                            Description = "",
-                            Name = "Country Autogas",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 10L,
-                            Description = "",
-                            Name = "Engineering solution international",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 11L,
-                            Description = "",
-                            Name = "ExpoMughal International",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 12L,
-                            Description = "",
-                            Name = "HI-Tek Manufacturing (Pvt) Ltd",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 13L,
-                            Description = "",
-                            Name = "Pak Engineering and Automation",
-                            Status = 1,
-                            UserName = "System_Populated"
-                        },
-                        new
-                        {
-                            Id = 14L,
-                            Description = "",
-                            Name = "Engineering solution international",
+                            Description = "Irani",
+                            Name = "Hayratan Gas.- IR ",
                             Status = 1,
                             UserName = "System_Populated"
                         });
@@ -2160,7 +2047,7 @@ namespace PMS.Migrations
 
                     b.Property<string>("TypeName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -2173,7 +2060,10 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_product_type_tbl");
+                    b.HasIndex("TypeName")
+                        .IsUnique();
+
+                    b.ToTable("gms_product_type_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Lookup.Province", b =>
@@ -2214,7 +2104,7 @@ namespace PMS.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.ToTable("wms_province_tbl");
+                    b.ToTable("gms_province_tbl");
 
                     b.HasData(
                         new
@@ -3402,7 +3292,7 @@ namespace PMS.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("wms_service_category_tbl");
+                    b.ToTable("gms_service_category_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Lookup.Unit", b =>
@@ -3426,7 +3316,7 @@ namespace PMS.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -3442,7 +3332,10 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_unit_tbl");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("gms_unit_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.OfficeLoan.OfficeLoanPayment", b =>
@@ -3496,7 +3389,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_office_loan_payment_tbl");
+                    b.ToTable("gms_office_loan_payment_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.OfficeLoan.OfficeLoanReceive", b =>
@@ -3550,7 +3443,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_office_loan_receive_tbl");
+                    b.ToTable("gms_office_loan_receive_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.OfficeLoan.OfficePerson", b =>
@@ -3596,7 +3489,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_office_person_tbl");
+                    b.ToTable("gms_office_person_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Partner", b =>
@@ -3648,7 +3541,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_partner_tbl");
+                    b.ToTable("gms_partner_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.PartnerInvestment", b =>
@@ -3703,7 +3596,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_partner_investment_tbl");
+                    b.ToTable("gms_partner_investment_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.PartnerPayment", b =>
@@ -3758,7 +3651,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_partner_payment_tbl");
+                    b.ToTable("gms_partner_payment_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.PersonalLoan.Person", b =>
@@ -3804,7 +3697,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_person_tbl");
+                    b.ToTable("gms_person_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.PersonalLoan.PersonalLoanPayment", b =>
@@ -3858,7 +3751,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_person_loan_payment_tbl");
+                    b.ToTable("gms_person_loan_payment_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.PersonalLoan.PersonalLoanReceive", b =>
@@ -3912,7 +3805,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_person_loan_receive_tbl");
+                    b.ToTable("gms_person_loan_receive_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Product", b =>
@@ -3960,7 +3853,7 @@ namespace PMS.Migrations
 
                     b.HasIndex("ProductTypeId");
 
-                    b.ToTable("wms_product_tbl");
+                    b.ToTable("gms_product_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.ProductBatch", b =>
@@ -4005,7 +3898,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_product_batch_tbl");
+                    b.ToTable("gms_product_batch_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.ProductSupplier", b =>
@@ -4038,7 +3931,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_product_supplier_tbl");
+                    b.ToTable("gms_product_supplier_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.ProductUnit", b =>
@@ -4086,7 +3979,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_partners_purchase_shares_tbl");
+                    b.ToTable("gms_partners_purchase_shares_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Purchase.Purchase", b =>
@@ -4130,9 +4023,6 @@ namespace PMS.Migrations
                     b.Property<int>("PaymentType")
                         .HasColumnType("int");
 
-                    b.Property<int>("PurchaseCurrency")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("PurchaseDate")
                         .HasColumnType("datetime2");
 
@@ -4166,9 +4056,12 @@ namespace PMS.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("currencyEnum")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("wms_purchase_tbl");
+                    b.ToTable("gms_purchase_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Purchase.PurchaseDetails", b =>
@@ -4213,7 +4106,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_purchase_details_tbl");
+                    b.ToTable("gms_purchase_details_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Quote.Quote", b =>
@@ -4282,7 +4175,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_quote_tbl");
+                    b.ToTable("gms_quote_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Quote.QuoteDetails", b =>
@@ -4330,7 +4223,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_quote_details_tbl");
+                    b.ToTable("gms_quote_details_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Return", b =>
@@ -4411,7 +4304,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_return_tbl");
+                    b.ToTable("gms_return_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.ReturnDetails", b =>
@@ -4466,7 +4359,7 @@ namespace PMS.Migrations
 
                     b.HasIndex("UnitId");
 
-                    b.ToTable("wms_return_details_tbl");
+                    b.ToTable("gms_return_details_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Sale.Sale", b =>
@@ -4512,9 +4405,6 @@ namespace PMS.Migrations
                     b.Property<decimal>("RentAmount")
                         .HasColumnType("decimal(38, 2)");
 
-                    b.Property<int>("SaleCurrency")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("SaleDate")
                         .HasColumnType("datetime2");
 
@@ -4542,9 +4432,12 @@ namespace PMS.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("currencyEnum")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("wms_sale_tbl");
+                    b.ToTable("gms_sale_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Sale.SaleDetails", b =>
@@ -4596,7 +4489,7 @@ namespace PMS.Migrations
 
                     b.HasIndex("UnitId");
 
-                    b.ToTable("wms_sale_details_tbl");
+                    b.ToTable("gms_sale_details_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Saraf", b =>
@@ -4644,7 +4537,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_saraf_tbl");
+                    b.ToTable("gms_saraf_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.SarafTransaction", b =>
@@ -4691,7 +4584,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_saraf_transaction_tbl");
+                    b.ToTable("gms_saraf_transaction_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Service.ServiceDetails", b =>
@@ -4739,7 +4632,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_service_details_tbl");
+                    b.ToTable("gms_service_details_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Service.Services", b =>
@@ -4806,7 +4699,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_service_tbl");
+                    b.ToTable("gms_service_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Settings.ProductTax", b =>
@@ -4821,7 +4714,7 @@ namespace PMS.Migrations
 
                     b.HasIndex("TaxId");
 
-                    b.ToTable("wms_product_tax_tbl");
+                    b.ToTable("gms_product_tax_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Settings.Tax", b =>
@@ -4858,7 +4751,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_tax_tbl");
+                    b.ToTable("gms_tax_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Shop", b =>
@@ -4934,7 +4827,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_shop_tbl");
+                    b.ToTable("gms_shop_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Stock", b =>
@@ -4979,7 +4872,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_stock_tbl");
+                    b.ToTable("gms_stock_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.StockDetails", b =>
@@ -5033,7 +4926,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_stock_details_tbl");
+                    b.ToTable("gms_stock_details_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.StockLog", b =>
@@ -5081,7 +4974,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_stock_purchase_log_tbl");
+                    b.ToTable("gms_stock_purchase_log_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Supplier", b =>
@@ -5094,7 +4987,7 @@ namespace PMS.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Countryid")
+                    b.Property<long?>("CountryId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("CreatedAt")
@@ -5119,7 +5012,7 @@ namespace PMS.Migrations
                     b.Property<decimal>("PreviousBalance")
                         .HasColumnType("decimal(38, 2)");
 
-                    b.Property<long>("Provinceid")
+                    b.Property<long?>("ProvinceId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -5133,11 +5026,11 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Countryid");
+                    b.HasIndex("CountryId");
 
-                    b.HasIndex("Provinceid");
+                    b.HasIndex("ProvinceId");
 
-                    b.ToTable("wms_supplier_tbl");
+                    b.ToTable("gms_supplier_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.SupplierAdvanced", b =>
@@ -5191,7 +5084,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_supplier_advanced_tbl");
+                    b.ToTable("gms_supplier_advanced_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.SupplierPayment", b =>
@@ -5245,7 +5138,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_supplier_payment_tbl");
+                    b.ToTable("gms_supplier_payment_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.Wastage", b =>
@@ -5297,7 +5190,7 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("wms_wastage_tbl");
+                    b.ToTable("gms_wastage_tbl");
                 });
 
             modelBuilder.Entity("PMS.Models.WastageDetails", b =>
@@ -5346,7 +5239,7 @@ namespace PMS.Migrations
 
                     b.HasIndex("UnitId");
 
-                    b.ToTable("wms_wastage_details_tbl");
+                    b.ToTable("gms_wastage_details_tbl");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -5512,15 +5405,13 @@ namespace PMS.Migrations
                 {
                     b.HasOne("PMS.Models.Lookup.Country", null)
                         .WithMany("suppliers")
-                        .HasForeignKey("Countryid")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("PMS.Models.Lookup.Province", null)
                         .WithMany("suppliers")
-                        .HasForeignKey("Provinceid")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .HasForeignKey("ProvinceId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("PMS.Models.WastageDetails", b =>

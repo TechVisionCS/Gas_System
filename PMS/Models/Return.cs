@@ -49,5 +49,12 @@ namespace PMS.Models
         public decimal DueAmount { get; set; }
         public string Description { get; set; }
         public string TransCode { get; set; }
+
+        //[EnumDataType(typeof(CurrencyEnum))]
+        //public CurrencyEnum currencyEnum { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; }
+
     }
 }

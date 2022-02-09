@@ -188,13 +188,6 @@ using PMS.ViewModels.Wastages;
 #line hidden
 #nullable disable
 #nullable restore
-#line 29 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
-using PMS.Data.Enums;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 30 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
@@ -229,8 +222,15 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 35 "E:\0110\GasGroupApp\GasGroupApp\PMS\Views\_ViewImports.cshtml"
+using PMS.Data.Enums;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"086dbe5030f212851af75a70168c0ea41b2c8e13", @"/Views/Purchase/_CreateBankPartialView.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"07c988150c4fa84b28b6ef034ddc763942ed574f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1294a065003cd80f0d0b51345d2b1e10ab7a6a9a", @"/Views/_ViewImports.cshtml")]
     public class Views_Purchase__CreateBankPartialView : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Bank>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("form-control"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

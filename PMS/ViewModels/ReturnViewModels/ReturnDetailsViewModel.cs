@@ -15,5 +15,7 @@ namespace PMS.ViewModels.ReturnViewModels
         public decimal Discount { get; set; }
         public decimal TotalPrice { get; set; }
         public long DetailsId { get; set; }
+
+
     }
 }

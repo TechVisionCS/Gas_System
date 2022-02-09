@@ -17,7 +17,6 @@ namespace PMS.Repositories
         private readonly PMSHelper pmsHelper;
         private readonly IHelperRepository helperRepository;
         private readonly ITransactionRepository transactionRepository;
-
         public EmployeeRepository(ApplicationDbContext dbContext,
             PMSHelper pmsHelper,
             IHelperRepository helperRepository, ITransactionRepository transactionRepository)
@@ -43,8 +42,6 @@ namespace PMS.Repositories
             }
             return null;
         }
-
-
 
         public bool DeleteEmployee(long employeeid)
         {
@@ -74,29 +71,10 @@ namespace PMS.Repositories
                 List<EmployeeViewModel> list = new List<EmployeeViewModel>();
                 var ModelList = dbContext.Employees.Where(x => x.DeletedAt == null && x.Leavedate == null).ToList();
                 long sno = 1;
-                var Country = "";
-                var Province = "";
                 var Designation = "";
                 foreach (var employee in ModelList)
                 {
 
-                    if (employee.Countryid == 0)
-                    {
-                        Country = "";
-                    }
-                    else
-                    {
-                        Country = dbContext.Countries.FirstOrDefault(x => x.Id == employee.Countryid).Name;
-                    }
-
-                    if (employee.Provinceid == 0)
-                    {
-                        Province = "";
-                    }
-                    else
-                    {
-                        Province = dbContext.Provinces.FirstOrDefault(x => x.Id == employee.Provinceid).Name;
-                    }
 
                     if (employee.DesignationId == 0)
                     {
@@ -112,23 +90,14 @@ namespace PMS.Repositories
                         Id = employee.Id,
                         SNo = sno++,
                         Name = employee.Name,
-                        Lastname = employee.Lastname,
+
                         Fathername = employee.Fathername,
                         NationalIdnumber = employee.NationalIdnumber,
                         Phone = employee.Phone,
-                        Email = employee.Email,
-                        Gender = (int)employee.Gender,
-                        MaritalStatus = (int)employee.MaritalStatus,
-                        EducationalDegree = (int)employee.EducationalDegree,
-                        BaseSalary = employee.BaseSalary,
-                        Birthdate = employee.Birthdate,
+
                         Hidredate = employee.Hiredate,
                         Leavedate = employee.Leavedate,
                         Details = employee.Details,
-                        Provinceid = employee.Provinceid,
-                        ProvinceName = Province,
-                        Countryid = employee.Countryid,
-                        CountryName = Country,
                         Address = employee.Address,
                         DesignationId = employee.DesignationId,
                         DesignationName = Designation,
@@ -155,29 +124,10 @@ namespace PMS.Repositories
                 List<EmployeeViewModel> list = new List<EmployeeViewModel>();
                 var ModelList = dbContext.Employees.Where(x => x.DeletedAt == null && x.Leavedate != null).ToList();
                 long sno = 1;
-                var Country = "";
-                var Province = "";
+
                 var Designation = "";
                 foreach (var employee in ModelList)
                 {
-
-                    if (employee.Countryid == 0)
-                    {
-                        Country = "";
-                    }
-                    else
-                    {
-                        Country = dbContext.Countries.FirstOrDefault(x => x.Id == employee.Countryid).Name;
-                    }
-
-                    if (employee.Provinceid == 0)
-                    {
-                        Province = "";
-                    }
-                    else
-                    {
-                        Province = dbContext.Provinces.FirstOrDefault(x => x.Id == employee.Provinceid).Name;
-                    }
 
                     if (employee.DesignationId == 0)
                     {
@@ -192,23 +142,17 @@ namespace PMS.Repositories
                         Id = employee.Id,
                         SNo = sno++,
                         Name = employee.Name,
-                        Lastname = employee.Lastname,
+
                         Fathername = employee.Fathername,
                         NationalIdnumber = employee.NationalIdnumber,
                         Phone = employee.Phone,
-                        Email = employee.Email,
-                        Gender = (int)employee.Gender,
-                        MaritalStatus = (int)employee.MaritalStatus,
-                        EducationalDegree = (int)employee.EducationalDegree,
+
                         BaseSalary = employee.BaseSalary,
-                        Birthdate = employee.Birthdate,
+
                         Hidredate = employee.Hiredate,
                         Leavedate = employee.Leavedate,
                         Details = employee.Details,
-                        Provinceid = employee.Provinceid,
-                        ProvinceName = Province,
-                        Countryid = employee.Countryid,
-                        CountryName = Country,
+
                         Address = employee.Address,
                         DesignationId = employee.DesignationId,
                         DesignationName = Designation,
@@ -232,26 +176,9 @@ namespace PMS.Repositories
             if (dbContext != null)
             {
                 var employee = dbContext.Employees.FirstOrDefault(x => x.Id == id);
-                var Country = "";
-                var Province = "";
-                var Designation = "";
-                if (employee.Countryid == 0)
-                {
-                    Country = "";
-                }
-                else
-                {
-                    Country = dbContext.Countries.FirstOrDefault(x => x.Id == employee.Countryid).Name;
-                }
 
-                if (employee.Provinceid == 0)
-                {
-                    Province = "";
-                }
-                else
-                {
-                    Province = dbContext.Provinces.FirstOrDefault(x => x.Id == employee.Provinceid).Name;
-                }
+                var Designation = "";
+
 
                 if (employee.DesignationId == 0)
                 {
@@ -266,27 +193,21 @@ namespace PMS.Repositories
                 {
                     Id = employee.Id,
                     Name = employee.Name,
-                    Lastname = employee.Lastname,
+
                     Fathername = employee.Fathername,
                     NationalIdnumber = employee.NationalIdnumber,
                     Phone = employee.Phone,
-                    Email = employee.Email,
-                    Gender = (int)employee.Gender,
-                    MaritalStatus = (int)employee.MaritalStatus,
-                    EducationalDegree = (int)employee.EducationalDegree,
+
                     BaseSalary = employee.BaseSalary,
-                    Birthdate = employee.Birthdate,
+
                     Hidredate = employee.Hiredate,
                     Leavedate = employee.Leavedate,
                     Details = employee.Details,
-                    Provinceid = employee.Provinceid,
-                    ProvinceName = Province,
-                    Countryid = employee.Countryid,
-                    CountryName = Country,
+
                     Address = employee.Address,
                     DesignationId = employee.DesignationId,
                     DesignationName = Designation,
-                    ManagerName = dbContext.Employees.FirstOrDefault(x => x.Id == employee.Id).Name,
+                    //ManagerName = dbContext.Employees.FirstOrDefault(x => x.Id == employee.Id).Name,
                     Image = employee.Image,
                     //ImageFile = employee.ImageFile,
                     CreatedAt = employee.CreatedAt,
@@ -523,11 +444,9 @@ namespace PMS.Repositories
                 {
                     pBalance = m.Debit - m.Credit;
 
-                    long cid = dbContext.Employees.FirstOrDefault(x => x.Id == m.EntityId).Countryid;
-                    long pid = dbContext.Employees.FirstOrDefault(x => x.Id == m.EntityId).Provinceid;
+
                     string address = "";
-                    string country = "";
-                    string province = "";
+
                     string addr = "";
                     int sMonth = 0;
                     int sYear = 0;
@@ -536,16 +455,13 @@ namespace PMS.Repositories
 
                     if (m.EntityId != 0)
                     {
-                        cid = dbContext.Employees.FirstOrDefault(x => x.Id == m.EntityId).Countryid;
-                        pid = dbContext.Employees.FirstOrDefault(x => x.Id == m.EntityId).Provinceid;
-                        country = helperRepository.GetCountry().FirstOrDefault(x => x.Id == cid).Name;
-                        province = helperRepository.GetProvinces().FirstOrDefault(x => x.Id == pid).Name;
+
                         addr = dbContext.Employees.FirstOrDefault(x => x.Id == m.EntityId).Address;
                         entityName = dbContext.Employees.FirstOrDefault(x => x.Id == m.EntityId).Name;
                         entityPhone = dbContext.Employees.FirstOrDefault(x => x.Id == m.EntityId).Phone;
                         sMonth = dbContext.EmployeeSalaries.FirstOrDefault(x => x.EmployeeId == m.EntityId).SalaryMonth;
                         sYear = dbContext.EmployeeSalaries.FirstOrDefault(x => x.EmployeeId == m.EntityId).SalaryYear;
-                        address = addr + ", " + province + ", " + country;
+                        address = addr;
                     }
                     else
                     {

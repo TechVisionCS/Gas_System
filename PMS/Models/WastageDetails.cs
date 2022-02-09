@@ -19,5 +19,12 @@ namespace PMS.Models
 
         [Column(TypeName = "decimal(38, 2)")]
         public decimal TotalPrice { get; set; }
+
+        //[EnumDataType(typeof(CurrencyEnum))]
+        //public CurrencyEnum currencyEnum { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; }
+
     }
 }

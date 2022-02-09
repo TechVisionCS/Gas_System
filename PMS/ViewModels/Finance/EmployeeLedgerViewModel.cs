@@ -37,5 +37,7 @@ namespace PMS.ViewModels
 
         public int SalaryMonth { get; set; }
         public int SalaryYear { get; set; }
+
+
     }
 }

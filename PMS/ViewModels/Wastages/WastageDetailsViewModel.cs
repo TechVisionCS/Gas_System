@@ -14,5 +14,7 @@ namespace PMS.ViewModels.Wastages
         public decimal Qty { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal TotalPrice { get; set; }
+
+
     }
 }

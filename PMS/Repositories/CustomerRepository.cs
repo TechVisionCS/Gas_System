@@ -182,31 +182,9 @@ namespace PMS.Repositories
                 long sno = 1;
                 decimal pBalance = 0;
                 string bFlg = "+";
-                var Country = "";
-                var Province = "";
                 foreach (var m in models)
                 {
                     pBalance = dbContext.CustomerLedgers.Where(x => x.EntityId == m.Id).Sum(x => x.Debit) - dbContext.CustomerLedgers.Where(x => x.EntityId == m.Id).Sum(x => x.Credit);
-
-
-                    if (m.Countryid == 0)
-                    {
-                        Country = "";
-                    }
-                    else
-                    {
-                        Country = dbContext.Countries.FirstOrDefault(x => x.Id == m.Countryid).Name;
-                    }
-
-                    if (m.Provinceid == 0)
-                    {
-                        Province = "";
-                    }
-                    else
-                    {
-                        Province = dbContext.Provinces.FirstOrDefault(x => x.Id == m.Provinceid).Name;
-                    }
-
                     CustomerViewModel model = new CustomerViewModel
                     {
                         Id = m.Id,
@@ -214,10 +192,6 @@ namespace PMS.Repositories
                         Name = m.Name,
                         Phone = m.Phone,
                         Email = m.Email,
-                        Countryid = m.Countryid,
-                        CountryName = Country,
-                        Provinceid = m.Provinceid,
-                        ProvinceName = Province,
                         Address = m.Address,
                         Details = m.Details,
                         CreatedAt = m.CreatedAt,
@@ -256,37 +230,13 @@ namespace PMS.Repositories
                 string bFlg = "+";
 
                 pBalance = dbContext.CustomerLedgers.Where(x => x.EntityId == id).Sum(x => x.Debit) - dbContext.CustomerLedgers.Where(x => x.EntityId == id).Sum(x => x.Credit);
-                var Country = "";
-                var Province = "";
-
-                if (m.Countryid == 0)
-                {
-                    Country = "";
-                }
-                else
-                {
-                    Country = dbContext.Countries.FirstOrDefault(x => x.Id == m.Countryid).Name;
-                }
-
-                if (m.Provinceid == 0)
-                {
-                    Province = "";
-                }
-                else
-                {
-                    Province = dbContext.Provinces.FirstOrDefault(x => x.Id == m.Provinceid).Name;
-                }
                 CustomerViewModel model = new CustomerViewModel
                 {
                     Id = m.Id,
                     Name = m.Name,
                     Phone = m.Phone,
                     Email = m.Email,
-                    Countryid = m.Countryid,
-                    CountryName = Country,
-                    Provinceid = m.Provinceid,
-                    ProvinceName = Province,
-                    Address = m.Address + ", " + Province + ", " + Country,
+                    Address = m.Address,
                     Details = m.Details,
                     CreatedAt = m.CreatedAt,
                     UpdatedAt = m.UpdatedAt,
@@ -426,12 +376,10 @@ namespace PMS.Repositories
                 {
                     pBalance = m.Debit - m.Credit;
 
-                    long cid = 0;
-                    long pid = 0;
+
 
                     string address = "";
-                    string country = "Country Not Register";
-                    string province = "Province Not Register";
+
                     string addr = "";
 
                     string entityName = "WALKING CUSTOMER";
@@ -440,18 +388,18 @@ namespace PMS.Repositories
                     if (m.EntityId != 0)
                     {
 
-                        cid = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Countryid;
-                        pid = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid;
+                        //cid = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Countryid;
+                        //pid = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid;
 
-                        country = helperRepository.GetCountry().FirstOrDefault(a => a.Id == dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Countryid)?.Name;
-                        province = helperRepository.GetProvinces().FirstOrDefault(a => a.Id == dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid)?.Name;
+                        //country = helperRepository.GetCountry().FirstOrDefault(a => a.Id == dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Countryid)?.Name;
+                        //province = helperRepository.GetProvinces().FirstOrDefault(a => a.Id == dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Provinceid)?.Name;
 
                         addr = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Address;
                         entityName = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Name;
                         entityPhone = dbContext.Customers.FirstOrDefault(x => x.Id == m.EntityId).Phone;
                     }
 
-                    address = addr + ", " + province + ", " + country;
+                    address = addr;
 
                     CustomerLedgerViewModel model = new CustomerLedgerViewModel
                     {

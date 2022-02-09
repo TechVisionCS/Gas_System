@@ -41,11 +41,14 @@ namespace PMS.Models.Sale
         [EnumDataType(typeof(SaleType))]
         public SaleType SaleType { get; set; }
 
-        [EnumDataType(typeof(Currency))]
-        public Currency SaleCurrency { get; set; }
+        [EnumDataType(typeof(CurrencyEnum))]
+        public CurrencyEnum currencyEnum { get; set; }
+
         [Column(TypeName = "decimal(38, 2)")]
-        public decimal ExchangeRate { get; set; } = 0;
+        public decimal ExchangeRate { get; set; }
         [Column(TypeName = "decimal(38, 2)")]
-        public decimal ExchangeAmount { get; set; } = 0;
+
+        public decimal ExchangeAmount { get; set; }
+
     }
 }

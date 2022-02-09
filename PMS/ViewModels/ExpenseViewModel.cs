@@ -14,7 +14,7 @@ namespace PMS.ViewModels
         public string ExpenseCategoryName { get; set; }
         public long EmployeeId { get; set; }
         public string EmployeeName { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime ExpenseDate { get; set; }
 
         [Column(TypeName = "decimal(38, 2)")]
         public decimal Amount { get; set; }
@@ -26,5 +26,7 @@ namespace PMS.ViewModels
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
+
+
     }
 }

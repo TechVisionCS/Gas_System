@@ -67,6 +67,31 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Currency<span class="required">*</span></label>
+                                                        <select class="form-control select2 required" required style="width: 100%;" id="CurrencyID" asp-for="@Purchase.currencyEnum" asp-items="Html.GetEnumSelectList<CurrencyEnum>()">
+                                                        </select>
+                                                        <span asp-validation-for="@Purchase.currencyEnum" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Exchange Rate </label>
+                                                        <input type="text" id="ExchangeRate" asp-for="@Purchase.ExchangeRate" class="form-control" placeholder="Exchange Rate" />
+                                                        <span asp-validation-for="@Purchase.ExchangeRate" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3 col-md-3 col-sm-12 d-none">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Exchange Amount</label>
+                                                        <input type="text" id="ExchangeAmount" asp-for="@Purchase.ExchangeAmount" class="form-control" placeholder="Exchange Amount" />
+                                                        <span asp-validation-for="@Purchase.ExchangeAmount" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
                                                 <div class="col-lg-3 col-md-3 col-sm-12 d-none">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Type <span class="required">*</span></label>
@@ -148,7 +173,6 @@
 
                                                                 var valueDefined = "";
 
-
                                                                 switch (CurrentName)
                                                                 {
                                                                     case "ps":
@@ -179,12 +203,12 @@
 
                                                                     <div class="form-group">
                                                                         <div id="input-type" class="row float-lg-right">
-                                                                            <label for="input-type">Select Discount Type &nbsp;&nbsp; </label>
+                                                                            <label for="input-type">Discount Type &nbsp;&nbsp; </label>
                                                                             <label class="radio-inline form-check-inline">
-                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" /> By Percentage(%)
+                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" />Percentage(%)
                                                                             </label>
                                                                             <label class="radio-inline form-check-inline">
-                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" /> By Fixed Amount
+                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" />Fixed Amount
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -200,11 +224,11 @@
                                                                         <input type="number" step="any" id="totalPercentDiscount" oninput="calcDiscount();" class="form-control calc" min="0" max="100" value="@disc" />
                                                                     </div>
                                                                     <div id='FixedAmountTextBoxDiv'>
-                                                                        <input type="hidden" step="any" asp-for="@Purchase.DiscountAmount" id="discount" class="form-control calc" />
+                                                                        <input type="number" step="any" asp-for="@Purchase.DiscountAmount" id="discount" class="form-control calc" />
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <div id="AmountLabelForDiscount">  <p class="text text-info">Amount: <span id="discAmount">@Purchase.DiscountAmount</span></p></div>
+                                                                    <div id="AmountLabelForDiscount">  <p class="text text-info">Discount Amount: <span id="discAmount">@Purchase.DiscountAmount</span></p></div>
                                                                 </td>
                                                             </tr>
 
@@ -249,21 +273,12 @@
                                                 </div>
                                             </div>
 
-
                                             <div class="form-group row d-none" id="dvExchange">
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Exchange Rate <span class="required">*</span></label>
                                                         <input type="text" id="ExchangeRate" asp-for="@Purchase.ExchangeRate" class="form-control" placeholder="Exchange Rate" />
                                                         <span asp-validation-for="@Purchase.ExchangeRate" class="text-danger"></span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-3 col-md-3 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Exchange Amount <span class="required">*</span></label>
-                                                        <input type="text" id="ExchangeAmount" asp-for="@Purchase.ExchangeAmount" class="form-control" readonly placeholder="Exchange Amount" />
-                                                        <span asp-validation-for="@Purchase.ExchangeAmount" class="text-danger"></span>
                                                     </div>
                                                 </div>
 
@@ -291,12 +306,8 @@
                                                     <input type="hidden" asp-for="@Purchase.PurchaseType" />
                                                     <button type="button" class="btn btn-sm btn-primary-outline mr-2" onclick="calculate();"><i class="fa fa-money"></i> Calculate</button>
 
-                                                    <button type="submit" class="btn btn-mat btn-success mr-2">
+                                                    <button type="submit" id="sbm_btn" class="btn btn-mat btn-success mr-2">
                                                         <i class="fa fa-save"></i> Update
-                                                    </button>
-
-                                                    <button type="reset" class="btn btn-mat btn-danger">
-                                                        <i class="fa fa-times"></i> Cancel
                                                     </button>
                                                 </div>
                                             </div>
@@ -330,23 +341,18 @@
 @section Scripts
 {
     <script>
-          $(document).ready(function () {
-                $("#HiddenTriggerForDropDown").trigger('click');
-                $("#CurrencyID").on("change", function () {
-                    ShowHideExchangeFields();
-                });
-                $('input[name="rdExchangeOperation"]').on('click', function () {
-                    setTrAmount($(this).val());
-                });
-          });
 
-        //$("#pType").on('change', function () {
-        //    if ($(this).val() == "2") {
-        //        $("#bank").removeAttr("Style");
-        //    } else {
-        //        $("#bank").addClass("d-none");
-        //    }
-        //});
+        function setTrAmount() {
+            var am = ($("#grandtotal").val());
+            var ex = $("#ExchangeRate").val();
+            var tra = am * ex;
+            $("#ExchangeAmount").val(tra);
+        }
+
+        $("#sbm_btn").on('click', function () {
+            setTrAmount();
+            $("#frm").submit();
+        });
 
         var i = 1;
         var sId = 0;
@@ -354,88 +360,68 @@
         $("#btnAddItem").click(function () {
             $.ajax({
                 cache: false,
+
                 url: '@Url.Action("LoadDetails", "Purchase")',
+
                 dataType: "html",
+
                 type: "GET",
+
                 contentType: "application/json",
+
                 success: function (response) {
+
                     $('#items').append(response);
+
                 },
+
                 error: function (err) {
+
                     alert(err.responseText);
                 }
             });
         });
 
-        //validations
-
         function calcDiscount() {
+
             var subtotal = $("#total").val();
+
             var discper = $("#totalPercentDiscount").val();
 
             var res = (subtotal * discper) / 100;
 
             $("#discount").val(res);
+
             $("#discAmount").text(res);
-
         }
 
+        DiscountTextBoxDiv.style.display = 'inline-block';
 
-         function ShowHideExchangeFields() {
-            $("#ExchangeRate").val("");
-            $("#ExchangeAmount").val("");
+        AmountLabelForDiscount.style.display = 'inline-block';
 
-            if ($("#CurrencyID").val() != 0 && $("#CurrencyID").val() != "") {
-                $("#dvExchange").removeClass("d-none");
-                //$("#TrAmount").attr("readonly", "readonly");
-                //$("#HawalaType").val("").val("Different");
-            }
-            else {
-                $("#dvExchange").addClass("d-none");
-                //$("#TrAmount").removeAttr("readonly");
-                //$("#HawalaType").val("").val("Same");
+        function show() {
+            var TextBoxCheck = document.getElementsByName('TextBoxCheck');
+
+            var DiscountTextBoxDiv = document.getElementById("DiscountTextBoxDiv");
+
+            var FixedAmountTextBoxDiv = document.getElementById("FixedAmountTextBoxDiv");
+
+            var AmountLabelForDiscount = document.getElementById("AmountLabelForDiscount");
+
+            if (TextBoxCheck[0].checked) {
+                DiscountTextBoxDiv.style.display = 'inline-block';
+
+                AmountLabelForDiscount.style.display = 'inline-block';
+
+                FixedAmountTextBoxDiv.style.display = 'none';
+            } else {
+                DiscountTextBoxDiv.style.display = 'none';
+
+                AmountLabelForDiscount.style.display = 'none';
+
+                FixedAmountTextBoxDiv.style.display = 'inline-block';
             }
         }
-
-           function TriggerDropDownList() {
-                    $("#supplierId").empty().append('<option selected="selected" value="">--Select Supplier--</option>');
-                  //  $("#BankId").empty().append('<option selected="selected" value="">--Select Bank--</option>');
-
-                    $.ajax({
-                        type: "POST",
-                        cache: false,
-                        url: '@Url.Action("GetSupplier", "Purchase")',
-                        contentType: "application/json",
-                        dataType: "json",
-                        success: function (response) {
-
-                            response.forEach(function (item) {
-                                $("#supplierId").append($('<option>').val(item['value']).text(item['text']));
-                            });
-                        },
-                        error: function (XMLHttpRequest, textStatus, errorThrown) {
-
-                        }
-                    });
-
-                     @*$.ajax({
-                            type: "POST",
-                            cache: false,
-                            url: '@Url.Action("GetBank", "Purchase")',
-                            contentType: "application/json",
-                            dataType: "json",
-                            success: function (response) {
-
-                                response.forEach(function (item) {
-                                    $("#BankId").append($('<option>').val(item['value']).text(item['text']));
-                                });
-                            },
-                            error: function (XMLHttpRequest, textStatus, errorThrown) {
-
-                            }
-                     });*@
-           }
-
     </script>
 
     <script src="~/js/purchaseFormValidation.js"></script>

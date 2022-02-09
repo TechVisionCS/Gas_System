@@ -1,13 +1,9 @@
-﻿using PMS.Models.Finance;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PMS.Models
 {
-    public class Bank: BaseEntity.BaseEntity
+    public class Bank : BaseEntity.BaseEntity
     {
         [Required(ErrorMessage = "Please Enter Bank Name")]
         public string BankName { get; set; }
@@ -23,6 +19,10 @@ namespace PMS.Models
         public string Description { get; set; }
 
         public string Signature { get; set; }
+        //public long CurrecnyId { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; } = 0;
 
 
     }

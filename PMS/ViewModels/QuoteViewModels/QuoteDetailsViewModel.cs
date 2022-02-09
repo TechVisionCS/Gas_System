@@ -10,5 +10,7 @@
         public decimal UnitPrice { get; set; }
         public decimal Discount { get; set; }
         public decimal TotalQuotePrice { get; set; }
+
     }
+
 }

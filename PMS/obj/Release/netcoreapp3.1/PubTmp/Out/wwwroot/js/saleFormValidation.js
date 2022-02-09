@@ -66,6 +66,7 @@ function calculate() {
     subtotal -= paid;
 
     $("#due").val(subtotal);
+    setTrAmount();
 }
 
 function clearAll() {

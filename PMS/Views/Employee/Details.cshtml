@@ -55,12 +55,6 @@
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Last Name</h6>
-                                    <p>@Model.Lastname</p>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
                                     <h6>Father Name</h6>
                                     <p>@Model.Fathername</p>
                                     <hr />
@@ -78,117 +72,15 @@
                                     <hr />
                                 </div>
 
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-lg-4 col-md-4 col-sm-6">
                                     <h6>Phone</h6>
                                     <p>@Model.Phone</p>
                                     <hr />
                                 </div>
 
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Email</h6>
-                                    <p>@Model.Email</p>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Gender</h6>
-                                    <p>
-                                        @if (Model.Gender == 1)
-                                        {
-                                            <span class="badge badge-primary">Male</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-warning">Female</span>
-                                        }
-                                    </p>
-                                    <hr />
-                                </div>
-
-                                <div class="col-12">
-                                    <h6>Address</h6>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Country</h6>
-                                    <p>@Model.CountryName</p>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Province</h6>
-                                    <p>@Model.ProvinceName</p>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="col-lg-4 col-md-4 col-sm-6">
                                     <h6>Address</h6>
                                     <p>@Model.Address</p>
-                                    <hr />
-                                </div>
-
-                                <div class="col-12">
-                                    <h6>Other Details</h6>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <h6>Marital Status</h6>
-                                    <p>
-                                        @if (Model.MaritalStatus == 1)
-                                        {
-                                            <span class="badge badge-danger">Single</span>
-                                        }
-                                        else if (Model.MaritalStatus == 2)
-                                        {
-                                            <span class="badge badge-success">Married</span>
-                                        }
-                                        else if (Model.MaritalStatus == 3)
-                                        {
-                                            <span class="badge badge-warning">Widowed</span>
-                                        }
-                                        else if (Model.MaritalStatus == 4)
-                                        {
-                                            <span class="badge badge-danger">Divorced</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-dark">Rether_Not_ToSay</span>
-                                        }
-
-                                    </p>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <h6>Education Degree</h6>
-                                    <p>
-                                        @if (Model.EducationalDegree == 1)
-                                        {
-                                            <span class="badge badge-primary">Bachlorate</span>
-                                        }
-                                        else if (Model.EducationalDegree == 2)
-                                        {
-                                            <span class="badge badge-info">14th pass</span>
-                                        }
-                                        else if (Model.EducationalDegree == 3)
-                                        {
-                                            <span class="badge badge-info">Bachelor</span>
-                                        }
-                                        else if (Model.EducationalDegree == 4)
-                                        {
-                                            <span class="badge badge-info">Master</span>
-                                        }
-                                        else if (Model.EducationalDegree == 5)
-                                        {
-                                            <span class="badge badge-info">Doctora</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-success">Non</span>
-                                        }
-                                    </p>
                                     <hr />
                                 </div>
 
@@ -200,12 +92,6 @@
 
                                 <div class="col-12">
                                     <h6>Date Info</h6>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Birth Date</h6>
-                                    <p>@Model.Birthdate</p>
                                     <hr />
                                 </div>
 

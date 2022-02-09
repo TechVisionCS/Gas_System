@@ -29,6 +29,7 @@ namespace PMS.Data
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<Manufacturer> Manufacturers { get; set; }
         public DbSet<Shop> Shops { get; set; }
+        public DbSet<Currency> currencies { get; set; }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductSupplier> ProductSuppliers { get; set; }
@@ -146,31 +147,20 @@ namespace PMS.Data
                 .WithMany(c => c.ProductsUnits)
                 .HasForeignKey(bc => bc.UnitId);
 
+            builder.Entity<Currency>().HasIndex(d => d.CurrencyCode).IsUnique();
+
+            builder.Entity<Currency>().HasData(
+            new Currency { Id = 1, CurrencyName = "Afghani", CurrencyCode = "AFN", CurrencySymbol = "؋", UserName = "System_generated" },
+            new Currency { Id = 2, CurrencyName = "UnitedState Dollar", CurrencyCode = "USD", CurrencySymbol = "$", UserName = "System_generated" }
+            );
+
             builder.Entity<Manufacturer>().HasData(
-             new Manufacturer { Id = 1, Name = "2A Muhendislik San.- Tur ", Description = "Turkey", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 2, Name = "Sinopec", Description = "China Petroleum and Chemical Corporation, also known as Sinopec, is the second-largest company behind US retailer Walmart and ", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 3, Name = "China National Petroleum", Description = "China National Petroleum is the state-owned parent company of PetroChina – the country’s second-largest oil producer.", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 4, Name = " Saudi Aramco", Description = "Saudi Aramco is the state-owned oil company of the Kingdom of Saudi Arabia and is the third-largest oil and gas company in Asia and the fourth-largest in the world by revenue.", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 5, Name = "Eneos Holdings ", Description = "Eneos Holdings is a Japanese petroleum and metals conglomerate and the fifth-largest oil and gas company in Asia by revenue.The Tokyo - headquartered firm brought in $75.9bn at the end of the 2019 - 20 fiscal year and recorded a $1.7bn loss across the same period.", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 6, Name = "Adeel Industry(Shan Gas)", Description = "", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 7, Name = "Bashir gas pvt limited", Description = "", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 8, Name = "Burhan Gas Company", Description = "", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 9, Name = "Country Autogas", Description = "", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 10, Name = "Engineering solution international", Description = "", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 11, Name = "ExpoMughal International", Description = "", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 12, Name = "HI-Tek Manufacturing (Pvt) Ltd", Description = "", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 13, Name = "Pak Engineering and Automation", Description = "", Status = 1, UserName = "System_Populated" },
-             new Manufacturer { Id = 14, Name = "Engineering solution international", Description = "", Status = 1, UserName = "System_Populated" }
-             );
+            new Manufacturer { Id = 1, Name = "Hayratan Gas.- IR ", Description = "Irani", Status = 1, UserName = "System_Populated" }
+            );
 
             builder.Entity<Category>().HasData(
-                      new Category { Id = 1, Name = "Liquefied petroleum gas LPG", Status = 1, Description = "Liquefied petroleum gas (LPG, LP gas, or condensate), is a flammable mixture of hydrocarbon gases, most commonly propane, butane, and propylene. However, the latter two typically comprise 5% or less of the mixture.", UserName = "System Defined" },
-                      new Category { Id = 2, Name = "Syngas", Status = 1, Description = "Syngas, or synthesis gas, is a fuel gas mixture consisting primarily of hydrogen, carbon monoxide, and very often some carbon dioxide. Syngas can be produced from many sources, including natural gas, coal, biomass, or virtually any hydrocarbon feedstock, by reaction with steam (steam reforming), carbon dioxide (dry reforming) or oxygen (partial oxidation).", UserName = "System Defined" },
-                      new Category { Id = 3, Name = "Natural gas", Status = 1, Description = "Natural gas is colorless and odorless, and explosive, so a sulfur-smell (similar to rotten eggs) is usually added for early detection of leaks", UserName = "System Defined" },
-                      new Category { Id = 4, Name = "Propane", Status = 1, Description = "Propane (/ˈproʊpeɪn/) is a three-carbon alkane with the molecular formula C3H8. It is a gas at standard temperature and pressure, but compressible to a transportable liquid.", UserName = "System Defined" },
-                      new Category { Id = 5, Name = "Gas stove", Status = 1, Description = "A gas stove is a stove that is fuelled by combustible gas such as syngas, natural gas, propane, butane, liquefied petroleum gas or other flammable gas.", UserName = "System Defined" },
-                      new Category { Id = 6, Name = "Butane", Status = 1, Description = "Butane is a gas at room temperature and atmospheric pressure. Butane is a highly flammable, colorless, easily liquefied gas that quickly vaporizes at room temperature.", UserName = "System Defined" }
-                  );
+            new Category { Id = 1, Name = "Natural Gas", Status = 1, Description = "Natural gas is colorless and odorless, and explosive, so a sulfur-smell (similar to rotten eggs) is usually added for early detection of leaks", UserName = "System Defined" }
+            );
 
             builder.Entity<Country>().HasData(
                    new Country { Id = 1, Name = "Afghanistan", Code = "AFN", UserName = "System_Populated" },
@@ -252,7 +242,6 @@ namespace PMS.Data
                   new Province { Id = 66, Name = "Uttar Pradesh", CountryId = 3, CountryCode = "IND", CountryName = "India", UserName = "System_Populated" },
                   new Province { Id = 67, Name = "Uttarakhand", CountryId = 3, CountryCode = "IND", CountryName = "India", UserName = "System_Populated" },
 
-
                   new Province { Id = 68, Name = "Adana", CountryId = 4, CountryCode = "TUR", CountryName = "Turkey", UserName = "System_Populated" },
                   new Province { Id = 69, Name = "Adıyaman", CountryId = 4, CountryCode = "TUR", CountryName = "Turkey", UserName = "System_Populated" },
                   new Province { Id = 70, Name = "Afyonkarahisar", CountryId = 4, CountryCode = "TUR", CountryName = "Turkey", UserName = "System_Populated" },
@@ -280,7 +269,6 @@ namespace PMS.Data
                   new Province { Id = 93, Name = "Denizli", CountryId = 4, CountryCode = "TUR", CountryName = "Turkey", UserName = "System_Populated" },
                   new Province { Id = 94, Name = "Diyarbakır", CountryId = 4, CountryCode = "TUR", CountryName = "Turkey", UserName = "System_Populated" },
                   new Province { Id = 95, Name = "Düzce", CountryId = 4, CountryCode = "TUR", CountryName = "Turkey", UserName = "System_Populated" },
-
 
                   new Province { Id = 96, Name = "Alborz", CountryId = 5, CountryCode = "IR", CountryName = "Iran", UserName = "System_Populated" },
                   new Province { Id = 97, Name = "South Khorasan", CountryId = 5, CountryCode = "IR", CountryName = "Iran", UserName = "System_Populated" },
@@ -323,8 +311,7 @@ namespace PMS.Data
                new Designation { Id = 3, Name = "Feul Attendant", UserName = "System Defined" },
                new Designation { Id = 4, Name = "Mechanic", UserName = "System Defined" },
                new Designation { Id = 5, Name = "Car Wash", UserName = "System Defined" },
-               new Designation { Id = 6, Name = "Gaurd", UserName = "System Defined" },
-               new Designation { Id = 7, Name = "Pharmacist", UserName = "System Defined" }
+               new Designation { Id = 6, Name = "Gaurd", UserName = "System Defined" } 
                );
 
             builder.Entity<ExpensesCategory>().HasData(
@@ -354,11 +341,11 @@ namespace PMS.Data
               );
 
             //lookup
-            builder.Entity<Category>();
-            builder.Entity<Unit>();
+            builder.Entity<Category>().HasIndex(x => x.Name).IsUnique();
+            builder.Entity<Unit>().HasIndex(x => x.Name).IsUnique();
             builder.Entity<Country>().HasIndex(x => x.Name).IsUnique();
             builder.Entity<Province>();
-            builder.Entity<ProductType>();
+            builder.Entity<ProductType>().HasIndex(x => x.TypeName).IsUnique();
             builder.Entity<Manufacturer>();
             builder.Entity<Shop>();
 
@@ -368,7 +355,6 @@ namespace PMS.Data
             builder.Entity<Stock>();
             builder.Entity<StockDetails>();
             builder.Entity<StockLog>();
-
 
             builder.Entity<Tax>();
             builder.Entity<ProductTax>();
@@ -387,15 +373,11 @@ namespace PMS.Data
             builder.Entity<Transaction>();
             builder.Entity<PartnerInvestment>();
             builder.Entity<PartnerPayment>();
-
-
             builder.Entity<Purchase>();
             builder.Entity<PurchaseDetails>();
             builder.Entity<PartnersPurchaseShare>();
-
             builder.Entity<Sale>();
             builder.Entity<SaleDetails>();
-
             builder.Entity<Designation>();
             builder.Entity<Employee>().HasIndex(x => x.NationalIdnumber).IsUnique();
             builder.Entity<EmployeeSalary>()
@@ -405,11 +387,10 @@ namespace PMS.Data
                   o.SalaryYear,
                   o.SalaryMonth
               });
-            builder.Entity<EmployeeLedger>();
 
+            builder.Entity<EmployeeLedger>();
             builder.Entity<Expense>();
             builder.Entity<ExpensesCategory>().HasIndex(x => x.Name).IsUnique();
-
             builder.Entity<AssetsCategory>().HasIndex(x => x.Name).IsUnique();
             builder.Entity<Asset>().HasIndex(x => x.Name).IsUnique();
             builder.Entity<AssetStock>();
@@ -421,7 +402,6 @@ namespace PMS.Data
             builder.Entity<ServiceCategory>().HasIndex(x => x.Name).IsUnique();
             builder.Entity<Services>();
             builder.Entity<ServiceDetails>();
-
 
             //Quote
             builder.Entity<Quote>();
@@ -456,6 +436,7 @@ namespace PMS.Data
             builder.Entity<Province>().ToTable(TablesConstants.Province);
             builder.Entity<Manufacturer>().ToTable(TablesConstants.Manufacturer);
             builder.Entity<Shop>().ToTable(TablesConstants.Shop);
+            builder.Entity<Currency>().ToTable(TablesConstants.Currency);
 
 
             //lookup

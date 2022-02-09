@@ -19,6 +19,5 @@ namespace PMS.ViewModels
         public DateTime? DeletedAt { get; set; }
         public int TotalAvailStockQtys { get; set; }
 
-
     }
 }

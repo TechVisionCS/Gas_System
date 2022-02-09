@@ -1,5 +1,4 @@
 ﻿using PMS.Data.Enums;
-using PMS.Models.FixedAsset;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -24,5 +23,7 @@ namespace PMS.ViewModels
         public DateTime? UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         public int TotalAvailStockQtys { get; set; }
+
+
     }
 }

@@ -58,6 +58,7 @@
                                                         <span asp-validation-for="Name" class="text-danger"></span>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label"> Phone </label>
@@ -71,26 +72,6 @@
                                                         <label class="control-label">Email</label>
                                                         <input type="email" asp-for="Email" class="form-control" />
                                                         <span asp-validation-for="Email" class="text-danger"></span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Country</label>
-                                                        <select class="select2 form-control" style="width: 100%;" id="CountryIdd" asp-for="Countryid" asp-items="@ViewBag.Countries">
-                                                            <option selected="selected" value="0">--Select Country--</option>
-                                                        </select>
-                                                        <span asp-validation-for="Countryid" class="text-danger"></span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Province</label>
-                                                        <select class="form-control select2" style="width: 100%;" id="ProvinceIdd" asp-for="Provinceid" asp-items="@ViewBag.Provinces">
-                                                            <option selected="selected" value="0">--Select Province--</option>
-                                                        </select>
-                                                        <span asp-validation-for="Provinceid" class="text-danger"></span>
                                                     </div>
                                                 </div>
 
@@ -133,10 +114,8 @@
                                             </div>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -159,29 +138,3 @@
         </div>
     </div>
 </div>
-@section Scripts
-{
-    <script>
-    $('#CountryIdd').change(function () {
-            var pId = $(this).val();
-            var elm = $('#ProvinceIdd');
-            elm.empty().append('<option selected="selected" value="0">--Select Province--</option>');
-        $.ajax({
-            type: "GET",
-            cache: false,
-            url: '@Url.Action("GetProvincesByID", "Home")',
-            data: {"id": pId},
-            contentType: "application/json",
-            dataType: "json",
-            success: function (response) {
-                response.forEach(function (item) {
-                    elm.append($('<option>').val(item['id']).text(item['name']));
-                });
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                console.log("No Provice for !");
-            }
-        });
-    });
-    </script>
-}

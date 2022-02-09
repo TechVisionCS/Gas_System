@@ -26,5 +26,12 @@ namespace PMS.Models
         [Required(ErrorMessage = "Please Enter Transaction Details")]
         public string Description { get; set; }
 
+        //[EnumDataType(typeof(CurrencyEnum))]
+        //public CurrencyEnum currencyEnum { get; set; }
+
+        //[Column(TypeName = "decimal(38, 2)")]
+        //public decimal ExchangeRate { get; set; }
+
+
     }
 }

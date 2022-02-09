@@ -504,5 +504,44 @@ namespace PMS.Controllers
             var res = localReport.Execute(RenderType.Pdf, extension, parameters, mimeType);
             return File(res.MainStream, "application/pdf");
         }
+
+
+        // GET: SupplierController/Create
+        [HttpGet]
+        public ActionResult CreatePartial()
+        {
+            Customer customerModel = new Customer();
+
+            return PartialView("_CreatePartialView", customerModel);
+        }
+
+
+        // POST: SupplierController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreatePartial(Customer customer)
+        {
+            try
+            {
+
+                var res = customerRepository.AddCustomer(customer);
+                if (res != null)
+                {
+                    helperRepository.SuccessMessage();
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    helperRepository.ErrorMessage();
+                    return View(customer);
+                }
+            }
+            catch
+            {
+                helperRepository.WarningMessage("Please Check your data");
+                return View(customer);
+            }
+        }
+
     }
 }

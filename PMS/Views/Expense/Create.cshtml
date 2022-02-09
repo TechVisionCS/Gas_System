@@ -127,8 +127,8 @@
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">Payment Date <span class="required">*</span> </label>
-                                                        <input type="date" asp-for="Date" class="form-control" required />
-                                                        <span asp-validation-for="Date" class="text-danger"></span>
+                                                        <input type="date" id="ExpenseDates" asp-for="ExpenseDate" class="form-control" required />
+                                                        <span asp-validation-for="ExpenseDate" class="text-danger"></span>
                                                     </div>
                                                 </div>
 
@@ -202,7 +202,7 @@
         //    }
         //});
 
-        document.getElementById('Date').valueAsDate = new Date();
+        document.getElementById('ExpenseDates').valueAsDate = new Date();
 
         $("#pType").on('change', function () {
             if ($(this).val() == "2") {

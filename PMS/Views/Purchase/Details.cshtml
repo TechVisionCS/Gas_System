@@ -142,28 +142,46 @@
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Payment Type</h6>
+                                    <h6>Currency</h6>
                                     <p>
-                                        @if (Purchase.PaymentType == 1)
+                                        @if (Purchase.CurrecnyId == 1)
                                         {
-                                            <span class="badge badge-info">Cash</span>
+                                            <span class="badge badge-info">AFN</span>
                                         }
                                         else
                                         {
-                                            <span class="badge badge-info">Bank</span>
+                                            <span class="badge badge-primary">USD</span>
                                         }
                                     </p>
                                     <hr />
                                 </div>
 
-                                @if (Purchase.PaymentType == 2)
+                                @if (Purchase.CurrecnyId == 2)
                                 {
                                     <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Bank Name</h6>
-                                        <p>@Purchase.BankName</p>
+                                        <h6>Excahgen Rate</h6>
+                                        <p>@Purchase.ExchangeRate.ToString("N")</p>
                                         <hr />
                                     </div>
                                 }
+
+                                @*@if (Purchase.CurrecnyId == 2)
+                                    {
+                                        <div class="col-lg-3 col-md-4 col-sm-6">
+                                            <h6>Excahgen Amount</h6>
+                                            <p>@Purchase.SubTotal.ToString("N")</p>
+                                            <hr />
+                                        </div>
+                                    }*@
+
+                                @*@if (Purchase.PaymentType == 2)
+                                    {
+                                        <div class="col-lg-3 col-md-4 col-sm-6">
+                                            <h6>Bank Name</h6>
+                                            <p>@Purchase.BankName</p>
+                                            <hr />
+                                        </div>
+                                    }*@
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <h6>Total Purchase</h6>
