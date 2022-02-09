@@ -11,7 +11,7 @@ namespace PMS.Models.Lookup
         [Required(ErrorMessage = "Enter Product Type Name!")]
         public string TypeName { get; set; }
         public string Description { get; set; }
-        public int Status { get; set; }
+        public int Status { get; set; } = 1;
         public ICollection<Product> products { get; set; }
     }
 }

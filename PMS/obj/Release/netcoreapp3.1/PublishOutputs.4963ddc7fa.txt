@@ -1176,6 +1176,7 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\5c18106d-41b3-4e15-8583-dd6b86aae515_02.PNG
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\957a7f2e-a005-4f0a-aee5-ca612770bb93_1-1.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\af651d32-a330-444e-b75e-22320f528a01_tazkira.jpg
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\b06dee67-ee4b-4390-8838-da5b268285b4_BT_20181213_SAFFRON1_3641832.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\b99a1114-01a7-4813-8cbe-fc517900f178_Training Assessment.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\c34c2c3e-07e5-4279-8978-a57c465f3cbd_1-1.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json

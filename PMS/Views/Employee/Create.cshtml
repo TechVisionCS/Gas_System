@@ -12,14 +12,19 @@
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
 
-                                <a asp-action="Index" asp-controller="Employee"
-                                   class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-list"></i>Employees List
-                                </a>
-
                                 <a asp-action="Index" asp-controller="Designation"
                                    class="btn btn-mat btn-info" style="color: white;">
                                     <i class="fa fa-plus"></i>Job Title
+                                </a>
+
+                                <a asp-action="EmployeeSalaries" asp-controller="Employee"
+                                   class="btn btn-mat btn-info" style="color: white;">
+                                    <i class="fa fa-plus"></i>Salary
+                                </a>
+
+                                <a asp-action="Index" asp-controller="Employee"
+                                   class="btn btn-mat btn-primary" style="color: white;">
+                                    <i class="fa fa-list"></i>Employees List
                                 </a>
 
                                 <a asp-action="GetAllLedgers" asp-controller="Employee"
