@@ -117,4 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account Name" xml:space="preserve">
+    <value>نام اکاونت</value>
+  </data>
+  <data name="Account No" xml:space="preserve">
+    <value>شماره اکاونت</value>
+  </data>
+  <data name="Add New Bank" xml:space="preserve">
+    <value>افزودن بانک جدید</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>بیلاینس</value>
+  </data>
+  <data name="Bank Details" xml:space="preserve">
+    <value>بانک معلومات</value>
+  </data>
+  <data name="Bank Name" xml:space="preserve">
+    <value>نام بانک</value>
+  </data>
+  <data name="Bank Transactions List" xml:space="preserve">
+    <value>لیست معاملات بانکی</value>
+  </data>
+  <data name="Banks Administration" xml:space="preserve">
+    <value>مدیریت بانکي</value>
+  </data>
+  <data name="Banks Ledger" xml:space="preserve">
+    <value>بانکی لیچر</value>
+  </data>
+  <data name="Banks List" xml:space="preserve">
+    <value>لیست بانکی</value>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>برانچ</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>ایجاد شده در</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>کریدیت</value>
+  </data>
+  <data name="Current Amount" xml:space="preserve">
+    <value>مقدار حالی</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>دیبت</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Last Updated At" xml:space="preserve">
+    <value>آخرین به روز رسانی در</value>
+  </data>
+  <data name="New Transaction" xml:space="preserve">
+    <value>معامله جدید</value>
+  </data>
+  <data name="Registered By User" xml:space="preserve">
+    <value>ثبت شده توسط کاربر</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Transaction Type" xml:space="preserve">
+    <value>نوع معامله</value>
+  </data>
 </root>

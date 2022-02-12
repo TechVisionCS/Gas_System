@@ -1,9 +1,8 @@
 ﻿@model IEnumerable<BankViewModel>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Banks";
+    ViewData["Title"] = localizer["Banks"];//
 }
-
 <div class="main-body">
     <div class="page-wrapper">
         <div class="row">
@@ -11,17 +10,17 @@
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Banks Administration</h5>
+                        <h5 class="m-b-10">@localizer["Banks Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="CreateOrEdit" asp-controller="Bank" asp-route-id="0" class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Bank
+                                    <i class="fa fa-plus"></i> @localizer["Add New Bank"]
                                 </a>
                                 <a asp-action="Transaction" asp-controller="Bank" class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-plus"></i> New Transaction
+                                    <i class="fa fa-plus"></i> @localizer["New Transaction"]
                                 </a>
                                 <a asp-action="GetAllLedgers" asp-controller="Bank" class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Banks Ledger
+                                    <i class="fa fa-list"></i> @localizer["Banks Ladger"]
                                 </a>
                             </li>
                         </ul>
@@ -32,7 +31,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Banks List</h5>
+                            <h5>@localizer["Banks List"] </h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -48,12 +47,12 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Bank Name</th>
-                                            <th>Account Name</th>
-                                            <th>Account No</th>
-                                            <th>Current Amount</th>
-                                            <th>Action</th>
+                                            <th>@localizer["SNo."]</th>
+                                            <th>@localizer["Bank Name"]</th>
+                                            <th>@localizer["Account Name"]</th>
+                                            <th>@localizer["Account No"]</th>
+                                            <th>@localizer["Current Amount"]</th>
+                                            <th>@localizer["Action"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -62,23 +61,23 @@
                                         {
                                             foreach (var bank in Model)
                                             {
-                                        <tr>
-                                            <td>@sno</td>
-                                            <td>@bank.BankName</td>
-                                            <td>@bank.AccountName</td>
-                                            <td>@bank.AccountNo</td>
-                                            <td>@bank.CurrentAmount.ToString("N")</td>
-                                            <td>
-                                                <a asp-action="Details" asp-controller="Bank" asp-route-id="@bank.Id" class="text text-info mr-2" style="cursor: pointer;">
-                                                    <i class="fa fa-eye"></i>
-                                                </a>
+                                                <tr>
+                                                    <td>@sno</td>
+                                                    <td>@bank.BankName</td>
+                                                    <td>@bank.AccountName</td>
+                                                    <td>@bank.AccountNo</td>
+                                                    <td>@bank.CurrentAmount.ToString("N")</td>
+                                                    <td>
+                                                        <a asp-action="Details" asp-controller="Bank" asp-route-id="@bank.Id" class="text text-info mr-2" style="cursor: pointer;">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
 
-                                                <a asp-action="CreateOrEdit" asp-controller="Bank" asp-route-id="@bank.Id" class="text text-primary" style="cursor: pointer;">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                                <span class="d-none">@{sno++;}</span>
+                                                        <a asp-action="CreateOrEdit" asp-controller="Bank" asp-route-id="@bank.Id" class="text text-primary" style="cursor: pointer;">
+                                                            <i class="fa fa-edit"></i>
+                                                        </a>
+                                                        <span class="d-none">@{sno++;}</span>
+                                                    </td>
+                                                </tr>
                                             }
                                         }
                                     </tbody>
@@ -86,18 +85,16 @@
                             </div>
                         </div>
                     </div>
-                @*Basic table card end*@
-
+                    @*Basic table card end*@
                 </div>
                 @*Page-body end*@
-
                 <div class="page-header card">
                     <div class="card-block">
                         <ul class="">
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
@@ -107,4 +104,3 @@
         </div>
     </div>
 </div>
-@*Main-body end*@

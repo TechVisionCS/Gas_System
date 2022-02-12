@@ -1,30 +1,27 @@
 ﻿@model UserClaimsViewModel
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "User Claims";
+    ViewData["Title"] = localizer["User Claims"];
 }
-
-
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
         <div class="row">
             <div class="col-lg-9" style="margin:0 auto;">
                 <!--Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">User Claims Administration</h5>
+                        <h5 class="m-b-10">@localizer["User Claims Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Users" asp-controller="Administration"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-list"></i> Users List
+                                    <i class="fa fa-list"></i> @localizer["Users List"]
                                 </a>
 
                                 <a asp-action="Roles" asp-controller="Administration"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-list"></i> Roles List
+                                    <i class="fa fa-list"></i> @localizer["Roles List"]
                                 </a>
 
                             </li>
@@ -39,7 +36,7 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Manage user claims</h5>
+                                    <h5>@localizer["Manage user claims"]</h5>
 
                                     <div class="card-header-right">
                                         <i class="icofont icofont-spinner-alt-5"></i>
@@ -61,12 +58,12 @@
                                                     @for (int i = 0; i < Model.Claims.Count; i++)
                                                     {
 
-                                                    <li class="list-group-item">
-                                                        <input asp-for="@Model.Claims[i].IsSelected" id="@Model.Claims[i].ClaimType" type="checkbox">
-                                                        &nbsp;&nbsp;
-                                                        @Model.Claims[i].ClaimType
-                                                        <input type="hidden" asp-for="@Model.Claims[i].ClaimType" />
-                                                    </li>
+                                                        <li class="list-group-item">
+                                                            <input asp-for="@Model.Claims[i].IsSelected" id="@Model.Claims[i].ClaimType" type="checkbox">
+                                                            &nbsp;&nbsp;
+                                                            @Model.Claims[i].ClaimType
+                                                            <input type="hidden" asp-for="@Model.Claims[i].ClaimType" />
+                                                        </li>
 
                                                     }
                                                 </ul>
@@ -75,18 +72,17 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-12 text text-left">
                                                     <button type="submit" class="btn btn-mat btn-success mr-2">
-                                                        <i class="fa fa-save"></i> Update
+                                                        <i class="fa fa-save"></i> @localizer["Update"]
                                                     </button>
 
                                                     <a asp-action="EditUser" asp-route-id="@Model.UserId" asp-controller="Administration"
                                                        class="btn btn-mat btn-danger">
-                                                        <i class="fa fa-times"></i> Cancel
+                                                        <i class="fa fa-times"></i> @localizer["Cancel"]
                                                     </a>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -100,34 +96,14 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 <!--Main-body end-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

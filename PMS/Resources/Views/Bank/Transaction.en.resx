@@ -117,4 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add a new bank transaction" xml:space="preserve">
+    <value>Add a new bank transaction</value>
+  </data>
+  <data name="Add New Bank" xml:space="preserve">
+    <value>Add New Bank</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="Bank Transaction" xml:space="preserve">
+    <value>Bank Transaction</value>
+  </data>
+  <data name="Bank Transaction ID" xml:space="preserve">
+    <value>Bank Transaction ID</value>
+  </data>
+  <data name="Bank Transaction Type" xml:space="preserve">
+    <value>Bank Transaction Type</value>
+  </data>
+  <data name="Banks Administration" xml:space="preserve">
+    <value>Banks Administration</value>
+  </data>
+  <data name="Banks Ledger" xml:space="preserve">
+    <value>Banks Ledger</value>
+  </data>
+  <data name="Banks List" xml:space="preserve">
+    <value>Banks List</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Credit (-)" xml:space="preserve">
+    <value>Credit (-)</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Debit (+)" xml:space="preserve">
+    <value>Debit (+)</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>Select Bank</value>
+  </data>
+  <data name="Select Transaction Type" xml:space="preserve">
+    <value>Select Transaction Type</value>
+  </data>
 </root>

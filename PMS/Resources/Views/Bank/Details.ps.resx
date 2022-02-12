@@ -117,4 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account Name" xml:space="preserve">
+    <value>اکاونت نوم</value>
+  </data>
+  <data name="Account No" xml:space="preserve">
+    <value>اکاونت نمبر</value>
+  </data>
+  <data name="Add New Bank" xml:space="preserve">
+    <value>نوی بانک اضافه کړئ</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مفدار</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>بیلانس</value>
+  </data>
+  <data name="Bank Details" xml:space="preserve">
+    <value>د بانک توضیحات</value>
+  </data>
+  <data name="Bank Name" xml:space="preserve">
+    <value>بانک نوم</value>
+  </data>
+  <data name="Bank Transactions List" xml:space="preserve">
+    <value>د بانکي معاملو لیست</value>
+  </data>
+  <data name="Banks Administration" xml:space="preserve">
+    <value>بانکونو مدیریت</value>
+  </data>
+  <data name="Banks Ledger" xml:space="preserve">
+    <value>بانک لیجر</value>
+  </data>
+  <data name="Banks List" xml:space="preserve">
+    <value>بانکو لیست</value>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>برانج</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>لمړی سیستم</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>کریدیت</value>
+  </data>
+  <data name="Current Amount" xml:space="preserve">
+    <value>اوسنی مقدار</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>دیبیت</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Last Updated At" xml:space="preserve">
+    <value>اخری تغیرات </value>
+  </data>
+  <data name="New Transaction" xml:space="preserve">
+    <value>نوی معامله</value>
+  </data>
+  <data name="Registered By User" xml:space="preserve">
+    <value>د کارونکي لخوا ثبت شوی</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>نمبر</value>
+  </data>
+  <data name="Transaction Type" xml:space="preserve">
+    <value>د راکړې ورکړې ډول</value>
+  </data>
 </root>

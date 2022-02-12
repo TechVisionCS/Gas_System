@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Category" xml:space="preserve">
+    <value>نوې کټګورۍ اضافه کړئ</value>
+  </data>
+  <data name="Add New Designation" xml:space="preserve">
+    <value>افزودن وظیفه</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="Designations Administration" xml:space="preserve">
+    <value>مدیریت وظیفه</value>
+  </data>
+  <data name="Designations List" xml:space="preserve">
+    <value>لیست وظیفه</value>
+  </data>
+  <data name="Product Categories Administration" xml:space="preserve">
+    <value>د محصول کټګورۍ اداره</value>
+  </data>
+  <data name="Product Categories List" xml:space="preserve">
+    <value>د محصول کټګوریو لیست</value>
+  </data>
 </root>

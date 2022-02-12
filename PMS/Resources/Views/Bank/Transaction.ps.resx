@@ -117,4 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add a new bank transaction" xml:space="preserve">
+    <value>د نوي بانک لیږد اضافه کړئ</value>
+  </data>
+  <data name="Add New Bank" xml:space="preserve">
+    <value>نوی بانک اضافه </value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مبلغ</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>بانک</value>
+  </data>
+  <data name="Bank Transaction" xml:space="preserve">
+    <value>بانکي راکړه ورکړه</value>
+  </data>
+  <data name="Bank Transaction ID" xml:space="preserve">
+    <value>د بانکي راکړې ورکړې ID</value>
+  </data>
+  <data name="Bank Transaction Type" xml:space="preserve">
+    <value>د بانکي معاملو ډول</value>
+  </data>
+  <data name="Banks Administration" xml:space="preserve">
+    <value>بانکونو مدیریت</value>
+  </data>
+  <data name="Banks Ledger" xml:space="preserve">
+    <value>بانک لیجری</value>
+  </data>
+  <data name="Banks List" xml:space="preserve">
+    <value>بانک لیست</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کول</value>
+  </data>
+  <data name="Credit (-)" xml:space="preserve">
+    <value>کریدیت (-)</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Debit (+)" xml:space="preserve">
+    <value>دبیت (+)</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>بانک انتخاب کړی</value>
+  </data>
+  <data name="Select Transaction Type" xml:space="preserve">
+    <value>د راکړې ورکړې ډول وټاکئ</value>
+  </data>
 </root>

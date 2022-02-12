@@ -117,4 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Role" xml:space="preserve">
+    <value>نقش جدید افزودن</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Edit user" xml:space="preserve">
+    <value>ویرایش کاربر</value>
+  </data>
+  <data name="Edit User Details" xml:space="preserve">
+    <value>ویرایش اطلاعات کاربر</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل ادرس</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>نام مکمل</value>
+  </data>
+  <data name="Manage User Claims" xml:space="preserve">
+    <value>مدیریت ادعاهای کاربران</value>
+  </data>
+  <data name="Manage User Roles" xml:space="preserve">
+    <value>مدیریت نقش های کاربر</value>
+  </data>
+  <data name="None at the moment!" xml:space="preserve">
+    <value>هیچ در سستم موجود نیست</value>
+  </data>
+  <data name="Roles List" xml:space="preserve">
+    <value>لیست نقشها</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت نمودن</value>
+  </data>
+  <data name="User Claims" xml:space="preserve">
+    <value>ادعاهای کاربر</value>
+  </data>
+  <data name="User Roles" xml:space="preserve">
+    <value>نقش کاربرها</value>
+  </data>
+  <data name="Users Administration" xml:space="preserve">
+    <value>مدیریت کاربر</value>
+  </data>
+  <data name="Users List" xml:space="preserve">
+    <value>لیست کاربر</value>
+  </data>
 </root>

@@ -161,7 +161,7 @@ namespace PMS
             });
             services.AddDistributedMemoryCache();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.AddRazorPages();
         }

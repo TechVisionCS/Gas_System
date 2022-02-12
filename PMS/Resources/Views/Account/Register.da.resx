@@ -117,20 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Account Administration" xml:space="preserve">
-    <value>مدیریت حساب</value>
-  </data>
-  <data name="Account Setting" xml:space="preserve">
-    <value>تنظیمات حساب</value>
-  </data>
   <data name="Add New Role" xml:space="preserve">
-    <value>نقش جدید اضافه کنید</value>
+    <value>اضافه نقش جدید</value>
+  </data>
+  <data name="Add New User" xml:space="preserve">
+    <value>کاربر جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>عقب</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>لغو کردن</value>
+    <value>لغوه</value>
   </data>
   <data name="Confirm Password" xml:space="preserve">
-    <value>رمز عبور را تأیید کنید!</value>
+    <value>تاییدی رمز</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>ایمیل ادرس</value>
@@ -139,24 +139,24 @@
     <value>نام مکمل</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>رمز عبور</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>ثبت کاربر</value>
+    <value>رمز</value>
   </data>
   <data name="Register a new user" xml:space="preserve">
-    <value>راجستریشن یوزر جدید</value>
+    <value>راجستر کاربر جدید</value>
   </data>
   <data name="Retype Password" xml:space="preserve">
-    <value>رمز عبور را دوباره تایپ کنید</value>
+    <value>دوباره تایب</value>
   </data>
   <data name="Roles List" xml:space="preserve">
-    <value>فهرست نقش ها</value>
+    <value>لیست نقشها</value>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>ثبت نمودن</value>
+    <value>ثبت</value>
+  </data>
+  <data name="Users Administration" xml:space="preserve">
+    <value>مدیریت کاربرها</value>
   </data>
   <data name="Users List" xml:space="preserve">
-    <value>لیست کاربران</value>
+    <value>لیست کاربر</value>
   </data>
 </root>

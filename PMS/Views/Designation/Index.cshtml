@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<Designation>
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Designation";
+    ViewData["Title"] = localizer["Designation"];
 }
 <div id="PlaceHolderHere"></div>
 <!-- Main-body start -->
@@ -11,12 +12,12 @@
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Designations Administration</h5>
+                        <h5 class="m-b-10">@localizer["Designations Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create")"
                                    data-redirect="@Url.Action("Success", "Designation")" class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Designation
+                                    <i class="fa fa-plus"></i>@localizer["Add New Designation"] 
                                 </a>
                             </li>
                         </ul>
@@ -27,7 +28,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Designations List</h5>
+                            <h5>@localizer["Designations List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -49,7 +50,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>

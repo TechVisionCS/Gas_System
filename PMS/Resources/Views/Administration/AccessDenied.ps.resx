@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Access Denied" xml:space="preserve">
+    <value>منع شوی یاست</value>
+  </data>
+  <data name="Access Denied!!!" xml:space="preserve">
+    <value>رسۍ منکره شوه!!!</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="You do not have any access to this resource!" xml:space="preserve">
+    <value>تاسو دې سرچینې ته هیڅ لاسرسی نلرئ!</value>
+  </data>
 </root>

@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account No" xml:space="preserve">
+    <value>بانکی اکونت شماره</value>
+  </data>
+  <data name="Add a new bank" xml:space="preserve">
+    <value>نوی بانک اضافه</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Bank Account Name" xml:space="preserve">
+    <value>بانکی اکاونت نوم</value>
+  </data>
+  <data name="Bank Name" xml:space="preserve">
+    <value>بانک نوم</value>
+  </data>
+  <data name="Banks" xml:space="preserve">
+    <value>بانکونه</value>
+  </data>
+  <data name="Banks Administration" xml:space="preserve">
+    <value>د بانکونو مدیریت</value>
+  </data>
+  <data name="Banks Ledger" xml:space="preserve">
+    <value>بانک لیچر</value>
+  </data>
+  <data name="Banks List" xml:space="preserve">
+    <value>بانک لیست</value>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>برانچ </value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کول</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="New Transaction" xml:space="preserve">
+    <value>نوی انتقال</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کول</value>
+  </data>
 </root>

@@ -117,4 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Role" xml:space="preserve">
+    <value>نوی رول اضافه کول</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کړی</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="Edit user" xml:space="preserve">
+    <value>کاوونکی ایدیت کئی</value>
+  </data>
+  <data name="Edit User Details" xml:space="preserve">
+    <value>د کارونکي توضیحات ایډیټ کړئ</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>مکمل نوم </value>
+  </data>
+  <data name="Manage User Claims" xml:space="preserve">
+    <value>د کاروونکي ادعاوې اداره کړئ</value>
+  </data>
+  <data name="Manage User Roles" xml:space="preserve">
+    <value>د کارونکي رولونه اداره کړئ</value>
+  </data>
+  <data name="None at the moment!" xml:space="preserve">
+    <value>هیخ سیستم کَی نشته</value>
+  </data>
+  <data name="Roles List" xml:space="preserve">
+    <value>رول لیست</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کول</value>
+  </data>
+  <data name="User Claims" xml:space="preserve">
+    <value>کاوونکی داعوی</value>
+  </data>
+  <data name="User Roles" xml:space="preserve">
+    <value>کارونکی رول</value>
+  </data>
+  <data name="Users Administration" xml:space="preserve">
+    <value>کاوونکی مدیریت</value>
+  </data>
+  <data name="Users List" xml:space="preserve">
+    <value>کاروونکی لیست</value>
+  </data>
 </root>

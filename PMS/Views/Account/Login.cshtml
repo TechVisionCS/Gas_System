@@ -2,12 +2,35 @@
 @{
     Layout = "";
 }
+@inject IViewLocalizer localizer
+@{
+    string CurrentName = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+    var valueDefined = "";
+    var divlin = "";
+    switch (CurrentName)
+    {
+        case "ps":
+            valueDefined = "text text-right";
+            divlin = "float-right";
+            break;
 
+        case "da":
+            valueDefined = "text text-right";
+            divlin = "float-right";
+
+            break;
+
+        default:
+            divlin = "float-left";
+            valueDefined = "text text-left";
+            break;
+    }
+}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Sign In | TechVision</title>
+    <title>@localizer["Sign In | TechVision"]</title>
     <style>
         #demotext {
             font-family: roboto;
@@ -47,14 +70,14 @@
 
     <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
         <!-- Container-fluid starts -->
-        <div class="container">
+        <div class="container  @valueDefined">
             <div class="row">
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body mr-auto ml-auto">
 
                         <div class="text-center">
-                            <div id="demotext">Tech Vision</div>
+                            <div id="demotext">@localizer["Tech Vision"]</div>
                         </div>
 
 
@@ -62,36 +85,36 @@
                             <form class="md-float-material" method="POST" asp-action="Login" asp-controller="Account">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
-                                        <h3 class="text-left txt-primary">Sign In</h3>
+                                        <h3 class="@valueDefined txt-primary ">@localizer["Sign In"]</h3>
                                     </div>
                                 </div>
                                 <hr />
-                                <div asp-validation-summary="All" class="text-danger text text-left"></div>
+                                <div asp-validation-summary="All" class="text-danger @valueDefined"></div>
                                 <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Your Email Address" asp-for="Email" required autofocus autocomplete="off">
+                                    <input type="email" class="form-control @valueDefined" placeholder="@localizer["Your Email Address"]" asp-for="Email" required autofocus autocomplete="off">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Password" required autocomplete="off" asp-for="Password">
+                                    <input type="password" class="form-control @valueDefined" placeholder="@localizer["Password"]" required autocomplete="off" asp-for="Password">
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
                                     <div class="col-sm-7 col-xs-12">
                                         <div class="checkbox-fade fade-in-primary">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input type="checkbox" value="" asp-for="RememberMe">
                                                 <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Remember me</span>
+                                                <span class="text-inverse">@localizer["Remember me"]</span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-sm-5 col-xs-12 forgot-phone text-right d-none">
-                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Forgot Your Password?</a>
+                                        @*  <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> @localizer["Forgot Your Password?"]</a>*@
                                     </div>
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">@localizer["log in"]</button>
                                     </div>
                                 </div>
                             </form>
@@ -101,8 +124,8 @@
                             <hr />
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p class="text-inverse text-left m-b-0">Thank you and enjoy our application.</p>
-                                    <p class="text-inverse text-left"><b>Your <a href="http://techvision.af/" style="color: cornflowerblue">TechVision</a> Team</b></p>
+                                    <p class="text-inverse @valueDefined m-b-0">@localizer["Thank you and enjoy our application"]</p>
+                                    <p class="text-inverse @valueDefined"><b>@localizer["Your"] <a href="http://techvision.af/" style="color: cornflowerblue">@localizer["TechVision"]</a> @localizer["Team"]</b></p>
                                 </div>
                                 <div class="col-md-2">
                                     <img src="~/logo-small-bottom.png" alt="small-logo.png">
@@ -135,5 +158,4 @@
     <script type="text/javascript" src="~/admin_assets/js/modernizr/css-scrollbars.js"></script>
     <script type="text/javascript" src="~/admin_assets/js/common-pages.js"></script>
 </body>
-
 </html>

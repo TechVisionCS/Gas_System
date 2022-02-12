@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Add New Role" xml:space="preserve">
+    <value>Add New Role</value>
+  </data>
+  <data name="Add New User" xml:space="preserve">
+    <value>Add New User</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Claims" xml:space="preserve">
+    <value>Claims</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Reset Password" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="Role List" xml:space="preserve">
+    <value>Role List</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="SNo." xml:space="preserve">
+    <value>SNo.</value>
+  </data>
+  <data name="System Users" xml:space="preserve">
+    <value>System Users</value>
+  </data>
+  <data name="System Users List" xml:space="preserve">
+    <value>System Users List</value>
+  </data>
+  <data name="Users Administration" xml:space="preserve">
+    <value>Users Administration</value>
+  </data>
 </root>

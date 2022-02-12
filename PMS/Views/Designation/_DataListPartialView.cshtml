@@ -1,14 +1,16 @@
 ﻿@model IEnumerable<Designation>
+@inject IViewLocalizer localizer
+
 <div class="card-block table-border-style">
     <div class="table-responsive">
         <table id="example1" class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>SNo.</th>
-                    <th>Designation</th>
-                    <th>Description</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>@localizer["SNo"].</th>
+                    <th>@localizer["Designation"]</th>
+                    <th>@localizer["Description"]</th>
+                    <th>@localizer["Status"]</th>
+                    <th>@localizer["Action"]</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,11 +26,11 @@
                             <td>
                                 @if (Type.Status == 1)
                                 {
-                                    <span class="badge badge-primary">Enabled</span>
+                                    <span class="badge badge-primary">@localizer["Enabled"]</span>
                                 }
                                 else
                                 {
-                                    <span class="badge badge-warning">Disabled</span>
+                                    <span class="badge badge-warning">@localizer["Enabled"]</span>
                                 }
                             </td>
                             <td>
@@ -36,7 +38,6 @@
                                    data-redirect="@Url.Action("Success", "Designation")" class="text text-primary" style="cursor: pointer;">
                                     <i class="fa fa-edit"></i>
                                 </a>
-
                                 <span class="d-none">@{sno++;}</span>
                             </td>
                         </tr>

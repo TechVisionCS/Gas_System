@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Manufacturer" xml:space="preserve">
+    <value>افزودن تولیدی شرکت جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+  <data name="Manufacturers" xml:space="preserve">
+    <value>تولیدی</value>
+  </data>
+  <data name="Manufacturers Administration" xml:space="preserve">
+    <value>مدیریت تولیدی </value>
+  </data>
+  <data name="Manufacturers List" xml:space="preserve">
+    <value>لیست تولید </value>
+  </data>
 </root>

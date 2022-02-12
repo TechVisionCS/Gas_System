@@ -117,20 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Enter Your Password" xml:space="preserve">
-    <value>پاسورد شما</value>
+  <data name="Forgot Your Password?" xml:space="preserve">
+    <value>رمز ته فراموش کردی</value>
   </data>
-  <data name="Login" xml:space="preserve">
+  <data name="log in" xml:space="preserve">
     <value>وارد شدن</value>
   </data>
-  <data name="Make Your Business Digital" xml:space="preserve">
-    <value>تجارت تان جهانی بسازید</value>
+  <data name="Password" xml:space="preserve">
+    <value>پاسورد شما</value>
+  </data>
+  <data name="Remember me" xml:space="preserve">
+    <value>ما ره به یاداشته باش</value>
   </data>
   <data name="Sign In" xml:space="preserve">
     <value>داخل شدن</value>
   </data>
-  <data name="Sign In To System" xml:space="preserve">
-    <value>وارد شدن به سیستم</value>
+  <data name="Sign In | TechVision" xml:space="preserve">
+    <value>وارد شدن ؛ سیستم</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>تیم</value>
+  </data>
+  <data name="Tech Vision" xml:space="preserve">
+    <value>تیک ویزن</value>
+  </data>
+  <data name="TechVision" xml:space="preserve">
+    <value>تیک ویزن</value>
+  </data>
+  <data name="Thank you and enjoy our application" xml:space="preserve">
+    <value>با تشکر از شما و از برنامه ما لذت ببرید</value>
+  </data>
+  <data name="Your" xml:space="preserve">
+    <value>از شما</value>
   </data>
   <data name="Your Email Address" xml:space="preserve">
     <value>ایمیل ادرس شما</value>

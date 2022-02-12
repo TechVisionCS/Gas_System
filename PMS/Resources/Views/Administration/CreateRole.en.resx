@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Role" xml:space="preserve">
+    <value>Add New Role</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Create New Role" xml:space="preserve">
+    <value>Create New Role</value>
+  </data>
+  <data name="Register a new user" xml:space="preserve">
+    <value>Register a new  role</value>
+  </data>
+  <data name="Role Name" xml:space="preserve">
+    <value>Role Name</value>
+  </data>
+  <data name="Roles List" xml:space="preserve">
+    <value>Roles List</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="User Roles Administration" xml:space="preserve">
+    <value>User Roles Administration</value>
+  </data>
+  <data name="Users List" xml:space="preserve">
+    <value>Users List</value>
+  </data>
 </root>

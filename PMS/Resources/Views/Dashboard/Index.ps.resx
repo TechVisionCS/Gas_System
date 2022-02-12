@@ -123,11 +123,50 @@
   <data name="Dashboard" xml:space="preserve">
     <value>ډیشبورډ</value>
   </data>
+  <data name="Expense" xml:space="preserve">
+    <value>مصارفات</value>
+  </data>
+  <data name="Expense Amount" xml:space="preserve">
+    <value>مصارفاتو مقدار</value>
+  </data>
   <data name="Orders Received" xml:space="preserve">
     <value>حاصل شوی اردر</value>
   </data>
+  <data name="Produts" xml:space="preserve">
+    <value>تولیدات</value>
+  </data>
+  <data name="Profit Amount" xml:space="preserve">
+    <value>ګټی مقدار</value>
+  </data>
+  <data name="Purchase" xml:space="preserve">
+    <value>خریداری</value>
+  </data>
+  <data name="Purchase Amount" xml:space="preserve">
+    <value>خریداری مقدار</value>
+  </data>
+  <data name="Purchased In Kg" xml:space="preserve">
+    <value>خریداری په کیلو</value>
+  </data>
   <data name="Revenue" xml:space="preserve">
     <value>ګټه</value>
+  </data>
+  <data name="Revenue Amount" xml:space="preserve">
+    <value>عواید مقدار</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>خرڅلاو</value>
+  </data>
+  <data name="Saled In Kg" xml:space="preserve">
+    <value>خرڅلاو په کیلو</value>
+  </data>
+  <data name="Sales Amount" xml:space="preserve">
+    <value>خرڅلاو مقدار</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>امار</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>ګودام</value>
   </data>
   <data name="This Month" xml:space="preserve">
     <value>همدا میاشت</value>

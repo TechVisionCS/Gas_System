@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Category" xml:space="preserve">
+    <value>افزودن کتګوری جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Expense Categories" xml:space="preserve">
+    <value>کتګوری مصارفات</value>
+  </data>
+  <data name="Expense Categories Administration" xml:space="preserve">
+    <value>مدیریت کتګوری مصارفات</value>
+  </data>
+  <data name="Expense Categories List" xml:space="preserve">
+    <value>لیست کتګورهای مصارفات</value>
+  </data>
 </root>

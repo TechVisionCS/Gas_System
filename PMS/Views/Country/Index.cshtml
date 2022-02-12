@@ -1,30 +1,29 @@
 ﻿@model IEnumerable<Country>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Manage Country";
+    ViewData["Title"] = localizer["Manage Country"];
 }
 <div id="PlaceHolderHere"></div>
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
         <div class="row">
             <div class="col-lg-9" style="margin:0 auto;">
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Countries Administration</h5>
+                        <h5 class="m-b-10">@localizer["Countries Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Province" class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Provinces List
+                                    <i class="fa fa-list"></i>@localizer["Provinces List"] Provinces List
                                 </a>
                             </li>
-                            
+
                             <li class="breadcrumb-item pull-right mr-2">
                                 <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create")"
                                    data-redirect="@Url.Action("Success", "Country")" class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Country
+                                    <i class="fa fa-plus"></i> @localizer["Add New Country"]
                                 </a>
                             </li>
                         </ul>
@@ -36,7 +35,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5>Countries List</h5>
+                            <h5>@localizer["Countries List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -53,10 +52,10 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Country Name</th>
-                                            <th>Code</th>
-                                            <th>Action</th>
+                                            <th>@localizer["SNo"].</th>
+                                            <th>@localizer["Country Name"]</th>
+                                            <th>@localizer["Code"]</th>
+                                            <th>@localizer["Action"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -70,15 +69,14 @@
                                                     <td>@sno</td>
                                                     <td>@type.Name</td>
                                                     <td>@type.Code</td>
-                                                    
                                                     <td>
                                                         <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action($"Edit/{type.Id}")"
                                                            data-redirect="@Url.Action("Success", "Country")" class="text text-primary" style="cursor: pointer;">
                                                             <i class="fa fa-edit"></i>
                                                         </a>
+                                                        <span class="d-none">@{sno++;}</span>
                                                     </td>
                                                 </tr>
-                                                <span class="d-none">@{sno++;}</span>
                                             }
                                         }
                                     </tbody>
@@ -87,7 +85,6 @@
                         </div>
                     </div>
                     @*Basic table card end*@
-
                 </div>
                 @*Page-body end*@
 
@@ -97,19 +94,14 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 @*Main-body end*@
-
-
-

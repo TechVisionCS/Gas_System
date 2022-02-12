@@ -1,18 +1,18 @@
 ﻿
 @model IEnumerable<CurrentStockViewModel>
-
+@inject IViewLocalizer localizer
 <div class="table-responsive">
     <table id="example1" class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>SNo.</th>
-                <th>Product Name</th>
-                <th>Manufacturer</th>
-                <th>Category</th>
+                <th>@localizer["SNo"].</th>
+                <th>@localizer["Product Name"]</th>
+                <th>@localizer["Manufacturer"]</th>
+                <th>@localizer["Category"]</th>
 
-                <th style="background-color: lightgray;">Current Stock Qty (@ViewBag.UnitName)</th>
+                <th style="background-color: lightgray;">@localizer["Current Stock Qty"] (@ViewBag.UnitName)</th>
 
-                <th>View Details</th>
+                <th>@localizer["View Details"]</th>
             </tr>
         </thead>
         <tbody>
@@ -45,7 +45,7 @@
                         <td>
                             <a asp-action="StockDetails" asp-controller="Stock" asp-route-id="@m.ProductId"
                                class="btn btn-info btn-mini">
-                                <i class="fa fa-eye"></i> Details
+                                <i class="fa fa-eye"></i> @localizer["Details"]
                             </a>
                         </td>
                     </tr>

@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>کود</value>
+  </data>
+  <data name="Country Details" xml:space="preserve">
+    <value>کشور معلومات</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
 </root>

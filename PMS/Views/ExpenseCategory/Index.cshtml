@@ -1,9 +1,12 @@
 ﻿@model IEnumerable<ExpensesCategory>
-@{
-    ViewData["Title"] = "Expense Categories";
+@inject IViewLocalizer localizer
 
+@{
+    ViewData["Title"] = localizer["Expense Categories"];
 }
+
 <div id="PlaceHolderHere"></div>
+
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
@@ -12,12 +15,12 @@
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Expense Categories Administration</h5>
+                        <h5 class="m-b-10">@localizer["Expense Categories Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create")"
                                    data-redirect="@Url.Action("Success", "ExpenseCategory")" class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Category
+                                    <i class="fa fa-plus"></i> @localizer["Add New Category"]
                                 </a>
                             </li>
                         </ul>
@@ -28,7 +31,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Expense Categories List</h5>
+                            <h5>@localizer["Expense Categories List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -50,7 +53,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>

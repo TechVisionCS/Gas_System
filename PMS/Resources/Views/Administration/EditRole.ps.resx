@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New User" xml:space="preserve">
+    <value>نوی کارمند اضافه کول</value>
+  </data>
+  <data name="Add or Remove Users" xml:space="preserve">
+    <value>اضافه یا لری کول کارونکی</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کول</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="Edit Role" xml:space="preserve">
+    <value>ایډیټ رول</value>
+  </data>
+  <data name="Edit roles" xml:space="preserve">
+    <value>رول تغیرول</value>
+  </data>
+  <data name="None at the moment!" xml:space="preserve">
+    <value>هیڅ معلومات نشته</value>
+  </data>
+  <data name="Role Name" xml:space="preserve">
+    <value>رول نوم</value>
+  </data>
+  <data name="Roles Administration" xml:space="preserve">
+    <value>رول مدیریت</value>
+  </data>
+  <data name="Roles List" xml:space="preserve">
+    <value>رول لیست</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="Users in This Role" xml:space="preserve">
+    <value>کاروونګی پدی رول کښی </value>
+  </data>
+  <data name="Users List" xml:space="preserve">
+    <value>کارمند لیست</value>
+  </data>
 </root>

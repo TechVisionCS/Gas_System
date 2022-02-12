@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Role" xml:space="preserve">
+    <value>نقش جدید اضافه کنید</value>
+  </data>
+  <data name="Add New User" xml:space="preserve">
+    <value>افزودن کاربر جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Role Name" xml:space="preserve">
+    <value>نام نقش</value>
+  </data>
+  <data name="SNo." xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="User Roles Administration" xml:space="preserve">
+    <value>مدیریت نقش کاربر</value>
+  </data>
+  <data name="User Roles List" xml:space="preserve">
+    <value>لیست نقش های کاربر</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>کاربر</value>
+  </data>
+  <data name="Users List" xml:space="preserve">
+    <value>لیست کاربران</value>
+  </data>
 </root>

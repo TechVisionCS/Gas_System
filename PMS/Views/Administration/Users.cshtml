@@ -1,36 +1,34 @@
 ﻿@model IEnumerable<ApplicationUser>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "System Users";
+    ViewData["Title"] = localizer["System Users"];
 }
 
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
         <div class="row">
             <div class="col-lg-9" style="margin:0 auto;">
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Users Administration</h5>
+                        <h5 class="m-b-10">@localizer["Users Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Register" asp-controller="Account"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-user-plus"></i> Add New User
+                                    <i class="fa fa-user-plus"></i> @localizer["Add New User"]
                                 </a>
 
                                 <a asp-action="CreateRole" asp-controller="Administration"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Role
+                                    <i class="fa fa-plus"></i> @localizer["Add New Role"]
                                 </a>
 
                                 <a asp-action="Roles" asp-controller="Administration"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Roles List
+                                    <i class="fa fa-list"></i> @localizer["Role List"]
                                 </a>
-
                             </li>
                         </ul>
                     </div>
@@ -41,7 +39,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5>System Users List</h5>
+                            <h5>@localizer["System Users List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -58,13 +56,13 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Full Name</th>
-                                            <th>Email</th>
-                                            <th>Roles</th>
-                                            <th>Claims</th>
-                                            <th>Reset Password</th>
-                                            <th>Actions</th>
+                                            <th>@localizer["SNo."]</th>
+                                            <th>@localizer["Full Name"]</th>
+                                            <th>@localizer["Email"]</th>
+                                            <th>@localizer["Roles"]</th>
+                                            < th>@localizer["Claims"]</th>
+                                            <th>@localizer["Reset Password"]</th>
+                                            <th>@localizer["Actions"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -81,19 +79,19 @@
                                                     <td>
                                                         <a asp-action="ManageUserRoles" asp-controller="Administration"
                                                            asp-route-userId="@user.Id" class="text text-info">
-                                                            <i class="fa fa-list"></i> Roles
+                                                            <i class="fa fa-list"></i> @localizer["Roles"]
                                                         </a>
                                                     </td>
                                                     <td>
                                                         <a asp-action="ManageUserClaims" asp-controller="Administration"
                                                            asp-route-userId="@user.Id" class="text text-info">
-                                                            <i class="fa fa-list"></i> Claims
+                                                            <i class="fa fa-list"></i> @localizer["Claims"]
                                                         </a>
                                                     </td>
                                                     <td>
                                                         <a asp-action="ChangePassword" asp-controller="Administration" asp-route-id="@user.Id"
                                                            class="text text-warning">
-                                                            <i class="fa fa-lock"></i> Reset Password
+                                                            <i class="fa fa-lock"></i> @localizer["Reset Password"]
                                                         </a>
                                                     </td>
                                                     <td>
@@ -107,11 +105,10 @@
                                                         </a>
                                                         <form class="p-0" id="delete_frm" style="display: inline;" asp-action="DeleteUser" asp-route-id="@user.Id" method="post">
                                                         </form>
+                                                        <span class="d-none">@{sno++;}</span>
                                                     </td>
                                                 </tr>
-                                                <span class="d-none">@{sno++;}</span>
                                                 //}
-
                                             }
                                         }
                                     </tbody>
@@ -129,28 +126,25 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
     </div>
 </div>
 @*Main-body end*@
 
 @section Scripts{
-<script>
-    function confirm_fun(event){
-        var c = confirm("Are you sure to delete this record?");
-        if (c) {
-            $("#delete_frm").submit();
+    <script>
+        function confirm_fun(event) {
+            var c = confirm("Are you sure to delete this record?");
+            if (c) {
+                $("#delete_frm").submit();
+            }
         }
-    }
-</script>
+    </script>
 }

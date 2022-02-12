@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New User" xml:space="preserve">
+    <value>کاربر جدید</value>
+  </data>
+  <data name="Add or Remove Users" xml:space="preserve">
+    <value>افزدون یا حذف کاربر</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="Edit Role" xml:space="preserve">
+    <value>ویرایش نقش</value>
+  </data>
+  <data name="Edit roles" xml:space="preserve">
+    <value>ویرایش نقش</value>
+  </data>
+  <data name="None at the moment!" xml:space="preserve">
+    <value>فعلا هیچی!</value>
+  </data>
+  <data name="Role Name" xml:space="preserve">
+    <value>نام نقش</value>
+  </data>
+  <data name="Roles Administration" xml:space="preserve">
+    <value>مدیریت نقش ها</value>
+  </data>
+  <data name="Roles List" xml:space="preserve">
+    <value>لیست نقش</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کردن</value>
+  </data>
+  <data name="Users in This Role" xml:space="preserve">
+    <value>کاربر در این نقشها</value>
+  </data>
+  <data name="Users List" xml:space="preserve">
+    <value>لیست کاربر</value>
+  </data>
 </root>

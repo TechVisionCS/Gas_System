@@ -123,11 +123,50 @@
   <data name="Dashboard" xml:space="preserve">
     <value>داشبورد</value>
   </data>
+  <data name="Expense" xml:space="preserve">
+    <value>مصارفات</value>
+  </data>
+  <data name="Expense Amount" xml:space="preserve">
+    <value>مبلغ مصارف</value>
+  </data>
   <data name="Orders Received" xml:space="preserve">
     <value>اردر یافته شده</value>
   </data>
+  <data name="Produts" xml:space="preserve">
+    <value>محصول</value>
+  </data>
+  <data name="Profit Amount" xml:space="preserve">
+    <value>مبلغ مفاد</value>
+  </data>
+  <data name="Purchase" xml:space="preserve">
+    <value>خریداری</value>
+  </data>
+  <data name="Purchase Amount" xml:space="preserve">
+    <value>مبلغ خریداری</value>
+  </data>
+  <data name="Purchased In Kg" xml:space="preserve">
+    <value>خریداری در کیلو </value>
+  </data>
   <data name="Revenue" xml:space="preserve">
     <value>مفاد</value>
+  </data>
+  <data name="Revenue Amount" xml:space="preserve">
+    <value>مبلغ عواید</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>فروشات</value>
+  </data>
+  <data name="Saled In Kg" xml:space="preserve">
+    <value>فروشات در ماه</value>
+  </data>
+  <data name="Sales Amount" xml:space="preserve">
+    <value>مبلغ فروشات</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>آمار</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>ذخیره</value>
   </data>
   <data name="This Month" xml:space="preserve">
     <value>همین ماه</value>

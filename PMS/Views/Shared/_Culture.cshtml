@@ -9,10 +9,32 @@
         .ToList();
     var returnUrl = string.IsNullOrWhiteSpace(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}{Context.Request.QueryString}";
 }
+@{
+    string CurrentName = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+    var valueDefined = "";
+    var divlin = "";
+    switch (CurrentName)
+    {
+        case "ps":
+            valueDefined = "text text-right";
+            divlin = "float-right";
+            break;
 
+        case "da":
+            valueDefined = "text text-right";
+            divlin = "float-right";
+
+            break;
+
+        default:
+            divlin = "float-left";
+            valueDefined = "text text-left";
+            break;
+    }
+}
 <form method="post" asp-action="SetLanguage" asp-controller="Home" asp-route-returnUrl="@returnUrl">
     <div class="form-group">
-        <select class="form-control" style="width:100%;" name="culture" asp-for="@culture.RequestCulture.UICulture.Name" asp-items="cultureList"
+        <select class="form-control @valueDefined" style="width:100%;" name="culture" asp-for="@culture.RequestCulture.UICulture.Name" asp-items="cultureList"
                 onchange="this.form.submit();">
         </select>
     </div>

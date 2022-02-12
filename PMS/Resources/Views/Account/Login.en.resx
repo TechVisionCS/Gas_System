@@ -117,17 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Enter Your Password" xml:space="preserve">
-    <value>Enter Your Password</value>
+  <data name="Forgot Your Password?" xml:space="preserve">
+    <value>Forgot Your Password?</value>
   </data>
-  <data name="Make Your Business Digital" xml:space="preserve">
-    <value>Make Your Business Digital</value>
+  <data name="log in" xml:space="preserve">
+    <value>log in</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Remember me" xml:space="preserve">
+    <value>Remember me</value>
   </data>
   <data name="Sign In" xml:space="preserve">
     <value>Sign In</value>
   </data>
-  <data name="Sign In To System" xml:space="preserve">
-    <value>Login to System</value>
+  <data name="Sign In | TechVision" xml:space="preserve">
+    <value>Sign In | TechVision</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="Tech Vision" xml:space="preserve">
+    <value>Tech Vision</value>
+  </data>
+  <data name="TechVision" xml:space="preserve">
+    <value>TechVision</value>
+  </data>
+  <data name="Thank you and enjoy our application" xml:space="preserve">
+    <value>Thank you and enjoy our application</value>
+  </data>
+  <data name="Your" xml:space="preserve">
+    <value>Your</value>
   </data>
   <data name="Your Email Address" xml:space="preserve">
     <value>Your Email Address</value>

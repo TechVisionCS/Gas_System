@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>غیر فعال</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="Manufacturer Name" xml:space="preserve">
+    <value>نام شرکت تولیدی</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>حالت</value>
+  </data>
 </root>

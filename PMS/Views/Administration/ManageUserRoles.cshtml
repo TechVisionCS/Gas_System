@@ -1,7 +1,8 @@
 ﻿@model List<UserRolesViewModel>
+@inject IViewLocalizer localizer
 
 @{
-    ViewData["Title"] = "User Roles Management";
+    ViewData["Title"] = localizer["User Roles Management"];
 
     var userId = ViewBag.userId;
 }
@@ -14,22 +15,22 @@
                 <!--Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">User Roles Administration</h5>
+                        <h5 class="m-b-10">@localizer["User Roles Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Roles" asp-controller="Administration"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-list"></i> Roles List
+                                    <i class="fa fa-list"></i> @localizer["Roles List"]
                                 </a>
 
                                 <a asp-action="CreateRole" asp-controller="Administration"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Role
+                                    <i class="fa fa-plus"></i> @localizer["Add New Role"]
                                 </a>
 
                                 <a asp-action="Users" asp-controller="Administration"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Users List
+                                    <i class="fa fa-list"></i> @localizer["Users List"]
                                 </a>
 
                             </li>
@@ -44,7 +45,7 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Manage user roles</h5>
+                                    <h5>@localizer["Manage user roles"]</h5>
 
                                     <div class="card-header-right">
                                         <i class="icofont icofont-spinner-alt-5"></i>
@@ -80,18 +81,17 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-12 text text-left">
                                                     <button type="submit" class="btn btn-mat btn-success mr-2">
-                                                        <i class="fa fa-save"></i> Update
+                                                        <i class="fa fa-save"></i> @localizer["Update"]
                                                     </button>
 
                                                     <a asp-action="EditUser" asp-route-id="@userId" asp-controller="Administration"
                                                        class="btn btn-mat btn-danger">
-                                                        <i class="fa fa-times"></i> Cancel
+                                                        <i class="fa fa-times"></i> @localizer["Cancel"]
                                                     </a>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i>@localizer["Back"]
                                 </a>
                             </li>
                         </ul>
@@ -114,7 +114,6 @@
 
             </div>
         </div>
-
     </div>
 </div>
-<!--Main-body end-->
+<!--Main-body end--

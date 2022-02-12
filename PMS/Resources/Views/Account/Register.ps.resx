@@ -126,6 +126,9 @@
   <data name="Add New Role" xml:space="preserve">
     <value>نوی نقش اضافه کړئ</value>
   </data>
+  <data name="Add New User" xml:space="preserve">
+    <value>Add New User</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>لغوه کړئ</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>ثبت کول</value>
+  </data>
+  <data name="Users Administration" xml:space="preserve">
+    <value>کارونکو مدیریت</value>
   </data>
   <data name="Users List" xml:space="preserve">
     <value>د کارکونکو لیست</value>

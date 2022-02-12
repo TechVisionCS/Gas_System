@@ -123,11 +123,50 @@
   <data name="Dashboard" xml:space="preserve">
     <value>Dashboard</value>
   </data>
+  <data name="Expense" xml:space="preserve">
+    <value>Expense</value>
+  </data>
+  <data name="Expense Amount" xml:space="preserve">
+    <value>Expense Amount</value>
+  </data>
   <data name="Orders Received" xml:space="preserve">
     <value>Oders Received</value>
   </data>
+  <data name="Produts" xml:space="preserve">
+    <value>Produts</value>
+  </data>
+  <data name="Profit Amount" xml:space="preserve">
+    <value>Profit Amount</value>
+  </data>
+  <data name="Purchase" xml:space="preserve">
+    <value>Purchas</value>
+  </data>
+  <data name="Purchase Amount" xml:space="preserve">
+    <value>Purchase Amount</value>
+  </data>
+  <data name="Purchased In Kg" xml:space="preserve">
+    <value>Purchased In Kg</value>
+  </data>
   <data name="Revenue" xml:space="preserve">
     <value>Revenue</value>
+  </data>
+  <data name="Revenue Amount" xml:space="preserve">
+    <value>Revenue Amount</value>
+  </data>
+  <data name="Sale" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="Saled In Kg" xml:space="preserve">
+    <value>Saled In Kg</value>
+  </data>
+  <data name="Sales Amount" xml:space="preserve">
+    <value>Sales Amount</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Stock</value>
   </data>
   <data name="This Month" xml:space="preserve">
     <value>This Month</value>

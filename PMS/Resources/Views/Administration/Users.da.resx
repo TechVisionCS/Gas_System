@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Role" xml:space="preserve">
+    <value>نقش جدید اضافه کنید</value>
+  </data>
+  <data name="Add New User" xml:space="preserve">
+    <value>افزودن کاربر جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Claims" xml:space="preserve">
+    <value>اداعوی</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل ادرس</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>نام مکمل</value>
+  </data>
+  <data name="Reset Password" xml:space="preserve">
+    <value>بازنشانی رمز عبور</value>
+  </data>
+  <data name="Role List" xml:space="preserve">
+    <value>فهرست نقش</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>نقش ها</value>
+  </data>
+  <data name="SNo." xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="System Users" xml:space="preserve">
+    <value>کاربران سیستم</value>
+  </data>
+  <data name="System Users List" xml:space="preserve">
+    <value>لیست کاربر سیستم</value>
+  </data>
+  <data name="Users Administration" xml:space="preserve">
+    <value>مدیریت کاربران</value>
+  </data>
 </root>

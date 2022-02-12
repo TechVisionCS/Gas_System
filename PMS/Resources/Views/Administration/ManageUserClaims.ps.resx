@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کول</value>
+  </data>
+  <data name="Manage user claims" xml:space="preserve">
+    <value>کارونکی ادعاوی ترتیب کول</value>
+  </data>
+  <data name="Roles List" xml:space="preserve">
+    <value>رول لیست</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تغیر ول</value>
+  </data>
+  <data name="User Claims" xml:space="preserve">
+    <value>کارونکی ادعاوی</value>
+  </data>
+  <data name="User Claims Administration" xml:space="preserve">
+    <value>کارونکو اداعاو مدیریت</value>
+  </data>
+  <data name="Users List" xml:space="preserve">
+    <value>کاروونکی لیست</value>
+  </data>
 </root>

@@ -1,4 +1,8 @@
 ﻿@model List<FileList>
+@inject IViewLocalizer localizer
+@{
+    ViewData["Title"] = localizer["Backup"];
+}
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
@@ -7,12 +11,12 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Backup Administration </h5>
+                        <h5 class="m-b-10">@localizer["Backup Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="BackupDatabase" asp-controller="Backup"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-database"></i> New Backup
+                                    <i class="fa fa-database"></i> @localizer["New Backup"]
                                 </a>
                             </li>
                         </ul>
@@ -25,7 +29,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Backup List</h5>
+                            <h5>@localizer["Backup List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -41,11 +45,11 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>File Name</th>
-                                            <th>Restore</th>
-                                            <th>Download</th>
-                                            <th>Delete</th>
+                                            <th>@localizer["SNo"].</th>
+                                            <th>@localizer["File Name"]</th>
+                                            <th>@localizer["Restore"]</th>
+                                            <th>@localizer["Download"]</th>
+                                            <th>@localizer["Delete"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -82,7 +86,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i>@localizer[""] Back
                                 </a>
                             </li>
                         </ul>

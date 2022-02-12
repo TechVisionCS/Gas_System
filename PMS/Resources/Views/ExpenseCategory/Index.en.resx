@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Category" xml:space="preserve">
+    <value>Add New Category</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Expense Categories" xml:space="preserve">
+    <value>Expense Categories</value>
+  </data>
+  <data name="Expense Categories Administration" xml:space="preserve">
+    <value>Expense Categories Administration</value>
+  </data>
+  <data name="Expense Categories List" xml:space="preserve">
+    <value>Expense Categories List</value>
+  </data>
 </root>

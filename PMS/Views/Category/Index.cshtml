@@ -1,25 +1,26 @@
 ﻿@model IEnumerable<Category>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Manage Product Categories";
-    
+    ViewData["Title"] = localizer["Manage Product Categories"];
+
 }
+
 <div id="PlaceHolderHere"></div>
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
+        @localizer[""]
         <div class="row">
             <div class="col-lg-9" style="margin:0 auto;">
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Product Categories Administration</h5>
+                        <h5 class="m-b-10"> @localizer["Product Categories Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create")"
                                    data-redirect="@Url.Action("Success", "Category")" class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Category
+                                    <i class="fa fa-plus"></i>  @localizer["Add New Category"]
                                 </a>
                             </li>
                         </ul>
@@ -28,10 +29,9 @@
                 <!-- Page-header end -->
                 <!-- Page-body start -->
                 <div class="page-body">
-
                     <div class="card">
                         <div class="card-header">
-                            <h5>Product Categories List</h5>
+                            <h5> @localizer["Product Categories List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -42,33 +42,25 @@
                                 </ul>
                             </div>
                         </div>
-
                         @{await Html.RenderPartialAsync("_DataListPartialView", Model);}
                     </div>
                     @*Basic table card end*@
-
                 </div>
                 @*Page-body end*@
-
                 <div class="page-header card">
                     <div class="card-block">
                         <ul class="">
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 @*Main-body end*@
-
-
-

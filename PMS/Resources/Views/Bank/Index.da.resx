@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account Name" xml:space="preserve">
+    <value>نام اکاونت</value>
+  </data>
+  <data name="Account No" xml:space="preserve">
+    <value>شماره حساب</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Bank" xml:space="preserve">
+    <value>افزودن بانک جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Bank Name" xml:space="preserve">
+    <value>نام بانک</value>
+  </data>
+  <data name="Banks" xml:space="preserve">
+    <value>بانک ها</value>
+  </data>
+  <data name="Banks Administration" xml:space="preserve">
+    <value>اداره بانک ها</value>
+  </data>
+  <data name="Banks Ladger" xml:space="preserve">
+    <value>‌‌بانک لیجر</value>
+  </data>
+  <data name="Banks List" xml:space="preserve">
+    <value>لیست بانک ها</value>
+  </data>
+  <data name="Current Amount" xml:space="preserve">
+    <value>مقدار فعلی</value>
+  </data>
+  <data name="New Transaction" xml:space="preserve">
+    <value>معامله جدید</value>
+  </data>
+  <data name="SNo." xml:space="preserve">
+    <value>شماره</value>
+  </data>
 </root>

@@ -1,18 +1,18 @@
 ﻿@model IEnumerable<Category>
+@inject IViewLocalizer localizer
 <div class="card-block table-border-style">
     <div class="table-responsive">
         <table id="example1" class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>SNo.</th>
-                    <th>Category Name</th>
-                    <th>Description</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>@localizer["SNo"].</th>
+                    <th>@localizer["Category Name"]</th>
+                    <th>@localizer["Description"]</th>
+                    <th>@localizer["Status"]</th>
+                    <th>@localizer["Action"]</th>
                 </tr>
             </thead>
             <tbody>
-
                 @{ var sno = 1; }
                 @if (Model.Any())
                 {
@@ -25,11 +25,11 @@
                             <td>
                                 @if (category.Status == 1)
                                 {
-                                    <span class="badge badge-primary">Enabled</span>
+                                    <span class="badge badge-primary">@localizer["Enabled"]</span>
                                 }
                                 else
                                 {
-                                    <span class="badge badge-warning">Disabled</span>
+                                    <span class="badge badge-warning">@localizer["Disabled"]</span>
                                 }
                             </td>
                             <td>
@@ -37,9 +37,9 @@
                                    data-redirect="@Url.Action("Success", "Category")" class="text text-primary" style="cursor: pointer;">
                                     <i class="fa fa-edit"></i>
                                 </a>
+                                <span class="d-none">@{sno++;}</span>
                             </td>
                         </tr>
-                        <span class="d-none">@{sno++;}</span>
                     }
                 }
             </tbody>
