@@ -117,4 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add a new Employee" xml:space="preserve">
+    <value>نوی کارمند اضافه کول</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Base Salary" xml:space="preserve">
+    <value>اولیه معاش</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کو</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="Employee Ledger" xml:space="preserve">
+    <value>لیچر کارمندان</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="Employees Administration" xml:space="preserve">
+    <value>کارمندانو مدیریت</value>
+  </data>
+  <data name="Employees List" xml:space="preserve">
+    <value>لیست کارمندان</value>
+  </data>
+  <data name="Father Name" xml:space="preserve">
+    <value>پلار نوم</value>
+  </data>
+  <data name="Hire Date" xml:space="preserve">
+    <value>استخدام تاریخ</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>انځور</value>
+  </data>
+  <data name="Job Title" xml:space="preserve">
+    <value>وظیفه تاتیل</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نوم</value>
+  </data>
+  <data name="National Id" xml:space="preserve">
+    <value>تذکره</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون</value>
+  </data>
+  <data name="Salary" xml:space="preserve">
+    <value>معاش</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="Select Designation" xml:space="preserve">
+    <value>وظیفه انتخاب کړی</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تغیرول</value>
+  </data>
+  <data name="Update Employee" xml:space="preserve">
+    <value>کارمندان تغیرول</value>
+  </data>
 </root>

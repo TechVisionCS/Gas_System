@@ -117,4 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Base Salary" xml:space="preserve">
+    <value>اساسی معاش</value>
+  </data>
+  <data name="Basic Salary" xml:space="preserve">
+    <value>اولیه معاش</value>
+  </data>
+  <data name="Bounse" xml:space="preserve">
+    <value>بونس</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>تاریخ انتری</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>ړنګول</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="Due Date" xml:space="preserve">
+    <value>ورکولو تاریخ</value>
+  </data>
+  <data name="Employee Administration" xml:space="preserve">
+    <value>د کارمندانو مدیریت</value>
+  </data>
+  <data name="Employee Details" xml:space="preserve">
+    <value>کارمندانو تفصیل</value>
+  </data>
+  <data name="Employee Info" xml:space="preserve">
+    <value>کارمندانو معلومات</value>
+  </data>
+  <data name="Employee Salaries" xml:space="preserve">
+    <value>د کارمندانو معاشونه</value>
+  </data>
+  <data name="Employee Salary List" xml:space="preserve">
+    <value>د کارمندانو معاشونو لیست</value>
+  </data>
+  <data name="Employees List" xml:space="preserve">
+    <value>کارمندانو لیست</value>
+  </data>
+  <data name="Entry Performed By" xml:space="preserve">
+    <value>د ننوتلو لخوا ترسره شوی</value>
+  </data>
+  <data name="Father Name" xml:space="preserve">
+    <value>پلار نوم</value>
+  </data>
+  <data name="Fire/Leave Employe" xml:space="preserve">
+    <value>اخراج شوی کارمندان</value>
+  </data>
+  <data name="Hire Date" xml:space="preserve">
+    <value>د ګمارلو نیټه</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>میاشت</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نوم</value>
+  </data>
+  <data name="Net Salary" xml:space="preserve">
+    <value>خالص معاش</value>
+  </data>
+  <data name="Over Time" xml:space="preserve">
+    <value>اضافه کاری</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>تادیه شوی</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرینت</value>
+  </data>
+  <data name="Remaind" xml:space="preserve">
+    <value>باقی مانده</value>
+  </data>
+  <data name="Salary Details" xml:space="preserve">
+    <value>د معاش تفصیلات</value>
+  </data>
+  <data name="Salary Status" xml:space="preserve">
+    <value>د معاش حالت</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>سیستم معلوامت</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>تیکس</value>
+  </data>
+  <data name="Total WOrk Days" xml:space="preserve">
+    <value>ټول کاري ورځې</value>
+  </data>
+  <data name="UnPaid" xml:space="preserve">
+    <value>نا تادیه شوی</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تازه کول</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>تاریخ تغیرشوی</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>کال</value>
+  </data>
 </root>

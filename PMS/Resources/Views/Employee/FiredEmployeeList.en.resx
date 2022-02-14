@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Add New Employee" xml:space="preserve">
+    <value>Add New Employee</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>Designation</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="Employee List" xml:space="preserve">
+    <value>Employee List</value>
+  </data>
+  <data name="Employees Administration" xml:space="preserve">
+    <value>Employees Administration</value>
+  </data>
+  <data name="Fired/Leave Employees List" xml:space="preserve">
+    <value>Fired/Leave Employees List</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Leave Date" xml:space="preserve">
+    <value>Leave Date</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>SNo</value>
+  </data>
 </root>

@@ -117,4 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Expense" xml:space="preserve">
+    <value>Add New Expense</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Bill Number" xml:space="preserve">
+    <value>Bill Number</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Edit expense payment details" xml:space="preserve">
+    <value>Edit expense payment details</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="Expense Category" xml:space="preserve">
+    <value>Expense Category</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>Expenses</value>
+  </data>
+  <data name="Expenses Administration" xml:space="preserve">
+    <value>Expenses Administration</value>
+  </data>
+  <data name="Expenses List" xml:space="preserve">
+    <value>Expenses List</value>
+  </data>
+  <data name="Expenses Statement" xml:space="preserve">
+    <value>Expenses Statement</value>
+  </data>
+  <data name="Payment Amount" xml:space="preserve">
+    <value>Payment Amount</value>
+  </data>
+  <data name="Payment Date" xml:space="preserve">
+    <value>Payment Date</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Save &amp; Print" xml:space="preserve">
+    <value>Save &amp; Print</value>
+  </data>
+  <data name="Select Employee" xml:space="preserve">
+    <value>Select Employee</value>
+  </data>
+  <data name="Select Expense Category" xml:space="preserve">
+    <value>Select Expense Category</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
 </root>

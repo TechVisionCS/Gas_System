@@ -1,7 +1,10 @@
 ﻿@model EmployeeSalaryViewModel
+@inject IViewLocalizer localizer
+
 @{
-    ViewData["Title"] = "Employee Salaries";
+    ViewData["Title"] = localizer["Employee Salaries"];
 }
+
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
@@ -11,33 +14,34 @@
                 <div class="page-header card">
                     <div class="card-block">
                         <h5 class="m-b-10">
-                            Employee Administration</h6>
-                            <ul class="breadcrumb-title b-t-default p-t-10">
-                                <li class="breadcrumb-item pull-right">
-                                    <a asp-action="Index" asp-controller="Employee"
-                                       class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                        <i class="fa fa-list"></i> Employees List
-                                    </a>
-                                    <a class="btn btn-mat btn-primary mr-2" style="color:white;"
-                                       asp-controller="Employee"
-                                       asp-action="EmployeeSalaries"
-                                       asp-route-month="0"
-                                       asp-route-year="0">
-                                        <i class="fa fa-list"></i> Employee Salary List
-                                    </a>
-                                    <a asp-action="FiredEmployeeList" asp-controller="Employee"
-                                       class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                        <i class="fa fa-list"></i> Fire/Leave Employe
-                                    </a>
-                                </li>
-                            </ul>
+                            @localizer["Employee Administration"]
+                        </h5>
+                        <ul class="breadcrumb-title b-t-default p-t-10">
+                            <li class="breadcrumb-item pull-right">
+                                <a asp-action="Index" asp-controller="Employee"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> @localizer["Employees List"]
+                                </a>
+                                <a class="btn btn-mat btn-primary mr-2" style="color:white;"
+                                   asp-controller="Employee"
+                                   asp-action="EmployeeSalaries"
+                                   asp-route-month="0"
+                                   asp-route-year="0">
+                                    <i class="fa fa-list"></i>@localizer["Employee Salary List"]
+                                </a>
+                                <a asp-action="FiredEmployeeList" asp-controller="Employee"
+                                   class="btn btn-mat btn-primary mr-2" style="color: white;">
+                                    <i class="fa fa-list"></i> @localizer["Fire/Leave Employe"]
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <!-- Page-body start -->
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h6>Employee Details</h6>
+                            <h6>@localizer["Employee Details"]</h6>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -53,71 +57,71 @@
                             <div id="dvContents">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h6>Employee Info</h6>
+                                        <h6>@localizer["Employee Info"]</h6>
                                         <hr />
                                     </div>
 
                                     <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <h6>Name</h6>
+                                        <h6>@localizer["Name"]</h6>
                                         <p>@Model.EmployeeName</p>
                                         <hr />
                                     </div>
 
                                     <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <h6>Designation</h6>
+                                        <h6>@localizer["Designation"]</h6>
                                         <p>@Model.DesignationName</p>
                                         <hr />
                                     </div>
 
                                     <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <h6>Father Name</h6>
+                                        <h6>@localizer["Father Name"]</h6>
                                         <p>@Model.EmployeeFatherName</p>
                                         <hr />
                                     </div>
 
                                     <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <h6>Hire Date.</h6>
+                                        <h6>@localizer["Hire Date"]</h6>
                                         <p>@Model.Hiredate</p>
                                         <hr />
                                     </div>
 
                                     <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <h6>Base Salary</h6>
+                                        <h6>@localizer["Base Salary"]</h6>
                                         <p>@Model.BasicSalary</p>
                                         <hr />
                                     </div>
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>Salary Details</h6>
+                                    <h6>@localizer["Salary Details"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Due Date</h6>
+                                            <h6>@localizer["Due Date"]</h6>
                                             <p>@Model.DueDate</p>
                                             <hr />
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Basic Salary</h6>
+                                            <h6>@localizer["Basic Salary"]</h6>
                                             <p>@Model.BasicSalary.ToString("N")</p>
                                             <hr />
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Month</h6>
+                                            <h6>@localizer["Month"]</h6>
                                             <p>@Model.SalaryMonth</p>
                                             <hr />
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Year</h6>
+                                            <h6>@localizer["Year"]</h6>
                                             <p>@Model.SalaryYear</p>
                                             <hr />
                                         </div>
@@ -131,7 +135,7 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Tax</h6>
+                                            <h6>@localizer["Tax"]</h6>
                                             <p>@Model.Tax.ToString("N")</p>
                                             <hr />
                                         </div>
@@ -139,7 +143,7 @@
 
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Bounse</h6>
+                                            <h6>@localizer["Bounse"]</h6>
                                             <p>@Model.Bounce.ToString("N")</p>
                                             <hr />
                                         </div>
@@ -147,7 +151,7 @@
 
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Over Time</h6>
+                                            <h6>@localizer["Over Time"]</h6>
                                             <p>@Model.OverTime.ToString("N")</p>
                                             <hr />
                                         </div>
@@ -155,7 +159,7 @@
 
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Total WOrk Days</h6>
+                                            <h6>@localizer["Total WOrk Days"]</h6>
                                             <p>@Model.TotalWorkDays</p>
                                             <hr />
                                         </div>
@@ -169,39 +173,38 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Salary Status</h6>
+                                            <h6>@localizer["Salary Status"]</h6>
                                             <p>
                                                 @if (Model.isPaid == true)
                                                 {
-                                                    <span class="badge bg-success">&nbsp;&nbsp; Paid &nbsp;&nbsp;</span>
+                                                    <span class="badge bg-success">&nbsp;&nbsp; @localizer["Paid"] &nbsp;&nbsp;</span>
                                                 }
                                                 else
                                                 {
-                                                    <span class="badge bg-warning">&nbsp;&nbsp; UnPaid &nbsp;&nbsp;</span>
+                                                    <span class="badge bg-warning">&nbsp;&nbsp; @localizer["UnPaid"] &nbsp;&nbsp;</span>
                                                 }
                                             </p>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6 class="text text-danger">Remaind</h6>
+                                            <h6 class="text text-danger">@localizer["Remaind"]</h6>
                                             <p>@Model.Balanced.ToString("N")</p>
                                             <hr />
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>Paid</h6>
+                                            <h6>@localizer["Paid"]</h6>
                                             <p>@Model.Paid.ToString("N")</p>
                                             <hr />
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="form-group">
-                                            <h6>
-                                                Net Salary</6>
-                                                <p>@Model.NetSalary.ToString("N")</p>
-                                                <hr />
+                                            <h6>@localizer["Net Salary"]</h6>
+                                            <p>@Model.NetSalary.ToString("N")</p>
+                                            <hr />
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
@@ -212,24 +215,24 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <h6>System Info</h6>
+                                        <h6>@localizer["System Info"]</h6>
                                         <hr />
                                     </div>
 
                                     <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Entry Performed By</h6>
+                                        <h6>@localizer["Entry Performed By"]</h6>
                                         <p>@Model.UserName</p>
                                         <hr />
                                     </div>
 
                                     <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Created At</h6>
+                                        <h6>@localizer["Created At"]</h6>
                                         <p>@Model.CreatedAt</p>
                                         <hr />
                                     </div>
 
                                     <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Update At</h6>
+                                        <h6>@localizer["Update At"]</h6>
                                         <p>@Model.UpdatedAt</p>
                                         <hr />
                                     </div>
@@ -244,7 +247,7 @@
                                    asp-route-id="@Model.Id"
                                    asp-controller="Employee"
                                    asp-action="DeleteEmployeeSalary">
-                                    <i class="fa fa-trash"></i> Delete
+                                    <i class="fa fa-trash"></i> @localizer["Delete"]
                                 </a>
                                 &nbsp;
                                 &nbsp;
@@ -253,11 +256,11 @@
                                    asp-route-empId="@Model.EmployeeId"
                                    asp-controller="Employee"
                                    asp-action="EmployeeSalaryEdit">
-                                    <i class="fa fa-edit"></i> Update
+                                    <i class="fa fa-edit"></i>@localizer["Update"]
                                 </a>
                                 &nbsp;
                                 &nbsp;
-                                <button type="button" class="btn btn-info" style="padding:20px" value='Print' onclick="PrintTable();">Print</button>
+                                <button type="button" class="btn btn-info" style="padding:20px" value='Print' onclick="PrintTable();">@localizer["Print"]</button>
                             </div>
                         </div>
                     </div>
@@ -271,7 +274,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
@@ -279,7 +282,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>تا
 </div>
 
 @section scripts

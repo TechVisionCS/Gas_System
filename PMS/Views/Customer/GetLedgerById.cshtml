@@ -1,29 +1,29 @@
 ﻿@model IEnumerable<CustomerLedgerViewModel>
-
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Customers Ledger";
+    ViewData["Title"] = Localizer["Customers Ledger"];
 }
 
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
         <div class="row">
             <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Customers Administration</h5>
+                        @Localizer[""]
+                        <h5 class="m-b-10">@Localizer["Customers Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="GetAllLedgers" asp-controller="Customer"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-list"></i> Customers Ledger
+                                    <i class="fa fa-list"></i> @Localizer["Customers Ledger"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Customer"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Customers List
+                                    <i class="fa fa-list"></i> @Localizer["Customers List"]
                                 </a>
 
                             </li>
@@ -38,9 +38,9 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label">Customer</label>
+                                        <label class="control-label">@Localizer["Customer"]</label>
                                         <select class="select2 form-control" name="customerId" asp-items="@ViewBag.Customer" style="width: 100%;">
-                                            <option selected="selected" value="0">--Select Customer--</option>
+                                            <option selected="selected" value="0">@Localizer["Select Customer"]</option>
                                         </select>
                                         <span class="text-danger"></span>
                                     </div>
@@ -48,7 +48,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">From</label>
+                                        <label class="control-label">@Localizer["From"]</label>
                                         <input type="date" name="startDate" class="form-control" id="inlineFormInputName">
                                         <span class="text-danger"></span>
                                     </div>
@@ -56,7 +56,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">To</label>
+                                        <label class="control-label">@Localizer["To"]</label>
                                         <input type="date" name="endDate" class="form-control" id="inlineFormInputName">
                                         <span class="text-danger"></span>
                                     </div>
@@ -64,9 +64,9 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
                                     <div class="form-group pt-2">
-                                        <button type="submit" class="btn btn-primary mr-2" formaction="GetLedgerById"><i class="fa fa-search"></i> Search</button>
+                                        <button type="submit" class="btn btn-primary mr-2" formaction="GetLedgerById"><i class="fa fa-search"></i>@Localizer["Search"]</button>
 
-                                        <button type="submit" class="btn btn-info mr-2" formaction="PrintDiv" formtarget="_blank"><i class="fa fa-search"></i> Print</button>
+                                        <button type="submit" class="btn btn-info mr-2" formaction="PrintDiv" formtarget="_blank"><i class="fa fa-search"></i>@Localizer["Print"]</button>
 
 
                                         <span class="text-danger"></span>
@@ -84,22 +84,22 @@
                             @if (ViewBag.CustomerName != null)
                             {
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <h5 class="text text-primary">Customer Details</h5>
+                                    <h5 class="text text-primary">@Localizer["Customer Details"]</h5>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <h6>Name</h6>
+                                    <h6>@Localizer["Name"]</h6>
                                     <p>@ViewBag.CustomerName</p>
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <h6>Phone</h6>
+                                    <h6>@Localizer["Phone"]</h6>
                                     <p>@ViewBag.CustomerPhone</p>
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <h6>Address</h6>
+                                    <h6>@Localizer["Address"]</h6>
                                     <p>@ViewBag.CustomerAddress</p>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -110,17 +110,17 @@
                             @if (ViewBag.StartDate != null)
                             {
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <h5 class="text text-primary">Date Details</h5>
+                                    <h5 class="text text-primary">@Localizer["Date Details"]</h5>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <h6>Start Date</h6>
+                                    <h6>@Localizer["Start Date"]</h6>
                                     <p>@ViewBag.StartDate</p>
                                 </div>
 
                                 <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <h6>End Date</h6>
+                                    <h6>@Localizer["End Date"]</h6>
                                     <p>@ViewBag.EndDate</p>
                                 </div>
                             }
@@ -128,12 +128,11 @@
                     </div>
                 </div>
 
-                <!-- Page-header end -->
                 <!-- Page-body start -->
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Customers Ledger</h5>
+                            <h5>@Localizer["Customers Ledger"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -150,12 +149,12 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo</th>
-                                            <th>Date</th>
-                                            <th>Description</th>
-                                            <th>Debit</th>
-                                            <th>Credit</th>
-                                            <th>Balance</th>
+                                            <th>@Localizer["SNo"]</th>
+                                            <th>@Localizer["Date"]</th>
+                                            <th>@Localizer["Description"]</th>
+                                            <th>@Localizer["Debit"]</th>
+                                            <th>@Localizer["Credit"]</th>
+                                            <th>@Localizer["Balance"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -192,7 +191,7 @@
                                         <tr style="background-color: lightgray;">
                                             <td></td>
                                             <td></td>
-                                            <td>Total</td>
+                                            <td>@Localizer["Total"]</td>
                                             <td>@totalDebit.ToString("N")</td>
                                             <td>@totalCredit.ToString("N")</td>
                                             <td>
@@ -205,7 +204,6 @@
                                                         }
                                                     }
                                                 </span>
-
                                                 @totalBalance.ToString("N")
                                             </td>
                                         </tr>
@@ -224,17 +222,13 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @Localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
     </div>
 </div>
-

@@ -117,55 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Completed Orders" xml:space="preserve">
-    <value>اردر تکمیل شده</value>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
   </data>
-  <data name="Dashboard" xml:space="preserve">
-    <value>داشبورد</value>
+  <data name="Customer" xml:space="preserve">
+    <value>مشتری</value>
   </data>
-  <data name="Expense Amount" xml:space="preserve">
-    <value>مبلغ مصارف</value>
+  <data name="Invoice No" xml:space="preserve">
+    <value>انوایس</value>
   </data>
-  <data name="Orders Received" xml:space="preserve">
-    <value>اردر یافته شده</value>
+  <data name="Sale Date" xml:space="preserve">
+    <value>تاریخ فروش</value>
   </data>
-  <data name="Produts" xml:space="preserve">
-    <value>محصول</value>
-  </data>
-  <data name="Profit Amount" xml:space="preserve">
-    <value>مبلغ مفاد</value>
-  </data>
-  <data name="Purchase Amount" xml:space="preserve">
-    <value>مبلغ خریداری</value>
-  </data>
-  <data name="Purchased In Kg" xml:space="preserve">
-    <value>خریداری در کیلو </value>
-  </data>
-  <data name="Revenue" xml:space="preserve">
-    <value>مفاد</value>
-  </data>
-  <data name="Revenue Amount" xml:space="preserve">
-    <value>مبلغ عواید</value>
-  </data>
-  <data name="Saled In Kg" xml:space="preserve">
-    <value>فروشات در ماه</value>
-  </data>
-  <data name="Sales Amount" xml:space="preserve">
-    <value>مبلغ فروشات</value>
-  </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>آمار</value>
-  </data>
-  <data name="This Month" xml:space="preserve">
-    <value>همین ماه</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>عنوان</value>
-  </data>
-  <data name="Total Profit" xml:space="preserve">
-    <value>مفاد توتل</value>
-  </data>
-  <data name="Total Sales" xml:space="preserve">
-    <value>فروشات توتل</value>
+  <data name="Total Amount" xml:space="preserve">
+    <value>توتل مقدار</value>
   </data>
 </root>

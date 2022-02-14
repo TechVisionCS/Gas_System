@@ -6496,9 +6496,6 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.View
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer.Receives.da.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer.Receives.en.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer.Receives.ps.resources
-E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer._AddCustomer.da.resources
-E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer._AddCustomer.en.resources
-E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer._AddCustomer.ps.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Dashboard.Index.da.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Dashboard.Index.en.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Dashboard.Index.ps.resources
@@ -7147,7 +7144,6 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Curren
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\Advances.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\Create.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\CreateAdvance.cshtml.g.cs
-E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\CreateOrEdit.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\CreateReceive.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\Details.cshtml.g.cs
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\Razor\Views\Customer\Edit.cshtml.g.cs
@@ -7454,3 +7450,6 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.View
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Dashboard._LatestSales.da.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Dashboard._LatestSales.en.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Dashboard._LatestSales.ps.resources
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer._CreatePartialView.da.resources
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer._CreatePartialView.en.resources
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Views.Customer._CreatePartialView.ps.resources

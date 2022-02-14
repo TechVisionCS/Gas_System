@@ -117,4 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Add New Customer" xml:space="preserve">
+    <value>Add New Customer</value>
+  </data>
+  <data name="Add Receives" xml:space="preserve">
+    <value>Add Receives</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Are you sure you want to delete this?" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>Customers</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>Customers Administration</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>Customers Ledger</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>Customers List</value>
+  </data>
+  <data name="Ledger" xml:space="preserve">
+    <value>Ledger</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>Sno</value>
+  </data>
 </root>

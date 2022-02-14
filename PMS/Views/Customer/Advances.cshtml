@@ -1,29 +1,30 @@
 ﻿@model IEnumerable<CustomerAdvanced>
+@inject IViewLocalizer localizer
 
 @{
-    ViewData["Title"] = "Customer Advances";
+    ViewData["Title"] = localizer["Customer Advances"];
 }
 
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
+        @localizer[""]
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12" style="margin:0 auto;">
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Customers Administration</h5>
+                        <h5 class="m-b-10">@localizer["Customers Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="CreateAdvance" asp-controller="Customer"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Advance Payment
+                                    <i class="fa fa-plus"></i> @localizer["Add New Advance Payment"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Customer"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Customers List
+                                    <i class="fa fa-list"></i> @localizer["Customers List"]
                                 </a>
 
                             </li>
@@ -38,9 +39,9 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label">Customer</label>
+                                        <label class="control-label">@localizer["Customer"]</label>
                                         <select class="select2 form-control" name="customerId" asp-items="@ViewBag.Customers" style="width: 100%;">
-                                            <option selected="selected" value="0">--Select Customer--</option>
+                                            <option selected="selected" value="0">@localizer["Select Customer"]</option>
                                         </select>
                                         <span class="text-danger"></span>
                                     </div>
@@ -48,7 +49,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">From</label>
+                                        <label class="control-label">@localizer["From"]</label>
                                         <input type="date" name="startDate" class="form-control" id="inlineFormInputName">
                                         <span class="text-danger"></span>
                                     </div>
@@ -56,7 +57,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">To</label>
+                                        <label class="control-label">@localizer["To"]</label>
                                         <input type="date" name="endDate" class="form-control" id="inlineFormInputName">
                                         <span class="text-danger"></span>
                                     </div>
@@ -64,9 +65,9 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
                                     <div class="form-group pt-2">
-                                        <button type="submit" class="btn btn-primary mr-2"><i class="fa fa-search"></i> Search</button>
+                                        <button type="submit" class="btn btn-primary mr-2"><i class="fa fa-search"></i> @localizer["Search"]</button>
                                         <a asp-action="Advances" asp-controller="Customer"
-                                           class="btn btn-info mr-2 text text-white"><i class="fa fa-list"></i> Show All</a>
+                                           class="btn btn-info mr-2 text text-white"><i class="fa fa-list"></i> @localizer["Show All"]</a>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +79,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Customers Advanced Receive Details</h5>
+                            <h5>@localizer["Customers Advanced Receive Details"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -95,14 +96,14 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Customer Name</th>
-                                            <th>Receive Date</th>
-                                            <th>Receive Type</th>
-                                            <th>Bank Name</th>
-                                            <th>Receive Amount</th>
-                                            <th>Description</th>
-                                            <th>Actions</th>
+                                            <th>@localizer["SNo"].</th>
+                                            <th>@localizer[""]Customer Name</th>
+                                            <th>@localizer[""]Receive Date</th>
+                                            <th>@localizer[""]Receive Type</th>
+                                            <th>@localizer[""]Bank Name</th>
+                                            <th>@localizer[""]Receive Amount</th>
+                                            <th>@localizer[""]Description</th>
+                                            <th>@localizer[""]Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -118,11 +119,11 @@
                                                     <td>
                                                         @if (m.PaymentType == 0)
                                                         {
-                                                            <span class="badge badge-info">Cash</span>
+                                                            <span class="badge badge-info">@localizer[""]Cash</span>
                                                         }
                                                         else
                                                         {
-                                                            <span class="badge badge-info">Bank</span>
+                                                            <span class="badge badge-info">@localizer[""]Bank</span>
                                                         }
                                                     </td>
                                                     <td>
@@ -154,7 +155,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer[""]Back
                                 </a>
                             </li>
                         </ul>

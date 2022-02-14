@@ -117,55 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Completed Orders" xml:space="preserve">
-    <value>Completed Orders</value>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
   </data>
-  <data name="Dashboard" xml:space="preserve">
-    <value>Dashboard</value>
+  <data name="Invoice No" xml:space="preserve">
+    <value>Invoice No</value>
   </data>
-  <data name="Expense Amount" xml:space="preserve">
-    <value>Expense Amount</value>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>Purchase Date</value>
   </data>
-  <data name="Orders Received" xml:space="preserve">
-    <value>Oders Received</value>
+  <data name="Purchase ID" xml:space="preserve">
+    <value>Purchase ID</value>
   </data>
-  <data name="Produts" xml:space="preserve">
-    <value>Produts</value>
+  <data name="Supplier" xml:space="preserve">
+    <value>Supplier</value>
   </data>
-  <data name="Profit Amount" xml:space="preserve">
-    <value>Profit Amount</value>
-  </data>
-  <data name="Purchase Amount" xml:space="preserve">
-    <value>Purchase Amount</value>
-  </data>
-  <data name="Purchased In Kg" xml:space="preserve">
-    <value>Purchased In Kg</value>
-  </data>
-  <data name="Revenue" xml:space="preserve">
-    <value>Revenue</value>
-  </data>
-  <data name="Revenue Amount" xml:space="preserve">
-    <value>Revenue Amount</value>
-  </data>
-  <data name="Saled In Kg" xml:space="preserve">
-    <value>Saled In Kg</value>
-  </data>
-  <data name="Sales Amount" xml:space="preserve">
-    <value>Sales Amount</value>
-  </data>
-  <data name="Statistics" xml:space="preserve">
-    <value>Statistics</value>
-  </data>
-  <data name="This Month" xml:space="preserve">
-    <value>This Month</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="Total Profit" xml:space="preserve">
-    <value>Total Profit</value>
-  </data>
-  <data name="Total Sales" xml:space="preserve">
-    <value>Total Sales</value>
+  <data name="Total Amount" xml:space="preserve">
+    <value>Total Amount</value>
   </data>
 </root>

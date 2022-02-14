@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<PurchaseViewModel>
+@inject IViewLocalizer localizer
 
 <div class="table-responsive">
     <table id="example1" class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Purchase ID</th>
-                <th>Purchase Date</th>
-                <th>Invoice No</th>
-                <th>Supplier</th>
-                <th>Total Amount</th>
-
-                <th>Actions</th>
+                <th>@localizer["Purchase ID"]</th>
+                <th>@localizer["Purchase Date"]</th>
+                <th>@localizer["Invoice No"]</th>
+                <th>@localizer["Supplier"]</th>
+                <th>@localizer["Total Amount"]</th>
+                <th>@localizer["Actions"]</th>
             </tr>
         </thead>
         <tbody>
@@ -44,16 +44,6 @@
                             <a asp-action="Details" asp-controller="Purchase" asp-route-id="@m.Id"
                                class="text text-info mr-2">
                                 <i class="fa fa-eye"></i>
-                            </a>
-                            =
-                            <a asp-action="Edit" asp-controller="Purchase" asp-route-id="@m.Id"
-                               class="text text-primary mr-2">
-                                <i class="fa fa-edit"></i>
-                            </a>
-
-                            <a asp-action="Delete" asp-controller="Purchase" asp-route-id="@m.Id"
-                               class="text text-danger mr-2">
-                                <i class="fa fa-trash"></i>
                             </a>
                             <span class="d-none">@{sno++;}</span>
                         </td>

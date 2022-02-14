@@ -1,18 +1,17 @@
 ﻿@model IEnumerable<SaleViewModel>
 
+@inject IViewLocalizer localizer
 <div class="table-responsive">
     <table id="example1" class="table table-bordered table-hover">
-
         <thead>
             <tr>
-                <th>Invoice No.</th>
-                <th>Sale Date</th>
-                <th>Customer</th>
-                <th>Total Amount</th>
-                <th>Actions</th>
+                <th>@localizer["Invoice No"].</th>
+                <th>@localizer["Sale Date"]</th>
+                <th>@localizer["Customer"]</th>
+                <th>@localizer["Total Amount"]</th>
+                <th>@localizer["Actions"]</th>
             </tr>
         </thead>
-
         <tbody>
             @if (Model.Any())
             {
@@ -43,16 +42,6 @@
                             <a asp-action="Details" asp-controller="Sale" asp-route-id="@m.Id"
                                class="text text-info mr-2">
                                 <i class="fa fa-eye"></i>
-                            </a>
-
-                            <a asp-action="Edit" asp-controller="Sale" asp-route-id="@m.Id"
-                               class="text text-primary mr-2">
-                                <i class="fa fa-edit"></i>
-                            </a>
-
-                            <a asp-action="Delete" asp-controller="Sale" asp-route-id="@m.Id"
-                               class="text text-danger mr-2">
-                                <i class="fa fa-trash"></i>
                             </a>
                         </td>
                     </tr>

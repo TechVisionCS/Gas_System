@@ -1,7 +1,10 @@
 ﻿@model EmployeeViewModel
+@inject IViewLocalizer localizer
+
 @{
-    ViewData["Title"] = "Employee";
+    ViewData["Title"] = localizer["Employee"];
 }
+
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
@@ -10,16 +13,16 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Employee Administration</h5>
+                        <h5 class="m-b-10">@localizer["Employee Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Employee"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Employees List
+                                    <i class="fa fa-list"></i>@localizer["Employees List"]
                                 </a>
                                 <a asp-action="FiredEmployeeList" asp-controller="Employee"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Fire/Leave Employe
+                                    <i class="fa fa-list"></i>@localizer["Fire/Leave Employe"]
                                 </a>
                             </li>
                         </ul>
@@ -29,7 +32,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Employee Details</h5>
+                            <h5>@localizer["Employee Details"] </h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -41,68 +44,68 @@
                             </div>
                         </div>
 
-                        <div class="card-block table-border-style">
+                        <div class="card-block table-border-style" id="DivIdToPrint">
                             <div class="row">
                                 <div class="col-12">
-                                    <h6>General Info</h6>
+                                    <h6>@localizer["General Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Name</h6>
+                                    <h6>@localizer["Name"]</h6>
                                     <p>@Model.Name</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Father Name</h6>
+                                    <h6>@localizer["Father Name"]</h6>
                                     <p>@Model.Fathername</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>National Id.</h6>
+                                    <h6>@localizer["National Id"].</h6>
                                     <p>@Model.NationalIdnumber</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Designation</h6>
+                                    <h6>@localizer["Designation"]</h6>
                                     <p>@Model.DesignationName</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <h6>Phone</h6>
+                                    <h6>@localizer["Phone"]</h6>
                                     <p>@Model.Phone</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <h6>Address</h6>
+                                    <h6>@localizer["Address"]</h6>
                                     <p>@Model.Address</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <h6>Base Salary</h6>
+                                    <h6>@localizer["Base Salary"]</h6>
                                     <p>@Model.BaseSalary</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>Date Info</h6>
+                                    <h6>@localizer["Date Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Hire Date</h6>
+                                    <h6>@localizer["Hire Date"]</h6>
                                     <p>@Model.Hidredate</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-6 col-md-4 col-sm-6">
-                                    <h6>Image</h6>
+                                    <h6>@localizer["Image"]</h6>
                                     <img src="~/Uploads/employee-profile/@Model.Image"
                                          class="rounded-card"
                                          height="120" width="250"
@@ -111,24 +114,24 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>System Info</h6>
+                                    <h6>@localizer["System Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Entry Performed By</h6>
+                                    <h6>@localizer["Entry Performed By"]</h6>
                                     <p>@Model.UserName</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Created At</h6>
+                                    <h6>@localizer["Created At"]</h6>
                                     <p>@Model.CreatedAt</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Update At</h6>
+                                    <h6>@localizer["Update At"] </h6>
                                     <p>@Model.UpdatedAt</p>
                                     <hr />
                                 </div>
@@ -139,8 +142,9 @@
 
                                 <div class="col-12 text text-right">
                                     <a class="btn btn-info text-white">
-                                        <i class="fa fa-print"></i> Print
+                                        <i class="fa fa-print"></i>
                                     </a>
+                                    <button type="button" id="onClick" class="btn btn-info" style="padding:8px" value='Print' onclick='printDiv("DivIdToPrint");'>@localizer["Print"]</button>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +159,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i>@localizer["Back"]
                                 </a>
                             </li>
                         </ul>

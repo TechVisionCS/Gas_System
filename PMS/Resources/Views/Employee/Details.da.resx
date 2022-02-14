@@ -117,4 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بارګشت</value>
+  </data>
+  <data name="Base Salary" xml:space="preserve">
+    <value>معاش اولیه</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>تاریخ اجرا شده</value>
+  </data>
+  <data name="Date Info" xml:space="preserve">
+    <value>تاریخ معلومات</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>کارمند</value>
+  </data>
+  <data name="Employee Administration" xml:space="preserve">
+    <value>مدیریت کارمندان</value>
+  </data>
+  <data name="Employee Details" xml:space="preserve">
+    <value>معلومات کارمندان</value>
+  </data>
+  <data name="Employees List" xml:space="preserve">
+    <value>لیست کارمندان</value>
+  </data>
+  <data name="Entry Performed By" xml:space="preserve">
+    <value>معلومات درج شده توسط</value>
+  </data>
+  <data name="Father Name" xml:space="preserve">
+    <value>نام پدر</value>
+  </data>
+  <data name="Fire/Leave Employe" xml:space="preserve">
+    <value>کارمندان رخصیت شده</value>
+  </data>
+  <data name="General Info" xml:space="preserve">
+    <value>معلومات عمومی</value>
+  </data>
+  <data name="Hire Date" xml:space="preserve">
+    <value>تاریخ استخدام</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="National Id" xml:space="preserve">
+    <value>تذکره</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرینت</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>معلومات </value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>اپدیت شده</value>
+  </data>
 </root>

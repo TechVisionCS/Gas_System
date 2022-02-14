@@ -1,35 +1,36 @@
 ﻿@model EmployeeSalary
+@inject IViewLocalizer localizer
 
 @{
-    ViewData["Title"] = "Employee Salaries";
+    ViewData["Title"] = localizer["Employee Salaries"];
 }
 
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
+        @localizer[""]
         <div class="row">
             <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Employee Salaries Administration</h5>
+                        <h5 class="m-b-10">@localizer["Employee Salaries Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Employee"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Employees List
+                                    <i class="fa fa-list"></i> @localizer["Employees List"]
                                 </a>
                                 <a class="btn btn-mat btn-primary mr-2" style="color:white;"
                                    asp-controller="Employee"
                                    asp-action="EmployeeSalaries"
                                    asp-route-month="0"
                                    asp-route-year="0">
-                                    <i class="fa fa-list"></i> Employee Salary List
+                                    <i class="fa fa-list"></i> @localizer["Employee Salary List"]
                                 </a>
                                 <a asp-action="FiredEmployeeList" asp-controller="Employee"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Fire/Leave Employe
+                                    <i class="fa fa-list"></i> @localizer["Fire/Leave Employe"]
                                 </a>
                             </li>
                         </ul>
@@ -42,7 +43,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Employee Salary Details</h5>
+                            <h5>@localizer["Employee Salary Details"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -57,54 +58,48 @@
                         <div class="card-block table-border-style">
                             <div class="row">
                                 <div class="col-12">
-                                    <h6>Employee Info</h6>
+                                    <h6>@localizer["Employee Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h5>Employee Name</h5>
+                                    <h5>@localizer["Employee Name"]</h5>
                                     <p>@ViewBag.Name</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h5>Father Name</h5>
+                                    <h5>@localizer["Father Name"]</h5>
                                     <p>@ViewBag.Fathername</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h5>Designation Name</h5>
+                                    <h5>@localizer["Designation Name"]</h5>
                                     <p>@ViewBag.DesignationName</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h5>Email</h5>
+                                    <h5>@localizer["Email"]</h5>
                                     <p>@ViewBag.Email</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h5>Phone</h5>
+                                    <h5>@localizer["Phone"]</h5>
                                     <p>@ViewBag.Phone</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h5>HireDate</h5>
+                                    <h5>@localizer["HireDate"]</h5>
                                     <p>@ViewBag.Hidredate</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h5>Address</h5>
+                                    <h5>@localizer["Address"]</h5>
                                     <p>@ViewBag.Address</p>
-                                    <hr />
-                                </div>
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h5>Province</h5>
-                                    <p>@ViewBag.ProvinceName</p>
                                     <hr />
                                 </div>
                             </div>
@@ -120,7 +115,7 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Add a new Employee</h5>
+                                    <h5>@localizer["Add a new Employee"]</h5>
                                     <div class="card-header-right">
                                         <i class="icofont icofont-spinner-alt-5"></i>
                                     </div>
@@ -139,21 +134,21 @@
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label>Year</label>
+                                                        <label>@localizer["Year"]</label>
                                                         <select class="form-control select2" style="width: 100%;" asp-for="SalaryYear">
-                                                            <option selected="selected" value="0">--Select Year--</option>
+                                                            <option selected="selected" value="0">@localizer["Select Year"]</option>
                                                             @*<option value="@ViewBag.CurrenYear">@ViewBag.CurrenYear</option>
                                                                 @{ int CurrentYear = @ViewBag.CurrenYear;}
                                                                 @for (int i = CurrentYear - 1; i > CurrentYear - 5; i--)
                                                                 {
                                                                     <option value="@i">@i</option>
                                                                 }*@
-                                                            <option value="2021">2021</option>
                                                             <option value="2022">2022</option>
                                                             <option value="2023">2023</option>
                                                             <option value="2024">2024</option>
                                                             <option value="2025">2025</option>
                                                             <option value="2026">2026</option>
+                                                            <option value="2026">2027</option>
                                                         </select>
                                                     </div>
                                                     <span asp-validation-for="SalaryYear"></span>
@@ -164,19 +159,19 @@
                                                     <div class="form-group">
                                                         <label>Month</label>
                                                         <select class="form-control select2" style="width: 100%;" asp-for="SalaryMonth">
-                                                            <option selected="selected" value="0">--Select Month--</option>
-                                                            <option value="1">January</option>
-                                                            <option value="2">Feberuy</option>
-                                                            <option value="3">March</option>
-                                                            <option value="4">April</option>
-                                                            <option value="5">May</option>
-                                                            <option value="6">June</option>
-                                                            <option value="7">July</option>
-                                                            <option value="8">Augest</option>
-                                                            <option value="9">September</option>
-                                                            <option value="10">October</option>
-                                                            <option value="11">November</option>
-                                                            <option value="12">December</option>
+                                                            <option selected="selected" value="0">@localizer[""]Select Month--</option>
+                                                            <option value="1">@localizer["January"]</option>
+                                                            <option value="2">@localizer["Feberuy"]</option>
+                                                            <option value="3">@localizer["March"]</option>
+                                                            <option value="4">@localizer["April"]</option>
+                                                            <option value="5">@localizer["May"]</option>
+                                                            <option value="6">@localizer["June"]</option>
+                                                            <option value="7">@localizer["July"]</option>
+                                                            <option value="8">@localizer["Augest"]</option>
+                                                            <option value="9">@localizer["September"]</option>
+                                                            <option value="10">@localizer["October"]</option>
+                                                            <option value="11">@localizer["November"]</option>
+                                                            <option value="12">@localizer["December"]</option>
                                                         </select>
                                                     </div>
                                                     <span asp-validation-for="SalaryMonth" class="text-danger"></span>
@@ -184,7 +179,7 @@
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label>Payment Date</label>
+                                                        <label>@localizer["Payment Date"]</label>
                                                         <div class="input-group date">
                                                             <input type="date" id="DueDate" name="DueDate" asp-for="DueDate" class="form-control" aria-invalid="true" placeholder="yyyy/mm/dd">
                                                             <div class="input-group-addon">
@@ -197,7 +192,7 @@
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label>Basic Salary</label>
+                                                        <label>@localizer["Basic Salary"]</label>
                                                         <input type="number" step="any" id="basicSalary" class="form-control" value="@ViewBag.BaseSalary" readonly>
 
                                                     </div>
@@ -205,14 +200,14 @@
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label>Monthly Work Days</label>
+                                                        <label>@localizer["Monthly Work Days"]</label>
                                                         <input type="text" step="any" id="totalDays" onkeypress="ChangeNumbers1(event, 'totalDays');" oninput="ChangeNumbers2(event, 'totalDays');" class="form-control" value="26">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label asp-for="TotalWorkDays" class="control-label">Present Working Days</label>
+                                                        <label asp-for="TotalWorkDays" class="control-label">@localizer["Present Working Days"]</label>
                                                         <div class="input-group">
                                                             <input type="number" step="any" id="totalWorkingDays" onkeypress="ChangeNumbers1(event, 'totalWorkingDays');" oninput="ChangeNumbers2(event, 'totalWorkingDays');" class="form-control" value="26" asp-for="TotalWorkDays">
                                                             <span asp-validation-for="TotalWorkDays" class="text-danger"></span>
@@ -222,7 +217,7 @@
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label asp-for="OverTime" class="control-label">OverTime Amount</label>
+                                                        <label asp-for="OverTime" class="control-label">@localizer["OverTime Amount"]</label>
                                                         <div class="input-group">
                                                             <input type="number" step="any" id="overTime" onkeypress="ChangeNumbers1(event, 'overTime');" oninput="ChangeNumbers2(event, 'overTime');" class="form-control" asp-for="OverTime">
                                                             <span asp-validation-for="OverTime" class="text-danger"></span>
@@ -231,7 +226,7 @@
                                                 </div>
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
-                                                    <label asp-for="Bounce" class="control-label">Bounce Amount</label>
+                                                    <label asp-for="Bounce" class="control-label">@localizer["Bounce Amount"]</label>
                                                     <div class="form-group">
                                                         <input type="text" asp-for="Bounce" class="form-control" id="bonus" required autocomplete="off" min="1" onkeypress="ChangeNumbers1(event, 'bonus');" oninput="ChangeNumbers2(event, 'bonus');" />
                                                         <span asp-validation-for="Bounce" class="text-danger"></span>
@@ -239,7 +234,7 @@
                                                 </div>
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
-                                                    <label asp-for="Tax" class="control-label">Tax Amount</label>
+                                                    <label asp-for="Tax" class="control-label">@localizer["Tax Amount"]</label>
                                                     <div class="form-group">
                                                         <input type="text" step="any" id="tax" class="form-control" asp-for="Tax" onkeypress="ChangeNumbers1(event, 'tax');" oninput="ChangeNumbers2(event, 'tax');">
                                                         <span asp-validation-for="Tax" class="text-danger"></span>
@@ -248,7 +243,7 @@
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Net Salary</label>
+                                                        <label class="control-label">@localizer["Net Salary"]</label>
                                                         <input type="number" step="any" id="netSalary" class="form-control" asp-for="NetSalary" readonly>
                                                         <span asp-validation-for="NetSalary" class="text-danger"></span>
                                                     </div>
@@ -256,7 +251,7 @@
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Paid Amount</label>
+                                                        <label class="control-label">@localizer["Paid Amount"]</label>
                                                         <input type="number" step="any" id="paid" class="form-control" asp-for="Paid" onkeypress="ChangeNumbers1(event, 'paid');" oninput="ChangeNumbers2(event, 'paid');">
                                                         <span asp-validation-for="Paid" class="text-danger"></span>
                                                     </div>
@@ -264,7 +259,7 @@
 
                                                 <div class="col-lg-4 col-md-8 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Belance</label>
+                                                        <label class="control-label">@localizer["Belance"]</label>
                                                         <input type="number" step="any" id="balanced" class="form-control" asp-for="Balanced" readonly>
                                                         <span asp-validation-for="Balanced" class="text-danger"></span>
                                                     </div>
@@ -272,12 +267,12 @@
                                                 <div class="form-group row">
                                                     <div class="col-sm-12 text text-left">
                                                         <button type="submit" class="btn btn-mat btn-success mr-2">
-                                                            <i class="fa fa-save"></i> Save
+                                                            <i class="fa fa-save"></i> @localizer["Save"]
                                                         </button>
 
                                                         <a asp-action="Index" asp-controller="Employee"
                                                            class="btn btn-mat btn-danger" style="color: white;">
-                                                            <i class="fa fa-list"></i>Cancel
+                                                            <i class="fa fa-list"></i>@localizer["Cancel"]
                                                         </a>
                                                     </div>
                                                 </div>
@@ -296,7 +291,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
@@ -309,6 +304,7 @@
     </div>
 </div>
 @section Scripts{
+
     <script>
 
         function calculate() {
@@ -325,26 +321,34 @@
             var paid = parseFloat($("#paid").val());
             $("#balanced").val(total - paid);
         }
+
         calculate();
+
         $("#totalWorkingDays").on("input", function () {
             calculate();
         });
+
         $("#totalDays").on("input", function () {
             calculate();
         });
+
         $("#overTime").on("input", function () {
             calculate();
         });
+
         $("#bonus").on("input", function () {
             calculate();
         });
+
         $("#tax").on("input", function () {
             calculate();
         });
+
         $("#paid").on("input", function () {
             var net = parseFloat($("#netSalary").val());
             var paid = parseFloat($(this).val());
             $("#balanced").val(net - paid);
         });
+
     </script>
 }

@@ -117,4 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add customer receive details" xml:space="preserve">
+    <value>Add customer receive details</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Customer Receives" xml:space="preserve">
+    <value>Customer Receives</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>Customers Administration</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>Customers Ledger</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Receive Amount" xml:space="preserve">
+    <value>Receive Amount</value>
+  </data>
+  <data name="Receive Date" xml:space="preserve">
+    <value>Receive Date</value>
+  </data>
+  <data name="Receive Type" xml:space="preserve">
+    <value>Receive Type</value>
+  </data>
+  <data name="Receives List" xml:space="preserve">
+    <value>Receives List</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>Select Bank</value>
+  </data>
+  <data name="Through Bank" xml:space="preserve">
+    <value>Through Bank</value>
+  </data>
+  <data name="Through Cash" xml:space="preserve">
+    <value>Through Cash</value>
+  </data>
 </root>

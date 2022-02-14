@@ -117,4 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Receive" xml:space="preserve">
+    <value>افزودن دریافت جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="Customer Name" xml:space="preserve">
+    <value>نام مشتری</value>
+  </data>
+  <data name="Customer Receives" xml:space="preserve">
+    <value>مشتری دریافت می کند</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>مدیریت مشتریان</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>لیست مشتریان</value>
+  </data>
+  <data name="Customers' Receives Details" xml:space="preserve">
+    <value>جزئیات دریافتی مشتریان</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>شرح</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>از تاریخ</value>
+  </data>
+  <data name="Receive Amount" xml:space="preserve">
+    <value>دریافت مبلغ</value>
+  </data>
+  <data name="Receive Date" xml:space="preserve">
+    <value>تاریخ دریافت</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Select Customer" xml:space="preserve">
+    <value>مشتری را انتخاب نمای</value>
+  </data>
+  <data name="Show All" xml:space="preserve">
+    <value>نمایش همه</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تا تاریخ</value>
+  </data>
 </root>

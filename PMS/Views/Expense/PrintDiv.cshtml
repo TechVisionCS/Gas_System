@@ -1,9 +1,8 @@
 ﻿@model ExpenseViewModel
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Expense";
+    ViewData["Title"] = localizer["Expense"];
 }
-
 
 @section Styles {
     <style>
@@ -40,7 +39,6 @@
         }
     </style>
 }
-
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
@@ -49,17 +47,17 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Expense Administration</h5>
+                        <h5 class="m-b-10">@localizer["Expense Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Expense"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Expense List
+                                    <i class="fa fa-list"></i> @localizer["Expense List"]
                                 </a>
 
                                 <a asp-action="Create" asp-controller="PurchExpase"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-shopping-cart"></i> Add New Expense
+                                    <i class="fa fa-shopping-cart"></i> @localizer["Add New Expense"]
                                 </a>
                             </li>
                         </ul>
@@ -70,7 +68,7 @@
                 <div class="page-body PrintArea">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Print Invoice</h5>
+                            <h5>@localizer["Print Slip"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -88,45 +86,46 @@
                                     <img src="~/Expense-gas-title.png" />
                                 </div>
                                 <div id="content">
-                                    <p class="sno"> <span style="float: right;"><u>نمبر بل: @Model.Id</u></span> <span style="float: left;">تاریخ: @Model.ExpenseDate.ToShortDateString()</span></p><br /><br />
-                                    <p class="sno" style="direction: rtl; text-align: right;"><span>نام کارمند: @Model.EmployeeName</span>   </p>
+                                    <p class="sno"> <span style="float: right;"><u>@localizer["Bill Numbe"]: @Model.Id</u></span> <span style="float: left;">@localizer["Date"]: @Model.ExpenseDate.ToShortDateString()</span></p><br /><br />
+                                    <p class="sno" style="direction: rtl; text-align: right;"><span>@localizer["Employee Name"]: @Model.EmployeeName</span>   </p>
                                     <table style="margin-top: 0; padding-top: 0; text-align:right;">
 
                                         <tbody>
                                             <tr>
-                                                <th>شماره</th>
+                                                <th>@localizer["SNo"]</th>
                                                 <td>@Model.Id</td>
-                                                <th>بیل نمبر</th>
+                                                <th>@localizer["Bill Number"]</th>
                                                 <td>@Model.BillNumber</td>
                                             </tr>
+
                                             <tr>
-                                                <th>تاریخ</th>
+                                                <th> @localizer["Date"]</th>
                                                 <td>@Model.ExpenseDate.ToShortDateString()</td>
-                                                <th>مبلغ</th>
+                                                <th> @localizer["Amount"] </th>
                                                 <td>@Model.Amount</td>
                                             </tr>
                                             <tr>
-                                                <th>کارمند </th>
+                                                <th>@localizer["Employee Name"]</th>
                                                 <td>@Model.EmployeeName</td>
-                                                <th>کتګوری</th>
+                                                <th>@localizer["Category"]</th>
                                                 <td>@Model.ExpenseCategoryName</td>
                                             </tr>
                                             <tr>
-                                                <th>تصیل</th>
+                                                <th>@localizer["Description"]</th>
                                                 <td colspan="4">@Model.Description</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <br>
-                                    <p class="sno">امضاء مدیر: ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ</p>
+                                    <p class="sno">: ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ @localizer["Admin Signature"]</p>
                                     <hr>
-                                    <p><span style="direction: rtl; float: right;">ادرس: ارزان قیمت سلیم کاروان</span> <span style="direction: rtl; float: left;"> شماره های تماس: 0774102020 - 0731159741 - 0776785461</span></p>
+                                    <p><span style="direction: rtl; float: right;">@localizer["Address"] : ارزان قیمت سلیم کاروان</span> <span style="direction: rtl; float: left;"> @localizer["Contact Info"]: 0774102020 - 0731159741 - 0776785461</span></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-12 text text-right p-2">
-                            <button type="button" id="onClick" class="btn btn-info" style="padding:8px" value='Print' onclick='printDiv("DivIdToPrint");'>Print</button>
+                            <button type="button" id="onClick" class="btn btn-info" style="padding:8px" value='Print' onclick='printDiv("DivIdToPrint");'> @localizer["Print"] </button>
                         </div>
                     </div>
                     <!-- Basic table card end -->
@@ -139,7 +138,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>

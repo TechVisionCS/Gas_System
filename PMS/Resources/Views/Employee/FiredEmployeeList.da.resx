@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Employee" xml:space="preserve">
+    <value>افزودن کارمندان جدید</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="Employee List" xml:space="preserve">
+    <value>لیست کارمندان</value>
+  </data>
+  <data name="Employees Administration" xml:space="preserve">
+    <value>مدیریت کارمندان</value>
+  </data>
+  <data name="Fired/Leave Employees List" xml:space="preserve">
+    <value>کارمندان منفک شده</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="Leave Date" xml:space="preserve">
+    <value>تاریخ استخدام</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
 </root>

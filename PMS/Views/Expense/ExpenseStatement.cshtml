@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ExpenseViewModel>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Expenses";
+    ViewData["Title"] = localizer["Expenses"];
 }
 
 <!-- Main-body start -->
@@ -13,19 +13,18 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Expenses Administration</h5>
+                        <h5 class="m-b-10">@localizer["Expenses Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Create" asp-controller="Expense"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-user-plus"></i> Add New Expense
+                                    <i class="fa fa-user-plus"></i> @localizer["Add New Expense"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Expense"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Expenses List
+                                    <i class="fa fa-list"></i> @localizer["Expenses List"]
                                 </a>
-
                             </li>
                         </ul>
                     </div>
@@ -39,9 +38,9 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label">Expense Category</label>
+                                        <label class="control-label">@localizer["Expense Category"]</label>
                                         <select class="select2 form-control" name="expenseCategoryId" asp-items="@ViewBag.ExpenseCategory" style="width: 100%;">
-                                            <option selected="selected" value="0">--Select Expense Category--</option>
+                                            <option selected="selected" value="0">@localizer["Select Expense Category"]</option>
                                         </select>
                                         <span class="text-danger"></span>
                                     </div>
@@ -49,7 +48,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">From</label>
+                                        <label class="control-label">@localizer["From"]</label>
                                         <input type="date" name="startDate" class="form-control" id="inlineFormInputName">
                                         <span class="text-danger"></span>
                                     </div>
@@ -57,7 +56,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">To</label>
+                                        <label class="control-label">@localizer["To"]</label>
                                         <input type="date" name="endDate" class="form-control" id="inlineFormInputName">
                                         <span class="text-danger"></span>
                                     </div>
@@ -65,9 +64,9 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
                                     <div class="form-group pt-2">
-                                        <button type="submit" class="btn btn-primary mr-2" formaction="ExpenseStatement"><i class="fa fa-search"></i> Search</button>
+                                        <button type="submit" class="btn btn-primary mr-2" formaction="ExpenseStatement"><i class="fa fa-search"></i>@localizer["Search"]</button>
 
-                                        <button type="submit" class="btn btn-success mr-2" formaction="PrintExpneseDivStatment" formtarget="_blank"><i class="fa fa-print"></i> Print</button>
+                                        <button type="submit" class="btn btn-success mr-2" formaction="PrintExpneseDivStatment" formtarget="_blank"><i class="fa fa-print"></i>@localizer["Print"]</button>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +79,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5>Expense Statement</h5>
+                            <h5>@localizer["Expense Statment"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -98,9 +97,9 @@
                                 {
                                     <table class="table table-bordered text text-center">
                                         <tr style="background-color: lightgray;">
-                                            <th class="text text-center">Expense Category</th>
-                                            <th class="text text-center">Start Date</th>
-                                            <th class="text text-center">End Date</th>
+                                            <th class="text text-center">@localizer["Expense Category"]</th>
+                                            <th class="text text-center">@localizer["Start Date"]</th>
+                                            <th class="text text-center">@localizer["End Date"]</th>
                                         </tr>
                                         <tr>
                                             <td>
@@ -110,7 +109,7 @@
                                                 }
                                                 else
                                                 {
-                                                    <span>All Categories</span>
+                                                    <span>@localizer[""]All Categories</span>
                                                 }
                                             </td>
                                             <td>@ViewBag.StartDate</td>
@@ -123,11 +122,11 @@
                                 <table class="table table-bordered table-hover text-left">
                                     <thead>
                                         <tr>
-                                            <th>شماره</th>
-                                            <th>تاریخ</th>
-                                            <th>کتګوری</th>
-                                            <th>تفصیل</th>
-                                            <th style="background-color: lightgray;">مقدار</th>
+                                            <th>@localizer["SNo"]</th>
+                                            <th>@localizer["Date"]</th>
+                                            <th>@localizer["Expense Category"]</th>
+                                            <th>@localizer["Description"]</th>
+                                            <th style="background-color: lightgray;">@localizer["Amount"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -150,11 +149,11 @@
                                         }
                                         else
                                         {
-                                            <tr><td colspan="5">معلومات در سیستم موجود نیست</td></tr>
+                                            <tr><td colspan="5">@localizer["No records available!"]</td></tr>
                                         }
 
                                         <tr>
-                                            <th class="text-left" colspan="4" style="background-color: lightgray;">جمله</th>
+                                            <th class="text-left" colspan="4" style="background-color: lightgray;"> @localizer["Total"]</th>
                                             <td style="background-color: lightgray;">@total.ToString("N")</td>
                                         </tr>
                                     </tbody>
@@ -172,7 +171,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i>@localizer["Back"] 
                                 </a>
                             </li>
                         </ul>

@@ -117,4 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Employee" xml:space="preserve">
+    <value>افزودن کارمند جدید</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>اپریل</value>
+  </data>
+  <data name="Augest" xml:space="preserve">
+    <value>اګست</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>بیلانس</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>کریدیت</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>دیبیت</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>دیسیمبر</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="Employee Administration" xml:space="preserve">
+    <value>مدیریت کارمندان</value>
+  </data>
+  <data name="Employees Ledger" xml:space="preserve">
+    <value>لیجر کارمندان</value>
+  </data>
+  <data name="Employees List" xml:space="preserve">
+    <value>لیست کارمندان</value>
+  </data>
+  <data name="Feberuy" xml:space="preserve">
+    <value>فبروروی</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>جنوری</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>جولای</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>جون</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>مارچ</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>مای</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>ماه</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>نومبر</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>اکتوبر</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرینټ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>لټون</value>
+  </data>
+  <data name="Select Employee" xml:space="preserve">
+    <value>کارمند انتخاب نمایید</value>
+  </data>
+  <data name="Select Month" xml:space="preserve">
+    <value>ماه را انتخاب نماید</value>
+  </data>
+  <data name="Select Year" xml:space="preserve">
+    <value>سال را انتخاب نمایید</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>سپتمیر</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>سال</value>
+  </data>
 </root>

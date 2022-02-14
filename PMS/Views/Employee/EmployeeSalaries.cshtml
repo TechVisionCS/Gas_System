@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<EmployeeSalaryViewModel>
+@inject IViewLocalizer localizer
+
 @{
-    ViewData["Title"] = "Employee Salaries";
+    ViewData["Title"] = localizer["Employee Salaries"];
 }
+
 <div class="main-body">
     <div class="page-wrapper">
         <div class="row">
@@ -9,23 +12,23 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Employees Administration</h5>
+                        <h5 class="m-b-10">@localizer["Employees Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
-
+                                @localizer[""]
                                 <a asp-action="Create" asp-controller="Employee"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-user-plus"></i> Add New Employee
+                                    <i class="fa fa-user-plus"></i> @localizer["Add New Employee"]
                                 </a>
 
                                 <a asp-action="GetAllLedgers" asp-controller="Employee"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Employees Ledger
+                                    <i class="fa fa-list"></i> @localizer["Employees Ledger"]
                                 </a>
 
                                 <a asp-action="FiredEmployeeList" asp-controller="Employee"
                                    class="btn btn-mat btn-info mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Fire/Leave Employe
+                                    <i class="fa fa-list"></i> @localizer["Fire/Leave Employe"]
                                 </a>
                             </li>
                         </ul>
@@ -39,19 +42,19 @@
                                     <div class="form-group">
                                         <label class="control-label">Months</label>
                                         <select class="form-control select2" style="width: 100%;" name="month">
-                                            <option selected="selected" value="0">--Please Select Month--</option>
-                                            <option value="1">January</option>
-                                            <option value="2">Feberuary</option>
-                                            <option value="3">March</option>
-                                            <option value="4">Aprial</option>
-                                            <option value="5">May</option>
-                                            <option value="6">June</option>
-                                            <option value="7">July</option>
-                                            <option value="8">August</option>
-                                            <option value="9">September</option>
-                                            <option value="10">October</option>
-                                            <option value="11">Novamber</option>
-                                            <option value="12">December</option>
+                                            <option selected="selected" value="0">@localizer["Select Month"]</option>
+                                            <option value="1">@localizer["January"]</option>
+                                            <option value="2">@localizer["Feberuary"]</option>
+                                            <option value="3">@localizer["March"]</option>
+                                            <option value="4">@localizer["Aprial"]</option>
+                                            <option value="5">@localizer["May"]</option>
+                                            <option value="6">@localizer["June"]</option>
+                                            <option value="7">@localizer["July"]</option>
+                                            <option value="8">@localizer["August"]</option>
+                                            <option value="9">@localizer["September"]</option>
+                                            <option value="10">@localizer["October"]</option>
+                                            <option value="11">@localizer["Novamber"]</option>
+                                            <option value="12">@localizer["December"]</option>
                                         </select>
                                         <span class="text-danger"></span>
                                     </div>
@@ -59,9 +62,9 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">Year</label>
+                                        <label class="control-label">@localizer["Year"]</label>
                                         <select class="form-control select2" style="width: 100%;" name="year">
-                                            <option selected="selected" value="0">--Please Select Year--</option>
+                                            <option selected="selected" value="0">@localizer["Select Year"]</option>
                                             <option value="@ViewBag.CurrenYear">@ViewBag.CurrenYear</option>
                                             @{ int currentyear = @ViewBag.CurrenYear;}
                                             @for (int i = currentyear - 1; i > currentyear - 5; i--)
@@ -78,51 +81,51 @@
                                         @ViewBag.Y |
                                         @if (ViewBag.M == 1)
                                         {
-                                            <span>January</span>
+                                            <span>@localizer["January"]</span>
                                         }
                                         else if (ViewBag.M == 2)
                                         {
-                                            <span>Feberuary</span>
+                                            <span>@localizer["Feberuary"]</span>
                                         }
                                         else if (ViewBag.M == 3)
                                         {
-                                            <span>March</span>
+                                            <span>@localizer["March"]</span>
                                         }
                                         else if (ViewBag.M == 4)
                                         {
-                                            <span>Aprial</span>
+                                            <span>@localizer["Aprial"]</span>
                                         }
                                         else if (ViewBag.M == 5)
                                         {
-                                            <span>May</span>
+                                            <span>@localizer["May"]</span>
                                         }
                                         else if (ViewBag.M == 6)
                                         {
-                                            <span>June</span>
+                                            <span>@localizer["June"]</span>
                                         }
                                         else if (ViewBag.M == 7)
                                         {
-                                            <span>July</span>
+                                            <span>@localizer["July"]</span>
                                         }
                                         else if (ViewBag.M == 8)
                                         {
-                                            <span>Augest</span>
+                                            <span>@localizer["Augest"]</span>
                                         }
                                         else if (ViewBag.M == 9)
                                         {
-                                            <span>September</span>
+                                            <span>@localizer["September"]</span>
                                         }
                                         else if (ViewBag.M == 10)
                                         {
-                                            <span>October</span>
+                                            <span>@localizer["October"]</span>
                                         }
                                         else if (ViewBag.M == 11)
                                         {
-                                            <span>Novamber</span>
+                                            <span>@localizer["Novamber"]</span>
                                         }
                                         else
                                         {
-                                            <span>December</span>
+                                            <span>@localizer["December"]</span>
                                         }
                                         <hr />
                                     </div>
@@ -130,7 +133,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
                                     <div class="form-group pt-2">
-                                        <button type="submit" class="btn btn-primary mr-2"><i class="fa fa-search"></i> Search</button>
+                                        <button type="submit" class="btn btn-primary mr-2"><i class="fa fa-search"></i>@localizer["Search"]</button>
                                         <span class="text-danger"></span>
                                     </div>
                                 </div>
@@ -143,7 +146,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Employees List</h5>
+                            <h5>@localizer["Employees List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -160,13 +163,13 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Name</th>
-                                            <th>Designation</th>
-                                            <th>HireDate</th>
-                                            <th>Basic Salary</th>
-                                            <th>Actionsy</th>
-                                            <th>Actions</th>
+                                            <th>@localizer["SNo"].</th>
+                                            <th>@localizer["Name"]</th>
+                                            <th>@localizer["Designation"]</th>
+                                            <th>@localizer["HireDate"]</th>
+                                            <th>@localizer["Basic Salary"]</th>
+                                            <th>@localizer["Status"]</th>
+                                            <th>@localizer["Actions"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -184,11 +187,11 @@
                                                     <td>
                                                         @if (m.isPaid == true)
                                                         {
-                                                            <span class="badge badge-success">&nbsp;&nbsp;Paid&nbsp;&nbsp;</span>
+                                                            <span class="badge badge-success">&nbsp;&nbsp;@localizer["Paid"]&nbsp;&nbsp;</span>
                                                         }
                                                         else
                                                         {
-                                                            <span class="badge badge-warning">&nbsp;&nbsp;UnPaid&nbsp;&nbsp;</span>
+                                                            <span class="badge badge-warning">&nbsp;&nbsp;@localizer["UnPaid"]&nbsp;&nbsp;</span>
                                                         }
                                                     </td>
                                                     <td>
@@ -215,7 +218,7 @@
                                                                asp-route-id="@m.EmployeeId"
                                                                asp-controller="Employee"
                                                                asp-action="EmployeeSalaryCreate">
-                                                                <i class="fa fa-money"></i> Add Salary
+                                                                <i class="fa fa-money"></i> @localizer["Add Salary"]
                                                             </a>
                                                         }
                                                     </td>
@@ -236,7 +239,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>

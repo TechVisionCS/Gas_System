@@ -117,4 +117,74 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Expense" xml:space="preserve">
+    <value>افزودن مصارف جدید</value>
+  </data>
+  <data name="All Categories" xml:space="preserve">
+    <value>تمام کتګوری</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>کتګوری</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیلات</value>
+  </data>
+  <data name="End Date" xml:space="preserve">
+    <value>تاریخ ختم</value>
+  </data>
+  <data name="Expense Category" xml:space="preserve">
+    <value>کتګوری مصارف</value>
+  </data>
+  <data name="Expense Statment" xml:space="preserve">
+    <value>کهاته مصارف</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>مصارفات</value>
+  </data>
+  <data name="Expenses Administration" xml:space="preserve">
+    <value>مدیریت مصارفات</value>
+  </data>
+  <data name="Expenses List" xml:space="preserve">
+    <value>لیست مصارفات</value>
+  </data>
+  <data name="Expenses Statement" xml:space="preserve">
+    <value>کهاته مصارفاتچ</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>از تاریخ</value>
+  </data>
+  <data name="No records available!" xml:space="preserve">
+    <value>هیچ مدرک موجود نیست ؟
+</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرینت</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Select Expense Category" xml:space="preserve">
+    <value>کتګوری انتخاب نماید</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Start Date" xml:space="preserve">
+    <value>تاریخ شروع</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تا تاریخ</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>مجموعه</value>
+  </data>
 </root>

@@ -117,4 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add expense payment details" xml:space="preserve">
+    <value>نوی مصارف اضافه کول معلومات</value>
+  </data>
+  <data name="Add New Expense" xml:space="preserve">
+    <value>نوي لګښتونه اضافه کړئ</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Bill Number" xml:space="preserve">
+    <value>بیل نمبر</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کول</value>
+  </data>
+  <data name="Create Employee" xml:space="preserve">
+    <value>د کارمند ایجاد</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیلات</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="Expense Category" xml:space="preserve">
+    <value>مصارف کتګوری</value>
+  </data>
+  <data name="Expense Statement" xml:space="preserve">
+    <value>مصارفاتو کهاته</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>مصارف</value>
+  </data>
+  <data name="Expenses Administration" xml:space="preserve">
+    <value>مدیریت مصارف</value>
+  </data>
+  <data name="Expenses List" xml:space="preserve">
+    <value>لیست مصارف</value>
+  </data>
+  <data name="Expenses Statement" xml:space="preserve">
+    <value>مصارف کهاته</value>
+  </data>
+  <data name="Payment Amount" xml:space="preserve">
+    <value>مقدار پیسو</value>
+  </data>
+  <data name="Payment Date" xml:space="preserve">
+    <value>تاریخ پیسو</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="Save &amp; Print" xml:space="preserve">
+    <value>ثبت او پرینت</value>
+  </data>
+  <data name="Select Employee" xml:space="preserve">
+    <value>کارمند انتخاب کړی</value>
+  </data>
+  <data name="Select Expense Category" xml:space="preserve">
+    <value>مصارف کتګوری انتخاب کړي</value>
+  </data>
 </root>

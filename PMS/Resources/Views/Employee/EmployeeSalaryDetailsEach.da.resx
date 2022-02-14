@@ -117,4 +117,178 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>آپریل</value>
+  </data>
+  <data name="Auguest" xml:space="preserve">
+    <value>اګست</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Base Salary" xml:space="preserve">
+    <value>معاش اولیه</value>
+  </data>
+  <data name="Basic Salary" xml:space="preserve">
+    <value>معاش اولیه</value>
+  </data>
+  <data name="Bounse" xml:space="preserve">
+    <value>بونس</value>
+  </data>
+  <data name="Created at" xml:space="preserve">
+    <value>ایجاد شده در</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>دیسمبر</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>وظیفه</value>
+  </data>
+  <data name="Due Date" xml:space="preserve">
+    <value>تاریخ ادینه</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="Employee Administration" xml:space="preserve">
+    <value>مدیریت کارمندان</value>
+  </data>
+  <data name="Employee Details" xml:space="preserve">
+    <value>تفصیل کارمندان</value>
+  </data>
+  <data name="Employee Info" xml:space="preserve">
+    <value>معلومات کارمند</value>
+  </data>
+  <data name="Employee Name" xml:space="preserve">
+    <value>نام کارمندان</value>
+  </data>
+  <data name="Employee Salaries" xml:space="preserve">
+    <value>معاش کارمندان </value>
+  </data>
+  <data name="Employee Salaries Administration" xml:space="preserve">
+    <value>مدیریت معاشات کارمندان</value>
+  </data>
+  <data name="Employee Salary Details" xml:space="preserve">
+    <value>تفصیل معاشات کارمندان</value>
+  </data>
+  <data name="Employee Salary List" xml:space="preserve">
+    <value>لیست معاشات </value>
+  </data>
+  <data name="Employees List" xml:space="preserve">
+    <value>لیست کارمندان</value>
+  </data>
+  <data name="Entry Performed By" xml:space="preserve">
+    <value>ورود انجام شده توسط</value>
+  </data>
+  <data name="Father Name" xml:space="preserve">
+    <value>نام پدر</value>
+  </data>
+  <data name="Feberuary" xml:space="preserve">
+    <value>فبروری</value>
+  </data>
+  <data name="Fire/Leave Employe" xml:space="preserve">
+    <value>ترک / اخراج کارمندان</value>
+  </data>
+  <data name="Hire Date" xml:space="preserve">
+    <value>تاریخ استخدام</value>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>تاریخ استخدام </value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>جنوری</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>جولای</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>جون</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>مارچ</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>مای</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>ماه</value>
+  </data>
+  <data name="Monthly Info" xml:space="preserve">
+    <value>میاشتنی معالومات</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Net Salary" xml:space="preserve">
+    <value>معاش نیت</value>
+  </data>
+  <data name="Novamber" xml:space="preserve">
+    <value>نومبر</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>اکتوبر</value>
+  </data>
+  <data name="Over Time" xml:space="preserve">
+    <value>اضافه کاری</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>تادیه شده</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرینت</value>
+  </data>
+  <data name="Remaind" xml:space="preserve">
+    <value>باقی مانده</value>
+  </data>
+  <data name="Salary Details" xml:space="preserve">
+    <value>تفصیل معاشات</value>
+  </data>
+  <data name="Salary Status" xml:space="preserve">
+    <value>حالات معاش</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>سبتمبر</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>حالات</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>اطلاعات سیستم</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>تیکس</value>
+  </data>
+  <data name="Total WOrk Days" xml:space="preserve">
+    <value>توتل روز کاری</value>
+  </data>
+  <data name="UnPaid" xml:space="preserve">
+    <value>نا تادیه شده</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>ویرایش در</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>سال</value>
+  </data>
 </root>

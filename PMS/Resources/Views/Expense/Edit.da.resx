@@ -117,4 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Expense" xml:space="preserve">
+    <value>اضافه کردن هزینه جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Bill Number" xml:space="preserve">
+    <value>بیل نمبر</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیلات</value>
+  </data>
+  <data name="Edit expense payment details" xml:space="preserve">
+    <value>تغیر اوردن در مصرف </value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>کارمند</value>
+  </data>
+  <data name="Expense Category" xml:space="preserve">
+    <value>کتګوری مصارف</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>مصارفات</value>
+  </data>
+  <data name="Expenses Administration" xml:space="preserve">
+    <value>مدیریت مصارفات</value>
+  </data>
+  <data name="Expenses List" xml:space="preserve">
+    <value>لیست مصارفات</value>
+  </data>
+  <data name="Expenses Statement" xml:space="preserve">
+    <value>کهاته مصارفات</value>
+  </data>
+  <data name="Payment Amount" xml:space="preserve">
+    <value>مقدار مصرف</value>
+  </data>
+  <data name="Payment Date" xml:space="preserve">
+    <value>تاریخ مصرف</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت نمودن</value>
+  </data>
+  <data name="Save &amp; Print" xml:space="preserve">
+    <value>ثبت و پرینت </value>
+  </data>
+  <data name="Select Employee" xml:space="preserve">
+    <value>کارمند انتخاب نماید</value>
+  </data>
+  <data name="Select Expense Category" xml:space="preserve">
+    <value>کتګوری انتخاب نماید</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تغیر نمودن</value>
+  </data>
 </root>

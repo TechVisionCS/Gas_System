@@ -1,17 +1,17 @@
-﻿
-@model IEnumerable<ExpenseViewModel>
+﻿@model IEnumerable<ExpenseViewModel>
+@inject IViewLocalizer localizer
 
 <div class="table-responsive">
     <table id="example1" class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th>SNo.</th>
-                <th>Date</th>
-                <th>Category</th>
-                <th>Bill Number</th>
-                <th>Amount</th>
-                <th>Description</th>
-                <th>Actions</th>
+                <th>@localizer["SNo"].</th>
+                <th>@localizer["Date"]</th>
+                <th>@localizer["Category"]</th>
+                <th>@localizer["Bill Number"]</th>
+                <th>@localizer["Amount"]</th>
+                <th>@localizer["Description"]</th>
+                <th>@localizer["Actions"]</th>
             </tr>
         </thead>
         <tbody>
@@ -28,22 +28,11 @@
                         <td>@m.BillNumber</td>
                         <td>@m.Amount.ToString("N")</td>
                         <td>@m.Description</td>
-
                         <td>
-                            @*<a asp-action="Edit" asp-controller="Expense" asp-route-id="@m.Id"
-                                   class="text text-primary mr-3">
-                                    <i class="fa fa-edit"></i>
-                                </a>*@
-
                             <a asp-action="PrintDiv" asp-controller="Expense" asp-route-id="@m.Id" target="_blank"
                                class="text text-info mr-3">
                                 <i class="fa fa-print"></i>
                             </a>
-
-                            @*<form style="display: inline;" method="POST" asp-controller="Expense" asp-action="Delete" asp-route-Id="@m.Id"
-                                      onclick="return confirm('Are you sure you want to delete this?')">
-                                    <button type="submit" class="btn btn-link text-danger mr-1"> <i class="fa fa-trash"></i></button>
-                                </form>*@
                         </td>
                     </tr>
                 }

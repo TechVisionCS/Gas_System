@@ -117,4 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Customer" xml:space="preserve">
+    <value>نوی پیریدونکی اضافه کول</value>
+  </data>
+  <data name="Add Receives" xml:space="preserve">
+    <value>نوی پیسو ادینه</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Are you sure you want to delete this?" xml:space="preserve">
+    <value>ایا تاسو ډاډه یاست چې دا حذف کول غواړئ؟</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>بیلانس</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>پیریدونکی </value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>د پیریدونکی مدیریت</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>د پیریدونکو لیجر</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>پیریدونکی لیست</value>
+  </data>
+  <data name="Ledger" xml:space="preserve">
+    <value>لیجر</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نوم</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
 </root>

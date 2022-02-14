@@ -117,4 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add a new Customer" xml:space="preserve">
+    <value>افزودن مشتری جدید</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>مدیریت مشتریها</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>لیجر مشتری</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>لیست مشتری</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل </value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون</value>
+  </data>
+  <data name="Please enter the correct amount of previous balance. The previous balance can not be updated" xml:space="preserve">
+    <value>لطفا مقدار صحیح موجودی قبلی را وارد کنید. موجودی قبلی را نمی توان به روز کرد</value>
+  </data>
+  <data name="Previous Balance" xml:space="preserve">
+    <value>بیلانس قبلی</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت نمودن</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="Update Customer" xml:space="preserve">
+    <value>مشتری تغیرات</value>
+  </data>
 </root>

@@ -117,4 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>فعالیت</value>
+  </data>
+  <data name="Add New Expense" xml:space="preserve">
+    <value>مصارف جدید </value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Are you sure you want to delete this?" xml:space="preserve">
+    <value>آیا مطمئن هستید که می خواهید این را حذف کنید؟</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Bill Number" xml:space="preserve">
+    <value>بیل نمبر</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>کتګوری</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیلات</value>
+  </data>
+  <data name="Expense Category" xml:space="preserve">
+    <value>کتګوری مصارف</value>
+  </data>
+  <data name="Expense List" xml:space="preserve">
+    <value>لیست مصارف</value>
+  </data>
+  <data name="Expense Statement" xml:space="preserve">
+    <value>مصارف کهاته</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>مصارفات</value>
+  </data>
+  <data name="Expenses Administration" xml:space="preserve">
+    <value>مدیریت مصارفات</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>از تاریخ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Select Expense Category" xml:space="preserve">
+    <value>کتګوری را انتخاب نماید</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>مشاهده</value>
+  </data>
+  <data name="Show All" xml:space="preserve">
+    <value>مشاهده همیه</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تا تاریخ</value>
+  </data>
 </root>

@@ -117,4 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>Created At</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>Credit</value>
+  </data>
+  <data name="Customer Details" xml:space="preserve">
+    <value>Customer Details</value>
+  </data>
+  <data name="Customer Invoices Details" xml:space="preserve">
+    <value>Customer Invoices Details</value>
+  </data>
+  <data name="Customer Ledger Details" xml:space="preserve">
+    <value>Customer Ledger Details</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>Customers Administration</value>
+  </data>
+  <data name="Customers Details" xml:space="preserve">
+    <value>Customers Details</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>Customers Ledger</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>Customers List</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>Debit</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>Invoice No</value>
+  </data>
+  <data name="Last Updated At" xml:space="preserve">
+    <value>Last Updated At</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Registered By User" xml:space="preserve">
+    <value>Registered By User</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>SNo</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>Total Amount</value>
+  </data>
 </root>
