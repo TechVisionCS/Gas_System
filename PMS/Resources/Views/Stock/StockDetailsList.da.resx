@@ -117,4 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="All Stock Details" xml:space="preserve">
+    <value>تمام جزئیات سهام</value>
+  </data>
+  <data name="All Stock Details List" xml:space="preserve">
+    <value>لیست تمام جزئیات سهام</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>کتګوری</value>
+  </data>
+  <data name="Current Stock" xml:space="preserve">
+    <value>ذخیره موجودی</value>
+  </data>
+  <data name="Current Stock Administration" xml:space="preserve">
+    <value>مدیریت ذخیره فعلی</value>
+  </data>
+  <data name="Current Stock Qty" xml:space="preserve">
+    <value>تعداد ذخیره فعلی</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>جزئیات</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>شرکت تولیدی</value>
+  </data>
+  <data name="Product Name" xml:space="preserve">
+    <value>نام محصول</value>
+  </data>
+  <data name="Products List" xml:space="preserve">
+    <value>لیست محصولات</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Select Unit" xml:space="preserve">
+    <value>واحد را انتخاب نمایید</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="Stock Administration" xml:space="preserve">
+    <value>اداره سهام</value>
+  </data>
+  <data name="Stock Details" xml:space="preserve">
+    <value>معلومات ذخیره</value>
+  </data>
+  <data name="Stock Details List" xml:space="preserve">
+    <value>لیست جزئیات سهام</value>
+  </data>
+  <data name="Stock Products List" xml:space="preserve">
+    <value>لیست محصولات بورسی</value>
+  </data>
+  <data name="Total In Qty" xml:space="preserve">
+    <value>مجموع خرید تعداد</value>
+  </data>
+  <data name="Total Out Qty" xml:space="preserve">
+    <value>مجموع فروش تعداد</value>
+  </data>
+  <data name="Transaction Code" xml:space="preserve">
+    <value>کود ترانزیکشن</value>
+  </data>
+  <data name="View Details" xml:space="preserve">
+    <value>دیدن جزئیات</value>
+  </data>
 </root>
