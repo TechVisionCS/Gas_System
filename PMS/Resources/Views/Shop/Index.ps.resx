@@ -117,4 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add shop details" xml:space="preserve">
+    <value>د ملکیت په اړه معلومات اضافه کو</value>
+  </data>
+  <data name="Address (dr)" xml:space="preserve">
+    <value>ادرس په دری حروف</value>
+  </data>
+  <data name="Address (en)" xml:space="preserve">
+    <value>ادرس په انګلیسی حروف</value>
+  </data>
+  <data name="Address (ps)" xml:space="preserve">
+    <value>ادرس په پښتو حروف</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کول</value>
+  </data>
+  <data name="Email 1" xml:space="preserve">
+    <value>ایمیل ادرس ۱</value>
+  </data>
+  <data name="Email 2" xml:space="preserve">
+    <value>ایمیل ادرس ۲</value>
+  </data>
+  <data name="here" xml:space="preserve">
+    <value>دلته</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>لوګو ملکیت</value>
+  </data>
+  <data name="Name (dr)" xml:space="preserve">
+    <value>ملکیت په دری حروف نوم</value>
+  </data>
+  <data name="Name (en)" xml:space="preserve">
+    <value>ملکیت په انګلیس حروف نوم</value>
+  </data>
+  <data name="Name (ps)" xml:space="preserve">
+    <value>ملکیت په پښتو حروف نوم</value>
+  </data>
+  <data name="No, registered shop available." xml:space="preserve">
+    <value>نه، راجستر شوی ملکیت شتون لري.</value>
+  </data>
+  <data name="Phone 1" xml:space="preserve">
+    <value>تلیفون شماره ۱</value>
+  </data>
+  <data name="Phone 2" xml:space="preserve">
+    <value>تلیفون شماره ۲</value>
+  </data>
+  <data name="Please add shop details from" xml:space="preserve">
+    <value>مهرباني وکړئ د ملکیت توضیحات اضافه کړئ</value>
+  </data>
+  <data name="Responsible 1" xml:space="preserve">
+    <value>مسول شخص</value>
+  </data>
+  <data name="Responsible 2" xml:space="preserve">
+    <value>مسول شخص۲</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کول</value>
+  </data>
+  <data name="Shop Administration" xml:space="preserve">
+    <value>ملکیت اداره</value>
+  </data>
+  <data name="Shop Details" xml:space="preserve">
+    <value>د ملکیت توضیحات</value>
+  </data>
+  <data name="Slogan (dr)" xml:space="preserve">
+    <value>ملکیت د خدمت شعار په دری</value>
+  </data>
+  <data name="Slogan (en" xml:space="preserve">
+    <value>ملکیت د خدمت شعار په انګلیس </value>
+  </data>
+  <data name="Slogan (ps)" xml:space="preserve">
+    <value>ملکیت د خدمت شعار په پښتو</value>
+  </data>
+  <data name="update shop details" xml:space="preserve">
+    <value>ملیکیت معلومات تغیرول</value>
+  </data>
 </root>

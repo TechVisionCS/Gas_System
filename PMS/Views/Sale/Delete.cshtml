@@ -1,7 +1,9 @@
 ﻿@model ViewSaleDetailsViewModel
 
+@inject IViewLocalizer localizer
+
 @{
-    ViewData["Title"] = "Sales";
+    ViewData["Title"] = localizer["Sales"];
 
     var Sale = Model.Sale;
     var SaleDetails = Model.SaleDetails;
@@ -16,12 +18,13 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Sales Administration</h5>
+                        @localizer["Sales Administration"]
+                        <h5 class="m-b-10"></h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Sale"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Sales List
+                                    <i class="fa fa-list"></i> @localizer["Sales List"]
                                 </a>
                             </li>
                         </ul>
@@ -32,19 +35,20 @@
 
                 <div class="page-header card card-border-danger">
                     <div class="card-block">
-                        <form method="POST" asp-action="Delete">
+                        <form method="POST" asp-action="Delete" asp-controller="Sale">
                             <div class="row">
+                                @localizer[""]
                                 <div class="col-md-8 col-sm-12">
-                                    <p class="h4">Do you want to delete the following record of sale?</p>
+                                    <p class="h4">@localizer["Do you want to delete the following record of sale?"]</p>
                                 </div>
 
                                 <div class="col-md-4 col-sm-12" style="padding-top: 20px;">
                                     <div class="form-group pt-2">
                                         <input type="hidden" name="saleId" value="@Sale.Id" />
                                         <input type="hidden" name="saleDate" value="@Sale.SaleDate" />
-                                        <button type="submit" class="btn btn-danger mr-2"><i class="fa fa-check"></i> Yes, Delete it</button>
+                                        <button type="submit" class="btn btn-danger mr-2"><i class="fa fa-check"></i> @localizer["Yes, Delete it"]</button>
                                         <a asp-action="Index" asp-controller="Sale"
-                                           class="btn btn-secondary"><i class="fa fa-times"></i> No, Cancel it</a>
+                                           class="btn btn-secondary"><i class="fa fa-times"></i>@localizer["No, Cancel it"] </a>
                                     </div>
                                 </div>
                             </div>
@@ -53,12 +57,10 @@
                 </div>
 
                 <!-- Page-body start -->
-
                 <div class="page-body">
-
                     <div class="card">
                         <div class="card-header">
-                            <h5>Sale Details</h5>
+                            <h5>@localizer["Sale Details"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -73,41 +75,83 @@
                         <div class="card-block table-border-style">
                             <div class="row">
                                 <div class="col-12">
-                                    <h6>General Info</h6>
+                                    <h6>@localizer["General Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Invoice No.</h6>
+                                    <h6>@localizer["Invoice No"].</h6>
                                     <p>@Sale.Id</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Sale Date</h6>
+                                    <h6>@localizer["Sale Date"]</h6>
                                     <p>@Sale.SaleDate</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Customer Name</h6>
+                                    <h6>@localizer["Customer Name"]</h6>
                                     @if (Sale.CustomerId == 0)
                                     {
                                         <p>@Sale.CustomerName</p>
                                     }
                                     else
                                     {
-                                        <p>WALKING CUSTOMER</p>
+                                        <p>@localizer["WALKING CUSTOMER"]</p>
                                     }
                                     <hr />
                                 </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>@localizer["Sale Type"]</h6>
+                                    <p>
+                                        @if (Sale.SaleType == 1)
+                                        {
+                                            <span class="badge badge-primary">@localizer["Whole Sale"]</span>
+                                        }
+                                        else if (Sale.SaleType == 2)
+                                        {
+                                            <span class="badge badge-info">@localizer["Retails"]</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-warning">@localizer["None"]</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <h6>@localizer["Currency"]</h6>
+                                    <p>
+                                        @if (Sale.CurrecnyId == 1)
+                                        {
+                                            <span class="badge badge-info">@localizer["AFN"]</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-primary">@localizer["USD"]</span>
+                                        }
+                                    </p>
+                                    <hr />
+                                </div>
+
+                                @if (Sale.CurrecnyId == 2)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>@localizer["Excahgen Rate"]</h6>
+                                        <p>@Sale.ExchangeRate.ToString("N")</p>
+                                        <hr />
+                                    </div>
+                                }
+
                                 <div class="col-lg-9 col-md-8 col-sm-6">
-                                    <h6>Description</h6>
+                                    <h6>@localizer["Description"]</h6>
                                     <p>@Sale.Description</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>Items</h6>
+                                    <h6>@localizer["Items"]</h6>
                                     <hr />
                                 </div>
 
@@ -116,13 +160,13 @@
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>SNo.</th>
-                                                    <th>Product</th>
-                                                    <th>Unit</th>
-                                                    <th>Unit Price</th>
-                                                    <th>Qty</th>
-                                                    <th class="d-none">Discount</th>
-                                                    <th>Total Price</th>
+                                                    <th>@localizer["SNo"].</th>
+                                                    <th>@localizer["Product"]</th>
+                                                    <th>@localizer["Unit"]</th>
+                                                    <th>@localizer["Unit Price"]</th>
+                                                    <th>@localizer["Qty"]</th>
+                                                    <th class="d-none">@localizer["Discount"]</th>
+                                                    <th>@localizer["Total Price"]</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -138,7 +182,7 @@
                                                             <td>@m.Qty</td>
                                                             <td class="d-none">
                                                                 @{ var res = (100 * m.Discount) / (m.Discount + m.TotalSalePrice); }
-                                                                @m.Discount (@res % - <small>Per item</small>)
+                                                                @m.Discount (@res % - <small>@localizer["Per item"]</small>)
                                                             </td>
                                                             <td>@m.TotalSalePrice</td>
                                                         </tr>
@@ -148,7 +192,7 @@
                                                 {
                                                     <tr>
                                                         <td colspan="7">
-                                                            <span class="text text-info">No item available in this sale!</span>
+                                                            <span class="text text-info">@localizer["No item available in this sale!"]</span>
                                                         </td>
                                                     </tr>
                                                 }
@@ -159,42 +203,18 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>Payment Details</h6>
+                                    <h6>@localizer["Payment Details"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Payment Type</h6>
-                                    <p>
-                                        @if (Sale.PaymentType == 1)
-                                        {
-                                            <span class="badge badge-info">Cash</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-info">Bank</span>
-                                        }
-                                    </p>
-                                    <hr />
-                                </div>
-
-                                @if (Sale.PaymentType == 2)
-                                {
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Bank Name</h6>
-                                        <p>@Sale.BankName</p>
-                                        <hr />
-                                    </div>
-                                }
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Total Sale</h6>
+                                    <h6>@localizer["Total Sale"]</h6>
                                     <p>@Sale.SubTotal.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Total Discount</h6>
+                                    <h6>@localizer["Total Discount"]</h6>
                                     <p>
                                         @{ var disc_per = (100 * Sale.DiscountAmount) / Sale.SubTotal; }
                                         @Sale.DiscountAmount.ToString("N") (@disc_per %)
@@ -203,54 +223,54 @@
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Rent</h6>
+                                    <h6>@localizer["Rent"]</h6>
                                     <p>@Sale.RentAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 d-none">
-                                    <h6>Tax</h6>
+                                    <h6>@localizer["Tax"]</h6>
                                     <p>@Sale.TaxAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6  text text-primary">
-                                    <h6>Total Amount</h6>
+                                    <h6>@localizer["Total Amount"]</h6>
                                     <p>@Sale.TotalAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 text text-success">
-                                    <h6>Paid Amount</h6>
+                                    <h6>@localizer["Paid Amount"]</h6>
                                     <p>@Sale.PaidAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 text text-warning">
-                                    <h6>Due Amount</h6>
+                                    <h6>@localizer["Due Amount"]</h6>
                                     <p>@Sale.DueAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>System Info</h6>
+                                    <h6>@localizer["System Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Sale Performed By</h6>
+                                    <h6>@localizer["Sale Performed By"]</h6>
                                     <p>@Sale.UserName</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Created At</h6>
+                                    <h6>@localizer["Created At"]</h6>
                                     <p>@Sale.CreatedAt</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Update At</h6>
+                                    <h6>@localizer["Update At"]</h6>
                                     <p>@Sale.UpdatedAt</p>
                                     <hr />
                                 </div>
@@ -269,20 +289,18 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
 
     </div>
 </div>
 <!-- Main-body end -->
-
 <partial name="_Modal" />
 @section Scripts{
     <script src="~/js/popupModel.js" asp-append-version="true"></script>

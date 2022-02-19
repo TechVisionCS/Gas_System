@@ -117,4 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Purchase" xml:space="preserve">
+    <value>Add New Purchase</value>
+  </data>
+  <data name="AFN" xml:space="preserve">
+    <value>AFN</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>Created At</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="Do you want to delete the following record of purchase?" xml:space="preserve">
+    <value>Do you want to delete the following record of purchase?</value>
+  </data>
+  <data name="Due Amount" xml:space="preserve">
+    <value>Due Amount</value>
+  </data>
+  <data name="Excahgen Amount" xml:space="preserve">
+    <value>Excahgen Amount</value>
+  </data>
+  <data name="Excahgen Rate" xml:space="preserve">
+    <value>Excahgen Rate</value>
+  </data>
+  <data name="General Info" xml:space="preserve">
+    <value>General Info</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>Invoice No</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="No item available in this purchase!" xml:space="preserve">
+    <value>No item available in this purchase!</value>
+  </data>
+  <data name="No, Cancel it" xml:space="preserve">
+    <value>No, Cancel it</value>
+  </data>
+  <data name="Paid Amount" xml:space="preserve">
+    <value>Paid Amount</value>
+  </data>
+  <data name="Payment Details" xml:space="preserve">
+    <value>Payment Details</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>Purchase Date</value>
+  </data>
+  <data name="Purchase Details" xml:space="preserve">
+    <value>Purchase Details</value>
+  </data>
+  <data name="Purchase No" xml:space="preserve">
+    <value>Purchase No</value>
+  </data>
+  <data name="Purchase Performed By" xml:space="preserve">
+    <value>Purchase Performed By</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="Purchases Administration" xml:space="preserve">
+    <value>Purchases Administration</value>
+  </data>
+  <data name="Purchases List" xml:space="preserve">
+    <value>Purchases List</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>Rent</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>SNo</value>
+  </data>
+  <data name="Supplier Name" xml:space="preserve">
+    <value>Supplier Name</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>System Info</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>Total Amount</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="Total Purchase" xml:space="preserve">
+    <value>Total Purchase</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="Unit Price" xml:space="preserve">
+    <value>Unit Price</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>Update At</value>
+  </data>
+  <data name="USD" xml:space="preserve">
+    <value>USD</value>
+  </data>
+  <data name="Yes, Delete it" xml:space="preserve">
+    <value>Yes, Delete it</value>
+  </data>
 </root>

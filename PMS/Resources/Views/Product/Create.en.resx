@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add a new Product" xml:space="preserve">
+    <value>Add a new Product</value>
+  </data>
+  <data name="Add New Category" xml:space="preserve">
+    <value>Add New Category</value>
+  </data>
+  <data name="Add New Manufecture" xml:space="preserve">
+    <value>Add New Manufecture</value>
+  </data>
+  <data name="Add New Unit" xml:space="preserve">
+    <value>Add New Unit</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Manage Cateogory" xml:space="preserve">
+    <value>Manage Category</value>
+  </data>
+  <data name="Manage Manufecturer" xml:space="preserve">
+    <value>Manage Manufecturer</value>
+  </data>
+  <data name="Manage Units" xml:space="preserve">
+    <value>Manage Units</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="please configure product units" xml:space="preserve">
+    <value>please configure product units</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="Products Administration" xml:space="preserve">
+    <value>Products Administration</value>
+  </data>
+  <data name="Products List" xml:space="preserve">
+    <value>Products List</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Select Category" xml:space="preserve">
+    <value>Select Category</value>
+  </data>
+  <data name="Select Manufacturer" xml:space="preserve">
+    <value>Select Manufacturer</value>
+  </data>
+  <data name="Unit Details" xml:space="preserve">
+    <value>Unit Details</value>
+  </data>
+  <data name="Unit Name" xml:space="preserve">
+    <value>Unit Name</value>
+  </data>
+  <data name="Unit Sell Price" xml:space="preserve">
+    <value>Unit Sell Price</value>
+  </data>
+  <data name="‌Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
 </root>

@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Select Product" xml:space="preserve">
+    <value>جنس انتخاب نمایید</value>
+  </data>
+  <data name="Select Unit" xml:space="preserve">
+    <value>واحد انتخاب نمایید</value>
+  </data>
 </root>

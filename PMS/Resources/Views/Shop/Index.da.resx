@@ -117,4 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add shop details" xml:space="preserve">
+    <value>معلومات در باره ملکیت افزودن</value>
+  </data>
+  <data name="Address (dr)" xml:space="preserve">
+    <value>ادرس به حروف دری</value>
+  </data>
+  <data name="Address (en)" xml:space="preserve">
+    <value>ادرس به حروف انگلیسی</value>
+  </data>
+  <data name="Address (ps)" xml:space="preserve">
+    <value>ادرس به حروف پشتو</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="Email 1" xml:space="preserve">
+    <value>ایمیل ادرس ۱</value>
+  </data>
+  <data name="Email 2" xml:space="preserve">
+    <value>ایمیل ادرس ۲</value>
+  </data>
+  <data name="here" xml:space="preserve">
+    <value>اینجا</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>لوګو</value>
+  </data>
+  <data name="Name (dr)" xml:space="preserve">
+    <value>نام به حروف دری</value>
+  </data>
+  <data name="Name (en)" xml:space="preserve">
+    <value>نام به حروف انګلیسی</value>
+  </data>
+  <data name="Name (ps)" xml:space="preserve">
+    <value>نام به حروف پشتو</value>
+  </data>
+  <data name="No, registered shop available." xml:space="preserve">
+    <value>خیر، ملیکت ثبت شده موجود است.</value>
+  </data>
+  <data name="Phone 1" xml:space="preserve">
+    <value>مبایل ۱</value>
+  </data>
+  <data name="Phone 2" xml:space="preserve">
+    <value>مبایل ۲</value>
+  </data>
+  <data name="Please add shop details from" xml:space="preserve">
+    <value>لطفا جزئیات ملکیت را اضافه کنید</value>
+  </data>
+  <data name="Responsible 1" xml:space="preserve">
+    <value>مسول ۱</value>
+  </data>
+  <data name="Responsible 2" xml:space="preserve">
+    <value>مسول ۲</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت نمودن</value>
+  </data>
+  <data name="Shop Administration" xml:space="preserve">
+    <value>مدیریت ملکیت سیستم</value>
+  </data>
+  <data name="Shop Details" xml:space="preserve">
+    <value>معلومات ملکیت</value>
+  </data>
+  <data name="Slogan (dr)" xml:space="preserve">
+    <value>شعار ملکیت دری</value>
+  </data>
+  <data name="Slogan (en" xml:space="preserve">
+    <value>شعار ملکیت انګلیسی</value>
+  </data>
+  <data name="Slogan (ps)" xml:space="preserve">
+    <value>شعار ملکیت پشتو</value>
+  </data>
+  <data name="update shop details" xml:space="preserve">
+    <value>ویرایش معلومات ملکیت این سیستم</value>
+  </data>
 </root>

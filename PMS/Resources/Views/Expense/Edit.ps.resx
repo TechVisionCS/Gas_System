@@ -133,25 +133,25 @@
     <value>تفصیلات</value>
   </data>
   <data name="Edit expense payment details" xml:space="preserve">
-    <value>مصرف معلومات تغیرول</value>
+    <value>لګښتونه معلومات تغیرول</value>
   </data>
   <data name="Employee" xml:space="preserve">
     <value>کارمندان</value>
   </data>
   <data name="Expense Category" xml:space="preserve">
-    <value>مصارف کتګوری</value>
+    <value> لګښتونه کتګوری</value>
   </data>
   <data name="Expenses" xml:space="preserve">
-    <value>مصارف</value>
+    <value>لګښتونه</value>
   </data>
   <data name="Expenses Administration" xml:space="preserve">
-    <value>مدیریت مصارف</value>
+    <value>مدیریت لګښتونه</value>
   </data>
   <data name="Expenses List" xml:space="preserve">
-    <value>لیست مصارف</value>
+    <value>لیست لګښتونه</value>
   </data>
   <data name="Expenses Statement" xml:space="preserve">
-    <value>مصارف کهاته</value>
+    <value>لګښتونه کهاته</value>
   </data>
   <data name="Payment Amount" xml:space="preserve">
     <value>مقدار پیسو</value>
@@ -169,7 +169,7 @@
     <value>کارمند انتخاب کړی</value>
   </data>
   <data name="Select Expense Category" xml:space="preserve">
-    <value>مصارف کتګوری انتخاب کړي</value>
+    <value>لګښتونه کتګوری انتخاب کړي</value>
   </data>
   <data name="Update" xml:space="preserve">
     <value>تغیرول</value>

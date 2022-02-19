@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<SarafViewModel>
 
+@inject IViewLocalizer localizer
+
 @{
-    ViewData["Title"] = "Sarafs";
+    ViewData["Title"] = localizer["Sarafs"];
 }
 
 <div class="main-body">
@@ -11,28 +13,27 @@
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Sarafs Administration</h5>
+                        <h5 class="m-b-10">@localizer["Sarafs Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="CreateOrEdit" asp-controller="Saraf" asp-route-id="0" class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Saraf
+                                    <i class="fa fa-plus"></i> @localizer["Add New Saraf"]
                                 </a>
                                 <a asp-action="Transaction" asp-controller="Saraf" class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-plus"></i> New Transaction
+                                    <i class="fa fa-plus"></i> @localizer["New Transaction"]
                                 </a>
                                 <a asp-action="GetAllLedgers" asp-controller="Saraf" class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Sarafs Ledger
+                                    <i class="fa fa-list"></i> @localizer["Sarafs Ledger"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <!-- Page-header end -->
                 <!-- Page-body start -->
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Sarafs List</h5>
+                            <h5>@localizer["Sarafs List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -48,12 +49,12 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Saraf Name</th>
-                                            <th>Account Name</th>
-                                            <th>Account No</th>
-                                            <th>Current Amount</th>
-                                            <th>Action</th>
+                                            <th>@localizer["SNo"].</th>
+                                            <th>@localizer["Saraf Name"]</th>
+                                            <th>@localizer["Account Name"]</th>
+                                            <th>@localizer["Account No"]</th>
+                                            <th>@localizer["Current Amount"]</th>
+                                            <th>@localizer["Action"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -76,9 +77,9 @@
                                                         <a asp-action="CreateOrEdit" asp-controller="Saraf" asp-route-id="@saraf.Id" class="text text-primary" style="cursor: pointer;">
                                                             <i class="fa fa-edit"></i>
                                                         </a>
+                                                        <span class="d-none">@{sno++;}</span>
                                                     </td>
                                                 </tr>
-                                                <span class="d-none">@{sno++;}</span>
                                             }
                                         }
                                     </tbody>
@@ -87,7 +88,6 @@
                         </div>
                     </div>
                     @*Basic table card end*@
-
                 </div>
                 @*Page-body end*@
 
@@ -97,7 +97,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>

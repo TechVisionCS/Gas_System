@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<SarafsLedgerViewModel>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Sarafs Ledger";
+    ViewData["Title"] = localizer["Sarafs Ledger"];
 }
 
 <!-- Main-body start -->
@@ -12,17 +12,17 @@
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Sarafs Administration</h5>
+                        <h5 class="m-b-10">@localizer["Sarafs Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="CreateOrEdit" asp-controller="Saraf" asp-route-id="0"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-user-plus"></i> Add New Saraf
+                                    <i class="fa fa-user-plus"></i> @localizer["Add New Saraf"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Saraf"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Sarafs List
+                                    <i class="fa fa-list"></i>@localizer["Sarafs List"]
                                 </a>
                             </li>
                         </ul>
@@ -35,9 +35,9 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label">Saraf</label>
+                                        <label class="control-label">@localizer["Saraf"]</label>
                                         <select class="select2 form-control" name="sarafId" asp-items="@ViewBag.Sarafs" style="width: 100%;">
-                                            <option selected="selected" value="0">--Select Saraf--</option>
+                                            <option selected="selected" value="0">@localizer["Select Saraf"]</option>
                                         </select>
                                         <span class="text-danger"></span>
                                     </div>
@@ -45,7 +45,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">From</label>
+                                        <label class="control-label">@localizer["From"]</label>
                                         <input type="date" name="startDate" class="form-control" id="inlineFormInputName">
                                         <span class="text-danger"></span>
                                     </div>
@@ -53,7 +53,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">To</label>
+                                        <label class="control-label">@localizer["To"]</label>
                                         <input type="date" name="endDate" class="form-control" id="inlineFormInputName">
                                         <span class="text-danger"></span>
                                     </div>
@@ -61,7 +61,7 @@
 
                                 <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
                                     <div class="form-group pt-2">
-                                        <button type="submit" class="btn btn-primary mr-2"><i class="fa fa-search"></i> Search</button>
+                                        <button type="submit" class="btn btn-primary mr-2"><i class="fa fa-search"></i> @localizer["Search"]</button>
                                         <span class="text-danger"></span>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                 <div class="page-body">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Sarafs Ledger</h5>
+                            <h5>@localizer["Sarafs Ledger"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -91,12 +91,12 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo</th>
-                                            <th>Date</th>
-                                            <th>Description</th>
-                                            <th>Debit</th>
-                                            <th>Credit</th>
-                                            <th>Balance</th>
+                                            <th>@localizer["SNo"]</th>
+                                            <th>@localizer["Date"]</th>
+                                            <th>@localizer["Description"]</th>
+                                            <th>@localizer["Debit"]</th>
+                                            <th>@localizer["Credit"]</th>
+                                            <th>@localizer["Balance"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -132,7 +132,7 @@
                                         <tr style="background-color: lightgray;">
                                             <td></td>
                                             <td></td>
-                                            <td>Total</td>
+                                            <td>@localizer["Total"]</td>
                                             <td>@totalDebit.ToString("N")</td>
                                             <td>@totalCredit.ToString("N")</td>
                                             <td>
@@ -159,7 +159,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>

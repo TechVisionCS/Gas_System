@@ -1,6 +1,7 @@
 ﻿@model Shop
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Shop Administration";
+    ViewData["Title"] = localizer["Shop Administration"];
 }
 <div class="main-body">
     <div class="page-wrapper">
@@ -8,7 +9,8 @@
             <div class="col-lg-10 col-md-12 col-ms-12" style="margin:0 auto;">
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Shop Administration</h5>
+                        @localizer[""]
+                        <h5 class="m-b-10">@localizer["Shop Administration"]</h5>
                     </div>
                 </div>
 
@@ -18,7 +20,7 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>update shop details</h5>
+                                    <h5>@localizer["update shop details"]</h5>
 
                                     <div class="card-header-right">
                                         <i class="icofont icofont-spinner-alt-5"></i>
@@ -41,7 +43,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Name (en) <span class="required">*</span>
+                                                            @localizer["Name (en"]) <span class="required">*</span>
                                                         </label>
                                                         <input asp-for="Name_en" class="form-control" required />
                                                         <span asp-validation-for="Name_en" class="text-danger"></span>
@@ -51,7 +53,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Name (ps)
+                                                            @localizer["Name (ps)"]
                                                         </label>
                                                         <input asp-for="Name_ps" class="form-control" />
                                                         <span asp-validation-for="Name_ps" class="text-danger"></span>
@@ -61,7 +63,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Name (dr)
+                                                            @localizer["Name (dr)"]
                                                         </label>
                                                         <input asp-for="Name_dr" class="form-control" />
                                                         <span asp-validation-for="Name_dr" class="text-danger"></span>
@@ -75,7 +77,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Phone 1
+                                                            @localizer["Phone 1"]
                                                         </label>
                                                         <input asp-for="Phone1" class="form-control" />
                                                         <span asp-validation-for="Phone1" class="text-danger"></span>
@@ -85,7 +87,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Phone 2
+                                                            @localizer["Phone 2"]
                                                         </label>
                                                         <input asp-for="Phone2" class="form-control" />
                                                         <span asp-validation-for="Phone2" class="text-danger"></span>
@@ -99,7 +101,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Email 1
+                                                            @localizer["Email 1"]
                                                         </label>
                                                         <input asp-for="Email1" class="form-control" />
                                                         <span asp-validation-for="Email1" class="text-danger"></span>
@@ -109,7 +111,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Email 2
+                                                            @localizer["Email 2"]
                                                         </label>
                                                         <input asp-for="Email2" class="form-control" />
                                                         <span asp-validation-for="Email2" class="text-danger"></span>
@@ -123,7 +125,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Responsible 1
+                                                            @localizer["Responsible 1"]
                                                         </label>
                                                         <input asp-for="Responsible1" class="form-control" />
                                                         <span asp-validation-for="Responsible1" class="text-danger"></span>
@@ -133,7 +135,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Responsible 2
+                                                            @localizer["Responsible 2"]
                                                         </label>
                                                         <input asp-for="Responsible2" class="form-control" />
                                                         <span asp-validation-for="Responsible2" class="text-danger"></span>
@@ -147,7 +149,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Address (en)
+                                                            @localizer["Address (en)"]
                                                         </label>
                                                         <input asp-for="Address_en" class="form-control" />
                                                         <span asp-validation-for="Address_en" class="text-danger"></span>
@@ -157,7 +159,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Address (ps)
+                                                            @localizer["Address (ps)"]
                                                         </label>
                                                         <input asp-for="Address_ps" class="form-control" />
                                                         <span asp-validation-for="Address_ps" class="text-danger"></span>
@@ -167,7 +169,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Address (dr)
+                                                            @localizer["Address (dr)"]
                                                         </label>
                                                         <input asp-for="Address_dr" class="form-control" />
                                                         <span asp-validation-for="Address_dr" class="text-danger"></span>
@@ -181,7 +183,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Slogan (en
+                                                            @localizer["Slogan (en"]
                                                         </label>
                                                         <input asp-for="Slog_en" class="form-control" />
                                                         <span asp-validation-for="Slog_en" class="text-danger"></span>
@@ -191,7 +193,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Slogan (ps)
+                                                            @localizer["Slogan (ps)"]
                                                         </label>
                                                         <input asp-for="Slog_ps" class="form-control" />
                                                         <span asp-validation-for="Slog_ps" class="text-danger"></span>
@@ -201,7 +203,7 @@
                                                 <div class="col-lg-4 col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Slogan (dr)
+                                                            @localizer["Slogan (dr)"]
                                                         </label>
                                                         <input asp-for="Slog_dr" class="form-control" />
                                                         <span asp-validation-for="Slog_dr" class="text-danger"></span>
@@ -215,7 +217,7 @@
                                                 <div class="col-lg-8 col-md-8 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Logo <span class="required">*</span>
+                                                            @localizer["Logo"]  <span class="required">*</span>
                                                         </label>
                                                         <input type="file" asp-for="ImageFile" class="form-control" accept="image/*" />
                                                         <span asp-validation-for="ImageFile" class="text-danger"></span>
@@ -240,11 +242,11 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-12 text text-left">
                                                     <button type="submit" class="btn btn-mat btn-success mr-2">
-                                                        <i class="fa fa-save"></i> Save
+                                                        <i class="fa fa-save"></i> @localizer["Save"]
                                                     </button>
 
                                                     <button type="reset" class="btn btn-mat btn-danger">
-                                                        <i class="fa fa-times"></i> Cancel
+                                                        <i class="fa fa-times"></i>@localizer["Cancel"]
                                                     </button>
                                                 </div>
                                             </div>
@@ -265,7 +267,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i>@localizer["Back"]
                                 </a>
                             </li>
                         </ul>

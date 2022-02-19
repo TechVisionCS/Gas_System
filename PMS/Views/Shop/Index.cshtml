@@ -1,7 +1,7 @@
 ﻿@model Shop
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Shop Administration";
+    ViewData["Title"] = localizer["Shop Administration"];
 }
 
 <!-- Main-body start -->
@@ -13,21 +13,22 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Shop Administration</h5>
+                        @localizer[""]
+                        <h5 class="m-b-10">@localizer["Shop Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 @if (Model == null)
                                 {
                                     <a asp-action="Create" asp-controller="Shop"
                                        class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                        <i class="fa fa-plus"></i> Add Shop Details
+                                        <i class="fa fa-plus"></i> @localizer["Add Shop Details"]
                                     </a>
                                 }
                                 else
                                 {
                                     <a asp-action="Edit" asp-controller="Shop"
                                        class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                        <i class="fa fa-edit"></i> Update Shop Details
+                                        <i class="fa fa-edit"></i> @localizer["Update Shop Details"]
                                     </a>
                                 }
                             </li>
@@ -39,11 +40,9 @@
                 <!-- Page-body start -->
 
                 <div class="page-body">
-
-
                     <div class="card">
                         <div class="card-header">
-                            <h5>Shop Details</h5>
+                            <h5>@localizer["Shop Details"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -60,17 +59,17 @@
                                 @if (Model != null)
                                 {
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Name (en)</h6>
+                                        <h6>@localizer["Name (en)"]</h6>
                                         <p>@Model.Name_en</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Name (ps)</h6>
+                                        <h6>@localizer["Name (ps)"]</h6>
                                         <p>@Model.Name_ps</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Name (dr)</h6>
+                                        <h6>@localizer["Name (dr)"]</h6>
                                         <p>@Model.Name_dr</p>
                                     </div>
 
@@ -79,12 +78,12 @@
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Phone 1</h6>
+                                        <h6>@localizer["Phone 1"]</h6>
                                         <p>@Model.Phone1</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Phone 2</h6>
+                                        <h6>@localizer["Phone 2"]</h6>
                                         <p>@Model.Phone2</p>
                                     </div>
 
@@ -93,12 +92,12 @@
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Email 1</h6>
+                                        <h6>@localizer["Email 1"]</h6>
                                         <p>@Model.Email1</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Email 2</h6>
+                                        <h6>@localizer["Email 2"]</h6>
                                         <p>@Model.Email2</p>
                                     </div>
 
@@ -107,17 +106,17 @@
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Address (en)</h6>
+                                        <h6>@localizer["Address (en)"]</h6>
                                         <p>@Model.Address_en</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Address (ps)</h6>
+                                        <h6>@localizer["Address (ps)"]</h6>
                                         <p>@Model.Address_ps</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Address (dr)</h6>
+                                        <h6>@localizer["Address (dr)"]</h6>
                                         <p>@Model.Address_dr</p>
                                     </div>
 
@@ -126,12 +125,12 @@
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Responsibl 1</h6>
+                                        <h6>@localizer["Responsibl 1"]</h6>
                                         <p>@Model.Responsible1</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Responsible 2</h6>
+                                        <h6>@localizer["Responsible 2"]</h6>
                                         <p>@Model.Responsible2</p>
                                     </div>
 
@@ -140,17 +139,17 @@
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Slogan (en)</h6>
+                                        <h6>@localizer["Slogan (en)"]</h6>
                                         <p>@Model.Slog_en</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Slogan (ps)</h6>
+                                        <h6>@localizer["Slogan (ps)"]</h6>
                                         <p>@Model.Slog_ps</p>
                                     </div>
 
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Slogan (dr)</h6>
+                                        <h6>@localizer["Slogan (dr)"]</h6>
                                         <p>@Model.Slog_dr</p>
                                     </div>
 
@@ -158,35 +157,9 @@
                                         <hr />
                                     </div>
 
-
                                     <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <h6>Logo</h6>
+                                        <h6>@localizer["Logo"]</h6>
                                         <img src="~/Uploads/@Model.LogoUrl" style="width: 200px; height: 200px;" />
-                                    </div>
-
-                                    <div class="col-12">
-                                        <hr />
-                                    </div>
-
-
-                                    <div class="col-12">
-                                        <h6>System Info</h6>
-                                        <hr />
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Shop Registered By</h6>
-                                        <p>@Model.UserName</p>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Created At</h6>
-                                        <p>@Model.CreatedAt</p>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Update At</h6>
-                                        <p>@Model.UpdatedAt</p>
                                     </div>
 
                                     <div class="col-12">
@@ -195,7 +168,7 @@
 
                                     <div class="col-12 text text-right">
                                         <a class="btn btn-primary text-white" asp-action="Edit" asp-controller="Shop">
-                                            <i class="fa fa-edit"></i> Update Shop Details
+                                            <i class="fa fa-edit"></i> @localizer["Update Shop Details"]
                                         </a>
                                     </div>
 
@@ -203,10 +176,10 @@
                                 else
                                 {
                                     <div>
-                                        <p class="text text-warning d-block">No, registered shop available.</p>
+                                        <p class="text text-warning d-block">@localizer["No, registered shop available."]</p>
                                     </div>
                                     <div>
-                                        <p class="text text-info d-block"> Please add shop details from <a asp-action="Create" asp-controller="Shop">here</a> ...</p>
+                                        <p class="text text-info d-block"> @localizer["Please add shop details from"] <a asp-action="Create" asp-controller="Shop">@localizer["here"]</a> ...</p>
                                     </div>
                                 }
                             </div>
@@ -224,20 +197,17 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 <!-- Main-body end -->
-
 <partial name="_Modal" />
 @section Scripts{
     <script src="~/js/popupModel.js" asp-append-version="true"></script>

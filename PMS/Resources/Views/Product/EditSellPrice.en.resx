@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Current Sale Price" xml:space="preserve">
+    <value>Current Sale Price</value>
+  </data>
+  <data name="New Sale Price" xml:space="preserve">
+    <value>New Sale Price</value>
+  </data>
+  <data name="Products Administration" xml:space="preserve">
+    <value>Products Administration</value>
+  </data>
+  <data name="Products List" xml:space="preserve">
+    <value>Products List</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Update Product Unit Sale Price" xml:space="preserve">
+    <value>Update Product Unit Sale Price</value>
+  </data>
 </root>

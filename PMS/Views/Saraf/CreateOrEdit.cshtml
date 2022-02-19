@@ -1,7 +1,7 @@
 ﻿@model Saraf
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Sarafs";
+    ViewData["Title"] = localizer["Sarafs"];
 }
 
 <div class="main-body">
@@ -11,34 +11,33 @@
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Sarafs Administration</h5>
+                        @localizer[""]
+                        <h5 class="m-b-10">@localizer["Sarafs Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Transaction" asp-controller="Saraf" class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-plus"></i> New Transaction
+                                    <i class="fa fa-plus"></i> @localizer["New Transaction"]
                                 </a>
                                 <a asp-action="Index" asp-controller="Saraf"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-list"></i> Sarafs List
+                                    <i class="fa fa-list"></i> @localizer["Sarafs List"]
                                 </a>
                                 <a asp-action="GetAllLedgers" asp-controller="Saraf"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Sarafs Ledger
+                                    <i class="fa fa-list"></i> @localizer["Sarafs Ledger"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <!-- Page-header end -->
-                <!-- Page-body start -->
-                <!-- Page body start -->
                 <div class="page-body">
                     <div class="row">
                         <div class="col-sm-12">
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Add a new saraf</h5>
+                                    <h5>@localizer["Add a new saraf"]</h5>
 
                                     <div class="card-header-right">
                                         <i class="icofont icofont-spinner-alt-5"></i>
@@ -56,28 +55,28 @@
                                     <div class="col-lg-6" style="margin: 0 auto;">
                                         <form method="post">
                                             <div class="form-group">
-                                                <label class="control-label">Saraf Name <span class="required">*</span></label>
+                                                <label class="control-label">@localizer["Saraf Name"] <span class="required">*</span></label>
                                                 <input asp-for="SarafName" class="form-control" autocomplete="off" required />
                                                 <span asp-validation-for="SarafName" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">Saraf Account Name <span class="required">*</span></label>
+                                                <label class="control-label">@localizer["Saraf Account Name"] <span class="required">*</span></label>
                                                 <input asp-for="AccountName" class="form-control" autocomplete="off" required />
                                                 <span asp-validation-for="AccountName" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">Account No <span class="required">*</span></label>
+                                                <label class="control-label">@localizer["Account No"]<span class="required">*</span></label>
                                                 <input asp-for="AccountNo" class="form-control" autocomplete="off" required />
                                                 <span asp-validation-for="AccountNo" class="text-danger"></span>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label">Branch</label>
+                                                <label class="control-label">@localizer["Branch"]</label>
                                                 <input asp-for="Branch" class="form-control" autocomplete="off" />
                                                 <span asp-validation-for="Branch" class="text-danger"></span>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="control-label">Description</label>
+                                                <label class="control-label">@localizer["Description"]</label>
                                                 <textarea asp-for="Description" class="form-control"> </textarea>
                                                 <span asp-validation-for="Description" class="text-danger"></span>
                                             </div>
@@ -85,11 +84,11 @@
                                             <div class="form-group">
                                                 <input type="hidden" value="@ViewBag.flag" name="flag" />
                                                 <button type="submit" class="btn btn-mat btn-success mr-2">
-                                                    <i class="fa fa-save"></i> Save
+                                                    <i class="fa fa-save"></i> @localizer["Save"]
                                                 </button>
 
                                                 <button type="reset" class="btn btn-mat btn-danger">
-                                                    <i class="fa fa-times"></i> Cancel
+                                                    <i class="fa fa-times"></i> @localizer["Cancel"]
                                                 </button>
                                             </div>
                                         </form>
@@ -108,16 +107,14 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
 @*Main-body end*@
-

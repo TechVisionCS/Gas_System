@@ -117,4 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Product" xml:space="preserve">
+    <value>نوی جنس اضافه کو</value>
+  </data>
+  <data name="Avalible Qty" xml:space="preserve">
+    <value>موجوده مقدار</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>کتگوری</value>
+  </data>
+  <data name="Change Unit" xml:space="preserve">
+    <value>واحد تغیر</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>جوړ شوی په </value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="InQty" xml:space="preserve">
+    <value>اخیستل شوی مقدار</value>
+  </data>
+  <data name="Last Updated At" xml:space="preserve">
+    <value>اخری تغیرات په</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>تولیدی</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نوم</value>
+  </data>
+  <data name="OutQty" xml:space="preserve">
+    <value>خرڅ مقدار</value>
+  </data>
+  <data name="Product Administration" xml:space="preserve">
+    <value>جنس مدیریت</value>
+  </data>
+  <data name="Product Details" xml:space="preserve">
+    <value>جنس معلومات</value>
+  </data>
+  <data name="Product Purchases" xml:space="preserve">
+    <value>جنس خریداری</value>
+  </data>
+  <data name="Product Sales" xml:space="preserve">
+    <value>جنس خرڅلاو</value>
+  </data>
+  <data name="Product Units Details" xml:space="preserve">
+    <value>جنس واحد معلومات</value>
+  </data>
+  <data name="Products List" xml:space="preserve">
+    <value>جنس لیست</value>
+  </data>
+  <data name="Purchase Price" xml:space="preserve">
+    <value>خرید قیمت</value>
+  </data>
+  <data name="Registered By User" xml:space="preserve">
+    <value>انتری شوی په</value>
+  </data>
+  <data name="Sale Price" xml:space="preserve">
+    <value>خرڅ قیمت</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>لټون</value>
+  </data>
+  <data name="Select Unit" xml:space="preserve">
+    <value>واحد انتخاب کړی</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="Unit Name" xml:space="preserve">
+    <value>واحد نوم</value>
+  </data>
+  <data name="Unit Sell Price" xml:space="preserve">
+    <value>واحد خرڅ قیمت</value>
+  </data>
 </root>

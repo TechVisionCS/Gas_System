@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Add expense payment details" xml:space="preserve">
-    <value>نوی مصارف اضافه کول معلومات</value>
+    <value>نوی لګښتونه اضافه کول معلومات</value>
   </data>
   <data name="Add New Expense" xml:space="preserve">
     <value>نوي لګښتونه اضافه کړئ</value>
@@ -142,22 +142,22 @@
     <value>کارمندان</value>
   </data>
   <data name="Expense Category" xml:space="preserve">
-    <value>مصارف کتګوری</value>
+    <value>لګښتونه کتګوری</value>
   </data>
   <data name="Expense Statement" xml:space="preserve">
-    <value>مصارفاتو کهاته</value>
+    <value> لګښتونه کهاته</value>
   </data>
   <data name="Expenses" xml:space="preserve">
-    <value>مصارف</value>
+    <value>لګښتونه</value>
   </data>
   <data name="Expenses Administration" xml:space="preserve">
-    <value>مدیریت مصارف</value>
+    <value>مدیریت لګښتونه</value>
   </data>
   <data name="Expenses List" xml:space="preserve">
-    <value>لیست مصارف</value>
+    <value>لیست لګښتونه</value>
   </data>
   <data name="Expenses Statement" xml:space="preserve">
-    <value>مصارف کهاته</value>
+    <value>لګښتونه کهاته</value>
   </data>
   <data name="Payment Amount" xml:space="preserve">
     <value>مقدار پیسو</value>
@@ -175,6 +175,6 @@
     <value>کارمند انتخاب کړی</value>
   </data>
   <data name="Select Expense Category" xml:space="preserve">
-    <value>مصارف کتګوری انتخاب کړي</value>
+    <value>لګښتونه کتګوری انتخاب کړي</value>
   </data>
 </root>

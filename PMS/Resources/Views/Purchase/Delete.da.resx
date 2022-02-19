@@ -117,4 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Purchase" xml:space="preserve">
+    <value>افزودن خرید جدید</value>
+  </data>
+  <data name="AFN" xml:space="preserve">
+    <value>افغانی</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>ایجاد خریداری در سیستم</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>کرنسی</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>تخفیف</value>
+  </data>
+  <data name="Do you want to delete the following record of purchase?" xml:space="preserve">
+    <value>آیا می خواهید رکورد خرید زیر را حذف کنید؟</value>
+  </data>
+  <data name="Due Amount" xml:space="preserve">
+    <value>مبلغ باقی مانده</value>
+  </data>
+  <data name="Excahgen Amount" xml:space="preserve">
+    <value>مبلغ تبادله</value>
+  </data>
+  <data name="Excahgen Rate" xml:space="preserve">
+    <value>نرخ تبادله</value>
+  </data>
+  <data name="General Info" xml:space="preserve">
+    <value>معلومات عمومی</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>نمبر انوایس</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>موارد</value>
+  </data>
+  <data name="No item available in this purchase!" xml:space="preserve">
+    <value>در این خریداری هیچ جنس موجود نمی باشد</value>
+  </data>
+  <data name="No, Cancel it" xml:space="preserve">
+    <value>نه، لغوش کن</value>
+  </data>
+  <data name="Paid Amount" xml:space="preserve">
+    <value>مبلغ تادیه</value>
+  </data>
+  <data name="Payment Details" xml:space="preserve">
+    <value>معلومات تادیه</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>چاپ</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>محصول</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>تاریخ خریداری</value>
+  </data>
+  <data name="Purchase Details" xml:space="preserve">
+    <value>معلومات خریداری</value>
+  </data>
+  <data name="Purchase No" xml:space="preserve">
+    <value>نمبر خرید</value>
+  </data>
+  <data name="Purchase Performed By" xml:space="preserve">
+    <value>خریداری توسط -</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>خرید</value>
+  </data>
+  <data name="Purchases Administration" xml:space="preserve">
+    <value>مدیریت خرید</value>
+  </data>
+  <data name="Purchases List" xml:space="preserve">
+    <value>لیست خرید</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>کرایه</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Supplier Name" xml:space="preserve">
+    <value>نام عرضه کننده</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>معلومات سیستم</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>تیکس</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>مبلغ توتل</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>توتل مبلغ</value>
+  </data>
+  <data name="Total Purchase" xml:space="preserve">
+    <value>توتل مبلغ خرید</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>واحد</value>
+  </data>
+  <data name="Unit Price" xml:space="preserve">
+    <value>قیمت واحد</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>تغیرات اخری این ریکارد در</value>
+  </data>
+  <data name="USD" xml:space="preserve">
+    <value>دالر</value>
+  </data>
+  <data name="Yes, Delete it" xml:space="preserve">
+    <value>بله حذفش کن</value>
+  </data>
 </root>

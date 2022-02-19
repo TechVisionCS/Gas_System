@@ -1,44 +1,37 @@
 ﻿@model IEnumerable<PurchaseViewModel>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Purchases";
+    ViewData["Title"] = localizer["Purchases"];
 }
-
 <!-- Main-body start -->
 <div class="main-body">
     <div class="page-wrapper">
-
         <div class="row">
             <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Purchases Administration</h5>
+                        <h5 class="m-b-10">@localizer["Purchases Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
-
                                 <a asp-action="Create" asp-controller="Purchase"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-shopping-cart"></i> Add New Purchase
+                                    <i class="fa fa-shopping-cart"></i> @localizer["Add New Purchase"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Stock"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-shopping-bag"></i> Stock
+                                    <i class="fa fa-shopping-bag"></i> @localizer["Stock"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- Page-header end -->
                 <!-- Page-body start -->
-
                 <div class="page-body">
-
                     <div class="card">
                         <div class="card-header">
-                            <h5>Purchases List</h5>
+                            <h5>@localizer["Purchases List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -55,13 +48,13 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Purchase ID</th>
-                                            <th>Purchase Date</th>
-                                            <th>Invoice No</th>
-                                            <th>Supplier</th>
-                                            <th>Total Amount</th>
-                                            <th>Purchase Details</th>
-                                            <th>Actions</th>
+                                            <th>@localizer["Purchase ID"]</th>
+                                            <th>@localizer["Purchase Date"]</th>
+                                            <th>@localizer["Invoice No"]</th>
+                                            <th>@localizer["Supplier"]</th>
+                                            <th>@localizer["Total Amount"]</th>
+                                            <th>@localizer["Purchase Details"]</th>
+                                            <th>@localizer["Actions"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -71,7 +64,6 @@
                                         {
                                             @foreach (var m in Model)
                                             {
-
                                                 <tr>
                                                     <td>@m.Id</td>
                                                     @{
@@ -93,12 +85,11 @@
                                                         <span class="d-none">@{var url = "Purchase/ViewPurchaseDetails?id=" + m.Id;}</span>
                                                         <a data-url="@url" data-toggle="modal" data-target="#modal-create-edit-user"
                                                            id="UserModel" class="btn btn-info btn-mini popup" style="color: white;">
-                                                            <i class="fa fa-eye"></i> Details
+                                                            <i class="fa fa-eye"></i> @localizer["Details"]
                                                         </a>
                                                     </td>
 
                                                     <td>
-
                                                         <a asp-action="PrintDiv" asp-controller="Purchase" asp-route-id="@m.Id" target="_blank"
                                                            class="text text-info mr-2">
                                                             <i class="fa fa-print"></i>
@@ -108,7 +99,6 @@
                                                            class="text text-info mr-2">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
-
 
                                                         <a asp-action="Edit" asp-controller="Purchase" asp-route-id="@m.Id"
                                                            class="text text-primary mr-2">
@@ -122,7 +112,6 @@
                                                         <span class="d-none">@{sno++;}</span>
                                                     </td>
                                                 </tr>
-
                                             }
                                         }
                                     </tbody>
@@ -140,20 +129,17 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 <!-- Main-body end -->
-
 <partial name="_Modal" />
 @section Scripts{
     <script src="~/js/popupModel.js" asp-append-version="true"></script>

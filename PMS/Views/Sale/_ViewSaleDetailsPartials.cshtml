@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<SaleDetailsViewModel>
+@inject IViewLocalizer localizer
 <!--Modal Body Start-->
 <div class="modal-content ">
     <!--Modal Header Start-->
     <div class="modal-header">
-        <h5 class="modal-title">Sale Details</h5>
+        <h5 class="modal-title">@localizer["Sale Details"]</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">
                 <i class="fa fa-times text text-danger"></i>
@@ -16,13 +17,13 @@
         <table class="table table-responsive table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>SNo.</th>
-                    <th>Product</th>
-                    <th>Unit</th>
-                    <th>Unit Price</th>
-                    <th>Qty</th>
-                    <th class="d-none">Discount</th>
-                    <th>Total Price</th>
+                    <th>@localizer["SNo"].</th>
+                    <th>@localizer["Product"]</th>
+                    <th>@localizer["Unit"]</th>
+                    <th>@localizer["Unit Price"]</th>
+                    <th>@localizer["Qty"]</th>
+                    <th class="d-none">@localizer["Discount"]</th>
+                    <th>@localizer["Total Price"]</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,7 +39,7 @@
                             <td>@m.Qty</td>
                             <td class="d-none">
                                 @{ var res = (100 * m.Discount) / (m.Discount + m.TotalSalePrice); }
-                                @m.Discount (@res % - <small>Per item</small>)
+                                @m.Discount (@res % - <small>@localizer["Per item"]</small>)
                             </td>
                             <td>@m.TotalSalePrice</td>
                         </tr>
@@ -48,6 +49,5 @@
         </table>
     </div>
     <!--Modal Contents end-->
-
 </div>
 <!--Modal Body End-->

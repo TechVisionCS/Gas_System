@@ -117,4 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Product" xml:space="preserve">
+    <value>Add New Product</value>
+  </data>
+  <data name="Avalible Qty" xml:space="preserve">
+    <value>Avalible Qty</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Change Unit" xml:space="preserve">
+    <value>Change Unit</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>Created At</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="InQty" xml:space="preserve">
+    <value>InQty</value>
+  </data>
+  <data name="Last Updated At" xml:space="preserve">
+    <value>Last Updated At</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="OutQty" xml:space="preserve">
+    <value>OutQty</value>
+  </data>
+  <data name="Product Administration" xml:space="preserve">
+    <value>Product Administration</value>
+  </data>
+  <data name="Product Details" xml:space="preserve">
+    <value>Product Details</value>
+  </data>
+  <data name="Product Purchases" xml:space="preserve">
+    <value>Product Purchases</value>
+  </data>
+  <data name="Product Sales" xml:space="preserve">
+    <value>Product Sales</value>
+  </data>
+  <data name="Product Units Details" xml:space="preserve">
+    <value>Product Units Details</value>
+  </data>
+  <data name="Products List" xml:space="preserve">
+    <value>Products List</value>
+  </data>
+  <data name="Purchase Price" xml:space="preserve">
+    <value>Purchase Price</value>
+  </data>
+  <data name="Registered By User" xml:space="preserve">
+    <value>Registered By User</value>
+  </data>
+  <data name="Sale Price" xml:space="preserve">
+    <value>Sale Price</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Select Unit" xml:space="preserve">
+    <value>Select Unit</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>SNo</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="Unit Name" xml:space="preserve">
+    <value>Unit Name</value>
+  </data>
+  <data name="Unit Sell Price" xml:space="preserve">
+    <value>Unit Sell Price</value>
+  </data>
 </root>

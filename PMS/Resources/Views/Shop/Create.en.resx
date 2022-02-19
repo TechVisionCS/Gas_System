@@ -117,4 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add shop details" xml:space="preserve">
+    <value>Add shop details</value>
+  </data>
+  <data name="Address (dr)" xml:space="preserve">
+    <value>Address (dr)</value>
+  </data>
+  <data name="Address (en)" xml:space="preserve">
+    <value>Address (en)</value>
+  </data>
+  <data name="Address (ps)" xml:space="preserve">
+    <value>Address (ps)</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Email 1" xml:space="preserve">
+    <value>Email 1</value>
+  </data>
+  <data name="Email 2" xml:space="preserve">
+    <value>Email 2</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="Name (dr)" xml:space="preserve">
+    <value>Name (dr)</value>
+  </data>
+  <data name="Name (en)" xml:space="preserve">
+    <value>Name (en)</value>
+  </data>
+  <data name="Name (ps)" xml:space="preserve">
+    <value>Name (ps)</value>
+  </data>
+  <data name="Phone 1" xml:space="preserve">
+    <value>Phone 1</value>
+  </data>
+  <data name="Phone 2" xml:space="preserve">
+    <value>Phone 2</value>
+  </data>
+  <data name="Responsible 1" xml:space="preserve">
+    <value>Responsible 1</value>
+  </data>
+  <data name="Responsible 2" xml:space="preserve">
+    <value>Responsible 2</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Shop Administration" xml:space="preserve">
+    <value>Shop Administration</value>
+  </data>
+  <data name="Slogan (dr)" xml:space="preserve">
+    <value>Slogan (dr)</value>
+  </data>
+  <data name="Slogan (en" xml:space="preserve">
+    <value>Slogan (en)</value>
+  </data>
+  <data name="Slogan (ps)" xml:space="preserve">
+    <value>Slogan (ps)</value>
+  </data>
 </root>

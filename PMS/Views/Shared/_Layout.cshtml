@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
+@inject IViewLocalizer localizer
 <html lang="en">
 
 <head>
-    <title>@ViewData["Title"] | GGMS</title>
+    <title>@ViewData["Title"] | @localizer["GAS"]</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -132,7 +133,7 @@
     <script src="~/js/site.js"></script>
     <script src="~/js/onClickDeleteScript.js"></script>
     <script src="~/js/printThis.js"></script>
-    <!--begin::Page Scripts(Print Area To Print Div Selected  )-->
+
     <script src="~/js/PrintScript.js"></script>
 
     <script>
@@ -140,17 +141,11 @@
         $(function () {
             $("#example1").DataTable({
                 "responsive": true, "lengthChange": false, "autoWidth": false,
-                "buttons": ["excel", "pdf", "print"],
-
-                "oLanguage": {
-                    "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",// text you want show for info section
-                },
-                "paging": false,
-                "Info": false
+                "buttons": ["excel", "pdf", "print"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
             $('.select2').select2()
-            //Initialize Select2 Elements
+
             $('.select2bs4').select2({
                 theme: 'bootstrap4'
             })
@@ -161,8 +156,3 @@
     @await Component.InvokeAsync("NToastNotify")
 </body>
 </html>
-<!--
-<li class="breadcrumb-item"><a><i class="fas fa-clock"></i> <span id="clock"></span></a></li>
-<li class="breadcrumb-item"><a><i class="fas fa-calendar"></i> <span id="tdate">today</span></a></li>
-colvis - show column visibility in datatable.
--->

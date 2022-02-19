@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Province>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Manage Provinces";
+    ViewData["Title"] = localizer["Manage Provinces"];
 }
 <div id="PlaceHolderHere"></div>
 <!-- Main-body start -->
@@ -13,19 +13,19 @@
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Provinces Administration</h5>
+                        <h5 class="m-b-10">@localizer["Provinces Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
- 
+
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Country" class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Countries List
+                                    <i class="fa fa-list"></i> @localizer["Countries List"]
                                 </a>
                             </li>
 
                             <li class="breadcrumb-item pull-right mr-2">
                                 <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create")"
                                    data-redirect="@Url.Action("Success", "Province")" class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Province
+                                    <i class="fa fa-plus"></i> @localizer["Add New Province"]
                                 </a>
                             </li>
                         </ul>
@@ -37,7 +37,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5>Provinces List</h5>
+                            <h5>@localizer["Provinces List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -54,11 +54,11 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Province Name</th>
-                                            <th>Country Name</th>
-                                            <th>Country Code</th>
-                                            <th>Action</th>
+                                            <th>@localizer["SNo"].</th>
+                                            <th>@localizer["Province Name"]</th>
+                                            <th>@localizer["Country Name"]</th>
+                                            <th>@localizer["Code"]</th>
+                                            <th>@localizer["Action"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -78,9 +78,9 @@
                                                            data-redirect="@Url.Action("Success", "Province")" class="text text-primary" style="cursor: pointer;">
                                                             <i class="fa fa-edit"></i>
                                                         </a>
+                                                        <span class="d-none">@{sno++;}</span>
                                                     </td>
                                                 </tr>
-                                                <span class="d-none">@{sno++;}</span>
                                             }
                                         }
                                     </tbody>
@@ -92,14 +92,13 @@
 
                 </div>
                 @*Page-body end*@
-
                 <div class="page-header card">
                     <div class="card-block">
                         <ul class="">
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
@@ -112,6 +111,3 @@
     </div>
 </div>
 @*Main-body end*@
-
-
-

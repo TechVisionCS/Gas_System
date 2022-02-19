@@ -1,7 +1,7 @@
 ﻿@model ViewPurchaseDetailsViewModel
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Purchase";
+    ViewData["Title"] = localizer["Purchase"];
 
     var Purchase = Model.purchase;
     var PurchaseDetails = Model.purchaseDetails;
@@ -52,17 +52,17 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Purchase Administration</h5>
+                        <h5 class="m-b-10">@localizer["Purchase Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Purchase"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Purchases List
+                                    <i class="fa fa-list"></i> @localizer["Purchases List"]
                                 </a>
 
                                 <a asp-action="Create" asp-controller="Purchase"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-shopping-cart"></i> Add New Purchase
+                                    <i class="fa fa-shopping-cart"></i> @localizer["Add New Purchase"]
                                 </a>
                             </li>
                         </ul>
@@ -73,7 +73,7 @@
                 <div class="page-body PrintArea">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Print Invoice</h5>
+                            <h5>@localizer["Print Invoice"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -95,19 +95,23 @@
                                         string iDate = Purchase.PurchaseDate;
                                         DateTime oDate = Convert.ToDateTime(iDate);
                                     }
-                                    <p class="sno"> <span style="float: right;"><u>نمبر بل: @Purchase.Id</u></span> <span style="float: left;">تاریخ: @oDate.Date.ToShortDateString()</span></p><br /><br />
-                                    <p class="sno" style="direction: rtl; text-align: right;"><span>نام سپلایر: @Purchase.SupplierName</span> <span style="margin-right: 20px;">شماره تماس: @Purchase.Supplier.Phone</span> <span style="margin-right: 20px;">ادرس: @Purchase.Supplier.Address</span> </p>
+                                    <p class="sno"> <span style="float: right;"><u> @localizer["Bill Number"] : @Purchase.Id</u></span> <span style="float: left;"> @localizer["Date"]  @oDate.Date.ToShortDateString()</span></p><br /><br />
+
+                                    <p class="sno" style="direction: rtl; text-align: right;"><span>@localizer["Supplier Name"] : @Purchase.SupplierName</span> <span style="margin-right: 20px;"> @localizer["Supplier Phone"] : @Purchase.Supplier.Phone</span> <span style="margin-right: 20px;">@localizer["Supplier Address"] : @Purchase.Supplier.Address</span> </p>
+
                                     <table style="margin-top: 0; padding-top: 0; text-align:right;">
+
                                         <thead style="text-align: right !important;">
                                             <tr>
-                                                <th class="text text-right">شماره</th>
-                                                <th class="text text-right">جنس</th>
-                                                <th class="text text-right">واحد اندازه ګیری</th>
-                                                <th class="text text-right">قیمت فی واحد</th>
-                                                <th class="text text-right">مقدار</th>
-                                                <th class="text text-right">مجموعه</th>
+                                                <th class="text text-right"> @localizer["SNo"] </th>
+                                                <th class="text text-right"> @localizer["Product"] </th>
+                                                <th class="text text-right"> @localizer["Unit"] </th>
+                                                <th class="text text-right"> @localizer["Purchase Price"] </th>
+                                                <th class="text text-right"> @localizer["Qty"] </th>
+                                                <th class="text text-right"> @localizer["Total Purchase Price"] </th>
                                             </tr>
                                         </thead>
+
                                         <tbody style="text-align: right !important;">
                                             @if (PurchaseDetails.Any())
                                             {
@@ -123,53 +127,47 @@
                                                     </tr>
                                                 }
                                             }
-
                                         </tbody>
 
                                         <tbody>
-
-
                                             <tr>
-
-                                                <th colspan="5" class="text text-left">مجموعه اولیه</th>
+                                                <th colspan="5" class="text text-left"> @localizer["Sub Total"] </th>
                                                 <td>
                                                     @Purchase.SubTotal
                                                 </td>
-
                                             </tr>
 
 
                                             <tr>
-                                                <th colspan="5" class="text text-left">کرایه</th>
+                                                <th colspan="5" class="text text-left"> @localizer["Rent"] </th>
                                                 <td>
                                                     @Purchase.RentAmount
                                                 </td>
 
                                             </tr>
                                             <tr>
-                                                <th colspan="5" class="text text-left">تخفیف (٪)</th>
+                                                <th colspan="5" class="text text-left"> @localizer["Discount"] </th>
                                                 <td>
                                                     @Purchase.DiscountAmount
                                                 </td>
-
                                             </tr>
 
                                             <tr>
-                                                <th colspan="5" class="text text-left">مجموعه پول</th>
+                                                <th colspan="5" class="text text-left"> @localizer["Total Amount"] </th>
                                                 <td>
                                                     @Purchase.TotalAmount
                                                 </td>
-
                                             </tr>
+
                                             <tr>
-                                                <th colspan="5" class="text text-left">تادیه شده</th>
+                                                <th colspan="5" class="text text-left"> @localizer["Paid Amount"]</th>
                                                 <td>
                                                     @Purchase.PaidAmount
                                                 </td>
 
                                             </tr>
                                             <tr>
-                                                <th colspan="5" class="text text-left">باقیمانده</th>
+                                                <th colspan="5" class="text text-left"> @localizer["Due Amount"] </th>
                                                 <td>
                                                     @Purchase.DueAmount
                                                 </td>
@@ -177,37 +175,35 @@
                                             </tr>
                                             <tr>
 
-                                                <th colspan="5" class="text text-left">کرنسی</th>
+                                                <th colspan="5" class="text text-left"> @localizer["Currency"] </th>
                                                 <td>
                                                     @if (Purchase.CurrecnyId == 1)
                                                     {
-                                                        <span class="badge badge-info">افغانی</span>
+                                                        <span class="badge badge-info"> @localizer["AFN"] </span>
                                                     }
                                                     else
                                                     {
-                                                        <span class="badge badge-primary">دالر</span>
+                                                        <span class="badge badge-primary"> @localizer["USD"] </span>
                                                     }
                                                 </td>
-
                                             </tr>
-
                                             <tr>
                                                 <td colspan="6">
-                                                    <bold>نوت: </bold> @Purchase.Description
+                                                    <bold> @localizer["Note"]: </bold> @Purchase.Description
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <br>
-                                    <p class="sno">امضاء مدیر: ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ</p>
+                                    <p class="sno"> ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ @localizer["Signature"] </p>
                                     <hr>
-                                    <p><span style="direction: rtl; float: right;">ادرس: ارزان قیمت سلیم کاروان</span> <span style="direction: rtl; float: left;"> شماره های تماس: 0774102020 - 0731159741 - 0776785461</span></p>
+                                    <p><span style="direction: rtl; float: right;"> @localizer["Address"]  @localizer["Arzan Qimat Salim Karwan"] </span> <span style="direction: rtl; float: left;"> : 0774102020 - 0731159741 - 0776785461 @localizer["Phone"] </span></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-12 text text-right p-2">
-                            <button type="button" id="onClick" class="btn btn-info" style="padding:8px" value='Print' onclick='printDiv("DivIdToPrint");'>Print</button>
+                            <button type="button" id="onClick" class="btn btn-info" style="padding:8px" value='Print' onclick='printDiv("DivIdToPrint");'>@localizer["Print"] </button>
                         </div>
                     </div>
                     <!-- Basic table card end -->
@@ -219,13 +215,12 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

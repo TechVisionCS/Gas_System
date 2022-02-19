@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Add New Country" xml:space="preserve">
+    <value>Add New Country</value>
+  </data>
+  <data name="Add New Province" xml:space="preserve">
+    <value>Add New Province</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Countries Administration" xml:space="preserve">
+    <value>Countries Administration</value>
+  </data>
+  <data name="Countries List" xml:space="preserve">
+    <value>Countries List</value>
+  </data>
+  <data name="Country Name" xml:space="preserve">
+    <value>Country Name</value>
+  </data>
+  <data name="Manage Country" xml:space="preserve">
+    <value>Manage Country</value>
+  </data>
+  <data name="Manage Provinces" xml:space="preserve">
+    <value>Manage Provinces</value>
+  </data>
+  <data name="Province Name" xml:space="preserve">
+    <value>Province Name</value>
+  </data>
+  <data name="Provinces Administration" xml:space="preserve">
+    <value>Provinces Administration</value>
+  </data>
+  <data name="Provinces List" xml:space="preserve">
+    <value>Provinces List</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>SNo</value>
+  </data>
 </root>

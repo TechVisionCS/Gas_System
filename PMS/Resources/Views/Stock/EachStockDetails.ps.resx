@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Change Unit" xml:space="preserve">
+    <value>د واحد بدلول</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>سیستم کښی داخل شوی</value>
+  </data>
+  <data name="Current Stock" xml:space="preserve">
+    <value>اوسنی ذخیره</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="General Info" xml:space="preserve">
+    <value>عمومي معلومات</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="InQty" xml:space="preserve">
+    <value>خرید مقدار</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>توکي</value>
+  </data>
+  <data name="Manufecturer" xml:space="preserve">
+    <value>تولیدی شرکت</value>
+  </data>
+  <data name="No item available!" xml:space="preserve">
+    <value>هیڅ شی شتون نلري!</value>
+  </data>
+  <data name="OutQty" xml:space="preserve">
+    <value>خرڅ مقدار</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>چاپ</value>
+  </data>
+  <data name="Product Name" xml:space="preserve">
+    <value>د محصول نوم</value>
+  </data>
+  <data name="Purchase Performed By" xml:space="preserve">
+    <value>پیرود ترسره شوی</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>لټون</value>
+  </data>
+  <data name="Select Unit" xml:space="preserve">
+    <value>واحد وټاکئ</value>
+  </data>
+  <data name="Stock Administration" xml:space="preserve">
+    <value>د ذخیره اداره</value>
+  </data>
+  <data name="Stock Details" xml:space="preserve">
+    <value>د ذخیره توضیحات</value>
+  </data>
+  <data name="Stock item Details" xml:space="preserve">
+    <value>د سټاک توکي توضیحات</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>د سیسټم معلومات</value>
+  </data>
+  <data name="System Transaction Code" xml:space="preserve">
+    <value>د سیسټم لیږد کوډ</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>اخری تغیرات</value>
+  </data>
 </root>

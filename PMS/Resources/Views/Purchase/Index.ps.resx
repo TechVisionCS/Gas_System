@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Purchase" xml:space="preserve">
+    <value>نوی پیردونه اضافه کول</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>انوایس نمبر</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>پیریدونه تاریخ</value>
+  </data>
+  <data name="Purchase Details" xml:space="preserve">
+    <value>پیریدونه تفصیل</value>
+  </data>
+  <data name="Purchase ID" xml:space="preserve">
+    <value>پیریدونه شماره</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>پیریدونه</value>
+  </data>
+  <data name="Purchases Administration" xml:space="preserve">
+    <value>پیریدونه مدیریت</value>
+  </data>
+  <data name="Purchases List" xml:space="preserve">
+    <value>پیریدونه لیست</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کوونکی</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>مبلغ توتل</value>
+  </data>
 </root>

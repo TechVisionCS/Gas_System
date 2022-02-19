@@ -117,4 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Sale" xml:space="preserve">
+    <value>افزودن فروش جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>جرَیات </value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>انوایس نمبر</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>هیچ یک</value>
+  </data>
+  <data name="Retailsale" xml:space="preserve">
+    <value>خرده فروشی</value>
+  </data>
+  <data name="Sale Date" xml:space="preserve">
+    <value>تاریخ فروش</value>
+  </data>
+  <data name="Sale Details" xml:space="preserve">
+    <value>جزئیات فروش</value>
+  </data>
+  <data name="Sale Type" xml:space="preserve">
+    <value>نوع فروش</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>فروش</value>
+  </data>
+  <data name="Sales Administration" xml:space="preserve">
+    <value>مدیریت فروش</value>
+  </data>
+  <data name="Sales List" xml:space="preserve">
+    <value>لیست فروش</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>موجودی</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>مقدار کل</value>
+  </data>
+  <data name="WholeSale" xml:space="preserve">
+    <value>عمده فروشی</value>
+  </data>
 </root>

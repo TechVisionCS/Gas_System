@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Batch ID" xml:space="preserve">
+    <value>Batch ID</value>
+  </data>
+  <data name="Product Batch Details" xml:space="preserve">
+    <value>Product Batch Details</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>Purchase Date</value>
+  </data>
+  <data name="Purchase Price" xml:space="preserve">
+    <value>Purchase Price</value>
+  </data>
+  <data name="Stock Qty" xml:space="preserve">
+    <value>Stock Qty</value>
+  </data>
 </root>

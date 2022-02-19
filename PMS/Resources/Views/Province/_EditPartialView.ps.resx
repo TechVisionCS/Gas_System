@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Close" xml:space="preserve">
+    <value>بندول</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>کود</value>
+  </data>
+  <data name="Country Details" xml:space="preserve">
+    <value>هیواد معلومات</value>
+  </data>
+  <data name="Country Name" xml:space="preserve">
+    <value>هیواد نوم</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نوم</value>
+  </data>
+  <data name="Province Details" xml:space="preserve">
+    <value>ولایت معلومات</value>
+  </data>
+  <data name="Province Name" xml:space="preserve">
+    <value>ولایت نوم</value>
+  </data>
+  <data name="Select Country" xml:space="preserve">
+    <value>هیواد انتخاب کړی</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تغیرول</value>
+  </data>
 </root>

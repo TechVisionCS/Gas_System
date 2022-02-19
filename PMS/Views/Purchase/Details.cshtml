@@ -1,7 +1,7 @@
 ﻿@model ViewPurchaseDetailsViewModel
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Purchases";
+    ViewData["Title"] = localizer["Purchases"];
 
     var Purchase = Model.purchase;
     var PurchaseDetails = Model.purchaseDetails;
@@ -16,17 +16,17 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Purchases Administration</h5>
+                        <h5 class="m-b-10"> @localizer["Purchases Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Purchase"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Purchases List
+                                    <i class="fa fa-list"></i> @localizer["Purchases List"]
                                 </a>
 
                                 <a asp-action="Create" asp-controller="Purchase"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-shopping-cart"></i> Add New Purchase
+                                    <i class="fa fa-shopping-cart"></i>@localizer["Add New Purchase"]
                                 </a>
                             </li>
                         </ul>
@@ -40,7 +40,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5>Purchase Details</h5>
+                            <h5> @localizer["Purchase Details"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -55,17 +55,17 @@
                         <div class="card-block table-border-style">
                             <div class="row">
                                 <div class="col-12">
-                                    <h6>General Info</h6>
+                                    <h6>@localizer["General Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <h6>Purchase No.</h6>
+                                    <h6>@localizer["Purchase No"]</h6>
                                     <p>@Purchase.Id</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <h6>Purchase Date</h6>
+                                    <h6>@localizer["Purchase Date"]</h6>
                                     @{
                                         string iDate = Purchase.PurchaseDate;
                                         DateTime oDate = Convert.ToDateTime(iDate);
@@ -74,17 +74,17 @@
                                     <hr />
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <h6>Invoice No.</h6>
+                                    <h6>@localizer["Invoice No"]</h6>
                                     <p>@Purchase.InvoiceNo</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <h6>Supplier Name</h6>
+                                    <h6>@localizer["Supplier Name"]</h6>
                                     <p>@Purchase.SupplierName</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <h6>Description</h6>
+                                    <h6>@localizer["Description"]</h6>
                                     <p>@Purchase.Description</p>
                                     <hr />
                                 </div>
@@ -99,12 +99,12 @@
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>SNo.</th>
-                                                    <th>Product</th>
-                                                    <th>Unit</th>
-                                                    <th>Unit Price</th>
-                                                    <th>Qty</th>
-                                                    <th>Total Price</th>
+                                                    <th>@localizer["SNo"]</th>
+                                                    <th>@localizer["Product"]</th>
+                                                    <th>@localizer["Unit"]</th>
+                                                    <th>@localizer["Unit Price"]</th>
+                                                    <th>@localizer["Qty"]</th>
+                                                    <th>@localizer["Total Price"]</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -126,7 +126,7 @@
                                                 {
                                                     <tr>
                                                         <td colspan="7">
-                                                            <span class="text text-info">No item available in this purchase!</span>
+                                                            <span class="text text-info">@localizer["No item available in this purchase!"]</span>
                                                         </td>
                                                     </tr>
                                                 }
@@ -137,20 +137,20 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>Payment Details</h6>
+                                    <h6>@localizer["Payment Details"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Currency</h6>
+                                    <h6>@localizer["Currency"]</h6>
                                     <p>
                                         @if (Purchase.CurrecnyId == 1)
                                         {
-                                            <span class="badge badge-info">AFN</span>
+                                            <span class="badge badge-info">@localizer["AFN"]</span>
                                         }
                                         else
                                         {
-                                            <span class="badge badge-primary">USD</span>
+                                            <span class="badge badge-primary">@localizer["USD"]</span>
                                         }
                                     </p>
                                     <hr />
@@ -159,38 +159,29 @@
                                 @if (Purchase.CurrecnyId == 2)
                                 {
                                     <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Excahgen Rate</h6>
+                                        <h6>@localizer["Excahgen Rate"]</h6>
                                         <p>@Purchase.ExchangeRate.ToString("N")</p>
                                         <hr />
                                     </div>
                                 }
 
-                                @*@if (Purchase.CurrecnyId == 2)
-                                    {
-                                        <div class="col-lg-3 col-md-4 col-sm-6">
-                                            <h6>Excahgen Amount</h6>
-                                            <p>@Purchase.SubTotal.ToString("N")</p>
-                                            <hr />
-                                        </div>
-                                    }*@
-
-                                @*@if (Purchase.PaymentType == 2)
-                                    {
-                                        <div class="col-lg-3 col-md-4 col-sm-6">
-                                            <h6>Bank Name</h6>
-                                            <p>@Purchase.BankName</p>
-                                            <hr />
-                                        </div>
-                                    }*@
+                                @if (Purchase.CurrecnyId == 2)
+                                {
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>@localizer["Excahgen Amount"]</h6>
+                                        <p>@Purchase.SubTotal.ToString("N")</p>
+                                        <hr />
+                                    </div>
+                                }
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Total Purchase</h6>
+                                    <h6>@localizer["Total Purchase"]</h6>
                                     <p>@Purchase.SubTotal.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Discount</h6>
+                                    <h6>@localizer["Discount"]</h6>
                                     <p>
                                         @{ var disc_per = (100 * Purchase.DiscountAmount) / Purchase.SubTotal; }
                                         @Purchase.DiscountAmount.ToString("N") (@disc_per %)
@@ -199,54 +190,54 @@
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Rent</h6>
+                                    <h6>@localizer["Rent"]</h6>
                                     <p>@Purchase.RentAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 d-none">
-                                    <h6>Tax</h6>
+                                    <h6>@localizer["Tax"]</h6>
                                     <p>@Purchase.TaxAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6  text text-primary">
-                                    <h6>Total Amount</h6>
+                                    <h6>@localizer["Total Amount"]</h6>
                                     <p>@Purchase.TotalAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 text text-success">
-                                    <h6>Paid Amount</h6>
+                                    <h6>@localizer["Paid Amount"]</h6>
                                     <p>@Purchase.PaidAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 text text-warning">
-                                    <h6>Due Amount</h6>
+                                    <h6>@localizer["Due Amount"]</h6>
                                     <p>@Purchase.DueAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>System Info</h6>
+                                    <h6>@localizer["System Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Purchase Performed By</h6>
+                                    <h6>@localizer["Purchase Performed By"]</h6>
                                     <p>@Purchase.UserName</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Created At</h6>
+                                    <h6>@localizer["Created At"]</h6>
                                     <p>@Purchase.CreatedAt</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Update At</h6>
+                                    <h6>@localizer["Update At"]</h6>
                                     <p>@Purchase.UpdatedAt</p>
                                     <hr />
                                 </div>
@@ -257,7 +248,7 @@
 
                                 <div class="col-12 text text-right">
                                     <a class="btn btn-info text-white">
-                                        <i class="fa fa-print"></i> Print
+                                        <i class="fa fa-print"></i> @localizer["Print"]
                                     </a>
                                 </div>
 
@@ -275,7 +266,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i>@localizer["Back"]
                                 </a>
                             </li>
                         </ul>

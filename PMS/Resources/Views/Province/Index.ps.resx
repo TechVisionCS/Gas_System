@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Country" xml:space="preserve">
+    <value>نوی هیواد اضافه</value>
+  </data>
+  <data name="Add New Province" xml:space="preserve">
+    <value>نوی ولایت اضافه کول</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>کود</value>
+  </data>
+  <data name="Countries Administration" xml:space="preserve">
+    <value>د هیوادونو اداره</value>
+  </data>
+  <data name="Countries List" xml:space="preserve">
+    <value>هیوادنو لیست</value>
+  </data>
+  <data name="Country Name" xml:space="preserve">
+    <value>هیواد نوم</value>
+  </data>
+  <data name="Manage Country" xml:space="preserve">
+    <value>د هیواد اداره کول</value>
+  </data>
+  <data name="Manage Provinces" xml:space="preserve">
+    <value>ولایتونو اداره</value>
+  </data>
+  <data name="Province Name" xml:space="preserve">
+    <value>ولایت نوم</value>
+  </data>
+  <data name="Provinces Administration" xml:space="preserve">
+    <value>مدیریت ولایت</value>
+  </data>
+  <data name="Provinces List" xml:space="preserve">
+    <value>ولایتونو لیست</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
 </root>

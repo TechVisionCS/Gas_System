@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account Settings" xml:space="preserve">
+    <value>تنظیمات حساب</value>
+  </data>
+  <data name="Backup Database" xml:space="preserve">
+    <value>دایتابیس پشتیبان</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="Manage Shop" xml:space="preserve">
+    <value>معلومات شرکت</value>
+  </data>
+  <data name="TechVision" xml:space="preserve">
+    <value>تیک ویژن</value>
+  </data>
 </root>

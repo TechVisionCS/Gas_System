@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Add New Purchase" xml:space="preserve">
+    <value>Add New Purchase</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>Invoice No</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>Purchase Date</value>
+  </data>
+  <data name="Purchase Details" xml:space="preserve">
+    <value>Purchase Details</value>
+  </data>
+  <data name="Purchase ID" xml:space="preserve">
+    <value>Purchase ID</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="Purchases Administration" xml:space="preserve">
+    <value>Purchases Administration</value>
+  </data>
+  <data name="Purchases List" xml:space="preserve">
+    <value>Purchases List</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Stock</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>Total Amount</value>
+  </data>
 </root>

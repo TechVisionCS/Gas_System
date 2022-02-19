@@ -17,6 +17,7 @@ namespace PMS.Controllers
         private readonly IHelperRepository helperRepository;
         private readonly IWebHostEnvironment webHostEnvironment;
         private readonly IShopRepository shopRepository;
+
         public CustomerController(IToastNotification toastNotification,
             ICustomerRepository customerRepository,
             IHelperRepository helperRepository, IWebHostEnvironment webHostEnvironment, IShopRepository shopRepository)

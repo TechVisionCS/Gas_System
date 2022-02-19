@@ -1,7 +1,7 @@
 ﻿@model CreatePurchaseViewModel
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Purchases";
+    ViewData["Title"] = localizer["Purchases"];
     var Purchase = Model.Purchase;
     var PurchaseDetails = Model.PurchaseDetails;
 }
@@ -18,12 +18,12 @@
             <div class="col-lg-12 col-md-12 col-ms-12" style="margin:0 auto;">
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Purchases Administration</h5>
+                        <h5 class="m-b-10">@localizer["Purchases Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Purchase"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-list"></i> Purchases List
+                                    <i class="fa fa-list"></i> @localizer["Purchases List"]
                                 </a>
                             </li>
                         </ul>
@@ -36,7 +36,7 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Edit puchase details</h5>
+                                    <h5>@localizer["Edit puchase details"]</h5>
 
                                     <div class="card-header-right">
                                         <i class="icofont icofont-spinner-alt-5"></i>
@@ -59,9 +59,9 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Supplier <span class="required">*</span></label>
+                                                        <label class="control-label">@localizer["Supplier"] <span class="required">*</span></label>
                                                         <select required class="form-control select2 required" id="supplierId" style="width: 100%;" asp-for="@Purchase.SupplierId" asp-items="@ViewBag.Suppliers">
-                                                            <option selected="selected" value="">--Select Supplier--</option>
+                                                            <option selected="selected" value="">@localizer["Select Supplier"]</option>
                                                         </select>
                                                         <span asp-validation-for="@Purchase.SupplierId" class="text-danger"></span>
                                                     </div>
@@ -69,7 +69,7 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Currency<span class="required">*</span></label>
+                                                        <label class="control-label">@localizer["Currency"]<span class="required">*</span></label>
                                                         <select class="form-control select2 required" required style="width: 100%;" id="CurrencyID" asp-for="@Purchase.currencyEnum" asp-items="Html.GetEnumSelectList<CurrencyEnum>()">
                                                         </select>
                                                         <span asp-validation-for="@Purchase.currencyEnum" class="text-danger"></span>
@@ -78,7 +78,7 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Exchange Rate </label>
+                                                        <label class="control-label">@localizer["Exchange Rate"] </label>
                                                         <input type="text" id="ExchangeRate" asp-for="@Purchase.ExchangeRate" class="form-control" placeholder="Exchange Rate" />
                                                         <span asp-validation-for="@Purchase.ExchangeRate" class="text-danger"></span>
                                                     </div>
@@ -86,7 +86,7 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12 d-none">
                                                     <div class="form-group">
-                                                        <label class="control-label">Exchange Amount</label>
+                                                        <label class="control-label">@localizer["Exchange Amount"]</label>
                                                         <input type="text" id="ExchangeAmount" asp-for="@Purchase.ExchangeAmount" class="form-control" placeholder="Exchange Amount" />
                                                         <span asp-validation-for="@Purchase.ExchangeAmount" class="text-danger"></span>
                                                     </div>
@@ -94,11 +94,10 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12 d-none">
                                                     <div class="form-group">
-                                                        <label class="control-label">Payment Type <span class="required">*</span></label>
+                                                        <label class="control-label">@localizer["Payment Type"] <span class="required">*</span></label>
                                                         <select required class="form-control select2" style="width: 100%;" asp-for="@Purchase.PaymentType" id="pType" disabled>
-                                                            <option selected="selected" value="0">--Select Payment Type--</option>
-                                                            <option value="1">Cash Payment</option>
-                                                            <option value="2">Bank Payment</option>
+                                                            <option selected="selected" value="1">@localizer["Cash Payment"]</option>
+                                                            <option value="2">@localizer["Bank Payment"]</option>
                                                         </select>
                                                         <input type="hidden" asp-for="@Purchase.PaymentType" />
                                                         <span asp-validation-for="@Purchase.PaymentType" class="text-danger"></span>
@@ -107,9 +106,9 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12" id="bank" style="display: none;">
                                                     <div class="form-group">
-                                                        <label class="control-label">Bank <span class="required">*</span></label>
+                                                        <label class="control-label">@localizer["Bank"] <span class="required">*</span></label>
                                                         <select required class="form-control select2" style="width: 100%;" asp-for="@Purchase.BankId" asp-items="@ViewBag.Banks">
-                                                            <option selected="selected" value="0">--Select Bank--</option>
+                                                            <option selected="selected" value="0">@localizer["Select Bank"]</option>
                                                         </select>
                                                         <span asp-validation-for="@Purchase.BankId" class="text-danger"></span>
                                                     </div>
@@ -117,7 +116,7 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Purchase Date <span class="required">*</span> </label>
+                                                        <label class="control-label">@localizer["Purchase Date"] <span class="required">*</span> </label>
                                                         <input type="date" asp-for="@Purchase.PurchaseDate" class="form-control" required />
                                                         <span asp-validation-for="@Purchase.PurchaseDate" class="text-danger"></span>
                                                     </div>
@@ -125,7 +124,7 @@
 
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Invoice No <span class="required">*</span></label>
+                                                        <label class="control-label">@localizer["Invoice No"] <span class="required">*</span></label>
                                                         <input asp-for="@Purchase.InvoiceNo" class="form-control" required autocomplete="off" Placeholder="Invoice No" />
                                                         <span asp-validation-for="@Purchase.InvoiceNo" class="text-danger"></span>
                                                     </div>
@@ -133,7 +132,7 @@
 
                                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Description</label>
+                                                        <label class="control-label">@localizer["Description"]</label>
                                                         <textarea asp-for="@Purchase.Description" class="form-control" placeholder="Details about Purchase..."> </textarea>
                                                         <span asp-validation-for="@Purchase.Description" class="text-danger"></span>
                                                     </div>
@@ -150,12 +149,12 @@
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
-                                                                <th>Product <span class="required">*</span></th>
-                                                                <th>Unit <span class="required">*</span></th>
-                                                                <th>Unit Price <span class="required">*</span></th>
-                                                                <th>Qty <span class="required">*</span></th>
-                                                                <th>Total Price</th>
-                                                                <th>Action</th>
+                                                                <th>@localizer["Product"] <span class="required">*</span></th>
+                                                                <th>@localizer["Unit"] <span class="required">*</span></th>
+                                                                <th>@localizer["Unit Price"] <span class="required">*</span></th>
+                                                                <th>@localizer["Qty"] <span class="required">*</span></th>
+                                                                <th>@localizer["Total Price"] </th>
+                                                                <th>@localizer["Action"]</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody id="items">
@@ -189,12 +188,12 @@
                                                                 }
                                                             }
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">Sub Total</td>
+                                                                <td colspan="4" class="@valueDefined">@localizer["Sub Total"]</td>
                                                                 <td>
                                                                     <input type="number" step="any" class="form-control" id="total" asp-for="@Purchase.SubTotal" placeholder="0.00" readonly />
                                                                 </td>
                                                                 <td>
-                                                                    <button type="button" class="btn btn-sm btn-primary-outline" id="btnAddItem"><i class="fa fa-plus-circle"></i> Add New</button>
+                                                                    <button type="button" class="btn btn-sm btn-primary-outline" id="btnAddItem"><i class="fa fa-plus-circle"></i> @localizer["Add New"] </button>
                                                                 </td>
                                                             </tr>
 
@@ -203,12 +202,12 @@
 
                                                                     <div class="form-group">
                                                                         <div id="input-type" class="row float-lg-right">
-                                                                            <label for="input-type">Discount Type &nbsp;&nbsp; </label>
+                                                                            <label for="input-type">@localizer["Discount Type"] &nbsp;&nbsp; </label>
                                                                             <label class="radio-inline form-check-inline">
-                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" />Percentage(%)
+                                                                                <input type="radio" name="TextBoxCheck" checked="checked" value="0" onClick="show()" />@localizer["Percentage(%)"]
                                                                             </label>
                                                                             <label class="radio-inline form-check-inline">
-                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" />Fixed Amount
+                                                                                <input type="radio" name="TextBoxCheck" value="1" onClick="show()" />@localizer["Fixed Amount"]
                                                                             </label>
                                                                         </div>
                                                                     </div>
@@ -228,41 +227,41 @@
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <div id="AmountLabelForDiscount">  <p class="text text-info">Discount Amount: <span id="discAmount">@Purchase.DiscountAmount</span></p></div>
+                                                                    <div id="AmountLabelForDiscount">  <p class="text text-info">@localizer["Discount Amount"]: <span id="discAmount">@Purchase.DiscountAmount</span></p></div>
                                                                 </td>
                                                             </tr>
 
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">Rent</td>
+                                                                <td colspan="4" class="@valueDefined">@localizer["Rent"]</td>
                                                                 <td>
                                                                     <input type="number" step="any" asp-for="@Purchase.RentAmount" id="rent" class="form-control calc" />
                                                                 </td>
                                                                 <td></td>
                                                             </tr>
                                                             <tr class="d-none">
-                                                                <td colspan="4" class="@valueDefined">Tax</td>
+                                                                <td colspan="4" class="@valueDefined">@localizer["Tax"]</td>
                                                                 <td>
                                                                     <input type="number" step="any" asp-for="@Purchase.TaxAmount" id="tax" class="form-control calc" />
                                                                 </td>
-                                                                <td><button type="button" class="btn btn-sm btn-danger-outline text text-danger d-none" onclick="clearAll();"><i class="fa fa-remove"></i> Clear</button></td>
+                                                                <td><button type="button" class="btn btn-sm btn-danger-outline text text-danger d-none" onclick="clearAll();"><i class="fa fa-remove"></i> @localizer["Clear"]</button></td>
                                                             </tr>
 
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">Grand Total</td>
+                                                                <td colspan="4" class="@valueDefined">@localizer["]Grand Total"] </td>
                                                                 <td>
                                                                     <input type="number" step="any" asp-for="@Purchase.TotalAmount" placeholder="0.00" id="grandtotal" class="form-control" readonly />
                                                                 </td>
                                                                 <td></td>
                                                             </tr>
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">Paid Amount</td>
+                                                                <td colspan="4" class="@valueDefined">@localizer["Paid Amount"]</td>
                                                                 <td>
                                                                     <input type="number" step="any" asp-for="@Purchase.PaidAmount" id="paid" class="form-control calc" />
                                                                 </td>
                                                                 <td></td>
                                                             </tr>
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">Due Amount</td>
+                                                                <td colspan="4" class="@valueDefined">@localizer["Due Amount"]</td>
                                                                 <td>
                                                                     <input type="number" step="any" asp-for="@Purchase.DueAmount" placeholder="0.00" id="due" class="form-control" readonly />
                                                                 </td>
@@ -273,41 +272,41 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row d-none" id="dvExchange">
-                                                <div class="col-lg-3 col-md-3 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Exchange Rate <span class="required">*</span></label>
-                                                        <input type="text" id="ExchangeRate" asp-for="@Purchase.ExchangeRate" class="form-control" placeholder="Exchange Rate" />
-                                                        <span asp-validation-for="@Purchase.ExchangeRate" class="text-danger"></span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-3 col-md-3 col-sm-12">
-                                                    <div class="form-group">
+                                            @*<div class="form-group row d-none" id="dvExchange">
+                                                    <div class="col-lg-3 col-md-3 col-sm-12">
                                                         <div class="form-group">
-                                                            <div id="input-type" class="row float-lg-right">
-                                                                <label for="input-type">
-                                                                    Operation &nbsp; &nbsp;
-                                                                </label>
-                                                                <label class="radio-inline form-check-inline">
-                                                                    <input type="radio" id="rdMultiply" name="rdExchangeOperation" class="md-radiobtn" value="*">  X
-                                                                </label>
-                                                                <label class="radio-inline form-check-inline">
-                                                                    <input type="radio" id="rdDivide" name="rdExchangeOperation" class="md-radiobtn" value="/"> /
-                                                                </label>
+                                                            <label class="control-label">@localizer[""]Exchange Rate <span class="required">*</span></label>
+                                                            <input type="text" id="ExchangeRate" asp-for="@Purchase.ExchangeRate" class="form-control" placeholder="Exchange Rate" />
+                                                            <span asp-validation-for="@Purchase.ExchangeRate" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-3 col-md-3 col-sm-12">
+                                                        <div class="form-group">
+                                                            <div class="form-group">
+                                                                <div id="input-type" class="row float-lg-right">
+                                                                    <label for="input-type">
+                                                                        @localizer[""]Operation &nbsp; &nbsp;
+                                                                    </label>
+                                                                    <label class="radio-inline form-check-inline">
+                                                                        <input type="radio" id="rdMultiply" name="rdExchangeOperation" class="md-radiobtn" value="*">  X
+                                                                    </label>
+                                                                    <label class="radio-inline form-check-inline">
+                                                                        <input type="radio" id="rdDivide" name="rdExchangeOperation" class="md-radiobtn" value="/"> /
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
+                                                </div>*@
 
                                             <div class="form-group row">
                                                 <div class="col-sm-12 text text-left">
                                                     <input type="hidden" asp-for="@Purchase.PurchaseType" />
-                                                    <button type="button" class="btn btn-sm btn-primary-outline mr-2" onclick="calculate();"><i class="fa fa-money"></i> Calculate</button>
+                                                    <button type="button" class="btn btn-sm btn-primary-outline mr-2" onclick="calculate();"><i class="fa fa-money"></i> @localizer["Calculate"]</button>
 
                                                     <button type="submit" id="sbm_btn" class="btn btn-mat btn-success mr-2">
-                                                        <i class="fa fa-save"></i> Update
+                                                        <i class="fa fa-save"></i> @localizer["Update"]
                                                     </button>
                                                 </div>
                                             </div>
@@ -327,7 +326,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i>@localizer["Back"]
                                 </a>
                             </li>
                         </ul>
@@ -353,6 +352,22 @@
             setTrAmount();
             $("#frm").submit();
         });
+
+        $("#CurrencyID").on("change", function () {
+            ShowHideExchangeFields();
+        });
+        function ShowHideExchangeFields() {
+            $("#ExchangeRate").val("");
+            $("#ExchangeAmount").val("");
+            if ($("#CurrencyID").val() != 1 && $("#CurrencyID").val() != "") {
+                $("#dvExchange").removeClass("d-none");
+            }
+            else {
+                $("#dvExchange").addClass("d-none");
+                $("#ExchangeRate").val(0);
+                $("#ExchangeAmount").val(0);
+            }
+        }
 
         var i = 1;
         var sId = 0;

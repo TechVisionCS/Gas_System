@@ -117,4 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accounts" xml:space="preserve">
+    <value>حسابونه</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>بانک</value>
+  </data>
+  <data name="Cash Book" xml:space="preserve">
+    <value>د نغدو کتاب</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>ډشبورډ</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>لګښتونه</value>
+  </data>
+  <data name="Expenses Report" xml:space="preserve">
+    <value>د لګښتونو راپور</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>وتل</value>
+  </data>
+  <data name="MAIN" xml:space="preserve">
+    <value>اصلی</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>محصولات</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>پیرودونه</value>
+  </data>
+  <data name="Purchases Report" xml:space="preserve">
+    <value>د پیرود راپور</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>راپورنه</value>
+  </data>
+  <data name="Retruns" xml:space="preserve">
+    <value>بیرته ګرځول</value>
+  </data>
+  <data name="Returns Report" xml:space="preserve">
+    <value>واپسی راپور</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>خرڅلاو</value>
+  </data>
+  <data name="Sales Report" xml:space="preserve">
+    <value>د پلور راپور</value>
+  </data>
+  <data name="Saraf" xml:space="preserve">
+    <value>صراف</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>ترتیبات</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>کاروونکي</value>
+  </data>
+  <data name="Wastages Report" xml:space="preserve">
+    <value>د ضایعاتو راپور</value>
+  </data>
 </root>

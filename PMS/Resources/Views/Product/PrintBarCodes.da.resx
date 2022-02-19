@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>بارګشت</value>
+  </data>
+  <data name="Barcode Number of" xml:space="preserve">
+    <value>بارکد شماره</value>
+  </data>
+  <data name="Batch Id" xml:space="preserve">
+    <value>شناسه دسته</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>چاپ</value>
+  </data>
+  <data name="Print Amount -" xml:space="preserve">
+    <value>مقدار چاپ -</value>
+  </data>
+  <data name="Product Barcodes" xml:space="preserve">
+    <value>بارکد محصولات</value>
+  </data>
+  <data name="Products Barcodes Print" xml:space="preserve">
+    <value>محصولات چاپ بارکد</value>
+  </data>
 </root>

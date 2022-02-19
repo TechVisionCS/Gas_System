@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Change Unit" xml:space="preserve">
+    <value>تغییر واحد</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>ایجاد شده در</value>
+  </data>
+  <data name="Current Stock" xml:space="preserve">
+    <value>سهام جاری</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="General Info" xml:space="preserve">
+    <value>اطلاعات عمومی</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="InQty" xml:space="preserve">
+    <value>مقدار خرید</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>موارد</value>
+  </data>
+  <data name="Manufecturer" xml:space="preserve">
+    <value>شرکت تولید کننده</value>
+  </data>
+  <data name="No item available!" xml:space="preserve">
+    <value>هیچ موردی در دسترس نیست!</value>
+  </data>
+  <data name="OutQty" xml:space="preserve">
+    <value>مفدار فروش</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>چاپ</value>
+  </data>
+  <data name="Product Name" xml:space="preserve">
+    <value>نام محصول</value>
+  </data>
+  <data name="Purchase Performed By" xml:space="preserve">
+    <value>خرید انجام شده توسط</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Select Unit" xml:space="preserve">
+    <value>واحد را انتخاب کنید</value>
+  </data>
+  <data name="Stock Administration" xml:space="preserve">
+    <value>اداره سهام</value>
+  </data>
+  <data name="Stock Details" xml:space="preserve">
+    <value>جزئیات سهام</value>
+  </data>
+  <data name="Stock item Details" xml:space="preserve">
+    <value>جزئیات اقلام سهام</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>اطلاعات سیستم</value>
+  </data>
+  <data name="System Transaction Code" xml:space="preserve">
+    <value>کد معاملات سیستم</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>به روز رسانی در</value>
+  </data>
 </root>

@@ -1,37 +1,38 @@
 ﻿@model Product
+@inject IViewLocalizer localizer
+
 @{
-    ViewData["Title"] = "Products";
+    ViewData["Title"] = localizer["Products"];
 }
-
 <div id="PlaceHolderHere"></div>
-
 <div class="main-body">
     <div class="page-wrapper">
         <div class="row">
             <div class="col-lg-10 col-md-12 col-ms-12" style="margin:0 auto;">
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Products Administration</h5>
+                        @localizer[""]
+                        <h5 class="m-b-10">@localizer["Products Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Product"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i>  Products List
+                                    <i class="fa fa-list"></i>  @localizer["Products List"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Unit"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Manage Units
+                                    <i class="fa fa-list"></i> @localizer["Manage Units"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Category"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Manage Cateogory
+                                    <i class="fa fa-list"></i> @localizer["Manage Cateogory"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Manufacturer"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Manage Manufecturer
+                                    <i class="fa fa-list"></i> @localizer["Manage Manufecturer"]
                                 </a>
 
                             </li>
@@ -45,7 +46,7 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Add a new Product</h5>
+                                    <h5>@localizer["Add a new Product"]</h5>
 
                                     <div class="card-header-right">
                                         <i class="icofont icofont-spinner-alt-5"></i>
@@ -68,7 +69,7 @@
                                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Name <span class="required">*</span>
+                                                            @localizer["Name"] <span class="required">*</span>
                                                         </label>
                                                         <input asp-for="Name" class="form-control" required autocomplete="on" />
                                                         <span asp-validation-for="Name" class="text-danger"></span>
@@ -77,35 +78,35 @@
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Manufacturer</label>
+                                                        <label class="control-label">@localizer["Manufacturer"]</label>
                                                         <select required class="form-control select2 custom-select2" style="width: 100%;" asp-for="ManufacturerId" asp-items="@ViewBag.Manufacturers">
-                                                            <option selected="selected" value="0">--Select Manufacturer--</option>
+                                                            <option selected="selected" value="0">@localizer["Select Manufacturer"]</option>
                                                         </select>
                                                         <span asp-validation-for="ManufacturerId" class="text-danger"></span>
                                                         <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create", "Manufacturer")"
                                                            data-redirect="@Url.Action("Create", "Product")" class="text text-info" style="color: white; cursor: pointer;">
-                                                            <i class="fa fa-plus-circle"></i> Add New Manufecture
+                                                            <i class="fa fa-plus-circle"></i> @localizer["Add New Manufecture"]
                                                         </a>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Category</label>
+                                                        <label class="control-label">@localizer["Category"]</label>
                                                         <select required class="form-control select2" style="width: 100%;" id="CategoryId" asp-for="CategoryId" asp-items="@ViewBag.Category">
-                                                            <option selected="selected" value="0">--Select Category--</option>
+                                                            <option selected="selected" value="0">@localizer["Select Category"]</option>
                                                         </select>
                                                         <span asp-validation-for="CategoryId" class="text-danger"></span>
                                                         <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create", "Category")"
                                                            data-redirect="@Url.Action("Create", "Product")" class="text text-info" style="color: white; cursor: pointer;">
-                                                            <i class="fa fa-plus-circle"></i> Add New Category
+                                                            <i class="fa fa-plus-circle"></i> @localizer["Add New Category"]
                                                         </a>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Description</label>
+                                                        <label class="control-label">@localizer["Description"]</label>
                                                         <textarea asp-for="Description" class="form-control"> </textarea>
                                                         <span asp-validation-for="Description" class="text-danger"></span>
                                                     </div>
@@ -115,19 +116,19 @@
                                                     <hr />
 
                                                     <label class="control-label">
-                                                        Unit Details
+                                                        @localizer["Unit Details"]
                                                     </label>
                                                     <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create","Unit")"
                                                        data-redirect="@Url.Action("Create", "Product")" class="text text-danger" style="color: white; cursor: pointer;">
-                                                        <i class="fa fa-plus-circle"></i> Add New Unit
+                                                        <i class="fa fa-plus-circle"></i> @localizer["Add New Unit"]
                                                     </a>
                                                 </div>
 
                                                 <div class="col-lg-12 col-md-12 col-sm-12 mb-5">
                                                     <table class="table table-bordered">
                                                         <tr>
-                                                            <td>Unit Name</td>
-                                                            <td>Unit Sell Price</td>
+                                                            <td>@localizer["Unit Name"]</td>
+                                                            <td>@localizer["Unit Sell Price"]</td>
                                                         </tr>
                                                         @foreach (var m in ViewBag.Unit)
                                                         {
@@ -141,7 +142,7 @@
                                                                 </td>
                                                             </tr>
                                                         }
-                                                        <label class="text-muted"> please configure product units </label>
+                                                        <label class="text-muted text-danger"> @localizer["please configure product units"] </label>
 
                                                     </table>
                                                 </div>
@@ -150,11 +151,11 @@
                                             <div class="form-group row">
                                                 <div class="col-sm-12 text text-left">
                                                     <button type="submit" class="btn btn-mat btn-success mr-2">
-                                                        <i class="fa fa-save"></i> Save
+                                                        <i class="fa fa-save"></i> @localizer["Save"]
                                                     </button>
 
                                                     <button type="reset" class="btn btn-mat btn-danger">
-                                                        <i class="fa fa-times"></i> Cancel
+                                                        <i class="fa fa-times"></i> @localizer["Cancel"]
                                                     </button>
 
                                                     <button type="button" id="ButtonCLicked" hidden onclick="LoadDropDowns();" />
@@ -191,17 +192,16 @@
 
 @section Scripts
 {
-
-
     <script>
-
          $(document).ready(function () {
             $("#ButtonCLicked").trigger('click');
         });
+        var Category = '@localizer["Select Category"].Value.ToString()';
+        var Manufecturer = '@localizer["Select Manufacturer"].Value.ToString()';
 
         function LoadDropDowns() {
-            $("#ManufacturerId").empty().append('<option selected="selected" value="">--Select Manufecturer--</option>');
-            $("#CategoryId").empty().append('<option selected="selected" value="">--Select Category--</option>');
+            $("#ManufacturerId").empty().append('<option selected="selected" value="">--' + Manufecturer +'--</option>');
+            $("#CategoryId").empty().append('<option selected="selected" value="">--' + Category +'--</option>');
                $.ajax({
                         type: "POST",
                         cache: false,

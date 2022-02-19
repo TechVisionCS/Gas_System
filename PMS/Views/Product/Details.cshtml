@@ -1,6 +1,7 @@
 ﻿@model ProductDetailsViewModel
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Product Details";
+    ViewData["Title"] = localizer["Product Details"];
     var productDetails = Model.ProductDetails;
     var stockdetial = Model.StockDetails;
 }
@@ -11,25 +12,24 @@
         <div class="row">
             <div class="col-lg-10 col-md-12 col-sm-12" style="margin:0 auto;">
                 <!-- Page-header start-->
-
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Product Administration</h5>
+                        <h5 class="m-b-10">@localizer["Product Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Create" asp-controller="Proudct"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Product
+                                    <i class="fa fa-plus"></i> @localizer["Add New Product"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Product"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Products List
+                                    <i class="fa fa-list"></i> @localizer["Products List"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Stock"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Stock
+                                    <i class="fa fa-list"></i> @localizer["Stock"]
                                 </a>
                             </li>
                         </ul>
@@ -44,16 +44,16 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-6">
                                     <div class="form-group">
-                                        <label class="control-label">Change Unit</label>
+                                        <label class="control-label">@localizer["Change Unit"]</label>
                                         <select class="form-control" name="unitId" asp-items="@ViewBag.Units" style="width: 100%;">
-                                            <option selected="selected" value="0">--Select Unit--</option>
+                                            <option selected="selected" value="0">@localizer["Select Unit"]</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-12" style="padding-top: 20px;">
                                     <div class="form-group pt-2">
-                                        <button type="submit" class="btn btn-outline-primary mr-2"><i class="fa fa-search"></i> Search</button>
+                                        <button type="submit" class="btn btn-outline-primary mr-2"><i class="fa fa-search"></i> @localizer["Search"]</button>
                                     </div>
                                 </div>
                             </div>
@@ -64,9 +64,8 @@
                 <!-- Page-body start -->
                 <div class="page-body">
                     <div class="card">
-
                         <div class="card-header">
-                            <h5>Product Details</h5>
+                            <h5>@localizer["Product Details"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -85,55 +84,51 @@
                                     <div class="card-block">
 
                                         <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <h5 class="text text-primary">Product Details</h5>
-                                                <hr />
-                                            </div>
 
                                             <div class="col-lg-3 col-md-3 col-sm-6">
-                                                <h6>Name</h6>
+                                                <h6>@localizer["Name"]</h6>
                                                 <p>@productDetails.Name</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-3 col-md-3 col-sm-6">
-                                                <h6>Category</h6>
+                                                <h6>@localizer["Category"]</h6>
                                                 <p>@productDetails.CategoryName</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-3 col-md-3 col-sm-6">
-                                                <h6>Manufacturer</h6>
+                                                <h6>@localizer["Manufacturer"]</h6>
                                                 <p>@productDetails.ManufacturerName</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-3 col-md-3 col-sm-6">
-                                                <h6>Avalible Qty</h6>
+                                                <h6>@localizer["Avalible Qty"]</h6>
                                                 <p>@productDetails.TotalAvailStockQtys (@ViewBag.UnitName)</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <h6>Description</h6>
+                                                <h6>@localizer["Description"]</h6>
                                                 <p>@productDetails.Description</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-3 col-md-3 col-sm-6">
-                                                <h6>Created At</h6>
+                                                <h6>@localizer["Created At"]</h6>
                                                 <p>@productDetails.CreatedAt</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-3 col-md-3 col-sm-6">
-                                                <h6>Last Updated At</h6>
+                                                <h6>@localizer["Last Updated At"]</h6>
                                                 <p>@productDetails.UpdatedAt</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-3 col-md-3 col-sm-6">
-                                                <h6>Registered By User</h6>
+                                                <h6>@localizer["Registered By User"]</h6>
                                                 <p>@productDetails.UserName</p>
                                                 <hr />
                                             </div>
@@ -146,7 +141,7 @@
                                     <div class="card-block">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <h5 class="text text-primary">Product Units Details</h5>
+                                                <h5 class="text text-primary">@localizer["Product Units Details"]</h5>
                                                 <hr />
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -155,13 +150,16 @@
                                                         <table class="table table-bordered table-hover">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>SNo.</th>
-                                                                    <th>Unit Name</th>
-                                                                    <th>Unit Sell Price</th>
+                                                                    <th>@localizer["SNo"].</th>
+                                                                    <th>@localizer["Unit Name"]</th>
+                                                                    <th>
+                                                                        @localizer["Unit Sell Price"]
+                                                                        <span class="d-none">@{ var snooo = 1; }</span>
+                                                                    </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <span class="d-none">@{ var snooo = 1; }</span>
+
                                                                 @if (Model.ProductUnits != null)
                                                                 {
                                                                     @foreach (var pu in Model.ProductUnits)
@@ -192,7 +190,7 @@
                                     <div class="card-block">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <h5 class="text text-primary">Product Purchases</h5>
+                                                <h5 class="text text-primary">@localizer["Product Purchases"]</h5>
                                                 <hr />
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -201,14 +199,17 @@
                                                         <table class="table table-bordered table-hover">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>SNo.</th>
-                                                                    <th>InQty (@ViewBag.UnitName)</th>
-                                                                    <th>Purchase Price</th>
-                                                                    <th>Description</th>
+                                                                    <th>@localizer["SNo"].</th>
+                                                                    <th>@localizer["InQty"] (@ViewBag.UnitName)</th>
+                                                                    <th>@localizer["Purchase Price"]</th>
+                                                                    <th>
+                                                                        @localizer["Description"]
+                                                                        <span class="d-none">@{ var sno = 1; }</span>
+                                                                    </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <span class="d-none">@{ var sno = 1; }</span>
+
                                                                 @if (stockdetial.Any())
                                                                 {
                                                                     @foreach (var m in stockdetial)
@@ -243,7 +244,7 @@
                                     <div class="card-block">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <h5 class="text text-primary">Product Sales </h5>
+                                                <h5 class="text text-primary">@localizer["Product Sales"] </h5>
                                                 <hr />
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -252,14 +253,18 @@
                                                         <table class="table table-bordered table-hover">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>SNo.</th>
-                                                                    <th>OutQty (@ViewBag.UnitName)</th>
-                                                                    <th>Sale Price</th>
-                                                                    <th>Description</th>
+                                                                    <th>@localizer["SNo"].</th>
+                                                                    <th>@localizer["OutQty"] (@ViewBag.UnitName)</th>
+                                                                    <th>@localizer["Sale Price"]</th>
+                                                                    <th>
+                                                                        @localizer["Description"]
+                                                                        <span class="d-none">@{ var snoo = 1; }</span>
+                                                                    </th>
+
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <span class="d-none">@{ var snoo = 1; }</span>
+
                                                                 @if (stockdetial.Any())
                                                                 {
                                                                     @foreach (var m in stockdetial)
@@ -300,7 +305,7 @@
                                 <li class="breadcrumb-item pull-left">
                                     <a onclick="window.history.back();"
                                        class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                        <i class="fa fa-arrow-left"></i> Back
+                                        <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                     </a>
                                 </li>
                             </ul>

@@ -117,4 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accounts" xml:space="preserve">
+    <value>حسابها</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>بانک</value>
+  </data>
+  <data name="Cash Book" xml:space="preserve">
+    <value>کتاب نقدی</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>داشبورد</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>کارمندان</value>
+  </data>
+  <data name="Expenses" xml:space="preserve">
+    <value>مصارفات</value>
+  </data>
+  <data name="Expenses Report" xml:space="preserve">
+    <value>گزارش هزینه ها</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="MAIN" xml:space="preserve">
+    <value>اصلی</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>اجناس</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>خریدها</value>
+  </data>
+  <data name="Purchases Report" xml:space="preserve">
+    <value>گزارش خریدها</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>گزارش ها</value>
+  </data>
+  <data name="Retruns" xml:space="preserve">
+    <value>برمی گرداند</value>
+  </data>
+  <data name="Returns Report" xml:space="preserve">
+    <value>گزارش بازگشت</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>فروشات</value>
+  </data>
+  <data name="Sales Report" xml:space="preserve">
+    <value>گزارش فروش</value>
+  </data>
+  <data name="Saraf" xml:space="preserve">
+    <value>صراف</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>موجودی</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>کاربران</value>
+  </data>
+  <data name="Wastages Report" xml:space="preserve">
+    <value>گزارش ضایعات</value>
+  </data>
 </root>

@@ -121,7 +121,7 @@
     <value>فعالیت</value>
   </data>
   <data name="Add New Expense" xml:space="preserve">
-    <value>نوی مصرق</value>
+    <value>نوی لګښټ</value>
   </data>
   <data name="Amount" xml:space="preserve">
     <value>مقدار</value>
@@ -139,19 +139,19 @@
     <value>تفصیلات</value>
   </data>
   <data name="Expense Category" xml:space="preserve">
-    <value>کتګوری مصارف</value>
+    <value>لګښتونو کتګوری</value>
   </data>
   <data name="Expense List" xml:space="preserve">
-    <value>لیست مصارف</value>
+    <value>لګښتونو لیست</value>
   </data>
   <data name="Expense Statement" xml:space="preserve">
-    <value>مصارف کهاته</value>
+    <value>لګښتونو کهاته</value>
   </data>
   <data name="Expenses" xml:space="preserve">
-    <value>مصارفات</value>
+    <value>لګښتونه</value>
   </data>
   <data name="Expenses Administration" xml:space="preserve">
-    <value>مدیریت مصارفات</value>
+    <value>لګښتونو مدیریت</value>
   </data>
   <data name="From" xml:space="preserve">
     <value>له تاریخ</value>

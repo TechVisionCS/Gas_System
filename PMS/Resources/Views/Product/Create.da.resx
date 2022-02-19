@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add a new Product" xml:space="preserve">
+    <value>یک محصول جدید اضافه کنید</value>
+  </data>
+  <data name="Add New Category" xml:space="preserve">
+    <value>اضافه کردن دسته جدید</value>
+  </data>
+  <data name="Add New Manufecture" xml:space="preserve">
+    <value>افزودن تولید جدید</value>
+  </data>
+  <data name="Add New Unit" xml:space="preserve">
+    <value>افزودن واحد جدید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بارګشت</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغو کنید</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>دسته بندی</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Manage Cateogory" xml:space="preserve">
+    <value>مدیریت دسته</value>
+  </data>
+  <data name="Manage Manufecturer" xml:space="preserve">
+    <value>تولید کننده را مدیریت کنید</value>
+  </data>
+  <data name="Manage Units" xml:space="preserve">
+    <value>مدیریت واحدها</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>شرکت تولید کننده</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="please configure product units" xml:space="preserve">
+    <value>لطفا واحدهای محصول را پیکربندی کنید</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>محصولات</value>
+  </data>
+  <data name="Products Administration" xml:space="preserve">
+    <value>مدیریت محصولات</value>
+  </data>
+  <data name="Products List" xml:space="preserve">
+    <value>لیست محصولات</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>صرفه جویی</value>
+  </data>
+  <data name="Select Category" xml:space="preserve">
+    <value>دسته را انتخاب کنید</value>
+  </data>
+  <data name="Select Manufacturer" xml:space="preserve">
+    <value>سازنده را انتخاب کنید</value>
+  </data>
+  <data name="Unit Details" xml:space="preserve">
+    <value>جزئیات واحد</value>
+  </data>
+  <data name="Unit Name" xml:space="preserve">
+    <value>نام واحد</value>
+  </data>
+  <data name="Unit Sell Price" xml:space="preserve">
+    <value>قیمت فروش واحد</value>
+  </data>
 </root>

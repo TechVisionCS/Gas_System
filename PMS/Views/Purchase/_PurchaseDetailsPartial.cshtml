@@ -1,40 +1,43 @@
 ﻿@model PurchaseDetails
+@inject IViewLocalizer localizer
 
 <tr id="newItem">
     <td>
         <select class="form-control select2 required" style="width: 100%;" asp-for="@Model.ProductId" asp-items="@ViewBag.Products" required>
-            <option selected="selected" value="">--Select Product--</option>
+            <option selected="selected" value="">@localizer["Select Product"]</option>
         </select>
         <span asp-validation-for="@Model.ProductId" class="text-danger"></span>
     </td>
+
     <td>
         <select class="form-control select2 required" style="width: 100%;" asp-for="@Model.UnitId" asp-items="@ViewBag.Units" required>
-            <option selected="selected" value="">--Select Unit--</option>
+            <option selected="selected" value="">@localizer["Select Unit"]</option>
         </select>
         <span asp-validation-for="@Model.UnitId" class="text-danger"></span>
     </td>
+
     <td>
         <input type="number" step="any" class="form-control calc" asp-for="@Model.PurchasePrice" placeholder="0.00" required
                oninput="$(this).closest('tr').find('#TotalPurchasePrice').val($(this).closest('tr').find('#Qty').val() * $(this).val());" />
         <span asp-validation-for="@Model.PurchasePrice" class="text-danger"></span>
     </td>
+
     <td>
         <input type="number" step="any" class="form-control calc ttd" asp-for="@Model.Qty" placeholder="0.00" required
                oninput="$(this).closest('tr').find('#TotalPurchasePrice').val($(this).closest('tr').find('#PurchasePrice').val() * $(this).val());" />
         <span asp-validation-for="@Model.Qty" class="text-danger"></span>
     </td>
+
     <td>
         <input type="number" step="any" class="form-control total" asp-for="@Model.TotalPurchasePrice" placeholder="0.00" readonly required />
         <span asp-validation-for="@Model.TotalPurchasePrice" class="text-danger"></span>
     </td>
+
     <td>
-        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> Delete</button>
+        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> @localizer["Delete"]</button>
     </td>
 </tr>
-
 <script src="~/js/purchaseFormValidation.js"></script>
 <script>
     $('.select2').select2();
-
-
 </script>

@@ -117,4 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Product" xml:space="preserve">
+    <value>افزودن محصول جدید</value>
+  </data>
+  <data name="Are you sure you want to delete this?" xml:space="preserve">
+    <value>ایا مطمیعن هستی که می خواهد این ریکارد را حدف نمایید</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>کتګوری</value>
+  </data>
+  <data name="Manage Cateogory" xml:space="preserve">
+    <value>اداره کتګوری محصول</value>
+  </data>
+  <data name="Manage Manufecturer" xml:space="preserve">
+    <value>اداره تولیدی محصول</value>
+  </data>
+  <data name="Manage Units" xml:space="preserve">
+    <value>اداره واحد محصول</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>تولیدی</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>محصول</value>
+  </data>
+  <data name="Products Administration" xml:space="preserve">
+    <value>مدیریت محصول</value>
+  </data>
+  <data name="Products List" xml:space="preserve">
+    <value>لیست محصول</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="Unit Details" xml:space="preserve">
+    <value>معلومات واحد</value>
+  </data>
 </root>

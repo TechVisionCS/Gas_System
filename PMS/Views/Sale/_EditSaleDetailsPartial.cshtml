@@ -1,16 +1,16 @@
 ﻿@model SaleDetails
-
+@inject IViewLocalizer localizer
 <tr id="newItem">
     <td>
         <select class="form-control select2 productId" style="width: 100%;" asp-for="@Model.ProductId" asp-items="@ViewBag.Products" required>
-            <option selected="selected" value="0">--Select Product--</option>
+            <option selected="selected" value="0">@localizer["Select Product"]</option>
         </select>
         <p class="text text-primary"></p>
         <span asp-validation-for="@Model.ProductId" class="text-danger"></span>
     </td>
     <td>
         <select class="form-control select2 batchId" style="width: 100%;" asp-for="@Model.UnitId" required asp-items="@ViewBag.Units">
-            <option selected="selected" value="0">--Select Unit--</option>
+            <option selected="selected" value="0">@localizer["Select Unit"]</option>
         </select>
         <div class="text text-primary" id="availQty"></div>
         <span asp-validation-for="@Model.UnitId" class="text-danger"></span>
@@ -39,7 +39,7 @@
         <span asp-validation-for="@Model.TotalSalePrice" class="text-danger"></span>
     </td>
     <td>
-        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i> Delete</button>
+        <button type="button" class="btn btn-sm btn-danger" onclick="$(this).closest('tr').remove();"><i class="fa fa-trash"></i>@localizer["Delete"]</button>
     </td>
 </tr>
 

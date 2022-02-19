@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Change Unit" xml:space="preserve">
+    <value>Change Unit</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>Created At</value>
+  </data>
+  <data name="Current Stock" xml:space="preserve">
+    <value>Current Stock</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="General Info" xml:space="preserve">
+    <value>General Info</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="InQty" xml:space="preserve">
+    <value>InQty</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Manufecturer" xml:space="preserve">
+    <value>Manufecturer</value>
+  </data>
+  <data name="No item available!" xml:space="preserve">
+    <value>No item available!</value>
+  </data>
+  <data name="OutQty" xml:space="preserve">
+    <value>OutQty</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Product Name" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="Purchase Performed By" xml:space="preserve">
+    <value>Purchase Performed By</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Select Unit" xml:space="preserve">
+    <value>Select Unit</value>
+  </data>
+  <data name="Stock Administration" xml:space="preserve">
+    <value>Stock Administration</value>
+  </data>
+  <data name="Stock Details" xml:space="preserve">
+    <value>Stock Details</value>
+  </data>
+  <data name="Stock item Details" xml:space="preserve">
+    <value>Stock item Details</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>System Info</value>
+  </data>
+  <data name="System Transaction Code" xml:space="preserve">
+    <value>System Transaction Code</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>Update At</value>
+  </data>
 </root>

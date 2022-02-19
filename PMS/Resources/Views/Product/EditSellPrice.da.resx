@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="Current Sale Price" xml:space="preserve">
+    <value>قیمت موجود فروش</value>
+  </data>
+  <data name="New Sale Price" xml:space="preserve">
+    <value>قیمت جدید قروش</value>
+  </data>
+  <data name="Products Administration" xml:space="preserve">
+    <value>مدیریت محصولات</value>
+  </data>
+  <data name="Products List" xml:space="preserve">
+    <value>لیست محصولات</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت</value>
+  </data>
+  <data name="Update Product Unit Sale Price" xml:space="preserve">
+    <value>تغیر نمودن قیمت واحد محصول </value>
+  </data>
 </root>

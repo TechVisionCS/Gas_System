@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<ProductBatch>
+@inject IViewLocalizer localizer
 <!--Modal Body Start-->
 <div class="modal-content p-2 m-2">
     <!--Modal Header Start-->
     <div class="modal-header">
-        <h5 class="modal-title">Product Batch Details</h5>
+        <h5 class="modal-title">@localizer["Product Batch Details"]</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">
                 <i class="fa fa-times text text-danger"></i>
@@ -16,10 +17,10 @@
         <table class="table table-responsive table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Batch ID</th>
-                    <th>Purchase Date</th>
-                    <th>Stock Qty</th>
-                    <th>Purchase Price</th>
+                    <th>@localizer["Batch ID"]</th>
+                    <th>@localizer["Purchase Date"]</th>
+                    <th>@localizer["Stock Qty"]</th>
+                    <th>@localizer["Purchase Price"]</th>
                 </tr>
             </thead>
             <tbody>

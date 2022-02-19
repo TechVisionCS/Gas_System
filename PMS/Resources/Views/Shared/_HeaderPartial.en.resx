@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account Settings" xml:space="preserve">
+    <value>Account Settings</value>
+  </data>
+  <data name="Backup Database" xml:space="preserve">
+    <value>Backup Database</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Manage Shop" xml:space="preserve">
+    <value>Manage Shop</value>
+  </data>
+  <data name="TechVision" xml:space="preserve">
+    <value>TechVision</value>
+  </data>
 </root>

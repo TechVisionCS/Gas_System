@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<PurchaseDetailsViewModel>
+@inject IViewLocalizer localizer
+
 <!--Modal Body Start-->
 <div class="modal-content p-2 m-2">
     <!--Modal Header Start-->
-    <div class="modal-header">
-        <h5 class="modal-title">Purchase Details</h5>
+    <div class="modal-header"> 
+        <h5 class="modal-title">@localizer["Purchase Details"]</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">
                 <i class="fa fa-times text text-danger"></i>
@@ -16,12 +18,12 @@
         <table class="table table-responsive table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>SNo.</th>
-                    <th>Product</th>
-                    <th>Unit</th>
-                    <th>Unit Price</th>
-                    <th>Qty</th>
-                    <th>Total Price</th>
+                    <th>@localizer["SNo"].</th>
+                    <th>@localizer["Product"]</th>
+                    <th>@localizer["Unit"]</th>
+                    <th>@localizer["Unit Price"]</th>
+                    <th>@localizer["Qty"]</th>
+                    <th>@localizer["Total Price"]</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,6 +45,5 @@
         </table>
     </div>
     <!--Modal Contents end-->
-
 </div>
 <!--Modal Body End-->
