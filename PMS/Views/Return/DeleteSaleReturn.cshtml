@@ -1,7 +1,7 @@
 ﻿@model ReturnViewModel
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Returns";
+    ViewData["Title"] = localizer["Returns"];
 
     var Return = Model.Return;
     var ReturnDetails = Model.ReturnDetails;
@@ -17,17 +17,17 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Sale Returns Administration</h5>
+                        <h5 class="m-b-10">@localizer["Sale Returns Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Return"
                                    class="btn btn-mat btn-primary mr-2" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Return
+                                    <i class="fa fa-plus"></i>@localizer["Add New Return"]
                                 </a>
 
                                 <a asp-action="SaleReturn" asp-controller="Return"
                                    class="btn btn-mat btn-info mr-2" style="color: white;">
-                                    <i class="fa fa-list"></i> Sale Returns List
+                                    <i class="fa fa-list"></i> @localizer["Sale Returns List"]
                                 </a>
 
                             </li>
@@ -41,30 +41,27 @@
                         <form method="POST" asp-action="DeleteSaleReturn">
                             <div class="row">
                                 <div class="col-md-8 col-sm-12">
-                                    <p class="h4">Do you want to delete the following record of sale return?</p>
+                                    <p class="h4">@localizer["Do you want to delete the following record of sale return?"]</p>
                                 </div>
 
                                 <div class="col-md-4 col-sm-12" style="padding-top: 20px;">
                                     <div class="form-group pt-2">
                                         <input type="hidden" name="returnId" value="@Return.Id" />
                                         <input type="hidden" name="saleId" value="@Return.SaleId" />
-                                        <button type="submit" class="btn btn-danger mr-2"><i class="fa fa-check"></i> Yes, Delete it</button>
+                                        <button type="submit" class="btn btn-danger mr-2"><i class="fa fa-check"></i> @localizer["Yes, Delete it"]</button>
                                         <a asp-action="SaleReturn" asp-controller="Return"
-                                           class="btn btn-secondary"><i class="fa fa-times"></i> No, Cancel it</a>
+                                           class="btn btn-secondary"><i class="fa fa-times"></i>@localizer["No, Cancel it"] </a>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-
-
                 <!-- Page-body start -->
                 <div class="page-body">
-
                     <div class="card">
                         <div class="card-header">
-                            <h5>Sale Return Details</h5>
+                            <h5>@localizer["Sale Return Details"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -79,7 +76,7 @@
                         <div class="card-block table-border-style">
                             <div class="row">
                                 <div class="col-12">
-                                    <h6>Return Info</h6>
+                                    <h6>@localizer["Return Info"]</h6>
                                     <hr />
                                 </div>
 
@@ -88,34 +85,34 @@
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Return No.</h6>
+                                    <h6>@localizer["Return No."]</h6>
                                     <p>@Return.Id</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Sale ID / Invoice No.</h6>
+                                    <h6>@localizer["Sale ID / Invoice No."]</h6>
                                     <p>@Return.SaleId</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Return Date</h6>
+                                    <h6>@localizer["Return Date"]</h6>
                                     <p>@Return.ReturnDate</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Customer Name</h6>
+                                    <h6>@localizer["Customer Name"]</h6>
                                     <p>@Return.CustomerName</p>
                                     <hr />
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-sm-6">
-                                    <h6>Description</h6>
+                                    <h6>@localizer["Description"]</h6>
                                     <p>@Return.Description</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>Return Details</h6>
+                                    <h6>@localizer["Return Details"]</h6>
                                     <hr />
                                 </div>
 
@@ -124,13 +121,13 @@
                                         <table class="table table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>SNo.</th>
-                                                    <th>Product</th>
-                                                    <th>Unit</th>
-                                                    <th>Returned Qty</th>
-                                                    <th>Unit Price</th>
-                                                    <th>Discount</th>
-                                                    <th>Total Price</th>
+                                                    <th>@localizer["SNo"].</th>
+                                                    <th>@localizer["Product"]</th>
+                                                    <th>@localizer["Unit"]</th>
+                                                    <th>@localizer["Returned Qty"]</th>
+                                                    <th>@localizer["Unit Price"]</th>
+                                                    <th>@localizer["Discount"]</th>
+                                                    <th>@localizer["Total Price"]</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -157,7 +154,7 @@
                                                 {
                                                     <tr>
                                                         <td colspan="7">
-                                                            <span class="text text-info">No item available in this sale!</span>
+                                                            <span class="text text-info">@localizer["No item available in this sale!"]</span>
                                                         </td>
                                                     </tr>
                                                 }
@@ -168,42 +165,42 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>Payment Details</h6>
+                                    <h6>@localizer["Payment Details"]</h6>
                                     <hr />
                                 </div>
 
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Payment Type</h6>
-                                    <p>
-                                        @if (Return.PaymentType == 1)
-                                        {
-                                            <span class="badge badge-info">Cash</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-info">Bank</span>
-                                        }
-                                    </p>
-                                    <hr />
-                                </div>
-
-                                @if (Return.PaymentType == 2)
-                                {
-                                    <div class="col-lg-3 col-md-4 col-sm-6">
-                                        <h6>Bank Name</h6>
-                                        <p>@Return.BankName</p>
+                                @*<div class="col-lg-3 col-md-4 col-sm-6">
+                                        <h6>@localizer[""]Payment Type</h6>
+                                        <p>
+                                            @if (Return.PaymentType == 1)
+                                            {
+                                                <span class="badge badge-info">Cash</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-info">Bank</span>
+                                            }
+                                        </p>
                                         <hr />
                                     </div>
-                                }
+
+                                    @if (Return.PaymentType == 2)
+                                    {
+                                        <div class="col-lg-3 col-md-4 col-sm-6">
+                                            <h6>Bank Name</h6>
+                                            <p>@Return.BankName</p>
+                                            <hr />
+                                        </div>
+                                    }*@
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Total Returns</h6>
+                                    <h6>@localizer["Total Returns"]</h6>
                                     <p>@Return.SubTotal.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Discount</h6>
+                                    <h6>@localizer["Discount"]</h6>
                                     <p>
                                         @{ var disc_per = (100 * Return.DiscountAmount) / Return.SubTotal; }
                                         @Return.DiscountAmount.ToString("N") (@disc_per %)
@@ -212,60 +209,58 @@
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Rent</h6>
+                                    <h6>@localizer["Rent"]</h6>
                                     <p>@Return.RentAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Tax</h6>
+                                    <h6>@localizer["Tax"]</h6>
                                     <p>@Return.TaxAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6  text text-primary">
-                                    <h6>Total Amount</h6>
+                                    <h6>@localizer["Total Amount"]</h6>
                                     <p>@Return.TotalAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 text text-success">
-                                    <h6>Received Amount</h6>
+                                    <h6>@localizer["Received Amount"]</h6>
                                     <p>@Return.PaidAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6 text text-warning">
-                                    <h6>Balanced Amount</h6>
+                                    <h6>@localizer["Balanced Amount"]</h6>
                                     <p>@Return.DueAmount.ToString("N")</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-12">
-                                    <h6>System Info</h6>
+                                    <h6>@localizer["System Info"]</h6>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Return Performed By</h6>
+                                    <h6>@localizer["Return Performed By"]</h6>
                                     <p>@Return.UserName</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Created At</h6>
+                                    <h6>@localizer["Created At"]</h6>
                                     <p>@Return.CreatedAt</p>
                                     <hr />
                                 </div>
 
                                 <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <h6>Update At</h6>
+                                    <h6>@localizer["Update At"]</h6>
                                     <p>@Return.UpdatedAt</p>
                                     <hr />
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                     <!-- Basic table card end -->
@@ -278,20 +273,17 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 <!-- Main-body end -->
-
 <partial name="_Modal" />
 @section Scripts{
     <script src="~/js/popupModel.js" asp-append-version="true"></script>

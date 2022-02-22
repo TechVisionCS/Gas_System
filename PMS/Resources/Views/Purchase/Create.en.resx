@@ -153,6 +153,9 @@
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="Details about Purchase...d" xml:space="preserve">
+    <value>Details about Purchase...</value>
+  </data>
   <data name="Discount Amount" xml:space="preserve">
     <value>Discount Amount</value>
   </data>

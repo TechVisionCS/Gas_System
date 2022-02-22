@@ -118,81 +118,81 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Address" xml:space="preserve">
-    <value>ادرس</value>
+    <value>Address</value>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>بازګشت</value>
+    <value>Back</value>
   </data>
   <data name="Balance" xml:space="preserve">
-    <value>بیلانس</value>
+    <value>Balance</value>
   </data>
   <data name="Created At" xml:space="preserve">
-    <value>جور شوی په </value>
+    <value>Created At</value>
   </data>
   <data name="Credit" xml:space="preserve">
-    <value>کریدیت</value>
+    <value>Credit</value>
   </data>
   <data name="Customer Details" xml:space="preserve">
-    <value>پیریدونکو تفصیل</value>
+    <value>Customer Details</value>
   </data>
   <data name="Customer Invoices Details" xml:space="preserve">
-    <value>پیریدونکو رسید معلومات</value>
+    <value>Customer Invoices Details</value>
   </data>
   <data name="Customer Ledger Details" xml:space="preserve">
-    <value>د پیرودونکي لیجر توضیحات</value>
+    <value>Customer Ledger Details</value>
   </data>
   <data name="Customers Administration" xml:space="preserve">
-    <value>پیریدونکو مدیریت</value>
+    <value>Customers Administration</value>
   </data>
   <data name="Customers Details" xml:space="preserve">
-    <value>پیریدونکو معلومات</value>
+    <value>Customers Details</value>
   </data>
   <data name="Customers Ledger" xml:space="preserve">
-    <value>پیریدونکو لیجر</value>
+    <value>Customers Ledger</value>
   </data>
   <data name="Customers List" xml:space="preserve">
-    <value>پیریدونکو لیست</value>
+    <value>Customers List</value>
   </data>
   <data name="Date" xml:space="preserve">
-    <value>تاریخ</value>
+    <value>Date</value>
   </data>
   <data name="Debit" xml:space="preserve">
-    <value>دبیت</value>
+    <value>Debit</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>تفصیل</value>
+    <value>Description</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>تفصیل</value>
+    <value>Details</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>ایمیل </value>
+    <value>Email</value>
   </data>
   <data name="Invoice No" xml:space="preserve">
-    <value>انوایس نمبر</value>
+    <value>Invoice No</value>
   </data>
   <data name="Last Updated At" xml:space="preserve">
-    <value>اخری تغیرات</value>
+    <value>Last Updated At</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>نوم</value>
+    <value>Name</value>
   </data>
   <data name="Paid" xml:space="preserve">
-    <value>تادیه </value>
+    <value>Paid</value>
   </data>
   <data name="Phone" xml:space="preserve">
-    <value>تلیفون</value>
+    <value>Phone</value>
   </data>
   <data name="Registered By User" xml:space="preserve">
-    <value>د کارمند په واسطه</value>
+    <value>Registered By User</value>
   </data>
   <data name="SNo" xml:space="preserve">
-    <value>شماره</value>
+    <value>SNo</value>
   </data>
   <data name="Total" xml:space="preserve">
-    <value>ټوتل</value>
+    <value>Total</value>
   </data>
   <data name="Total Amount" xml:space="preserve">
-    <value>توتل مبلغ</value>
+    <value>Total Amount</value>
   </data>
 </root>

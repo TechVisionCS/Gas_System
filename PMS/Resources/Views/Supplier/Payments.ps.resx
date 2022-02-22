@@ -117,4 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Payment" xml:space="preserve">
+    <value>نوی تادیه</value>
+  </data>
+  <data name="Add New Receive" xml:space="preserve">
+    <value>نوی پیریدونکی ترلاسه کول</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>پیریدونکی</value>
+  </data>
+  <data name="Customer Name" xml:space="preserve">
+    <value>پیریدونکی نوم</value>
+  </data>
+  <data name="Customer Receives" xml:space="preserve">
+    <value>پیریدونکی ترلاسه شوی</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>پیریدونکی مدیریت</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>پیریدونکی لیست</value>
+  </data>
+  <data name="Customers' Receives Details" xml:space="preserve">
+    <value>د پیرودونکو توضیحات ترلاسه کوي</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>له تاریخ</value>
+  </data>
+  <data name="Payment Amount" xml:space="preserve">
+    <value>تادیه مقدار</value>
+  </data>
+  <data name="Payment Date" xml:space="preserve">
+    <value>تادیه تاریخ</value>
+  </data>
+  <data name="Receive Amount" xml:space="preserve">
+    <value>پیسې ترلاسه کړئ</value>
+  </data>
+  <data name="Receive Date" xml:space="preserve">
+    <value>ترلاسه کړی نیټه</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>لټون</value>
+  </data>
+  <data name="Select Customer" xml:space="preserve">
+    <value>پیریدونکی انتخاب کړی</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>عرضه کوونکی انتخاب کړي</value>
+  </data>
+  <data name="Show All" xml:space="preserve">
+    <value>تول لیدل</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کوونکی</value>
+  </data>
+  <data name="Supplier Name" xml:space="preserve">
+    <value>عرضه کوونکی نوم</value>
+  </data>
+  <data name="Supplier Payments" xml:space="preserve">
+    <value>عرضه کوونکی تادیه</value>
+  </data>
+  <data name="Suppliers Administration" xml:space="preserve">
+    <value>عرضه کوونکی مدیریت</value>
+  </data>
+  <data name="Suppliers List" xml:space="preserve">
+    <value>عرضه کوونکی لیست</value>
+  </data>
+  <data name="Suppliers Payments Details" xml:space="preserve">
+    <value>عرضه کوونکی د تادیه معلومات</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تر تاریخ</value>
+  </data>
 </root>

@@ -117,4 +117,133 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add purchase return" xml:space="preserve">
+    <value>نوی پیریدو واپسی اضافه </value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مبلغ</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Balanced Amount" xml:space="preserve">
+    <value>بیلانس مقدار</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>بانک</value>
+  </data>
+  <data name="Bank Payment" xml:space="preserve">
+    <value>بانکی تادیه</value>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>محاسبه</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کړی</value>
+  </data>
+  <data name="Cash Payment" xml:space="preserve">
+    <value>نغدی تادیه</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>لری کول</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Details about Purchase..." xml:space="preserve">
+    <value>د پیریدو په اړه معلومات </value>
+  </data>
+  <data name="Discount(%)" xml:space="preserve">
+    <value>تخفیف</value>
+  </data>
+  <data name="Edit purchase return" xml:space="preserve">
+    <value>ویرایش بازگشت خرید</value>
+  </data>
+  <data name="Enter return notes..." xml:space="preserve">
+    <value>د بیرته ستنیدو نوټونه دننه کړئ ...</value>
+  </data>
+  <data name="Grand Total" xml:space="preserve">
+    <value>عمومی مجموعه</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>انوایس نمبر</value>
+  </data>
+  <data name="Item details" xml:space="preserve">
+    <value>توکی معلومات </value>
+  </data>
+  <data name="Payment Type" xml:space="preserve">
+    <value>تادیه نوعه</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>جنس</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>پیریدو نیټه</value>
+  </data>
+  <data name="Purchase Returns Administration" xml:space="preserve">
+    <value>د پیریدو بیرته واپسی مدیریت</value>
+  </data>
+  <data name="Purchase Returns List" xml:space="preserve">
+    <value>بیرته واپسی لیست</value>
+  </data>
+  <data name="Purchased Price" xml:space="preserve">
+    <value>پیریدو قیمت</value>
+  </data>
+  <data name="Purchased Qty" xml:space="preserve">
+    <value>پیریدو مقدار</value>
+  </data>
+  <data name="Received Amount" xml:space="preserve">
+    <value>ترلاسه کړی قیمت</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>کرایه</value>
+  </data>
+  <data name="Return Check" xml:space="preserve">
+    <value>واپسی چیک</value>
+  </data>
+  <data name="Return Date" xml:space="preserve">
+    <value>واپسی تاریخ</value>
+  </data>
+  <data name="Return Id" xml:space="preserve">
+    <value>شناسه بازگشت</value>
+  </data>
+  <data name="Return Notes" xml:space="preserve">
+    <value>واپسی نوت</value>
+  </data>
+  <data name="Returned Qty" xml:space="preserve">
+    <value>واپسی مقدار</value>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>بیرته واپسی</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کول</value>
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>بانک انتخاب کړی</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>عرضه کوونکی انتخاب کړی</value>
+  </data>
+  <data name="Sub Total" xml:space="preserve">
+    <value>مجموعه اولیه</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کوونکی</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>تیکس</value>
+  </data>
+  <data name="Total Discount (%)" xml:space="preserve">
+    <value>مجموعه تخفیف</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>مجموعه قیمت</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>واحد </value>
+  </data>
 </root>

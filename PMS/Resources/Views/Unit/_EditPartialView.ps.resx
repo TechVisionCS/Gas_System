@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Amount in Kg" xml:space="preserve">
+    <value>واحد مقدار په کیلو ګرام</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>بندول</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>غیر فعال</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>واحد نوم</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کول</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>حالات</value>
+  </data>
+  <data name="Unit Details" xml:space="preserve">
+    <value>واحد معلومات</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>تغیرول</value>
+  </data>
 </root>

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Unit>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Manage GAS Units";
+    ViewData["Title"] = localizer["Manage GAS Units"];
 }
 <div id="PlaceHolderHere"></div>
 <!-- Main-body start -->
@@ -13,12 +13,12 @@
                 @*Page-header start*@
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">GAS Units Administration</h5>
+                        <h5 class="m-b-10">@localizer["GAS Units Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("Create")"
                                    data-redirect="@Url.Action("Success", "Unit")" class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-plus"></i> Add New Unit
+                                    <i class="fa fa-plus"></i> @localizer["Add New Unit"]
                                 </a>
                             </li>
                         </ul>
@@ -30,7 +30,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h5>Units List</h5>
+                            <h5>@localizer["Units List"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -47,12 +47,12 @@
                                 <table id="example1" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>SNo.</th>
-                                            <th>Unit Name</th>
-                                            <th>Amount in Kg</th>
-                                            <th>Description</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th>@localizer["SNo"].</th>
+                                            <th>@localizer["Unit Name"]</th>
+                                            <th>@localizer["Amount in Kg"]</th>
+                                            <th>@localizer["Description"]</th>
+                                            <th>@localizer["Status"]</th>
+                                            <th>@localizer["Action"]</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -70,11 +70,11 @@
                                                     <td>
                                                         @if (unit.Status == 1)
                                                         {
-                                                            <span class="badge badge-primary">Enabled</span>
+                                                            <span class="badge badge-primary">@localizer["Enabled"]</span>
                                                         }
                                                         else
                                                         {
-                                                            <span class="badge badge-warning">Disabled</span>
+                                                            <span class="badge badge-warning">@localizer["Disabled"]</span>
                                                         }
                                                     </td>
                                                     <td>
@@ -82,9 +82,9 @@
                                                            data-redirect="@Url.Action("Success", "Unit")" class="text text-primary" style="cursor: pointer;">
                                                             <i class="fa fa-edit"></i>
                                                         </a>
+                                                        <span class="d-none">@{sno++;}</span>
                                                     </td>
                                                 </tr>
-                                                <span class="d-none">@{sno++;}</span>
                                             }
                                         }
                                     </tbody>
@@ -103,19 +103,14 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 @*Main-body end*@
-
-
-

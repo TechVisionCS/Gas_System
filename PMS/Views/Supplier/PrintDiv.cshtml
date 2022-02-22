@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<SupplierLedgerViewModel>
-
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Suppliers Ledger";
+    ViewData["Title"] = localizer["Suppliers Ledger"];
 }
 <style id="table_style" type="text/css">
     body {
@@ -36,29 +36,26 @@
                 <!-- Page-header start-->
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Suppliers Administration</h5>
+                        <h5 class="m-b-10">@localizer["Suppliers Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Create" asp-controller="Supplier"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-user-plus"></i> Add New Supplier
+                                    <i class="fa fa-user-plus"></i> @localizer["Add New Supplier"]
                                 </a>
 
                                 <a asp-action="Index" asp-controller="Supplier"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Suppliers List
+                                    <i class="fa fa-list"></i> @localizer["Suppliers List"]
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- Page-header end -->
-                <!-- Page-body start -->
                 <div class="page-body ">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Supplier Ledger Print</h5>
+                            <h5>@localizer["Supplier Ledger Print"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -79,7 +76,7 @@
                                     {
                                         <div class="col-lg-6 col-md-6 col-sm-6">
                                             <div class="d-flex flex-column flex-root">
-                                                <h3> <span class="font-weight-bolder mb-2"> <b> Supplier : </b>@m.EntityName </span></h3>
+                                                <h3> <span class="font-weight-bolder mb-2"> <b> @localizer["Supplier"] : </b>@m.EntityName </span></h3>
                                                 <span class="opacity-60" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size:large">
                                                     / @m.EntityPhone / &nbsp; @m.EntityAddress <br />
                                                 </span>
@@ -108,12 +105,12 @@
                                         <table id="table_style" class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>SNo</th>
-                                                    <th>Date</th>
-                                                    <th>Description</th>
-                                                    <th>Debit</th>
-                                                    <th>Credit</th>
-                                                    <th>Balance</th>
+                                                    <th>@localizer["SNo"]</th>
+                                                    <th>@localizer["Date"]</th>
+                                                    <th>@localizer["Description"]</th>
+                                                    <th>@localizer["Debit"]</th>
+                                                    <th>@localizer["Credit"]</th>
+                                                    <th>@localizer["Balance"]</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -150,7 +147,7 @@
                                                 <tr style="background-color: lightgray;">
                                                     <td></td>
                                                     <td></td>
-                                                    <td style="text-align:right">Total</td>
+                                                    <td style="text-align:right">@localizer["Total"]</td>
                                                     <td><b>@totalDebit.ToString("N")</b></td>
                                                     <td><b>@totalCredit.ToString("N")</b></td>
                                                     <td>
@@ -174,7 +171,7 @@
                         </div>
 
                         <div class="col-12 text text-right">
-                            <button type="button" class="btn btn-info" onclick="PrintTable();" style="padding:8px" value='Print'>Print</button>
+                            <button type="button" class="btn btn-info" onclick="PrintTable();" style="padding:8px" value='Print'>@localizer["Print"]</button>
                         </div>
                     </div>
                     <!-- Basic table card end -->
@@ -186,7 +183,7 @@
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>

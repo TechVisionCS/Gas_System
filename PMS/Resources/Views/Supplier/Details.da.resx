@@ -117,4 +117,112 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>بیلانس</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>کتګوری</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>جور شوی په </value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>کریدیت</value>
+  </data>
+  <data name="Customer Details" xml:space="preserve">
+    <value>پیریدونکو تفصیل</value>
+  </data>
+  <data name="Customer Invoices Details" xml:space="preserve">
+    <value>پیریدونکو رسید معلومات</value>
+  </data>
+  <data name="Customer Ledger Details" xml:space="preserve">
+    <value>د پیرودونکي لیجر توضیحات</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>پیریدونکو مدیریت</value>
+  </data>
+  <data name="Customers Details" xml:space="preserve">
+    <value>پیریدونکو معلومات</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>پیریدونکو لیجر</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>پیریدونکو لیست</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>دبیت</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل </value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>انوایس نمبر</value>
+  </data>
+  <data name="Last Updated At" xml:space="preserve">
+    <value>اخری تغیرات</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>شرکت تولیدی</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نوم</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>تادیه </value>
+  </data>
+  <data name="Payments List" xml:space="preserve">
+    <value>لیست پرداخت ها</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون</value>
+  </data>
+  <data name="Registered By User" xml:space="preserve">
+    <value>د کارمند په واسطه</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Supplier Details" xml:space="preserve">
+    <value>جزیات عرضه کننده</value>
+  </data>
+  <data name="Supplier Ledger Details" xml:space="preserve">
+    <value>تفصیل کهاته عرضه کننده</value>
+  </data>
+  <data name="Supplier Products" xml:space="preserve">
+    <value>اجناس عرضه کننده</value>
+  </data>
+  <data name="Suppliers Administration" xml:space="preserve">
+    <value>مدیریت عرضه کننده</value>
+  </data>
+  <data name="Suppliers Details" xml:space="preserve">
+    <value>جزئیات عرضه کننده کنندگان</value>
+  </data>
+  <data name="Suppliers Ledger" xml:space="preserve">
+    <value>کهاته عرضه کننده</value>
+  </data>
+  <data name="Suppliers List" xml:space="preserve">
+    <value>لیست عرضه کننده</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>ټوتل</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>توتل مبلغ</value>
+  </data>
 </root>

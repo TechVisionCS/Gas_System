@@ -123,6 +123,9 @@
   <data name="Category" xml:space="preserve">
     <value>کتګوری</value>
   </data>
+  <data name="Change Unit" xml:space="preserve">
+    <value>واحد تغیرکنید</value>
+  </data>
   <data name="Current Stock" xml:space="preserve">
     <value>ذخیره موجودی</value>
   </data>

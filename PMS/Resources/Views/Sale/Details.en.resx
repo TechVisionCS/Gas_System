@@ -171,6 +171,9 @@
   <data name="Per item" xml:space="preserve">
     <value>Per item</value>
   </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
   <data name="Product" xml:space="preserve">
     <value>Product</value>
   </data>

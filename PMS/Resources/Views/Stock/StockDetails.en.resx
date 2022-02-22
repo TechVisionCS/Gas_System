@@ -123,6 +123,9 @@
   <data name="Category" xml:space="preserve">
     <value>Category</value>
   </data>
+  <data name="Change Unit" xml:space="preserve">
+    <value>Change Unit</value>
+  </data>
   <data name="Current Stock" xml:space="preserve">
     <value>Current Stock</value>
   </data>

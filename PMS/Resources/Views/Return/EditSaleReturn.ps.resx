@@ -117,4 +117,190 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>عملی</value>
+  </data>
+  <data name="Add a new puchase details" xml:space="preserve">
+    <value>نوی خریداری اضافه کول معلومات</value>
+  </data>
+  <data name="Add New" xml:space="preserve">
+    <value>نوی ریکارد</value>
+  </data>
+  <data name="Add New Bank" xml:space="preserve">
+    <value>نوی بانک اضافه کول</value>
+  </data>
+  <data name="Add sale return" xml:space="preserve">
+    <value>نوی خرڅلاو واپسی</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مبلغ</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Balanced Amount" xml:space="preserve">
+    <value>بیلانس مبلغ</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>بانک</value>
+  </data>
+  <data name="Bank Payment" xml:space="preserve">
+    <value>بانکی تادیه</value>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>محاسبه کول</value>
+  </data>
+  <data name="Cash Payment" xml:space="preserve">
+    <value>نغدی تادیه </value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>پاک کول</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>کرنسی</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>ختمول</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Details about Sale..." xml:space="preserve">
+    <value>خرڅلاو په اړه معلومات</value>
+  </data>
+  <data name="Discount Amount" xml:space="preserve">
+    <value>تخفیف مبلغ</value>
+  </data>
+  <data name="Discount Type" xml:space="preserve">
+    <value>تخفیف نوعیت</value>
+  </data>
+  <data name="Discount(%)" xml:space="preserve">
+    <value>تخفیف</value>
+  </data>
+  <data name="Due Amount" xml:space="preserve">
+    <value>باقی مبلغ</value>
+  </data>
+  <data name="Edit sale return" xml:space="preserve">
+    <value>د خرڅلاو واپسی تغیرول</value>
+  </data>
+  <data name="Enter return notes..." xml:space="preserve">
+    <value>دلته د واپسی نوت ولیکی</value>
+  </data>
+  <data name="Exchange Amount" xml:space="preserve">
+    <value>تبادلی مقدار</value>
+  </data>
+  <data name="Exchange Rate" xml:space="preserve">
+    <value>تبادلی نرخ</value>
+  </data>
+  <data name="Fixed Amount" xml:space="preserve">
+    <value>ثابت </value>
+  </data>
+  <data name="Grand Total" xml:space="preserve">
+    <value>عمومی توتل</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>انوایس نمبر</value>
+  </data>
+  <data name="Item details" xml:space="preserve">
+    <value>توکو معلومات</value>
+  </data>
+  <data name="Paid Amount" xml:space="preserve">
+    <value>تادیه مبلغ</value>
+  </data>
+  <data name="Payment Type" xml:space="preserve">
+    <value>د تادیه نوعیت</value>
+  </data>
+  <data name="Percentage(%)" xml:space="preserve">
+    <value>فیصدی</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>جنس</value>
+  </data>
+  <data name="Product List" xml:space="preserve">
+    <value>پیرودونه لیست</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>خریداری تاریخ</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>پیرودونه</value>
+  </data>
+  <data name="Purchases Administration" xml:space="preserve">
+    <value>پیرودونه مدیریت</value>
+  </data>
+  <data name="Purchases List" xml:space="preserve">
+    <value>خریداری لیست</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Received Amount" xml:space="preserve">
+    <value>ترلاسه شوی مبلغ</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>کرایه</value>
+  </data>
+  <data name="Return Check" xml:space="preserve">
+    <value>واپسی چیک</value>
+  </data>
+  <data name="Return Date" xml:space="preserve">
+    <value>واپسی تاریخ</value>
+  </data>
+  <data name="Return Notes" xml:space="preserve">
+    <value>واپسی نوټ</value>
+  </data>
+  <data name="Returned Qty" xml:space="preserve">
+    <value>واپسی مقدار</value>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>واپسی</value>
+  </data>
+  <data name="Sale Returns Administration" xml:space="preserve">
+    <value>خرڅلاو واپسی مدیریت</value>
+  </data>
+  <data name="Sale Returns List" xml:space="preserve">
+    <value>خرڅلاو واپسی لیست</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کول</value>
+  </data>
+  <data name="Save &amp; Print" xml:space="preserve">
+    <value>ثبت او چاپ</value>
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>بانک انتخاب کړی</value>
+  </data>
+  <data name="Select Customer" xml:space="preserve">
+    <value>مشتری انتخاب کړی</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>عرضه کوونکی انتخاب کړی</value>
+  </data>
+  <data name="Sold Qty" xml:space="preserve">
+    <value>خرڅ شوی مقدار</value>
+  </data>
+  <data name="Sub Total" xml:space="preserve">
+    <value>فرعی ټوټل</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کوونکی</value>
+  </data>
+  <data name="Supplier List" xml:space="preserve">
+    <value>د عرضه کوونکي لیست</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>تکس</value>
+  </data>
+  <data name="Total Discount (%)" xml:space="preserve">
+    <value>مجموعه تخفیف</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>ټول قیمت</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>واحد</value>
+  </data>
+  <data name="Unit Price" xml:space="preserve">
+    <value>واحد قیمت</value>
+  </data>
 </root>

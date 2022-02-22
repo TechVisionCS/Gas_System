@@ -117,4 +117,91 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>بیلانس</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>کریدیت</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>پیریدونکی</value>
+  </data>
+  <data name="Customer Details" xml:space="preserve">
+    <value>پیریدونکی معلومات</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>پیریدونکو مدیریت</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>پیریدونکو لیجر</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>پیریدونکو لیست</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Date Details" xml:space="preserve">
+    <value>تاریخ معالومات</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>دبیت</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="End Date" xml:space="preserve">
+    <value>ختم تاریخ</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>له تاریخ</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نوم</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون نمبر</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرینت</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>لټون</value>
+  </data>
+  <data name="Select Customer" xml:space="preserve">
+    <value>لطفا پیریدونکی انتخاب کړي</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>عرضه کوونکی انتخاب کړي</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Start Date" xml:space="preserve">
+    <value>شروع تاریخ</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کوونکی </value>
+  </data>
+  <data name="Supplier Administration" xml:space="preserve">
+    <value>عرضه کوونکی مدیریت</value>
+  </data>
+  <data name="Suppliers Ledger" xml:space="preserve">
+    <value>عرضه کوونکی کهاته</value>
+  </data>
+  <data name="Suppliers List" xml:space="preserve">
+    <value>عرضه کوونکی لیست</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تر تاریخ</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>توتل</value>
+  </data>
 </root>

@@ -171,6 +171,9 @@
   <data name="Per item" xml:space="preserve">
     <value>به هر جنس</value>
   </data>
+  <data name="Print" xml:space="preserve">
+    <value>چاپ</value>
+  </data>
   <data name="Product" xml:space="preserve">
     <value>جنس</value>
   </data>

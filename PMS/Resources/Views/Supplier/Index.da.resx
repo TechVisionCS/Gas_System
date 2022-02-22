@@ -117,4 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Customer" xml:space="preserve">
+    <value>افزودن مشتری جدید</value>
+  </data>
+  <data name="Add New Supplier" xml:space="preserve">
+    <value>عرضه کننده جدید</value>
+  </data>
+  <data name="Add Payment" xml:space="preserve">
+    <value>پرداخت جدید</value>
+  </data>
+  <data name="Add Receives" xml:space="preserve">
+    <value>مبلغ رسید افزودن</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Are you sure you want to delete this?" xml:space="preserve">
+    <value>آیا مطمئن هستید که می خواهید این را حذف کنید؟</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>بیلانس</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>مدیریت مشتری</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>لیجر مشتری</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>لیست مشتری</value>
+  </data>
+  <data name="Ledger" xml:space="preserve">
+    <value>لیجری</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Suppliers" xml:space="preserve">
+    <value>عرضه کننده</value>
+  </data>
+  <data name="Suppliers Administration" xml:space="preserve">
+    <value>مدیریت عرضه کننده</value>
+  </data>
+  <data name="Suppliers Ledger" xml:space="preserve">
+    <value>کهاته عرضه کننده</value>
+  </data>
+  <data name="Suppliers List" xml:space="preserve">
+    <value>لیست عرضه کننده</value>
+  </data>
 </root>

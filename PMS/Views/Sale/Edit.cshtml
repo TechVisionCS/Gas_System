@@ -66,9 +66,9 @@
                                                             <option selected="selected" value="0">@localizer["WALKING CUSTOMER"]</option>
                                                         </select>
                                                         <span asp-validation-for="@Sale.CustomerId" class="text-danger"></span>
-                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreateCustomerModel")"
-                                                           data-redirect="@Url.Action("Success", "Sale")" class="text text-info" style="color: white; cursor: pointer;" id="btnAddCustomer">
-                                                            <i class="fa fa-plus"></i> @localizer["Customer"]
+                                                        <a data-toggle="ajax-modal" data-target="#exampleModal" data-url="@Url.Action("CreatePartial","Customer")"
+                                                           data-redirect="@Url.Action("Index", "Sale")" class="text text-info" style="color: white; cursor: pointer;" id="btnAddCustomer">
+                                                            <i class="fa fa-plus"></i>@localizer["Customer"]
                                                         </a>
                                                     </div>
                                                 </div>
@@ -166,8 +166,8 @@
                                                                 <th>@localizer["Unit Price"] <span class="required">*</span></th>
                                                                 <th>@localizer["Qty"] <span class="required">*</span></th>
                                                                 <th class="d-none">@localizer["Discount (%)"] <small>@localizer["Per item"]</small>  <span class="required"></span></th>
-                                                                <th>Total Price</th>
-                                                                <th>Action</th>
+                                                                <th>@localizer["Total Price"]</th>
+                                                                <th>@localizer["Action"]</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody id="items">

@@ -155,7 +155,7 @@
                                                 <div class="col-lg-3 col-md-3 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">@localizer["Invoice No"]<span class="required">*</span></label>
-                                                        <input asp-for="@Purchase.InvoiceNo" class="form-control" required autocomplete="off" Placeholder="Invoice No" />
+                                                        <input asp-for="@Purchase.InvoiceNo" class="form-control" required autocomplete="off" Placeholder="@localizer["Invoice No"]" />
                                                         <span asp-validation-for="@Purchase.InvoiceNo" class="text-danger"></span>
                                                     </div>
                                                 </div>
@@ -163,7 +163,7 @@
                                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">@localizer["Description"]</label>
-                                                        <textarea asp-for="@Purchase.Description" class="form-control" placeholder="Details about Purchase..."> </textarea>
+                                                        <textarea asp-for="@Purchase.Description" class="form-control" placeholder="@localizer["Details about Purchase..."]"> </textarea>
                                                         <span asp-validation-for="@Purchase.Description" class="text-danger"></span>
                                                     </div>
                                                 </div>

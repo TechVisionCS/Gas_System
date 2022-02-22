@@ -117,4 +117,130 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add purchase return" xml:space="preserve">
+    <value>افزودن بازگشت خرید</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مبلغ</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>عقب</value>
+  </data>
+  <data name="Balanced Amount" xml:space="preserve">
+    <value>مبلغ بیلانس کل</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>بانک</value>
+  </data>
+  <data name="Bank Payment" xml:space="preserve">
+    <value>پرداخت بانکي</value>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>محاسبه</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="Cash Payment" xml:space="preserve">
+    <value>پرداخت نقدی</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>پاک کردن</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Details about Purchase..." xml:space="preserve">
+    <value>جزئیات خرید ...</value>
+  </data>
+  <data name="Discount(%)" xml:space="preserve">
+    <value>تخفیف</value>
+  </data>
+  <data name="Edit purchase return" xml:space="preserve">
+    <value>ویرایش معلومات خریداری </value>
+  </data>
+  <data name="Enter return notes..." xml:space="preserve">
+    <value>یادداشت های برگشتی را وارد کنید...</value>
+  </data>
+  <data name="Grand Total" xml:space="preserve">
+    <value>مجموعه عمومی</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>انوایس نمبر</value>
+  </data>
+  <data name="Item details" xml:space="preserve">
+    <value>جزئیات مورد</value>
+  </data>
+  <data name="Payment Type" xml:space="preserve">
+    <value>نوع پرداخت</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>جنس</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>تاریخ خرید</value>
+  </data>
+  <data name="Purchase Returns Administration" xml:space="preserve">
+    <value>اداره بازگشت خرید</value>
+  </data>
+  <data name="Purchase Returns List" xml:space="preserve">
+    <value>لیست بازگشت خرید</value>
+  </data>
+  <data name="Purchased Price" xml:space="preserve">
+    <value>قیبمت خرید</value>
+  </data>
+  <data name="Purchased Qty" xml:space="preserve">
+    <value>مقدار خرید</value>
+  </data>
+  <data name="Received Amount" xml:space="preserve">
+    <value>مبلغ دریافتی</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>کرایه</value>
+  </data>
+  <data name="Return Check" xml:space="preserve">
+    <value>چک برگشتی</value>
+  </data>
+  <data name="Return Date" xml:space="preserve">
+    <value>تاریخ بازګشت</value>
+  </data>
+  <data name="Return Notes" xml:space="preserve">
+    <value>یادداشت های برگشتی</value>
+  </data>
+  <data name="Returned Qty" xml:space="preserve">
+    <value>مقدار بازګشت</value>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت نمودن</value>
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>بانک را انتخاب نمایید</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>عرضه کننده را انتخاب نمایید</value>
+  </data>
+  <data name="Sub Total" xml:space="preserve">
+    <value>توتل اولیه</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کننده</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>تیکس</value>
+  </data>
+  <data name="Total Discount (%)" xml:space="preserve">
+    <value>توتل تخفیف</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>مبلغ کل</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>واحد</value>
+  </data>
 </root>

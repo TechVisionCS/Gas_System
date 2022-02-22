@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Add New Unit" xml:space="preserve">
+    <value>Add New Unit</value>
+  </data>
+  <data name="Amount in Kg" xml:space="preserve">
+    <value>Amount in Kg</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="GAS Units Administration" xml:space="preserve">
+    <value>GAS Units Administration</value>
+  </data>
+  <data name="Manage GAS Units" xml:space="preserve">
+    <value>Manage GAS Units</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>SNo</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Unit Name" xml:space="preserve">
+    <value>Unit Name</value>
+  </data>
+  <data name="Units List" xml:space="preserve">
+    <value>Units List</value>
+  </data>
 </root>

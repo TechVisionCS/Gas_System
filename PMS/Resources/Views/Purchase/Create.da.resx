@@ -153,6 +153,9 @@
   <data name="Description" xml:space="preserve">
     <value>تفصیل</value>
   </data>
+  <data name="Details about Purchase..." xml:space="preserve">
+    <value>معلومات در باره خریداری</value>
+  </data>
   <data name="Discount Amount" xml:space="preserve">
     <value>مبلغ تخفیف</value>
   </data>

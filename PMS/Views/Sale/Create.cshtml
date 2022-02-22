@@ -199,7 +199,7 @@
                                                         <tbody>
                                                             <tr>
 
-                                                                <td colspan="4" class="@valueDefined">Sub Total</td>
+                                                                <td colspan="4" class="@valueDefined">@localizer["Sub Total"]</td>
 
                                                                 <td>
                                                                     <input type="number" step="any" class="form-control" id="total" asp-for="@Sale.SubTotal" placeholder="0.00" readonly />
@@ -258,7 +258,7 @@
                                                             </tr>
 
                                                             <tr>
-                                                                <td colspan="4" class="@valueDefined">@localizer[""]Grand Total</td>
+                                                                <td colspan="4" class="@valueDefined">@localizer["Grand Total"]</td>
                                                                 <td>
                                                                     <input type="number" step="any" asp-for="@Sale.TotalAmount" placeholder="0.00" id="grandtotal" class="form-control" readonly />
                                                                 </td>

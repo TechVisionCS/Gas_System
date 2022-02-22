@@ -117,4 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add customer receive details" xml:space="preserve">
+    <value>جزئیات دریافت مشتری را اضافه کنید</value>
+  </data>
+  <data name="Add supplier payment details" xml:space="preserve">
+    <value>جزئیات پرداخت تامین کننده را اضافه کنید</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>بانک </value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="Customer Receives" xml:space="preserve">
+    <value>مشتری دریافت می کند</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>مدیریت مشتری</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>دفتر کل مشتریان</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>شرح</value>
+  </data>
+  <data name="Payment Amount" xml:space="preserve">
+    <value>مبلغ پرداختی</value>
+  </data>
+  <data name="Payment Date" xml:space="preserve">
+    <value>تاریخ پرداخت</value>
+  </data>
+  <data name="Payment Type" xml:space="preserve">
+    <value>نوع پرداخت</value>
+  </data>
+  <data name="Receive Amount" xml:space="preserve">
+    <value>دریافت مبلغ</value>
+  </data>
+  <data name="Receive Date" xml:space="preserve">
+    <value>تاریخ دریافت</value>
+  </data>
+  <data name="Receive Type" xml:space="preserve">
+    <value>نوع دریافت</value>
+  </data>
+  <data name="Receives List" xml:space="preserve">
+    <value>لیست دریافت ها</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کردن</value>
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>بانک را انتخاب نمایید</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>--انتخاب عرضه کننده کننده--</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کننده</value>
+  </data>
+  <data name="Supplier Payments" xml:space="preserve">
+    <value>پرداخت های عرضه کننده کننده</value>
+  </data>
+  <data name="Suppliers Administration" xml:space="preserve">
+    <value>اداره عرضه کننده کنندگان</value>
+  </data>
+  <data name="Suppliers Ledger" xml:space="preserve">
+    <value>کهاته عرضه کنندعه</value>
+  </data>
+  <data name="Suppliers List" xml:space="preserve">
+    <value>لیست عرضه کننده کنندگان</value>
+  </data>
+  <data name="Through Bank" xml:space="preserve">
+    <value>از طریق بانک</value>
+  </data>
+  <data name="Through Cash" xml:space="preserve">
+    <value>از طریق پول نقد</value>
+  </data>
 </root>

@@ -6,22 +6,21 @@
 @{
     string CurrentName = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
     var valueDefined = "";
-    var divlin = "";
+
     switch (CurrentName)
     {
         case "ps":
             valueDefined = "text text-right";
-            divlin = "float-right";
+
             break;
 
         case "da":
             valueDefined = "text text-right";
-            divlin = "float-right";
 
             break;
 
         default:
-            divlin = "float-left";
+
             valueDefined = "text text-left";
             break;
     }
@@ -98,7 +97,8 @@
                                     <input type="password" class="form-control @valueDefined" placeholder="@localizer["Password"]" required autocomplete="off" asp-for="Password">
                                     <span class="md-line"></span>
                                 </div>
-                                <div class="row m-t-25 text-left">
+
+                                <!--<div class="row m-t-25 text-left">
                                     <div class="col-sm-7 col-xs-12">
                                         <div class="checkbox-fade fade-in-primary">
                                             <label>
@@ -108,10 +108,11 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right d-none">
-                                        @*  <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> @localizer["Forgot Your Password?"]</a>*@
-                                    </div>
-                                </div>
+                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right d-none">-->
+                                @*  <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> @localizer["Forgot Your Password?"]</a>*@
+                                <!--</div>
+                                </div>-->
+
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">@localizer["log in"]</button>

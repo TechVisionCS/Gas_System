@@ -117,4 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>عمل</value>
+  </data>
+  <data name="Add New Return" xml:space="preserve">
+    <value>نوی اضافه کول</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>مبلغ</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>له تاریخ</value>
+  </data>
+  <data name="Invoice #" xml:space="preserve">
+    <value>انووایس </value>
+  </data>
+  <data name="No item available!" xml:space="preserve">
+    <value>هیڅ توکی ندی موجود</value>
+  </data>
+  <data name="Purchase ID" xml:space="preserve">
+    <value>پیریدو شماره</value>
+  </data>
+  <data name="Purchase Returns Administration" xml:space="preserve">
+    <value>د پیریدو د واپسی مدیریت</value>
+  </data>
+  <data name="Purchase Returns List" xml:space="preserve">
+    <value>د خریداری واپسی لیست</value>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>واپسی </value>
+  </data>
+  <data name="Sale ID" xml:space="preserve">
+    <value>خرڅلاو شماره</value>
+  </data>
+  <data name="Sale Returns Administration" xml:space="preserve">
+    <value>خرڅلاو واپسی مدیریت</value>
+  </data>
+  <data name="Sale Returns List" xml:space="preserve">
+    <value>خرڅلاو واپسی لیست</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>لټون</value>
+  </data>
+  <data name="Show All" xml:space="preserve">
+    <value>ټول لیدل</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کوونکی</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تر تاریخ</value>
+  </data>
 </root>

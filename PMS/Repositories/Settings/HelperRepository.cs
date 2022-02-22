@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Localization;
 using NToastNotify;
 using PMS.Data;
 using PMS.Models;
@@ -19,11 +20,15 @@ namespace PMS.Repositories
     {
         private readonly ApplicationDbContext dbContext;
         private readonly IToastNotification toastNotification;
+        private readonly IStringLocalizer<HelperRepository> localizer;
 
-        public HelperRepository(ApplicationDbContext dbContext, IToastNotification toastNotification)
+        public HelperRepository(ApplicationDbContext dbContext,
+            IToastNotification toastNotification,
+            IStringLocalizer<HelperRepository> localizer)
         {
             this.dbContext = dbContext;
             this.toastNotification = toastNotification;
+            this.localizer = localizer;
         }
 
         public IEnumerable<Category> GetCategory()
@@ -200,11 +205,11 @@ namespace PMS.Repositories
 
         public void SuccessMessage()
         {
-            toastNotification.AddSuccessToastMessage("Operation has been completed successfully!");
+            toastNotification.AddSuccessToastMessage(localizer["Operation has been completed successfully!"]);
         }
         public void ErrorMessage()
         {
-            toastNotification.AddErrorToastMessage("Something went wrong, please try again later!\nPlease view errors in system error logs file.");
+            toastNotification.AddErrorToastMessage(localizer["Something went wrong, please try again later!\nPlease view errors in system error logs file."]);
         }
         public void WarningMessage(string msg)
         {

@@ -1,6 +1,7 @@
 ﻿@model SupplierPayment
+@inject IViewLocalizer localizer
 @{
-    ViewData["Title"] = "Supplier Payments";
+    ViewData["Title"] = localizer["Supplier Payments"];
 }
 <div class="main-body">
     <div class="page-wrapper">
@@ -8,16 +9,16 @@
             <div class="col-lg-10 col-md-12 col-ms-12" style="margin:0 auto;">
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Suppliers Administration</h5>
+                        <h5 class="m-b-10">@localizer["Suppliers Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
                                 <a asp-action="Index" asp-controller="Supplier"
                                    class="btn btn-mat btn-primary" style="color: white;">
-                                    <i class="fa fa-list"></i>  Suppliers List
+                                    <i class="fa fa-list"></i>  @localizer["Suppliers List"]
                                 </a>
                                 <a asp-action="GetAllLedgers" asp-controller="Supplier"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Suppliers Ledger
+                                    <i class="fa fa-list"></i> @localizer["Suppliers Ledger"]
                                 </a>
 
                             </li>
@@ -30,7 +31,7 @@
                             <!-- Basic Form Inputs card start -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Edit supplier payment details</h5>
+                                    <h5>@localizer["Edit supplier payment details"]</h5>
 
                                     <div class="card-header-right">
                                         <i class="icofont icofont-spinner-alt-5"></i>
@@ -46,27 +47,24 @@
                                         <div asp-validation-summary="All" class="text-danger"></div>
                                     </div>
                                     <div class="col-lg-8 col-md-10 col-sm-12" style="margin: 0 auto;">
-                                        <form method="post">
-
+                                        <form method="post" asp-controller="Supplier">
                                             <div class="row">
-
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Supplier <span class="required">*</span></label>
+                                                        <label class="control-label">@localizer["Supplier"] <span class="required">*</span></label>
                                                         <select class="select2 form-control" style="width: 100%;" asp-for="SupplierId" asp-items="@ViewBag.Suppliers">
-                                                            <option selected="selected" value="0">--Select Supplier--</option>
+                                                            <option selected="selected" value="0">@localizer["Select Supplier"]</option>
                                                         </select>
                                                         <span asp-validation-for="SupplierId" class="text-danger"></span>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 d-none">
                                                     <div class="form-group">
-                                                        <label class="control-label">Payment Type <span class="required">*</span></label>
+                                                        <label class="control-label">@localizer["Payment Type"] <span class="required">*</span></label>
                                                         <select class="form-control select2" style="width: 100%;" asp-for="PaymentType" id="invtype">
-                                                            <option selected="selected" value="-1">--Select Payment Type--</option>
-                                                            <option value="0">Through Cash</option>
-                                                            <option value="1">Through Bank</option>
+                                                            <option selected="selected" value="0">@localizer["Through Cash"]</option>
+                                                            <option value="1">@localizer["Through Bank"]</option>
                                                         </select>
                                                         <span asp-validation-for="PaymentType" class="text-danger"></span>
                                                     </div>
@@ -74,9 +72,9 @@
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12" id="bankid">
                                                     <div class="form-group">
-                                                        <label class="control-label">Bank <span class="required">*</span></label>
+                                                        <label class="control-label">@localizer["Bank"] <span class="required">*</span></label>
                                                         <select class="form-control select2" style="width: 100%;" asp-for="BankId" asp-items="@ViewBag.Banks">
-                                                            <option selected="selected" value="0">--Select Bank--</option>
+                                                            <option selected="selected" value="0">@localizer["Select Bank"]</option>
                                                         </select>
                                                         <span asp-validation-for="BankId" class="text-danger"></span>
                                                     </div>
@@ -85,7 +83,7 @@
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <label class="control-label">
-                                                            Payment Amount <span class="required">*</span>
+                                                            @localizer["Payment Amount"] <span class="required">*</span>
                                                         </label>
                                                         <input type="number" step="any" asp-for="Amount" class="form-control" required />
                                                         <span asp-validation-for="Amount" class="text-danger"></span>
@@ -93,7 +91,7 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label"> Payment Date <span class="required">*</span> </label>
+                                                        <label class="control-label"> @localizer["Payment Date"] <span class="required">*</span> </label>
                                                         <input type="date" asp-for="Date" class="form-control" />
                                                         <span asp-validation-for="Date" class="text-danger"></span>
                                                     </div>
@@ -102,7 +100,7 @@
 
                                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Description</label>
+                                                        <label class="control-label">@localizer["Description"]</label>
                                                         <textarea asp-for="Desciption" class="form-control"> </textarea>
                                                         <span asp-validation-for="Desciption" class="text-danger"></span>
                                                     </div>
@@ -115,33 +113,29 @@
                                                     <input type="hidden" asp-for="TransCode" />
                                                     <input type="hidden" asp-for="CreatedAt" />
                                                     <button type="submit" class="btn btn-mat btn-success mr-2">
-                                                        <i class="fa fa-save"></i> Save
+                                                        <i class="fa fa-save"></i> @localizer["Update"]
                                                     </button>
 
                                                     <button type="reset" class="btn btn-mat btn-danger">
-                                                        <i class="fa fa-times"></i> Cancel
+                                                        <i class="fa fa-times"></i> @localizer["Cancel"]
                                                     </button>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
                 <!-- Page body end -->
-
                 <div class="page-header card">
                     <div class="card-block">
                         <ul class="">
                             <li class="breadcrumb-item pull-left">
                                 <a onclick="window.history.back();;"
                                    class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                    <i class="fa fa-arrow-left"></i> Back
+                                    <i class="fa fa-arrow-left"></i> @localizer["Back"]
                                 </a>
                             </li>
                         </ul>
@@ -151,28 +145,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts{
-    <script>
-        var b = $("#invtype").val();
-        if (b == 0) {
-            $("#bankid").hide();
-        } else {
-            $("#bankid").show();
-        }
-
-        $("#invtype").on('change', function () {
-            var vl = $(this).val();
-
-            if (vl == "0") {
-                $("#bankid").hide();
-                $("#bankid").val("-1");
-            } else if (vl == "1") {
-                $("#bankid").show();
-            } else {
-                $("#bankid").hide();
-                $("#bankid").val("-1");
-            }
-        });
-    </script>
-} 

@@ -144,6 +144,9 @@
   <data name="Calculate" xml:space="preserve">
     <value>Calculate</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Cash Payment" xml:space="preserve">
     <value>Cash Payment</value>
   </data>
@@ -255,8 +258,11 @@
   <data name="Select Bank" xml:space="preserve">
     <value>Select Bank</value>
   </data>
+  <data name="Select Customer" xml:space="preserve">
+    <value>Select Customer</value>
+  </data>
   <data name="Select Supplier" xml:space="preserve">
-    <value>Select Supplier</value>
+    <value>Select Customer</value>
   </data>
   <data name="Sub Total" xml:space="preserve">
     <value>Sub Total</value>

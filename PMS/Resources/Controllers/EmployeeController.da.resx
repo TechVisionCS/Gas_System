@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Please enter correct data and try again!" xml:space="preserve">
+    <value>لطفا نموده معلومات را درست داخل نمایید</value>
+  </data>
+  <data name="Please enter correct filter details!" xml:space="preserve">
+    <value>لطفا نموده معلومات را درست فلتر نمایید</value>
+  </data>
 </root>

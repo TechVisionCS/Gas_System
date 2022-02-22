@@ -117,4 +117,91 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>ادرس</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Balance" xml:space="preserve">
+    <value>بیلانس</value>
+  </data>
+  <data name="Credit" xml:space="preserve">
+    <value>کریدیت</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="Customer Details" xml:space="preserve">
+    <value>معلومات مشتری</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>مدیریت مشتریان</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>لیجر مشتریان</value>
+  </data>
+  <data name="Customers List" xml:space="preserve">
+    <value>لیست مشتریان</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="Date Details" xml:space="preserve">
+    <value>معلومات تاریخ</value>
+  </data>
+  <data name="Debit" xml:space="preserve">
+    <value>دبیت</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="End Date" xml:space="preserve">
+    <value>تاریخ ختم</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>از تاریخ</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلیفون</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>پرینت</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Select Customer" xml:space="preserve">
+    <value>لطفا مشتری را انتخاب نمایید</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>عرضه کننده را انتخاب نمایید</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="Start Date" xml:space="preserve">
+    <value>تاریخ شروع</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کننده</value>
+  </data>
+  <data name="Supplier Administration" xml:space="preserve">
+    <value>مدیریت عرضه کننده</value>
+  </data>
+  <data name="Suppliers Ledger" xml:space="preserve">
+    <value>کهاته عرضه کننده</value>
+  </data>
+  <data name="Suppliers List" xml:space="preserve">
+    <value>لیست عرضه کننده</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تا تاریخ</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>توتل</value>
+  </data>
 </root>

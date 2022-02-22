@@ -1,6 +1,8 @@
 ﻿@model SupplierDetailsViewModel
+@inject IViewLocalizer localizer
+
 @{
-    ViewData["Title"] = "Suppliers Details";
+    ViewData["Title"] = localizer["Suppliers Details"];
     var supplierDetails = Model.SupplierDetails;
     var supplierLedgers = Model.SupplierLedgerDetails;
     var supplierProducts = Model.ProductDetails;
@@ -15,21 +17,21 @@
 
                 <div class="page-header card">
                     <div class="card-block">
-                        <h5 class="m-b-10">Suppliers Administration</h5>
+                        <h5 class="m-b-10">@localizer["Suppliers Administration"]</h5>
                         <ul class="breadcrumb-title b-t-default p-t-10">
                             <li class="breadcrumb-item pull-right">
 
                                 <a asp-action="Index" asp-controller="Supplier"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Suppliers List
+                                    <i class="fa fa-list"></i>@localizer["Suppliers List"]
                                 </a>
                                 <a asp-action="Payments" asp-controller="Supplier"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Payments List
+                                    <i class="fa fa-list"></i> @localizer["Payments List"]
                                 </a>
                                 <a asp-action="GetAllLedgers" asp-controller="Supplier"
                                    class="btn btn-mat btn-info" style="color: white;">
-                                    <i class="fa fa-list"></i> Suppliers Ledger
+                                    <i class="fa fa-list"></i> @localizer["Suppliers Ledger"]
                                 </a>
                             </li>
                         </ul>
@@ -41,7 +43,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h5>Supplier Details</h5>
+                            <h5>@localizer["Supplier Details"]</h5>
                             <div class="card-header-right">
                                 <ul class="list-unstyled card-option">
                                     <li><i class="fa fa-chevron-left"></i></li>
@@ -61,51 +63,51 @@
 
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <h5 class="text text-primary">Supplier Details</h5>
+                                                <h5 class="text text-primary">@localizer["Supplier Details"]</h5>
                                                 <hr />
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                                <h6>Name</h6>
+                                                <h6>@localizer["Name"]</h6>
                                                 <p>@supplierDetails.Name</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                                <h6>Phone</h6>
+                                                <h6>@localizer["Phone"]</h6>
                                                 <p>@supplierDetails.Phone</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                                <h6>Email</h6>
+                                                <h6>@localizer["Email"]</h6>
                                                 <p>@supplierDetails.Email</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-6 col-md-4 col-sm-6">
-                                                <h6>Address</h6>
+                                                <h6>@localizer["Address"]</h6>
                                                 <p>@supplierDetails.Address</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-6 col-md-4 col-sm-6">
-                                                <h6>Details</h6>
+                                                <h6>@localizer["Details"]</h6>
                                                 <p>@supplierDetails.Details</p>
                                                 <hr />
                                             </div>
 
                                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                                <h6>Created At</h6>
+                                                <h6>@localizer["Created At"]</h6>
                                                 <p>@supplierDetails.CreatedAt</p>
                                                 <hr />
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                                <h6>Last Updated At</h6>
+                                                <h6>@localizer["Last Updated At"]</h6>
                                                 <p>@supplierDetails.UpdatedAt</p>
                                                 <hr />
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                                <h6>Registered By User</h6>
+                                                <h6>@localizer["Registered By User"]</h6>
                                                 <p>@supplierDetails.UserName</p>
                                                 <hr />
                                             </div>
@@ -118,7 +120,7 @@
                                     <div class="card-block">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <h5 class="text text-primary">Supplier Products</h5>
+                                                <h5 class="text text-primary">@localizer["Supplier Products"]</h5>
                                                 <hr />
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -127,15 +129,17 @@
                                                         <table class="table table-bordered table-hover">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>SNo.</th>
-                                                                    <th>Name</th>
-                                                                    <th>Manufacturer</th>
-                                                                    <th>Category</th>
-
+                                                                    <th>@localizer["SNo"].</th>
+                                                                    <th>@localizer["Name"]</th>
+                                                                    <th>@localizer["Manufacturer"]</th>
+                                                                    <th>
+                                                                        @localizer["Category"]
+                                                                        <span class="d-none">@{ var sno = 1; }</span>
+                                                                    </th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <span class="d-none">@{ var sno = 1; }</span>
+
                                                                 @if (supplierProducts.Any())
                                                                 {
                                                                     @foreach (var m in supplierProducts)
@@ -166,7 +170,7 @@
                                     <div class="card-block">
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <h5 class="text text-primary">Supplier Ledger Details</h5>
+                                                <h5 class="text text-primary">@localizer["Supplier Ledger Details"]</h5>
                                                 <hr />
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -175,12 +179,12 @@
                                                         <table class="table table-bordered table-hover">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>SNo</th>
-                                                                    <th>Date</th>
-                                                                    <th>Description</th>
-                                                                    <th>Debit</th>
-                                                                    <th>Credit</th>
-                                                                    <th>Balance</th>
+                                                                    <th>@localizer["SNo"]</th>
+                                                                    <th>@localizer["Date"]</th>
+                                                                    <th>@localizer["Description"]</th>
+                                                                    <th>@localizer["Debit"]</th>
+                                                                    <th>@localizer["Credit"]</th>
+                                                                    <th>@localizer["Balance"]</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -217,7 +221,7 @@
                                                                 <tr style="background-color: lightgray;">
                                                                     <td></td>
                                                                     <td></td>
-                                                                    <td>Total</td>
+                                                                    <td>@localizer["Total"]</td>
                                                                     <td>@totalDebit.ToString("N")</td>
                                                                     <td>@totalCredit.ToString("N")</td>
                                                                     <td>
@@ -242,8 +246,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                         @*Basic table card end*@
@@ -256,13 +258,12 @@
                                 <li class="breadcrumb-item pull-left">
                                     <a onclick="window.history.back();"
                                        class="text text-danger font-weight-bold" style="cursor: pointer;">
-                                        <i class="fa fa-arrow-left"></i> Back
+                                        <i class="fa fa-arrow-left"></i>@localizer["Back"]
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

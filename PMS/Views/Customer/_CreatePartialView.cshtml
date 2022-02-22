@@ -26,7 +26,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="form-group">
                                 <label class="control-label"> @locaizer["Phone"] </label>
-                                <input asp-for="Phone" class="form-control" value="07---------" />
+                                <input asp-for="Phone" class="form-control" value="07---------" dir="auto" />
                                 <span asp-validation-for="Phone" class="text-danger"></span>
                             </div>
                         </div>
@@ -53,8 +53,8 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-info" data-save="modal">@locaizer["Save"]</button>
-                            <a asp-action="Index" asp-controller="Supplier" class="btn btn-primary">@locaizer["Manage"]</a>
+                            <button type="button" class="btn btn-info" data-save="modal">@locaizer["Save"]</button> &nbsp; &nbsp;
+                            <a asp-action="Index" asp-controller="Customer" class="btn btn-primary">@locaizer["Manage"]</a>
                         </div>
                     </div>
                 </form>

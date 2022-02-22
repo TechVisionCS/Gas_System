@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Enter Invoice No or Sale ID" xml:space="preserve">
+    <value>Enter Invoice No or Sale ID</value>
+  </data>
+  <data name="Enter Purchase Id" xml:space="preserve">
+    <value>Enter Purchase Id</value>
+  </data>
+  <data name="Invoice No (Sale ID)" xml:space="preserve">
+    <value>Invoice No (Sale ID)</value>
+  </data>
+  <data name="Purchase ID" xml:space="preserve">
+    <value>Purchase ID</value>
+  </data>
+  <data name="Purchase Return to Suppliers" xml:space="preserve">
+    <value>Purchase Return to Suppliers</value>
+  </data>
+  <data name="Purchase Returns" xml:space="preserve">
+    <value>Purchase Returns</value>
+  </data>
+  <data name="Return Administration" xml:space="preserve">
+    <value>Return Administration</value>
+  </data>
+  <data name="Sale Return from Customers" xml:space="preserve">
+    <value>Sale Return from Customers</value>
+  </data>
+  <data name="Sale Returns" xml:space="preserve">
+    <value>Sale Returns</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
 </root>

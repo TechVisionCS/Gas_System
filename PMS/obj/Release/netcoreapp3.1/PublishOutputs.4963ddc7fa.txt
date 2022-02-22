@@ -1170,10 +1170,12 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\c0430269-549d-4609-844a-ebd3e60d734d_eeeee.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\dbb251bd-e9e1-40cd-a168-890c078e4f31_190705878_773312203378191_1671868058975634366_n.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\e463ffbd-72ad-4245-bc9b-65c35521a616_TEC logo.png
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\18c83585-abd1-42e0-8cb5-d92c1d482487_care.png
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\1ff92fad-7326-4dd8-adf1-7f0f93ed46c1_scanner_20211204_152826.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\4c4a4ccd-3ddd-4f74-9d4f-064a505776ea_photo_2021-12-23_14-33-25.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\5a167c85-b270-4c2b-b7f0-e9bfc37097d6_pharmacy-logo-4729C66E18-seeklogo.com.png
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\5c18106d-41b3-4e15-8583-dd6b86aae515_02.PNG
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\8fa0db43-354b-42e3-974e-0a8e24d45c07_giz.png
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\957a7f2e-a005-4f0a-aee5-ca612770bb93_1-1.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\af651d32-a330-444e-b75e-22320f528a01_tazkira.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\b06dee67-ee4b-4390-8838-da5b268285b4_BT_20181213_SAFFRON1_3641832.jpg

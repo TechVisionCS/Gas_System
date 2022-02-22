@@ -29,11 +29,13 @@
                     <tr>
                         <td>@sno  @{sno++;}</td>
                         <td>@m.ProductName</td>
+
                         <td>
                             <a asp-action="GetByManufacturerId" asp-controller="Stock" asp-route-id="@m.ManufacturerId" class="text text-primary">
                                 @m.ManufacturerName
                             </a>
                         </td>
+
                         <td>
                             <a asp-action="GetByCategoryId" asp-controller="Stock" asp-route-id="@m.CategoryId" class="text text-primary">
                                 @m.CategoryName
@@ -50,7 +52,6 @@
                         </td>
                     </tr>
                 }
-
             }
         </tbody>
     </table>

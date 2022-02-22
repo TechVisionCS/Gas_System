@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Enter Invoice No or Sale ID" xml:space="preserve">
+    <value>انوایس شماره داخل کړي</value>
+  </data>
+  <data name="Enter Purchase Id" xml:space="preserve">
+    <value>خریداری یا انوایس ایدی داخل کړی</value>
+  </data>
+  <data name="Invoice No (Sale ID)" xml:space="preserve">
+    <value>انوایس شماره </value>
+  </data>
+  <data name="Purchase ID" xml:space="preserve">
+    <value>خریداری ایدی</value>
+  </data>
+  <data name="Purchase Return to Suppliers" xml:space="preserve">
+    <value>خریداری واپسی عرضه کوونکی ته</value>
+  </data>
+  <data name="Purchase Returns" xml:space="preserve">
+    <value>پیریدو واپسی</value>
+  </data>
+  <data name="Return Administration" xml:space="preserve">
+    <value>د توکو واپسی مدیریت</value>
+  </data>
+  <data name="Sale Return from Customers" xml:space="preserve">
+    <value>خرڅلاو واپسی د جنس له مشتری څخه</value>
+  </data>
+  <data name="Sale Returns" xml:space="preserve">
+    <value>خرڅلاو واپسی</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>لټون</value>
+  </data>
 </root>

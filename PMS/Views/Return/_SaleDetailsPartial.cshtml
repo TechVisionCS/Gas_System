@@ -1,14 +1,14 @@
 ﻿@model SaleDetails
-
+@inject IViewLocalizer localizer
 <tr id="newItem">
     <td>
         <select class="form-control productId" style="width: 100%;" asp-for="@Model.ProductId" asp-items="@ViewBag.Products" disabled>
-            <option selected="selected" value="0">--Select Product--</option>
+            <option selected="selected" value="0">@localizer["Select Product"]</option>
         </select>
     </td>
     <td>
         <select class="form-control productId" style="width: 100%;" asp-for="@Model.UnitId" asp-items="@ViewBag.Units" disabled>
-            <option selected="selected" value="0">--Select Unit--</option>
+            <option selected="selected" value="0">@localizer["Select Unit"]</option>
         </select>
     </td>
     <td>
@@ -35,6 +35,4 @@
                style="width: 2.2rem; height: 2.2rem;" />
     </td>
 </tr>
-
 <script src="~/js/saleReturnFormValidation.js"></script>
-

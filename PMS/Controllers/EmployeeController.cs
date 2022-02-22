@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Localization;
 using NToastNotify;
 using PMS.Models;
 using PMS.Repositories.IRepositories;
@@ -16,15 +17,19 @@ namespace PMS.Controllers
         private readonly IToastNotification toastNotification;
         private readonly IHelperRepository helperRepository;
         private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly IStringLocalizer<EmployeeController> localizer;
+
         public EmployeeController(IEmployeeRepository employeeRepository,
             IToastNotification toastNotification,
             IHelperRepository helperRepository,
-            IWebHostEnvironment webHostEnvironment)
+            IWebHostEnvironment webHostEnvironment,
+            IStringLocalizer<EmployeeController> localizer)
         {
             this.employeeRepository = employeeRepository;
             this.toastNotification = toastNotification;
             this.helperRepository = helperRepository;
             this.webHostEnvironment = webHostEnvironment;
+            this.localizer = localizer;
         }
 
         // GET: EmployeeController
@@ -394,7 +399,7 @@ namespace PMS.Controllers
             }
             catch
             {
-                toastNotification.AddErrorToastMessage("Please enter correct data and try again!");
+                toastNotification.AddErrorToastMessage(localizer["Please enter correct data and try again!"]);
                 return RedirectToAction("Index");
             }
         }
@@ -455,7 +460,7 @@ namespace PMS.Controllers
             }
             else
             {
-                helperRepository.AlertMessage("Please enter correct filter details!");
+                helperRepository.AlertMessage(localizer["Please enter correct filter details!"]);
                 return View("GetAllLedgers", employeeLedgers);
             }
         }

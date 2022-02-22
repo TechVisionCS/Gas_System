@@ -376,8 +376,6 @@ namespace PMS.Repositories
                 {
                     pBalance = m.Debit - m.Credit;
 
-
-
                     string address = "";
 
                     string addr = "";

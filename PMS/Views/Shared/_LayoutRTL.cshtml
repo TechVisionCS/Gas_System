@@ -24,12 +24,17 @@
             direction: rtl;
         }
 
-        td {
+
+        /* OR */
+
+        .table thead,
+        .table th {
             text-align: right;
             direction: rtl;
         }
 
-        th {
+        table thead,
+        .table td {
             text-align: right;
             direction: rtl;
         }
@@ -161,9 +166,6 @@
                 theme: 'bootstrap4'
             })
         });
-
-
-
     </script>
 
     @RenderSection("Scripts", required: false)

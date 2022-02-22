@@ -117,4 +117,187 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Return" xml:space="preserve">
+    <value>افزودن بازګشت جدید</value>
+  </data>
+  <data name="Add New Sale" xml:space="preserve">
+    <value>افزودن فروش جدید</value>
+  </data>
+  <data name="AFN" xml:space="preserve">
+    <value>افغانی</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+  <data name="Balanced Amount" xml:space="preserve">
+    <value>مبلغ بیلانس</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>ایجاد شده در</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>کرنسی</value>
+  </data>
+  <data name="Customer Name" xml:space="preserve">
+    <value>نام مشتری</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>تخفیف</value>
+  </data>
+  <data name="Do you want to delete the following record of sale return?" xml:space="preserve">
+    <value>آیا می خواهید سابقه بازگشت فروش زیر را حذف کنید؟</value>
+  </data>
+  <data name="Do you want to delete the following record of sale?" xml:space="preserve">
+    <value>آیا می خواهید رکورد فروش زیر را حذف کنید؟</value>
+  </data>
+  <data name="Due Amount" xml:space="preserve">
+    <value>مبلغ باقیمانده</value>
+  </data>
+  <data name="Excahgen Rate" xml:space="preserve">
+    <value>نرخ تبادله</value>
+  </data>
+  <data name="General Info" xml:space="preserve">
+    <value>معلومات عمومی</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>انوایس نمبر</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>اشیا</value>
+  </data>
+  <data name="No item available in this sale!" xml:space="preserve">
+    <value>هیچ مواد موجود نیست در سستسم</value>
+  </data>
+  <data name="No, Cancel it" xml:space="preserve">
+    <value>نه، لغوش کن</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>هیچ</value>
+  </data>
+  <data name="Paid Amount" xml:space="preserve">
+    <value>مبلغ تادیه </value>
+  </data>
+  <data name="Payment Details" xml:space="preserve">
+    <value>معلومات تادیه</value>
+  </data>
+  <data name="Per item" xml:space="preserve">
+    <value>به هر جنس</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>جنس</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Received Amount" xml:space="preserve">
+    <value>مبلغ دریافتی</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>کرایه</value>
+  </data>
+  <data name="Retails" xml:space="preserve">
+    <value>پروچون</value>
+  </data>
+  <data name="Return Date" xml:space="preserve">
+    <value>تاریخ بازګشت</value>
+  </data>
+  <data name="Return Details" xml:space="preserve">
+    <value>تفصیل بازګشت</value>
+  </data>
+  <data name="Return Info" xml:space="preserve">
+    <value>معلومات بازګشت</value>
+  </data>
+  <data name="Return No." xml:space="preserve">
+    <value>نمبر بازګشت</value>
+  </data>
+  <data name="Return Performed By" xml:space="preserve">
+    <value>بازگشت انجام شده توسط</value>
+  </data>
+  <data name="Returned Qty" xml:space="preserve">
+    <value>مقدار بازګشت</value>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>بازګشت</value>
+  </data>
+  <data name="Sale Date" xml:space="preserve">
+    <value>تاریخ فروش</value>
+  </data>
+  <data name="Sale Details" xml:space="preserve">
+    <value>معلومات فروشات</value>
+  </data>
+  <data name="Sale ID / Invoice No." xml:space="preserve">
+    <value>انوایس / فروش ايدی</value>
+  </data>
+  <data name="Sale Performed By" xml:space="preserve">
+    <value>فروش انجام شده توسط</value>
+  </data>
+  <data name="Sale Return Details" xml:space="preserve">
+    <value>جزئیات بازگشت فروش</value>
+  </data>
+  <data name="Sale Returns Administration" xml:space="preserve">
+    <value>مدیریت بازګشت فروش</value>
+  </data>
+  <data name="Sale Returns List" xml:space="preserve">
+    <value>لیست بازګشت فروش</value>
+  </data>
+  <data name="Sale Type" xml:space="preserve">
+    <value>نوعه فروش</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>فروشات</value>
+  </data>
+  <data name="Sales Administration" xml:space="preserve">
+    <value>مدیریت فروشات</value>
+  </data>
+  <data name="Sales List" xml:space="preserve">
+    <value>لیست فروشات</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>معلومات سیستم</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>تیکس</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>مبلغ عمومی</value>
+  </data>
+  <data name="Total Discount" xml:space="preserve">
+    <value>مبلغ تخفیف</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>توتل کل</value>
+  </data>
+  <data name="Total Returns" xml:space="preserve">
+    <value>مجموعه بازګشت</value>
+  </data>
+  <data name="Total Sale" xml:space="preserve">
+    <value>مبلغ کل</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>واحد</value>
+  </data>
+  <data name="Unit Price" xml:space="preserve">
+    <value>قیمت فی واحد</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>به روز رسانی در</value>
+  </data>
+  <data name="USD" xml:space="preserve">
+    <value>دالر</value>
+  </data>
+  <data name="WALKING CUSTOMER" xml:space="preserve">
+    <value>مشتری کوچه رو </value>
+  </data>
+  <data name="Whole Sale" xml:space="preserve">
+    <value>عمده </value>
+  </data>
+  <data name="Yes, Delete it" xml:space="preserve">
+    <value>بله حذفش کن</value>
+  </data>
 </root>

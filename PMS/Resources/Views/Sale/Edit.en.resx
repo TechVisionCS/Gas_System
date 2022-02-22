@@ -144,11 +144,11 @@
   <data name="Calculate" xml:space="preserve">
     <value>Calculate</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Cash Payment" xml:space="preserve">
     <value>Cash Payment</value>
-  </data>
-  <data name="Change Batch ID" xml:space="preserve">
-    <value>Change Batch ID</value>
   </data>
   <data name="Clear" xml:space="preserve">
     <value>Clear</value>
@@ -258,17 +258,17 @@
   <data name="Save &amp; Print" xml:space="preserve">
     <value>Save &amp; Print</value>
   </data>
+  <data name="Saved" xml:space="preserve">
+    <value />
+  </data>
   <data name="Select Bank" xml:space="preserve">
     <value>Select Bank</value>
   </data>
-  <data name="Select Product" xml:space="preserve">
-    <value>Select Product</value>
+  <data name="Select Customer" xml:space="preserve">
+    <value>Select Customer</value>
   </data>
   <data name="Select Supplier" xml:space="preserve">
-    <value>Select Supplier</value>
-  </data>
-  <data name="Select Unit" xml:space="preserve">
-    <value>Select Unit</value>
+    <value>Select Customer</value>
   </data>
   <data name="Sub Total" xml:space="preserve">
     <value>Sub Total</value>
@@ -281,9 +281,6 @@
   </data>
   <data name="Tax" xml:space="preserve">
     <value>Tax</value>
-  </data>
-  <data name="Total Discount (%)" xml:space="preserve">
-    <value>Total Discount (%)</value>
   </data>
   <data name="Total Price" xml:space="preserve">
     <value>Total Price</value>

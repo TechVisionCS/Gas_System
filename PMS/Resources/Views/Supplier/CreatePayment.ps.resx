@@ -117,4 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add customer receive details" xml:space="preserve">
+    <value>پیرودونکي اضافه کړئ توضیحات ترلاسه کړئ</value>
+  </data>
+  <data name="Add supplier payment details" xml:space="preserve">
+    <value>د عرضه کونکي تادیې توضیحات اضافه کړئ</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>بانک </value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>لغوه کردن</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="Customer Receives" xml:space="preserve">
+    <value>پیرودونکي ترلاسه کوي</value>
+  </data>
+  <data name="Customers Administration" xml:space="preserve">
+    <value>د پیرودونکو اداره</value>
+  </data>
+  <data name="Customers Ledger" xml:space="preserve">
+    <value>د پیرودونکو لیجر</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>شرح</value>
+  </data>
+  <data name="Payment Amount" xml:space="preserve">
+    <value>د تادیاتو اندازه مبلغ</value>
+  </data>
+  <data name="Payment Date" xml:space="preserve">
+    <value>د تادیاتو نیټه</value>
+  </data>
+  <data name="Payment Type" xml:space="preserve">
+    <value>د تادیاتو ډول</value>
+  </data>
+  <data name="Receive Amount" xml:space="preserve">
+    <value>دریافت مبلغ</value>
+  </data>
+  <data name="Receive Date" xml:space="preserve">
+    <value>تاریخ دریافت</value>
+  </data>
+  <data name="Receive Type" xml:space="preserve">
+    <value>نوع دریافت</value>
+  </data>
+  <data name="Receives List" xml:space="preserve">
+    <value>لیست ترلاسه کوي</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ثبت کردن</value>
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>بانک را انتخاب نمایید</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>-- عرضه کونکی وټاکئ --</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>عرضه کوونکی</value>
+  </data>
+  <data name="Supplier Payments" xml:space="preserve">
+    <value>عرضه کوونکی تادیه</value>
+  </data>
+  <data name="Suppliers Administration" xml:space="preserve">
+    <value>د عرضه کوونکو اداره</value>
+  </data>
+  <data name="Suppliers Ledger" xml:space="preserve">
+    <value>د عرضه کوونکو لیجر</value>
+  </data>
+  <data name="Suppliers List" xml:space="preserve">
+    <value>د عرضه کوونکو لیست</value>
+  </data>
+  <data name="Through Bank" xml:space="preserve">
+    <value>از طریق بانک</value>
+  </data>
+  <data name="Through Cash" xml:space="preserve">
+    <value>از طریق پول نقد</value>
+  </data>
 </root>

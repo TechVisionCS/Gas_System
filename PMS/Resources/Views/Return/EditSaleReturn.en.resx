@@ -117,4 +117,226 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Add a new puchase details" xml:space="preserve">
+    <value>Add a new puchase details</value>
+  </data>
+  <data name="Add a new sale details" xml:space="preserve">
+    <value>Add a new sale details</value>
+  </data>
+  <data name="Add New" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Add New Bank" xml:space="preserve">
+    <value>Add New Bank</value>
+  </data>
+  <data name="Add sale return" xml:space="preserve">
+    <value>Add sale return</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Balanced Amount" xml:space="preserve">
+    <value>Balanced Amount</value>
+  </data>
+  <data name="Bank" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="Bank Payment" xml:space="preserve">
+    <value>Bank Payment</value>
+  </data>
+  <data name="Calculate" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="Cash Payment" xml:space="preserve">
+    <value>Cash Payment</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Details about Sale..." xml:space="preserve">
+    <value>Details about Sale...</value>
+  </data>
+  <data name="Discount (%)" xml:space="preserve">
+    <value>Discount (%)</value>
+  </data>
+  <data name="Discount Amount" xml:space="preserve">
+    <value>Discount Amount</value>
+  </data>
+  <data name="Discount Type" xml:space="preserve">
+    <value>Discount Type</value>
+  </data>
+  <data name="Discount(%)" xml:space="preserve">
+    <value>Discount(%)</value>
+  </data>
+  <data name="Due Amount" xml:space="preserve">
+    <value>Due Amount</value>
+  </data>
+  <data name="Edit sale return" xml:space="preserve">
+    <value>Edit sale return</value>
+  </data>
+  <data name="Enter return notes..." xml:space="preserve">
+    <value>Enter return notes...</value>
+  </data>
+  <data name="Exchange Amount" xml:space="preserve">
+    <value>Exchange Amount</value>
+  </data>
+  <data name="Exchange Rate" xml:space="preserve">
+    <value>Exchange Rate</value>
+  </data>
+  <data name="Fixed Amount" xml:space="preserve">
+    <value>Fixed Amount</value>
+  </data>
+  <data name="Full Paid" xml:space="preserve">
+    <value>Full Paid</value>
+  </data>
+  <data name="Grand Total" xml:space="preserve">
+    <value>Grand Total</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>Invoice No</value>
+  </data>
+  <data name="Item details" xml:space="preserve">
+    <value>Item details</value>
+  </data>
+  <data name="Paid Amount" xml:space="preserve">
+    <value>Paid Amount</value>
+  </data>
+  <data name="Payment Type" xml:space="preserve">
+    <value>Payment Type</value>
+  </data>
+  <data name="Per item" xml:space="preserve">
+    <value>Per item</value>
+  </data>
+  <data name="Percentage(%)" xml:space="preserve">
+    <value>Percentage(%)</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Product List" xml:space="preserve">
+    <value>Product List</value>
+  </data>
+  <data name="Purchase Date" xml:space="preserve">
+    <value>Purchase Date</value>
+  </data>
+  <data name="Purchases" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="Purchases Administration" xml:space="preserve">
+    <value>Purchases Administration</value>
+  </data>
+  <data name="Purchases List" xml:space="preserve">
+    <value>Purchases List</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="Received Amount" xml:space="preserve">
+    <value>Received Amount</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>Rent</value>
+  </data>
+  <data name="Return Check" xml:space="preserve">
+    <value>Return Check</value>
+  </data>
+  <data name="Return Date" xml:space="preserve">
+    <value>Return Date</value>
+  </data>
+  <data name="Return Notes" xml:space="preserve">
+    <value>Return Notes</value>
+  </data>
+  <data name="Returned Qty" xml:space="preserve">
+    <value>Returned Qty</value>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>Returns</value>
+  </data>
+  <data name="Sale Date" xml:space="preserve">
+    <value>Sale Date</value>
+  </data>
+  <data name="Sale Returns Administration" xml:space="preserve">
+    <value>Sale Returns Administration</value>
+  </data>
+  <data name="Sale Returns List" xml:space="preserve">
+    <value>Sale Returns List</value>
+  </data>
+  <data name="Sale Type" xml:space="preserve">
+    <value>Sale Type</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="Sales Administration" xml:space="preserve">
+    <value>Sales Administration</value>
+  </data>
+  <data name="Sales List" xml:space="preserve">
+    <value>Sales List</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Save &amp; Print" xml:space="preserve">
+    <value>Save &amp; Print</value>
+  </data>
+  <data name="Saved" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Select Bank" xml:space="preserve">
+    <value>Select Bank</value>
+  </data>
+  <data name="Select Customer" xml:space="preserve">
+    <value>Select Customer</value>
+  </data>
+  <data name="Select Supplier" xml:space="preserve">
+    <value>Select Supplier</value>
+  </data>
+  <data name="Sold Qty" xml:space="preserve">
+    <value>Sold Qty</value>
+  </data>
+  <data name="Sub Total" xml:space="preserve">
+    <value>Sub Total</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="Supplier List" xml:space="preserve">
+    <value>Supplier List</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="Total Discount (%)" xml:space="preserve">
+    <value>Total Discount (%)</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>Total Price</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="Unit Price" xml:space="preserve">
+    <value>Unit Price</value>
+  </data>
+  <data name="WALKING CUSTOMER" xml:space="preserve">
+    <value>WALKING CUSTOMER</value>
+  </data>
 </root>

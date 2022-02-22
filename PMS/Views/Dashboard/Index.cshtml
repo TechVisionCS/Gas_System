@@ -180,6 +180,7 @@
                     contentType: "application/json",
                     success: function (response) {
                         $('#purchase').append(response);
+                        //console.log(response);
                     },
                     error: function (err) {
                         alert(err.responseText);
@@ -214,22 +215,11 @@
                         }
               });
         });
-             @*$.ajax({
-                    cache: false,
-                    url: '@Url.Action("TotalSalesPerMonth", "Dashboard")',
-                    dataType: "html",
-                    type: "GET",
-                    contentType: "application/json",
-                    success: function (response) {
-                        $('#TotalProjectsPerYear').html(response);
-                    },
-                    error: function (err) {
-                        alert(err.responseText);
-                    }
-             });*@
+
         var Jan=@ViewBag.JanuarySale;
-        var feb=@ViewBag.FaberuarySale;
-        var mar=@ViewBag.March;
+
+        var feb =@ViewBag.FaberuarySale;
+        var mar =@ViewBag.March;
         var apr=@ViewBag.AprilSale;
         var may=@ViewBag.MaySale ;
         var jun=@ViewBag.JuneSale ;

@@ -117,4 +117,190 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add New Return" xml:space="preserve">
+    <value>نوی خرڅلاو واپسی </value>
+  </data>
+  <data name="Add New Sale" xml:space="preserve">
+    <value>نوی پلور اضافه کړئ</value>
+  </data>
+  <data name="AFN" xml:space="preserve">
+    <value>افغانی</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>شاته</value>
+  </data>
+  <data name="Balanced Amount" xml:space="preserve">
+    <value>بیلانس مبلغ</value>
+  </data>
+  <data name="Created At" xml:space="preserve">
+    <value>تاریخ ایجاد</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>کرنسی</value>
+  </data>
+  <data name="Customer Name" xml:space="preserve">
+    <value>پیریدونکي نوم</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>تفصیل</value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>تخفیف</value>
+  </data>
+  <data name="Do you want to delete the following record of sale return?" xml:space="preserve">
+    <value>ایا تاسو غواړئ د پلور بیرته راستنیدو لاندې ریکارډ حذف کړئ؟</value>
+  </data>
+  <data name="Do you want to delete the following record of sale?" xml:space="preserve">
+    <value>ایا تاسو غواړئ د پلور لاندې ریکارډ حذف کړئ؟</value>
+  </data>
+  <data name="Due Amount" xml:space="preserve">
+    <value>د ورکړې اندازه</value>
+  </data>
+  <data name="Excahgen Rate" xml:space="preserve">
+    <value>نرخ تبادله</value>
+  </data>
+  <data name="General Info" xml:space="preserve">
+    <value>عمومي معلومات</value>
+  </data>
+  <data name="Invoice No" xml:space="preserve">
+    <value>د انوائس شمیره</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>توکي</value>
+  </data>
+  <data name="No item available in this sale return!" xml:space="preserve">
+    <value>د دې پلور بیرته ستنیدو کې هیڅ شی شتون نلري!</value>
+  </data>
+  <data name="No item available in this sale!" xml:space="preserve">
+    <value>پدې پلور کې هیڅ توکي شتون نلري!</value>
+  </data>
+  <data name="No, Cancel it" xml:space="preserve">
+    <value>نه، لغوه یې کړه</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>هیڅ نه</value>
+  </data>
+  <data name="Paid Amount" xml:space="preserve">
+    <value>تادیه شوی مقدار</value>
+  </data>
+  <data name="Payment Details" xml:space="preserve">
+    <value>د تاديې جزئيات</value>
+  </data>
+  <data name="Per item" xml:space="preserve">
+    <value>په هر توکي</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>جنس</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Received Amount" xml:space="preserve">
+    <value>ترلاسه شوي مبلغ</value>
+  </data>
+  <data name="Rent" xml:space="preserve">
+    <value>کرایه</value>
+  </data>
+  <data name="Retails" xml:space="preserve">
+    <value>پرچون پلوري</value>
+  </data>
+  <data name="Return Date" xml:space="preserve">
+    <value>واپسی تاریخ</value>
+  </data>
+  <data name="Return Details" xml:space="preserve">
+    <value>واپسی معلومات</value>
+  </data>
+  <data name="Return Info" xml:space="preserve">
+    <value>واپسی معلومات</value>
+  </data>
+  <data name="Return No." xml:space="preserve">
+    <value>واپسی نمبر</value>
+  </data>
+  <data name="Return Performed By" xml:space="preserve">
+    <value>واپسی د چا په واسطه شوی</value>
+  </data>
+  <data name="Returned Qty" xml:space="preserve">
+    <value>واپسی مقدار</value>
+  </data>
+  <data name="Returns" xml:space="preserve">
+    <value>واپسی</value>
+  </data>
+  <data name="Sale Date" xml:space="preserve">
+    <value>د خرڅلاو نېټه</value>
+  </data>
+  <data name="Sale Details" xml:space="preserve">
+    <value>د خرڅلاو تفصیلات</value>
+  </data>
+  <data name="Sale ID / Invoice No." xml:space="preserve">
+    <value>خرڅ / انوایس نمبر</value>
+  </data>
+  <data name="Sale Performed By" xml:space="preserve">
+    <value>خرڅلاو لخوا ترسره شوی</value>
+  </data>
+  <data name="Sale Return Details" xml:space="preserve">
+    <value>خرڅلاو وواپسی معلومات</value>
+  </data>
+  <data name="Sale Returns Administration" xml:space="preserve">
+    <value>خرڅلاو واپسی مدیریت</value>
+  </data>
+  <data name="Sale Returns List" xml:space="preserve">
+    <value>خرڅلاو واپس شوی لیست</value>
+  </data>
+  <data name="Sale Type" xml:space="preserve">
+    <value>د خرڅلاو ډول</value>
+  </data>
+  <data name="Sales" xml:space="preserve">
+    <value>خرڅلاو</value>
+  </data>
+  <data name="Sales Administration" xml:space="preserve">
+    <value>د خرڅلاو اداره</value>
+  </data>
+  <data name="Sales List" xml:space="preserve">
+    <value>د پلور لیست</value>
+  </data>
+  <data name="SNo" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>سیستم معلومات</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>تیکس</value>
+  </data>
+  <data name="Total Amount" xml:space="preserve">
+    <value>ټول مبلغ</value>
+  </data>
+  <data name="Total Discount" xml:space="preserve">
+    <value>ټول تخفیف</value>
+  </data>
+  <data name="Total Price" xml:space="preserve">
+    <value>ټول قیمت</value>
+  </data>
+  <data name="Total Returns" xml:space="preserve">
+    <value>مجموعه واپسی</value>
+  </data>
+  <data name="Total Sale" xml:space="preserve">
+    <value>ټول خرڅلاو</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>واحد</value>
+  </data>
+  <data name="Unit Price" xml:space="preserve">
+    <value>فی واحد قیمت</value>
+  </data>
+  <data name="Update At" xml:space="preserve">
+    <value>اخری تغیرات </value>
+  </data>
+  <data name="USD" xml:space="preserve">
+    <value>دالر</value>
+  </data>
+  <data name="WALKING CUSTOMER" xml:space="preserve">
+    <value>پلی پیریدونکی </value>
+  </data>
+  <data name="Whole Sale" xml:space="preserve">
+    <value>د عمده خرڅلاو</value>
+  </data>
+  <data name="Yes, Delete it" xml:space="preserve">
+    <value>هو، دا ړنګ کړئ</value>
+  </data>
 </root>
