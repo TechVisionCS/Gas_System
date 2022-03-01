@@ -1,4 +1,5 @@
-﻿using PMS.ViewModels.PurchaseViewModels;
+﻿using PMS.Models;
+using PMS.ViewModels.PurchaseViewModels;
 using PMS.ViewModels.SaleViewModels;
 using System.Collections.Generic;
 
@@ -10,6 +11,8 @@ namespace PMS.Repositories.IRepositories
         IEnumerable<PurchaseDetailsViewModel> GetAllPurchaseDetails();
         IEnumerable<SalesPerMonthViewModel> GetAllSalesPerMonth();
         IEnumerable<SalesPerMonthViewModel> GetAllPurchasePerMonth();
+
+        IEnumerable<Expense> GetAllExpense();
 
         // void MonthSales(out string Months, out string Amount);
         long GetAllProducts();

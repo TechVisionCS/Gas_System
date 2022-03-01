@@ -5862,7 +5862,6 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\bin\Release\netcoreapp3.1\runtimes\win\lib\n
 E:\0110\GasGroupApp\GasGroupApp\PMS\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\0110\GasGroupApp\GasGroupApp\PMS\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\0110\GasGroupApp\GasGroupApp\PMS\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.csproj.AssemblyReference.cache
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Controllers.AccountController.da.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Controllers.AccountController.en.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Controllers.AccountController.ps.resources
@@ -7466,3 +7465,4 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.View
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Repositories.IRepositories.Settings.IHelperRepository.da.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Repositories.IRepositories.Settings.IHelperRepository.en.resources
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.Resources.Repositories.IRepositories.Settings.IHelperRepository.ps.resources
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PMS.csprojAssemblyReference.cache

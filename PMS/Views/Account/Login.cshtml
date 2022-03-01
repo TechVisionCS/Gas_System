@@ -37,6 +37,20 @@
             font-weight: 400;
             color: #ffffff;
         }
+
+        /*.toggle-password {
+            float: right;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: -25px;
+        }*/
+        .field-icon {
+            float: right;
+            margin-left: -25px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+        }
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -79,7 +93,6 @@
                             <div id="demotext">@localizer["Tech Vision"]</div>
                         </div>
 
-
                         <div class="auth-box">
                             <form class="md-float-material" method="POST" asp-action="Login" asp-controller="Account">
                                 <div class="row m-b-20">
@@ -89,29 +102,40 @@
                                 </div>
                                 <hr />
                                 <div asp-validation-summary="All" class="text-danger @valueDefined"></div>
+
                                 <div class="input-group">
                                     <input type="email" class="form-control @valueDefined" placeholder="@localizer["Your Email Address"]" asp-for="Email" required autofocus autocomplete="off">
                                     <span class="md-line"></span>
                                 </div>
+
                                 <div class="input-group">
-                                    <input type="password" class="form-control @valueDefined" placeholder="@localizer["Password"]" required autocomplete="off" asp-for="Password">
-                                    <span class="md-line"></span>
+                                    <input type="password" id="password" class="form-control @valueDefined" placeholder="@localizer["Password"]" required autocomplete="off" asp-for="Password">
+                                    @*<i id="icon" class="fa fa-eye-slash"></i>*@
+                                    @*<span class="fa fa-eye-slash"
+                                        id="togglePassword"></span>*@
                                 </div>
 
-                                <!--<div class="row m-t-25 text-left">
-                                    <div class="col-sm-7 col-xs-12">
+                                <div class="row m-t-25 text-left">
+                                    <div class="col-sm-6 col-xs-12">
                                         <div class="checkbox-fade fade-in-primary">
                                             <label>
-                                                <input type="checkbox" value="" asp-for="RememberMe">
+                                                <input type="checkbox" value="true" asp-for="RememberMe">
                                                 <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">@localizer["Remember me"]</span>
+                                                <span class="text-inverse">@localizer["Remember Me"]</span>
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right d-none">-->
-                                @*  <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> @localizer["Forgot Your Password?"]</a>*@
-                                <!--</div>
-                                </div>-->
+
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                <input type="checkbox" id="checkbox">
+                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">@localizer["Show Password"]</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
@@ -121,7 +145,6 @@
                             </form>
 
                             <partial name="_Culture" />
-
                             <hr />
                             <div class="row">
                                 <div class="col-md-10">
@@ -132,11 +155,8 @@
                                     <img src="~/logo-small-bottom.png" alt="small-logo.png">
                                 </div>
                             </div>
-
                         </div>
-
                         <!-- end of form -->
-
                     </div>
                     <!-- Authentication card end -->
                 </div>
@@ -160,3 +180,52 @@
     <script type="text/javascript" src="~/admin_assets/js/common-pages.js"></script>
 </body>
 </html>
+<script>
+    const togglePassword = document
+        .querySelector('#togglePassword');
+
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', () => {
+
+        // Toggle the type attribute using
+
+        // getAttribure() method
+        const type = password
+            .getAttribute('type') === 'password' ?
+            'text' : 'password';
+
+        password.setAttribute('type', type);
+
+        // Toggle the eye and bi-eye icon
+        this.classList.toggle('fa-eye');
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('#checkbox').on('change', function () {
+            $('#password').attr('type', $('#checkbox').prop('checked') == true ? "text" : "password");
+        });
+    });
+</script>
+<script>
+    //$(".toggle-password").click(function () {
+    //    $(this).toggleClass("fa-eye fa-eye-slash");
+    //    input = $(this).parent().find("input");
+    //    if (input.attr("type") == "password") {
+    //        input.attr("type", "text");
+    //    } else {
+    //        input.attr("type", "password");
+    //    }
+    //});
+
+    $(".toggle-password").click(function () {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+</script>

@@ -311,7 +311,7 @@ namespace PMS.Data
                new Designation { Id = 3, Name = "Feul Attendant", UserName = "System Defined" },
                new Designation { Id = 4, Name = "Mechanic", UserName = "System Defined" },
                new Designation { Id = 5, Name = "Car Wash", UserName = "System Defined" },
-               new Designation { Id = 6, Name = "Gaurd", UserName = "System Defined" } 
+               new Designation { Id = 6, Name = "Gaurd", UserName = "System Defined" }
                );
 
             builder.Entity<ExpensesCategory>().HasData(
@@ -339,7 +339,9 @@ namespace PMS.Data
               new ExpensesCategory { Id = 22, Name = "repairs", UserName = "System Defined", Status = 1, Description = "" },
               new ExpensesCategory { Id = 23, Name = "Printing", UserName = "System Defined", Status = 1, Description = "" }
               );
-
+            builder.Entity<Shop>().HasData(
+               new Shop { Id = 1, Name_en = "Techvision Consulting Service", Name_dr = "شزکت خدماتی تیک ویژن", Name_ps = "تیک ویژن خدماتی شرکت", Slog_en = "Make Your Bussiness Degital", Slog_ps = "تجارت مو نړی وال کړی", Slog_dr = "تجارت تان جهانی سازید", Address_en = "Share-now Majeed Mal back street", Address_ps = "شهر نو مجید مال شاته کوڅه", Address_dr = "شهر نو عقب مجید مال", Phone1 = "0770902698", Phone2 = "079892332", Email1 = "info@techvision.af", Email2 = "amanzai@techvision.af", Responsible1 = "Bismillah Amanzi", Responsible2 = "AKbr" }
+               );
             //lookup
             builder.Entity<Category>().HasIndex(x => x.Name).IsUnique();
             builder.Entity<Unit>().HasIndex(x => x.Name).IsUnique();

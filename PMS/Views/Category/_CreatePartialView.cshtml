@@ -32,15 +32,16 @@
                                         <input type="radio" asp-for="Status" class="form-control" value="1" checked="checked" /> @localizer["Enable"]
                                     </label>
                                 </div>
-
                                 <div class="col-sm-6">
                                     <label class="radio-inline">
-                                        <input type="radio" asp-for="Status" class="form-control" value="0" /> @localizer["Disable"]
+                                        <input type="radio" asp-for="Status" class="form-control" value="0" />@localizer["Disable"]
                                     </label>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-save="modal">@localizer["Save"]</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">@localizer["Close"]</button>

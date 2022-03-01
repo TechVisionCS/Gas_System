@@ -34,8 +34,8 @@ namespace PMS.Controllers
         // GET: Dashboard
         public ActionResult Index()
         {
+            //Sales in bar chart
             var salesperMonths = dashboardRepository.GetAllSalesPerMonth();
-
             ViewBag.JanuarySale = salesperMonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.FaberuarySale = salesperMonths.Where(x => x.Month == 2 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.March = salesperMonths.Where(x => x.Month == 3 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
@@ -49,9 +49,8 @@ namespace PMS.Controllers
             ViewBag.NovermberSale = salesperMonths.Where(x => x.Month == 11 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.DecemberSale = salesperMonths.Where(x => x.Month == 12 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
 
-
+            //purchase in bar chart
             var salesperMPurchaseonths = dashboardRepository.GetAllPurchasePerMonth();
-
             ViewBag.JanuarySalep = salesperMPurchaseonths.Where(x => x.Month == 1 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.FaberuarySalep = salesperMPurchaseonths.Where(x => x.Month == 2 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.Marchp = salesperMPurchaseonths.Where(x => x.Month == 3 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
@@ -65,81 +64,40 @@ namespace PMS.Controllers
             ViewBag.NovermberSalep = salesperMPurchaseonths.Where(x => x.Month == 11 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
             ViewBag.DecemberSalep = salesperMPurchaseonths.Where(x => x.Month == 12 && x.Year == DateTime.Now.Year).Select(x => x.Amount).Sum();
 
-            var TotalExpenses = dashboardRepository.GetAllExpenses();
+            //Expense Moduel
+            var TotalExpenses = dashboardRepository.GetAllExpense();
 
-            ViewBag.TotalExpenses = TotalExpenses;
+            ViewBag.TotalExpenses = TotalExpenses.Where(x => x.DeletedAt == null).Sum(x => x.Amount);
+            ViewBag.TotalExpensesMonth = TotalExpenses.Where(xd => xd.ExpenseDate.Value.Month == DateTime.Now.Month).Select(x => x.Amount).Sum();
+            ViewBag.TodayExpense = TotalExpenses.Where(xd => xd.ExpenseDate.Value.Day == DateTime.Now.Day).Select(x => x.Amount).Sum();
 
-            var TotalExpensesMonth = dashboardRepository.GetAllExpensesMonth();
+            decimal TotalExpensesMonth = TotalExpenses.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Amount).Sum();
+            decimal expense = TotalExpenses.Where(x => x.DeletedAt == null).Sum(x => x.Amount);
 
-            ViewBag.TotalExpensesMonth = TotalExpensesMonth;
-
-
+            //Sale Modul
             var SaleDetails = dashboardRepository.GetAllSaleDetails();
 
             ViewBag.SaleQty = SaleDetails.Select(x => x.Qty).Sum();
 
             ViewBag.TotalSale = SaleDetails.Select(x => x.TotalSalePrice).Sum();
-
             ViewBag.TotalSalePerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.TotalSalePrice).Sum();
+            ViewBag.TodaySale = SaleDetails.Where(xd => xd.CreatedAt.Value.Day == DateTime.Now.Day).Select(x => x.TotalSalePrice).Sum();
 
-            if (SaleDetails == null)
-            {
-                ViewBag.SaleRevenue = (SaleDetails.Select(x => x.Qty).Sum()) * (SaleDetails.Select(x => x.UnitPrice).Average());
-                ViewBag.SaleRevenuePerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average();
-                ViewBag.SaleRevenueQty = SaleDetails.Select(x => x.Qty).Sum();
-                ViewBag.TotalProfit = SaleDetails.Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average() - TotalExpenses;
-                ViewBag.TotalProfitPerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).Average() - TotalExpenses;
-            }
+            ViewBag.SaleRevenueQty = SaleDetails.Select(x => x.Qty).Sum();
+            ViewBag.SaleRevenue = (SaleDetails.Select(x => x.Qty).Sum()) * (SaleDetails.Select(x => x.UnitPrice).DefaultIfEmpty().Average());
+            ViewBag.SaleRevenuePerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * (SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.UnitPrice).DefaultIfEmpty().Average());
+            ViewBag.TodaySaleRevenue = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * (SaleDetails.Where(xd => xd.CreatedAt.Value.Day == DateTime.Now.Day).Select(x => x.UnitPrice).DefaultIfEmpty().Average());
 
-            else
-            {
-                ViewBag.SaleRevenue = 0;
-                ViewBag.SaleRevenuePerMonth = 0;
-                ViewBag.SaleRevenueQty = 0;
-                ViewBag.TotalProfit = 0;
-                ViewBag.TotalProfitPerMonth = 0;
-            }
+            ViewBag.TotalProfit = SaleDetails.Select(x => x.Qty).Sum() * SaleDetails.Select(x => x.UnitPrice).DefaultIfEmpty().Average() - expense;
+            ViewBag.TotalProfitPerMonth = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * (SaleDetails.Where(x => x.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.UnitPrice).DefaultIfEmpty().Average()) - (TotalExpensesMonth);
+            ViewBag.TodayProfit = SaleDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.Qty).Sum() * (SaleDetails.Where(x => x.CreatedAt.Value.Day == DateTime.Now.Day).Select(x => x.UnitPrice).DefaultIfEmpty().Average()) - (TotalExpensesMonth);
 
-            //doughnet
-
-            var stockItems = stockRepository.GetCurrentStockDetails();
-
-
-
-            ViewBag.stockPro = stockItems.Select(k => new { k.ProductName, k.CurrentStockQty }).GroupBy(a => new
-            {
-                ProductName = a.ProductName
-            }).ToArray();
-
-            //ViewBag.ProductName = stockItems.Select(k => new { k.ProductName }).ToArray();
-
-            ////ViewBag.ProductName = JsonConvert.SerializeObject(list);
-
-            ////  ViewBag.ProductName = stockItems.Select(k => new { k.ProductName }).ToArray();
-            //ViewBag.CurrentQty = stockItems.Select(k => new { k.CurrentStockQty }).ToArray();
-
-            //// var CurrentQty = @Html.Raw(Json.Serialize(@ViewBag.CurrentQty));
-            //ViewBag.ProductName = Newtonsoft.Json.JsonConvert.SerializeObject(ProductName);
-            //ViewBag.CurrentStock = Newtonsoft.Json.JsonConvert.SerializeObject(CurrentStock);
-            //List<DatapointLine> dataPoints = new List<DatapointLine>{
-            //    new DatapointLine(10, 22),
-            //    new DatapointLine(20, 36),
-            //    new DatapointLine(30, 42),
-            //    new DatapointLine(40, 51),
-            //    new DatapointLine(50, 46),
-            //};
-
-            //ViewBag.DataPoints = JsonConvert.SerializeObject(dataPoints);
-
-            //return Json(dataPoints, JsonRequestBehavior.AllowGet);
-
-            //Profit
-
-            //Purchase 
             var PurchaseDetails = dashboardRepository.GetAllPurchaseDetails();
+
             ViewBag.PurchaseQty = PurchaseDetails.Select(x => x.Qty).Sum();
             ViewBag.TotalPurchase = PurchaseDetails.Select(x => x.TotalPurchasePrice).Sum();
             ViewBag.TotalPurchasePerMonth = PurchaseDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.TotalPurchasePrice).Sum();
+            ViewBag.TotalPurchaseToday = PurchaseDetails.Where(xd => xd.CreatedAt.Value.Day == DateTime.Now.Day).Select(x => x.TotalPurchasePrice).Sum();
 
             var TotalProducts = dashboardRepository.GetAllProducts();
             ViewBag.TotalProducts = TotalProducts;
@@ -158,7 +116,6 @@ namespace PMS.Controllers
 
             var TotalSuppliersPerMonth = dashboardRepository.GetAllSuppliersMonth();
             ViewBag.TotalSuppliersPerMonth = TotalSuppliersPerMonth;
-
             return View();
         }
 
@@ -203,45 +160,5 @@ namespace PMS.Controllers
             return PartialView("_LatestCurrentStock", stockItems);
         }
 
-        //public ActionResult TotalSalesPerMonth()
-        //{
-        //    //PassMonth List Static for now
-        //    var monthlists = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-        //    ViewBag.MonthName = Newtonsoft.Json.JsonConvert.SerializeObject(monthlists);
-
-
-
-        //    // This was also 
-        //    //List<decimal> lst = new List<decimal>();
-        //    //ViewBag.Data = salesperMonths.Select(k => new { k.Month, k.Amount }).GroupBy(x => new { x.Month }, (key, group) => new
-        //    //{
-        //    //    Month = key.Month,
-        //    //    Amount = group.Sum(k => k.Amount)
-        //    //}).ToArray();
-
-        //    //Also this 
-
-        //    //ViewBag.Data = salesperMonths.GroupBy(x => new { x.Month }, (key, group) => new
-        //    //{
-        //    //    Amount = group.Sum(k => k.Amount)
-        //    //}).ToList();
-
-
-        //    //Changed to ENumerble 
-
-        //    //var other= salesperMonths.GroupBy(a => new {
-        //    //      Month = a.Month
-        //    //  })
-        //    //.AsEnumerable()
-        //    //.Select(q => salesperMonths
-        //    //{
-        //    //    Month = q.Key.Month,
-        //    //    Year = q.Key.Year,
-        //    //    Total = q.SelectMany(a => a.DetalleVenta).Sum(a => a.Total)
-        //    //}).OrderByDescending(a => a.Month)
-        //    //.ToList();
-
-        //    return PartialView("_TotalSalesPerMonth");
-        //}
     }
 }

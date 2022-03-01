@@ -6,6 +6,5 @@ namespace PMS.Models.Lookup
     {
         public string Name { get; set; }
         public string Code { get; set; }
-        public ICollection<Supplier> suppliers { get; set; }
     }
 }

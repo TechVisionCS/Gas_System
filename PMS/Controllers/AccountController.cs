@@ -36,8 +36,6 @@ namespace PMS.Controllers
             return View();
         }
 
-
-
         [AcceptVerbs("Get", "Post")]
         public async Task<IActionResult> IsEmailInUse(string email)
         {
@@ -73,9 +71,7 @@ namespace PMS.Controllers
                         toastNotification.AddWarningToastMessage("User Created Successfully but loged in to the system as well!");
                         return RedirectToAction("Index", "Home");
                     }
-
                 }
-
                 foreach (var error in result.Errors)
                 {
                     toastNotification.AddErrorToastMessage("Something went wrong, please try again later!");
@@ -106,8 +102,6 @@ namespace PMS.Controllers
                         toastNotification.AddWarningToastMessage("User Created Successfully but loged in to the system as well!");
                         return RedirectToAction("Index", "Home");
                     }
-
-
                 }
 
                 foreach (var error in result.Errors)

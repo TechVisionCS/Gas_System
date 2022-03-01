@@ -632,7 +632,7 @@ namespace PMS.Migrations
                     b.Property<long>("ExpenseCategory")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("ExpenseDate")
+                    b.Property<DateTime?>("ExpenseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PaymentType")
@@ -3849,8 +3849,6 @@ namespace PMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("ProductTypeId");
 
                     b.ToTable("gms_product_tbl");
@@ -4828,6 +4826,27 @@ namespace PMS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("gms_shop_tbl");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            Address_dr = "شهر نو عقب مجید مال",
+                            Address_en = "Share-now Majeed Mal back street",
+                            Address_ps = "شهر نو مجید مال شاته کوڅه",
+                            Email1 = "info@techvision.af",
+                            Email2 = "amanzai@techvision.af",
+                            Name_dr = "شزکت خدماتی تیک ویژن",
+                            Name_en = "Techvision Consulting Service",
+                            Name_ps = "تیک ویژن خدماتی شرکت",
+                            Phone1 = "0770902698",
+                            Phone2 = "079892332",
+                            Responsible1 = "Bismillah Amanzi",
+                            Responsible2 = "AKbr",
+                            Slog_dr = "تجارت تان جهانی سازید",
+                            Slog_en = "Make Your Bussiness Degital",
+                            Slog_ps = "تجارت مو نړی وال کړی"
+                        });
                 });
 
             modelBuilder.Entity("PMS.Models.Stock", b =>
@@ -4987,9 +5006,6 @@ namespace PMS.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("CountryId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -5012,9 +5028,6 @@ namespace PMS.Migrations
                     b.Property<decimal>("PreviousBalance")
                         .HasColumnType("decimal(38, 2)");
 
-                    b.Property<long?>("ProvinceId")
-                        .HasColumnType("bigint");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -5025,10 +5038,6 @@ namespace PMS.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
-
-                    b.HasIndex("ProvinceId");
 
                     b.ToTable("gms_supplier_tbl");
                 });
@@ -5329,12 +5338,6 @@ namespace PMS.Migrations
 
             modelBuilder.Entity("PMS.Models.Product", b =>
                 {
-                    b.HasOne("PMS.Models.Lookup.Category", null)
-                        .WithMany("Medicines")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("PMS.Models.Lookup.ProductType", null)
                         .WithMany("products")
                         .HasForeignKey("ProductTypeId")
@@ -5399,19 +5402,6 @@ namespace PMS.Migrations
                         .HasForeignKey("TaxId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("PMS.Models.Supplier", b =>
-                {
-                    b.HasOne("PMS.Models.Lookup.Country", null)
-                        .WithMany("suppliers")
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("PMS.Models.Lookup.Province", null)
-                        .WithMany("suppliers")
-                        .HasForeignKey("ProvinceId")
-                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("PMS.Models.WastageDetails", b =>

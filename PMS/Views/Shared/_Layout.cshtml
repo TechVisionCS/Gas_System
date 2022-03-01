@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Gradient Able Bootstrap admin template made using Bootstrap 4. The starter version of Gradient Able is completely free for personal project." />
-    <meta name="keywords" content="free dashboard template, free admin, free bootstrap template, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
-    <meta name="author" content="codedthemes">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="TechVision">
     <!-- Favicon icon -->
     <link rel="icon" href="~/assets/images/logo5.png" type="image/x-icon">
     <!-- Google font-->
@@ -32,7 +32,6 @@
     <link rel="stylesheet" href="~/lib/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
     <!-- Style.css -->
-
     <link rel="stylesheet" type="text/css" href="~/admin_assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="~/admin_assets/css/jquery.mCustomScrollbar.css">
     <link href="~/css/site.css" rel="stylesheet" />
@@ -87,7 +86,6 @@
             </div>
         </div>
     </div>
-
     <!-- Required Jquery -->
     <script type="text/javascript" src="~/admin_assets/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="~/admin_assets/js/jquery-ui/jquery-ui.min.js"></script>
@@ -98,11 +96,14 @@
     <!-- modernizr js -->
     <script type="text/javascript" src="~/admin_assets/js/modernizr/modernizr.js"></script>
     @*am chart*@
+
     @*<script src="~/admin_assets/pages/widget/amchart/amcharts.min.js"></script>
         <script src="~/admin_assets/pages/widget/amchart/serial.min.js"></script>*@
     @*Chart js*@
+
     <script type="text/javascript" src="~/admin_assets/js/chart.js/Chart.js"></script>
     @*Todo js*@
+
     @*<script type="text/javascript " src="~/admin_assets/pages/todo/todo.js "></script>*@
     <!-- DataTables  & Plugins -->
     <script src="~/lib/datatables/jquery.dataTables.min.js"></script>
@@ -137,7 +138,17 @@
     <script src="~/js/PrintScript.js"></script>
 
     <script>
-        $('input').attr('autocomplete', 'off');
+        $(document).ready(function () {
+
+            //when the page is done loading, disable autocomplete on all inputs[text]
+            $('input[type="text"]').attr('autocomplete', 'off');
+
+            //do the same when a bootstrap modal dialog is opened
+            $(window).on('shown.bs.modal', function () {
+                $('input[type="text"]').attr('autocomplete', 'off');
+            });
+        });
+
         $(function () {
             $("#example1").DataTable({
                 "responsive": true, "lengthChange": false, "autoWidth": false,

@@ -15,7 +15,8 @@
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Purchase Amount"]</h6>
                             <h4 class="text-right"><i class="ti-shopping-cart f-left"></i><span>@ViewBag.TotalPurchase.ToString(@ViewBag.TotalPurchase % 1 == 0 ? "N0" : "N2")</span></h4>
-                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalPurchasePerMonth.ToString(@ViewBag.TotalPurchasePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-10">@localizer["This Month"]<span class="f-right">@ViewBag.TotalPurchasePerMonth.ToString(@ViewBag.TotalPurchasePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-0">@localizer["Today"]<span class="f-right">@ViewBag.TotalPurchaseToday.ToString(@ViewBag.TotalPurchaseToday % 1 == 0 ? "N0" : "N2")</span></p>
                             <p class="m-b-0">@localizer["Purchased In Kg"]<span class="f-right">@ViewBag.PurchaseQty.ToString(@ViewBag.PurchaseQty % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
                     </div>
@@ -26,7 +27,8 @@
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Sales Amount"]</h6>
                             <h4 class="text-right"><i class="ti-tag f-left"></i><span>@ViewBag.TotalSale.ToString(@ViewBag.TotalSale % 1 == 0 ? "N0" : "N2")</span></h4>
-                            <p class="m-b-0">@localizer["This Month"]<span class="f-right">@ViewBag.TotalSalePerMonth.ToString(@ViewBag.TotalSalePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-10">@localizer["This Month"]<span class="f-right">@ViewBag.TotalSalePerMonth.ToString(@ViewBag.TotalSalePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-0">@localizer["Today"]<span class="f-right">@ViewBag.TodaySale.ToString(@ViewBag.TodaySale % 1 == 0 ? "N0" : "N2")</span></p>
                             <p class="m-b-0">@localizer["Saled In Kg"]<span class="f-right">@ViewBag.SaleQty.ToString(@ViewBag.SaleQty % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
                     </div>
@@ -37,7 +39,8 @@
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Revenue Amount"]</h6>
                             <h4 class="text-right"><i class="ti-reload f-left"></i><span>@ViewBag.SaleRevenue.ToString(@ViewBag.SaleRevenue % 1 == 0 ? "N0" : "N2")</span></h4>
-                            <p class="m-b-20">@localizer["This Month"]<span class="f-right">@ViewBag.SaleRevenuePerMonth.ToString(@ViewBag.SaleRevenuePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-10">@localizer["This Month"]<span class="f-right">@ViewBag.SaleRevenuePerMonth.ToString(@ViewBag.SaleRevenuePerMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-20">@localizer["Today"]<span class="f-right">@ViewBag.TodaySaleRevenue.ToString(@ViewBag.TodaySaleRevenue % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +50,9 @@
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Expense Amount"]</h6>
                             <h4 class="text-right"><i class="ti-wallet f-left"></i><span>@ViewBag.TotalExpenses.ToString(@ViewBag.TotalExpenses % 1 == 0 ? "N0" : "N2")</span></h4>
-                            <p class="m-b-20">@localizer["This Month"]<span class="f-right">@ViewBag.TotalExpensesMonth.ToString(@ViewBag.TotalExpensesMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-10">@localizer["This Month"]<span class="f-right">@ViewBag.TotalExpensesMonth.ToString(@ViewBag.TotalExpensesMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-20">@localizer["Today"]<span class="f-right">@ViewBag.TodayExpense.ToString(@ViewBag.TodayExpense % 1 == 0 ? "N0" : "N2")</span></p>
+
                         </div>
                     </div>
                 </div>
@@ -57,7 +62,9 @@
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Profit Amount"]</h6>
                             <h4 class="text-right"><i class="fa fa-money f-left"></i><span>@ViewBag.TotalProfit.ToString(@ViewBag.TotalProfit % 1 == 0 ? "N0" : "N2")</span></h4>
-                            <p class="m-b-20">@localizer["This Month"]<span class="f-right">@ViewBag.TotalProfitPerMonth.ToString(@ViewBag.TotalProfitPerMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-10">@localizer["This Month"]<span class="f-right">@ViewBag.TotalProfitPerMonth.ToString(@ViewBag.TotalProfitPerMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-20">@localizer["Today"]<span class="f-right">@ViewBag.TodayProfit.ToString(@ViewBag.TodayProfit % 1 == 0 ? "N0" : "N2")</span></p>
+
                         </div>
                     </div>
                 </div>
@@ -67,7 +74,8 @@
                         <div class="card-block">
                             <h6 class="m-b-20">@localizer["Produts"]</h6>
                             <h4 class="text-right"><i class="ti-wallet f-left"></i><span>@ViewBag.TotalProducts.ToString(@ViewBag.TotalProducts % 1 == 0 ? "N0" : "N2")</span></h4>
-                            <p class="m-b-20">@localizer["This Month"]<span class="f-right">@ViewBag.TotalProductMonth.ToString(@ViewBag.TotalProductMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-10">@localizer["This Month"]<span class="f-right">@ViewBag.TotalProductMonth.ToString(@ViewBag.TotalProductMonth % 1 == 0 ? "N0" : "N2")</span></p>
+                            <p class="m-b-20">@localizer["Today"]<span class="f-right">@ViewBag.TodaySaleRevenue.ToString(@ViewBag.TodaySale % 1 == 0 ? "N0" : "N2")</span></p>
                         </div>
                     </div>
                     <!--end::Nav-->

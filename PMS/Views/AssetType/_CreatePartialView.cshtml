@@ -10,6 +10,7 @@
             </div>
             <div class="modal-body">
                 <form method="post" asp-action="Create" asp-controller="AssetType">
+
                     <div class="form-group">
                         <label>Name <span class="required">*</span></label>
                         <input type="text" asp-for="Name" class="form-control" required autofocus autocomplete="off" dir="auto" />
@@ -47,6 +48,3 @@
         </div>
     </div>
 </div>
-<script>
-    $('input').attr('autocomplete', 'off');
-</script>

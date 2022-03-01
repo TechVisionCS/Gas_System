@@ -1181,6 +1181,7 @@ E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\b06dee67-ee4b-4390-8838-da5b268285b4_BT_20181213_SAFFRON1_3641832.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\b99a1114-01a7-4813-8cbe-fc517900f178_Training Assessment.jpg
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\c34c2c3e-07e5-4279-8978-a57c465f3cbd_1-1.jpg
+E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Uploads\employee-profile\c57491e4-a0dd-412e-881e-8f9aaa17e0b7_afg rugs and carpets center.png
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
 E:\0110\GasGroupApp\GasGroupApp\PMS\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.AspNetCore.Antiforgery.dll

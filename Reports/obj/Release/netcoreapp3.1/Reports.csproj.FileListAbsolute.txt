@@ -113,7 +113,6 @@ E:\0110\GasGroupApp\GasGroupApp\Reports\bin\Release\netcoreapp3.1\runtimes\win-x
 E:\0110\GasGroupApp\GasGroupApp\Reports\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\0110\GasGroupApp\GasGroupApp\Reports\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\0110\GasGroupApp\GasGroupApp\Reports\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.csproj.AssemblyReference.cache
 E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.Form1.resources
 E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.csproj.GenerateResource.cache
 E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.GeneratedMSBuildEditorConfig.editorconfig
@@ -124,3 +123,4 @@ E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.csproj
 E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.dll
 E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.pdb
 E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.genruntimeconfig.cache
+E:\0110\GasGroupApp\GasGroupApp\Reports\obj\Release\netcoreapp3.1\Reports.csprojAssemblyReference.cache

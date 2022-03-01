@@ -1,4 +1,5 @@
 ﻿using PMS.Data;
+using PMS.Models;
 using PMS.Repositories.IRepositories;
 using PMS.ViewModels.PurchaseViewModels;
 using PMS.ViewModels.SaleViewModels;
@@ -8,6 +9,7 @@ using System.Linq;
 
 namespace PMS.Repositories
 {
+    [System.Runtime.InteropServices.Guid("25B42203-39AE-45CD-8B9A-260FC7007718")]
     public class DashboardRepository : IDashboardRepository
     {
         private readonly ApplicationDbContext dbContext;
@@ -141,7 +143,7 @@ namespace PMS.Repositories
         {
             if (dbContext != null)
             {
-                var totalExpense = dbContext.Expenses.Where(x => x.DeletedAt == null && x.ExpenseDate.Month == DateTime.Now.Month).Sum(x => x.Amount);
+                var totalExpense = dbContext.Expenses.Where(x => x.DeletedAt == null && x.ExpenseDate.Value.Month == DateTime.Now.Month).Sum(x => x.Amount);
                 if (totalExpense > 0)
                 {
                     return totalExpense;
@@ -264,6 +266,24 @@ namespace PMS.Repositories
                     list.Add(model);
                 }
                 return list;
+            }
+            return null;
+        }
+
+        public IEnumerable<Expense> GetAllExpense()
+        {
+            if (dbContext != null)
+            {
+                var totalExpense = dbContext.Expenses.ToList();
+
+                if (totalExpense != null)
+                {
+                    return totalExpense;
+                }
+                else
+                {
+                    return null;
+                }
             }
             return null;
         }

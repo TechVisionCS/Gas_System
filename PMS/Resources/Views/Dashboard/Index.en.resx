@@ -145,7 +145,7 @@
     <value>Purchase Amount</value>
   </data>
   <data name="Purchased In Kg" xml:space="preserve">
-    <value>Purchased In Kg</value>
+    <value>Total Purchased Kg</value>
   </data>
   <data name="Revenue" xml:space="preserve">
     <value>Revenue</value>
@@ -157,7 +157,7 @@
     <value>Sale</value>
   </data>
   <data name="Saled In Kg" xml:space="preserve">
-    <value>Saled In Kg</value>
+    <value>Total Sale Kg</value>
   </data>
   <data name="Sales Amount" xml:space="preserve">
     <value>Sales Amount</value>
@@ -173,6 +173,9 @@
   </data>
   <data name="Title" xml:space="preserve">
     <value>Title</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Today</value>
   </data>
   <data name="Total Profit" xml:space="preserve">
     <value>Total Profit</value>
