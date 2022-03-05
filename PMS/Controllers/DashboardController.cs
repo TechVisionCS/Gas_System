@@ -96,8 +96,8 @@ namespace PMS.Controllers
 
             ViewBag.PurchaseQty = PurchaseDetails.Select(x => x.Qty).Sum();
             ViewBag.TotalPurchase = PurchaseDetails.Select(x => x.TotalPurchasePrice).Sum();
-            ViewBag.TotalPurchasePerMonth = PurchaseDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(x => x.TotalPurchasePrice).Sum();
-            ViewBag.TotalPurchaseToday = PurchaseDetails.Where(xd => xd.CreatedAt.Value.Day == DateTime.Now.Day).Select(x => x.TotalPurchasePrice).Sum();
+            ViewBag.TotalPurchasePerMonth = PurchaseDetails.Where(xd => xd.CreatedAt.Value.Month == DateTime.Now.Month).Select(xd => xd.TotalPurchasePrice).DefaultIfEmpty().Sum();
+            ViewBag.TotalPurchaseToday = PurchaseDetails.Where(xd => xd.CreatedAt.Value.Day == DateTime.Now.Day).Select(x => x.TotalPurchasePrice).DefaultIfEmpty().Sum();
 
             var TotalProducts = dashboardRepository.GetAllProducts();
             ViewBag.TotalProducts = TotalProducts;

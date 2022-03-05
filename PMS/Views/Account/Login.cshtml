@@ -38,18 +38,12 @@
             color: #ffffff;
         }
 
-        /*.toggle-password {
-            float: right;
+        table td, table th {
+            color: black;
+        }
+
+        table tr:hover {
             cursor: pointer;
-            margin-right: 10px;
-            margin-top: -25px;
-        }*/
-        .field-icon {
-            float: right;
-            margin-left: -25px;
-            margin-top: -25px;
-            position: relative;
-            z-index: 2;
         }
     </style>
     <meta charset="utf-8">
@@ -87,6 +81,34 @@
             <div class="row">
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
+
+                    <div class="login-card card-block auth-body mr-auto ml-auto">
+
+                        <div class="auth-box">
+                            <div class="table-responsive">
+                                <table id="position" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Name_Role</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Admin</td>
+                                            <td class="text-black">Admin@techvision.af</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-black">User</td>
+                                            <td class="text-black">User@techvision.af</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end of form -->
+                    </div>
+
                     <div class="login-card card-block auth-body mr-auto ml-auto">
 
                         <div class="text-center">
@@ -104,7 +126,7 @@
                                 <div asp-validation-summary="All" class="text-danger @valueDefined"></div>
 
                                 <div class="input-group">
-                                    <input type="email" class="form-control @valueDefined" placeholder="@localizer["Your Email Address"]" asp-for="Email" required autofocus autocomplete="off">
+                                    <input type="email" class="form-control @valueDefined" id="email" placeholder="@localizer["Your Email Address"]" asp-for="Email" required autofocus autocomplete="off">
                                     <span class="md-line"></span>
                                 </div>
 
@@ -181,51 +203,23 @@
 </body>
 </html>
 <script>
-    const togglePassword = document
-        .querySelector('#togglePassword');
+    var cells = document.querySelectorAll("#position td");
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].addEventListener("click", function () {
+            if (this.innerHTML == "Admin@techvision.af" || this.innerHTML == "Admin") {
+                $("#email").val("Admin@techvision.af");
+                $("#password").val("Admin@123");
+            }
+            else {
+                $("#email").val("User@techvision.af");
+                $("#password").val("User@123");
+            }
 
-    const password = document.querySelector('#password');
-
-    togglePassword.addEventListener('click', () => {
-
-        // Toggle the type attribute using
-
-        // getAttribure() method
-        const type = password
-            .getAttribute('type') === 'password' ?
-            'text' : 'password';
-
-        password.setAttribute('type', type);
-
-        // Toggle the eye and bi-eye icon
-        this.classList.toggle('fa-eye');
-    });
-</script>
-<script>
+        });
+    }
     $(document).ready(function () {
         $('#checkbox').on('change', function () {
             $('#password').attr('type', $('#checkbox').prop('checked') == true ? "text" : "password");
         });
-    });
-</script>
-<script>
-    //$(".toggle-password").click(function () {
-    //    $(this).toggleClass("fa-eye fa-eye-slash");
-    //    input = $(this).parent().find("input");
-    //    if (input.attr("type") == "password") {
-    //        input.attr("type", "text");
-    //    } else {
-    //        input.attr("type", "password");
-    //    }
-    //});
-
-    $(".toggle-password").click(function () {
-        $(this).toggleClass("fa-eye fa-eye-slash");
-        var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
-            input.attr("type", "text");
-        } else {
-            input.attr("type", "password");
-        }
     });
 </script>
